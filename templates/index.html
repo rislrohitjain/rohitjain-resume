@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ user.header.name }} | AI Architect Portfolio</title>
+    <!-- Google Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='images/favicon.svg') }}">
+    
+    <style>
+        :root {
+            --bg: #050505;
+            --card-bg: #111111;
+            --accent: #00d4ff;
+            --text-main: #ffffff;
+            --text-dim: #a0a0a0;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            letter-spacing: -0.02em;
+        }
+
+        /* --- Bento Grid Layout --- */
+        .bento-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 20px;
+            padding: 50px 0;
+        }
+
+        .bento-item {
+            background: var(--card-bg);
+            border: 1px solid #222;
+            border-radius: 28px;
+            padding: 30px;
+            transition: 0.4s ease;
+        }
+
+        .bento-item:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        /* --- Custom UI Components --- */
+        .profile-box { grid-column: span 1; grid-row: span 3; }
+        .hero-box { grid-column: span 3; background: linear-gradient(135deg, #111, #1a1a1a); }
+        .map-box { grid-column: span 2; padding: 0; overflow: hidden; position: relative; height: 250px; }
+        
+        .skill-progress {
+            height: 6px;
+            background: #222;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--accent);
+            box-shadow: 0 0 15px var(--accent);
+            border-radius: 10px;
+        }
+
+        .btn-download {
+            background: var(--accent);
+            color: #000;
+            font-weight: 700;
+            border-radius: 14px;
+            width: 100%;
+            padding: 15px;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .btn-download:hover {
+            background: white;
+            box-shadow: 0 0 20px var(--accent);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="bento-container">
+        
+        <!-- Sidebar: Profile & Master Skills -->
+        <aside class="bento-item profile-box text-center">
+            <div class="mb-4">
+               
+				
+				<div class="rounded-circle bg-secondary d-inline-block p-1 mb-3" 
+					 style="width: 120px; height: 120px; background: url('{{ url_for('static', filename='images/RohitPhoto.jpg') }}') center/cover;">
+				</div>
+
+				<h2 class="h4 fw-bold mb-1">{{ user.header.name }}</h2>
+                <p class="text-info small fw-bold">{{ user.header.title }}</p>
+            </div>
+
+            <div class="text-start mb-5">
+                <p class="small text-secondary mb-1">AI Architecture</p>
+                <div class="skill-progress"><div class="progress-fill" style="width: 95%"></div></div>
+                <p class="small text-secondary mb-1">Full-Stack Development</p>
+                <div class="skill-progress"><div class="progress-fill" style="width: 98%"></div></div>
+            </div>
+
+            <div class="text-start mb-4 small text-secondary">
+                {% for contact in user.header.contact %}
+					<div class="mb-2"><i class="bi bi-dot text-info"></i> {{ contact }}</div>
+                {% endfor %}
+            </div>
+
+            <a href="{{ user.header.resume_url }}" class="btn-download" download>
+                <i class="bi bi-file-earmark-pdf-fill me-2"></i> Download CV
+            </a>
+        </aside>
+
+        <!-- Hero Card -->
+        <section class="bento-item hero-box d-flex flex-column justify-content-center">
+            <h1 class="display-4 fw-bold mb-3">Architecting <span class="text-info">Intelligent</span> Systems.</h1>
+            <p class="lead text-secondary w-75">{{ user.summary }}</p>
+        </section>
+
+        <!-- Stats Grid -->
+        {% for stat in user.stats %}
+        <div class="bento-item text-center d-flex flex-column justify-content-center">
+            <h3 class="fw-bold text-info display-6 mb-0">{{ stat.value }}</h3>
+            <span class="text-secondary small text-uppercase tracking-widest">{{ stat.label }}</span>
+        </div>
+        {% endfor %}
+
+       <div class="bento-item map-box" style="position: relative; height: 300px; overflow: hidden; border-radius: 15px; margin-bottom: 20px;">
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d227748.3825624311!2d75.65046927322304!3d26.88544791796718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396c4adb4ad13d4b%3A0xdc6d9361309859f5!2sJaipur%2C%20Rajasthan!5e0!3m2!1sen!2sin!4v1714553117000!5m2!1sen!2sin" 
+        width="100%" height="100%" style="border:0; filter: invert(90%) grayscale(1);" allowfullscreen="" loading="lazy">
+    </iframe>
+    <div style="position: absolute; bottom: 15px; left: 15px; background: rgba(0,0,0,0.85); padding: 8px 18px; border-radius: 50px; font-size: 0.85rem; backdrop-filter: blur(4px); border: 1px solid rgba(255,255,255,0.1);">
+        <i class="bi bi-geo-alt-fill text-info"></i> {{ user.header.location }}
+    </div>
+</div>
+
+<section class="cta-bridge" style="padding: 40px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
+    <div class="philosophy-text" style="margin-bottom: 30px; text-align: center;">
+        <p style="font-style: italic; color: #b0b0b0; font-size: 1.2rem; max-width: 700px; margin: 0 auto; line-height: 1.6;">
+            "Bridging the gap between legacy enterprise systems and modern AI automation."
+        </p>
+    </div>
+
+    <div class="action-bar" style="display: flex; justify-content: center; gap: 25px; align-items: center; flex-wrap: wrap;">
+        <div class="focus-tag" style="background: rgba(0, 123, 255, 0.05); border: 1px solid rgba(0, 123, 255, 0.3); color: #4dabff; padding: 10px 20px; border-radius: 12px; font-size: 0.9rem; display: flex; align-items: center;">
+            <span style="display: inline-block; width: 8px; height: 8px; background: #007bff; border-radius: 50%; margin-right: 10px; box-shadow: 0 0 10px #007bff;"></span>
+            Currently Piloting: <strong>Agentic AI & .NET Core</strong>
+        </div>
+
+        <a href="mailto:engrohitjain5@gmail.com" style="text-decoration: none;">
+            <button class="btn-collaborate" style="background: #007bff; color: white; border: none; padding: 12px 30px; border-radius: 12px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2); font-size: 1rem;">
+                Let's Collaborate <i class="bi bi-arrow-right-short"></i>
+            </button>
+        </a>
+    </div>
+</section>
+
+		<!-- Technical Skills Grid -->
+<div class="bento-item" style="grid-column: span 4;">
+    <h4 class="fw-bold mb-4">Technical Expertise</h4>
+    <div class="row g-4">
+        {% for category, items in user.skills.items() %}
+        <div class="col-md-6 col-lg-3">
+            <div class="p-4 border border-secondary border-opacity-10 rounded-4 h-100">
+                <h6 class="text-info fw-bold text-uppercase small mb-3" style="letter-spacing: 1px;">
+                    {{ category }}
+                </h6>
+                <div class="d-flex flex-wrap gap-2">
+                    {% for skill in items %}
+                    <span class="badge bg-dark border border-secondary border-opacity-25 px-3 py-2 rounded-pill font-monospace" style="font-size: 0.75rem; color: #e0e0e0;">
+                        {{ skill }}
+                    </span>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+		
+        <!-- Professional Timeline -->
+        <div class="bento-item" style="grid-column: span 4;">
+            <h4 class="fw-bold mb-4">Milestones</h4>
+            <div class="row g-4">
+                {% for job in user.experience %}
+                <div class="col-md-6">
+                    <div class="p-4 border border-secondary border-opacity-10 rounded-4 h-100">
+                        <span class="badge bg-dark border border-info text-info mb-2">{{ job.period }}</span>
+                        <h5 class="fw-bold mb-1">{{ job.role }}</h5>
+                        <p class="text-secondary small mb-3">{{ job.company }}</p>
+                        <ul class="text-dim small">
+                            {% for detail in job.details %}
+                            <li class="mb-2">{{ detail }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+		
+		
+		
+
+    </div>
+</div>
+
+<footer class="text-center py-5 opacity-25 small">
+    &copy; 2026 Developed for Rohit Jain. Engineered with AI Precision.
+</footer>
+
+</body>
+</html>
