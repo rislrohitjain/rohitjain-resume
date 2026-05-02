@@ -17,7 +17,7 @@ user_data = {
             "github.com/rislrohitjain/",
             "linkedin.com/in/rohit-jain-061571a3"
         ],
-        "resume_url": "static/Resume_Original_Rohit_Jain"  # Replace with actual file download link
+        "resume_url": "static/Resume_Original_Rohit_Jain.pdf"  # Replace with actual file download link
     },
     "summary": "Results-driven Full-Stack Developer and AI Automation Architect with 9+ years of experience delivering high-impact government portals and enterprise systems serving 100,000+ users. Proven track record of cutting result generation time by 50% via optimized stored procedures[cite: 1].",
     "stats": [
