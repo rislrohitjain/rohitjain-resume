@@ -14,8 +14,9 @@ user_data = {
         "contact": [
             "+91 89469 19241",
             "engrohitjain5@gmail.com",
-            "github.com/rislrohitjain/",
-            "linkedin.com/in/rohit-jain-061571a3"
+            "https://github.com/rislrohitjain/",
+            "https://linkedin.com/in/rohit-jain-061571a3",
+            "https://huggingface.co/spaces/rislrohitjain/"
         ],
         "resume_url": "static/Resume_Original_Rohit_Jain.pdf"  # Replace with actual file download link
     },
@@ -96,4 +97,4 @@ def index():
     return render_template('index.html', user=user_data)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', debug=True)

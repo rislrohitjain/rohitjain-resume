@@ -84,6 +84,16 @@
             background: white;
             box-shadow: 0 0 20px var(--accent);
         }
+
+        .contact-link {
+            color: var(--text-dim);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .contact-link:hover {
+            color: var(--accent);
+        }
     </style>
 </head>
 <body>
@@ -113,7 +123,27 @@
 
             <div class="text-start mb-4 small text-secondary">
                 {% for contact in user.header.contact %}
-					<div class="mb-2"><i class="bi bi-dot text-info"></i> {{ contact }}</div>
+                    <div class="mb-2">
+                        {% if contact.startswith('+') %}
+                            <i class="bi bi-telephone-fill text-info me-2"></i>
+                            <a href="tel:{{ contact|replace(' ', '') }}" class="contact-link">{{ contact }}</a>
+                        {% elif '@' in contact %}
+                            <i class="bi bi-envelope-fill text-info me-2"></i>
+                            <a href="mailto:{{ contact }}" class="contact-link">{{ contact }}</a>
+                        {% elif 'github.com' in contact %}
+                            <i class="bi bi-github text-info me-2"></i>
+                            <a href="{{ contact }}" target="_blank" class="contact-link">GitHub Profile</a>
+                        {% elif 'linkedin.com' in contact %}
+                            <i class="bi bi-linkedin text-info me-2"></i>
+                            <a href="{{ contact }}" target="_blank" class="contact-link">LinkedIn Profile</a>
+                        {% elif 'huggingface.co' in contact %}
+                            <i class="bi bi-rocket-takeoff-fill text-info me-2"></i>
+                            <a href="{{ contact }}" target="_blank" class="contact-link">Hugging Face Spaces</a>
+                        {% else %}
+                            <i class="bi bi-dot text-info me-2"></i>
+                            <span>{{ contact }}</span>
+                        {% endif %}
+                    </div>
                 {% endfor %}
             </div>
 
