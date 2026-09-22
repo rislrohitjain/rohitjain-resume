@@ -33,6 +33,27 @@ user_data = {
         "Database": ["MySQL", "MSSQL", "ChromaDB Vector DB", "Stored Procedures"],
         "BI & DevOps": ["Pentaho", "Tableau", "Git", "Docker", "IIS"]
     },
+    "agentic_team": [
+        {"name": "Business Analyst Agent", "role": "Requirements & Domain Modeling"},
+        {"name": "Product Manager Agent", "role": "Roadmap & User Stories"},
+        {"name": "UI/UX Design Agent", "role": "Wireframing & Interface Spec"},
+        {"name": "Frontend Developer Agent", "role": "Responsive UI & Components"},
+        {"name": "Python Backend Developer Agent", "role": "REST/FastAPI & Business Logic"},
+        {"name": "API Design Agent", "role": "OpenAPI Spec & Contract Validation"},
+        {"name": "Database Architect Agent", "role": "Schema & Index Optimization"},
+        {"name": "Database Migration Agent", "role": "DDL & DML Migration Scripts"},
+        {"name": "Code Reviewer Agent", "role": "Static Analysis & Best Practices"},
+        {"name": "Unit Test Generator Agent", "role": "Automated Test Suite Generation"},
+        {"name": "QA & Automation Testing Agent", "role": "End-to-End Test Automation"},
+        {"name": "Performance & Load Testing Agent", "role": "Benchmarking & Profiling"},
+        {"name": "Security & Vulnerability Scanner Agent", "role": "SAST/DAST & OWASP Audit"},
+        {"name": "DevOps CI/CD Agent", "role": "Pipeline Automation & Workflows"},
+        {"name": "Cloud Infrastructure Agent", "role": "Terraform & Cloud Architecture"},
+        {"name": "Deployment & Release Manager Agent", "role": "Zero-Downtime Releases"},
+        {"name": "Site Reliability & Monitoring Agent", "role": "Metrics, Logs & Alerting"},
+        {"name": "Technical Documentation Agent", "role": "API Docs & Knowledge Base"},
+        {"name": "Project Orchestrator Agent", "role": "Multi-Agent Coordination"}
+    ],
     "events": [
         {
             "title": "BrowserStack Testathon Jaipur 2026",
