@@ -1,0 +1,26 @@
+{
+  "ecosystem": "Autonomous Agentic AI Team",
+  "version": "1.0.0",
+  "total_agents": 19,
+  "agents": [
+    { "id": "agent-01", "name": "Business Analyst Agent", "role": "Requirements & Domain Modeling", "capabilities": ["User Stories", "Domain Specs", "Requirements Gathering"] },
+    { "id": "agent-02", "name": "Product Manager Agent", "role": "Roadmap & User Stories", "capabilities": ["Backlog Prioritization", "Acceptance Criteria", "Milestones"] },
+    { "id": "agent-03", "name": "UI/UX Design Agent", "role": "Wireframing & Interface Spec", "capabilities": ["Bento Layout Specs", "CSS Design Tokens", "Responsive UI"] },
+    { "id": "agent-04", "name": "Frontend Developer Agent", "role": "Responsive UI & Components", "capabilities": ["Jinja2 Templates", "HTML5/CSS3", "Bootstrap Integration"] },
+    { "id": "agent-05", "name": "Python Backend Developer Agent", "role": "REST/FastAPI & Business Logic", "capabilities": ["Flask App Routes", "Python Logic", "Middleware"] },
+    { "id": "agent-06", "name": "API Design Agent", "role": "OpenAPI Spec & Contract Validation", "capabilities": ["OpenAPI 3.0", "Endpoint Contracts", "Payload Validation"] },
+    { "id": "agent-07", "name": "Database Architect Agent", "role": "Schema & Index Optimization", "capabilities": ["Relational Schemas", "Indexing", "Query Plan Optimization"] },
+    { "id": "agent-08", "name": "Database Migration Agent", "role": "DDL & DML Migration Scripts", "capabilities": ["SQL Scripts", "Alembic Migrations", "Schema Versioning"] },
+    { "id": "agent-09", "name": "Code Reviewer Agent", "role": "Static Analysis & Best Practices", "capabilities": ["Lint Audit", "Refactoring", "Clean Code Standards"] },
+    { "id": "agent-10", "name": "Unit Test Generator Agent", "role": "Automated Test Suite Generation", "capabilities": ["Pytest", "Unittest", "Coverage Reports"] },
+    { "id": "agent-11", "name": "QA & Automation Testing Agent", "role": "End-to-End Test Automation", "capabilities": ["BrowserStack", "Selenium", "Playwright Integration"] },
+    { "id": "agent-12", "name": "Performance & Load Testing Agent", "role": "Benchmarking & Profiling", "capabilities": ["Locust Benchmarks", "Latency Profiling", "Load Testing"] },
+    { "id": "agent-13", "name": "Security & Vulnerability Scanner Agent", "role": "SAST/DAST & OWASP Audit", "capabilities": ["OWASP Audit", "Dependency Scans", "Security Headers"] },
+    { "id": "agent-14", "name": "DevOps CI/CD Agent", "role": "Pipeline Automation & Workflows", "capabilities": ["GitHub Actions", "Build Scripts", "Task Execution"] },
+    { "id": "agent-15", "name": "Cloud Infrastructure Agent", "role": "Terraform & Cloud Architecture", "capabilities": ["Vercel Configuration", "Serverless Specs", "Cloud Architecture"] },
+    { "id": "agent-16", "name": "Deployment & Release Manager Agent", "role": "Zero-Downtime Releases", "capabilities": ["Vercel CLI Deployments", "Production Aliasing", "Rollback Safety"] },
+    { "id": "agent-17", "name": "Site Reliability & Monitoring Agent", "role": "Metrics, Logs & Alerting", "capabilities": ["Uptime Monitoring", "Log Inspection", "Error Diagnostics"] },
+    { "id": "agent-18", "name": "Technical Documentation Agent", "role": "API Docs & Knowledge Base", "capabilities": ["README Generation", "Markdown Docs", "Architecture Specs"] },
+    { "id": "agent-19", "name": "Project Orchestrator Agent", "role": "Multi-Agent Coordination", "capabilities": ["Workflow Dispatch", "Subagent Coordination", "Execution Pipelines"] }
+  ]
+}
