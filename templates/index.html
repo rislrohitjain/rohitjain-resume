@@ -115,9 +115,22 @@
             </div>
 
             <div class="text-start mb-5">
-                <p class="small text-secondary mb-1">AI Architecture</p>
-                <div class="skill-progress"><div class="progress-fill" style="width: 95%"></div></div>
-                <p class="small text-secondary mb-1">Full-Stack Development</p>
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                    <span class="small text-secondary">AI Automation</span>
+                    <span class="small text-info fw-bold">90%</span>
+                </div>
+                <div class="skill-progress"><div class="progress-fill" style="width: 90%"></div></div>
+
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                    <span class="small text-secondary">Python (Intermediate)</span>
+                    <span class="small text-info fw-bold">75%</span>
+                </div>
+                <div class="skill-progress"><div class="progress-fill" style="width: 75%"></div></div>
+
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                    <span class="small text-secondary">Full-Stack Development</span>
+                    <span class="small text-info fw-bold">98%</span>
+                </div>
                 <div class="skill-progress"><div class="progress-fill" style="width: 98%"></div></div>
             </div>
 
@@ -165,6 +178,8 @@
             <span class="text-secondary small text-uppercase tracking-widest">{{ stat.label }}</span>
         </div>
         {% endfor %}
+
+
 
        <div class="bento-item map-box" style="position: relative; height: 300px; overflow: hidden; border-radius: 15px; margin-bottom: 20px;">
     <iframe 
@@ -219,7 +234,64 @@
         {% endfor %}
     </div>
 </div>
-		
+
+        <!-- Tech Events & Community Participation Section -->
+        {% if user.events %}
+        <div id="events" class="bento-item" style="grid-column: span 4; background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(0, 212, 255, 0.35); border-radius: 28px; padding: 35px; box-shadow: 0 8px 32px 0 rgba(0, 212, 255, 0.1);">
+            <div class="d-flex align-items-center mb-4">
+                <span class="fs-2 me-3">📍</span>
+                <div>
+                    <h3 class="fw-bold mb-0 text-white">Tech Events & Community Participation <span class="badge bg-info text-dark font-monospace align-middle ms-2" style="font-size: 0.75rem;">Onsite & In-Person</span></h3>
+                    <p class="text-info small mb-0 font-monospace">Active in-person tech community engagement, hackathons & conferences in Jaipur</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                {% for event in user.events %}
+                <div class="col-md-6">
+                    <div class="p-4 border border-secondary border-opacity-20 rounded-4 h-100 d-flex flex-column" style="background: rgba(17, 17, 17, 0.7); backdrop-filter: blur(8px);">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="fw-bold text-info mb-0 fs-6">{{ event.title }}</h5>
+                            {% if event.type %}
+                            <span class="badge bg-dark border border-info text-info font-monospace ms-2" style="font-size: 0.65rem;"><i class="bi bi-geo-alt-fill me-1"></i>{{ event.type }}</span>
+                            {% endif %}
+                        </div>
+                        
+                        <div class="mb-3 small">
+                            <div class="mb-2 p-2 rounded-3 border border-secondary border-opacity-25" style="background: rgba(0, 212, 255, 0.05);">
+                                <div class="d-flex justify-content-between align-items-center mb-1">
+                                    <span class="text-info fw-bold"><i class="bi bi-clock-history me-1"></i>Date & Time:</span>
+                                    {% if event.registration_date %}
+                                    <span class="badge bg-dark text-info border border-info font-monospace" style="font-size: 0.65rem;">{{ event.registration_date }}</span>
+                                    {% endif %}
+                                </div>
+                                <span class="text-white font-monospace d-block">{{ event.date }}</span>
+                            </div>
+                            <div class="text-secondary mb-1">
+                                <i class="bi bi-building text-info me-2"></i><strong>Venue (Onsite):</strong> <span class="text-light">{{ event.location }}</span>
+                                {% if event.map_url %}
+                                <a href="{{ event.map_url }}" target="_blank" class="badge bg-info text-dark text-decoration-none ms-2 font-monospace" style="font-size: 0.7rem;"><i class="bi bi-map-fill me-1"></i>View on Google Maps</a>
+                                {% endif %}
+                            </div>
+                            {% if event.organizer %}
+                            <div class="text-secondary"><i class="bi bi-people-fill text-info me-2"></i><strong>Organizer:</strong> <span class="text-light">{{ event.organizer }}</span></div>
+                            {% endif %}
+                        </div>
+
+                        <div class="mt-auto">
+                            <h6 class="text-uppercase text-info small font-monospace mb-2" style="font-size: 0.75rem;"><i class="bi bi-mortarboard-fill me-1"></i>Key Onsite Learnings & Skills Acquired:</h6>
+                            <ul class="text-dim small ps-3 mb-0">
+                                {% for item in event.learnings %}
+                                <li class="mb-2 leading-relaxed">{{ item }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
         <!-- Professional Timeline -->
         <div class="bento-item" style="grid-column: span 4;">
             <h4 class="fw-bold mb-4">Milestones</h4>

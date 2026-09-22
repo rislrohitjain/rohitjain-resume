@@ -1,30 +1,38 @@
----
-title: Rohitjain Resume
-emoji: 🐠
-colorFrom: yellow
-colorTo: red
-sdk: docker
-pinned: false
-license: cc
-short_description: rohitjain-resume
+# Rohit Jain - Interactive Resume Web App
+
+A full-stack, responsive personal resume web application built with Python and deployed seamlessly on Vercel.
+
+🔗 **Live Demo:** [rohitjain-resume.vercel.app](https://rohitjain-resume.vercel.app/)
+
 ---
 
-# Rohit Jain - Resume Portfolio
+## 📌 Overview
 
-A modern Bento-grid inspired resume and portfolio website engineered for senior full-stack developer and AI automation architect **Rohit Jain**.
+This project serves as an interactive online CV showcasing professional experience, technical skills (including Python, GenAI/LangGraph, and web development), contact details, and a visitor tracker.
 
-## Tech Stack
-- **Backend**: Flask (Python)
-- **Frontend**: HTML5, CSS3, Bootstrap 5, Bootstrap Icons
-- **Deployment**: Vercel (Serverless), Hugging Face Spaces (Docker), GitHub
+## 🚀 Features
 
-## Running Locally
-1. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-2. Run the application:
-   ```bash
-   python app.py
-   ```
-3. Open in your browser: `http://localhost:5000`
+- **Responsive Portfolio & CV:** Optimized for viewing across mobile, tablet, and desktop devices.
+- **Skills & Experience Showcase:** Dynamic sections detailing core competencies and career history.
+- **Interactive Contact & Map:** Integrated contact section for reaching out directly.
+- **Visitor Counter:** Tracks portfolio visits with a connected database.
+- **Serverless Deployment:** Configured with `vercel.json` for fast serverless execution.
+
+## 🛠️ Tech Stack
+
+- **Backend:** Python (Flask)
+- **Frontend:** HTML5, CSS3, Jinja2 Templates
+- **Database:** MySQL (Visitor counter)
+- **Deployment & Hosting:** Vercel
+
+## 📂 Project Structure
+
+```text
+rohit-resume-app/
+│
+├── templates/          # HTML templates (index.html, etc.)
+├── app.py              # Main Flask application entry point
+├── requirements.txt    # Python dependencies
+├── vercel.json         # Vercel deployment configuration
+└── README.md           # Project documentation
+```
