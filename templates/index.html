@@ -111,7 +111,12 @@
 				</div>
 
 				<h2 class="h4 fw-bold mb-1">{{ user.header.name }}</h2>
-                <p class="text-info small fw-bold">{{ user.header.title }}</p>
+                <p class="text-info small fw-bold mb-2">{{ user.header.title }}</p>
+                <div class="mb-3">
+                    <button type="button" class="btn btn-sm btn-outline-info font-monospace py-1 px-3 rounded-pill" style="font-size: 0.75rem;" data-bs-toggle="modal" data-bs-target="#videoModal" onclick="playEventVideo('{{ url_for('static', filename='rohit_ai_ata.mp4') }}')">
+                        <i class="bi bi-play-circle-fill me-1"></i>Watch Keynote Video
+                    </button>
+                </div>
             </div>
 
             <div class="text-start mb-5">
