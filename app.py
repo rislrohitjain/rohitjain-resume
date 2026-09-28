@@ -11,7 +11,7 @@ user_data = {
         "name": "Rohit Jain",
         "title": "Senior Full-Stack Developer | AI Automation Architect",
         "location": "Jaipur, Rajasthan",
-        "contact": [
+        "contact": [ 
             "+91 89469 19241",
             "engrohitjain5@gmail.com",
             "https://github.com/rislrohitjain/",
@@ -98,6 +98,7 @@ user_data = {
             "registration_date": "Registered: August 28, 2026",
             "location": "Asymbl Technology - 1st floor, E-81 & 82, SL Marg, Lal Bahadur Nagar, Milap Nagar, Jaipur 302018",
             "map_url": "https://maps.app.goo.gl/U3gswhRJYYxN4H2f6?g_st=aw",
+            "video_url": "rohit_ai_ata.mp4",
             "organizer": "Agile Testing Alliance (ATA)",
             "learnings": [
                 "Agile QA & Quality Engineering: Learned modern agile testing methodologies, test automation standards, and continuous testing pipelines.",
