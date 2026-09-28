@@ -297,6 +297,9 @@
                                 <button type="button" class="btn btn-sm btn-outline-info ms-2 font-monospace py-0 px-2" style="font-size: 0.75rem;" data-bs-toggle="modal" data-bs-target="#videoModal" onclick="playEventVideo('{{ url_for('static', filename=event.video_url) }}')">
                                     <i class="bi bi-play-circle-fill me-1"></i>Play Video Highlights
                                 </button>
+                                <a href="{{ url_for('static', filename=event.video_url) }}" target="_blank" class="btn btn-sm btn-info text-dark font-monospace py-0 px-2 ms-1" style="font-size: 0.75rem;">
+                                    <i class="bi bi-box-arrow-up-right me-1"></i>Open Video in New Tab
+                                </a>
                                 {% endif %}
                             </div>
                             {% if event.organizer %}
