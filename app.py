@@ -99,6 +99,11 @@ user_data = {
             "location": "Asymbl Technology - 1st floor, E-81 & 82, SL Marg, Lal Bahadur Nagar, Milap Nagar, Jaipur 302018",
             "map_url": "https://maps.app.goo.gl/U3gswhRJYYxN4H2f6?g_st=aw",
             "video_url": "rohit_ai_ata.mp4",
+            "images": [
+                "images/ata_1.jpg",
+                "images/ata_2.jpg",
+                "images/ata_3.jpg"
+            ],
             "organizer": "Agile Testing Alliance (ATA)",
             "learnings": [
                 "Agile QA & Quality Engineering: Learned modern agile testing methodologies, test automation standards, and continuous testing pipelines.",
