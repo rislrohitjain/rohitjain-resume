@@ -298,6 +298,9 @@
                                 {% if event.map_url %}
                                 <a href="{{ event.map_url }}" target="_blank" class="badge bg-info text-dark text-decoration-none ms-2 font-monospace" style="font-size: 0.7rem;"><i class="bi bi-map-fill me-1"></i>View on Google Maps</a>
                                 {% endif %}
+                                {% if event.event_url %}
+                                <a href="{{ event.event_url }}" target="_blank" class="badge bg-outline-info text-info border border-info text-decoration-none ms-2 font-monospace" style="font-size: 0.7rem;"><i class="bi bi-box-arrow-up-right me-1"></i>Official Event Details</a>
+                                {% endif %}
                                 {% if event.video_url %}
                                 <button type="button" class="btn btn-sm btn-outline-info ms-2 font-monospace py-0 px-2" style="font-size: 0.75rem;" data-bs-toggle="modal" data-bs-target="#videoModal" onclick="playEventVideo('{{ url_for('static', filename=event.video_url) }}')">
                                     <i class="bi bi-play-circle-fill me-1"></i>Play Video Highlights
@@ -309,6 +312,11 @@
                             </div>
                             {% if event.organizer %}
                             <div class="text-secondary mb-2"><i class="bi bi-people-fill text-info me-2"></i><strong>Organizer:</strong> <span class="text-light">{{ event.organizer }}</span></div>
+                            {% endif %}
+                            {% if event.achievement %}
+                            <div class="mb-2 p-2 rounded-3 border border-warning border-opacity-30 font-monospace" style="background: rgba(255, 193, 7, 0.08); color: #ffc107; font-size: 0.78rem;">
+                                <i class="bi bi-trophy-fill me-2"></i>{{ event.achievement }}
+                            </div>
                             {% endif %}
                             {% if event.images %}
                             <div class="mt-2 mb-2">

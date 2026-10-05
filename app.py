@@ -56,6 +56,20 @@ user_data = {
     ],
     "events": [
         {
+            "title": "UiPath Jaipur: Agentic Automation in Practice (Maestro Flow & Live Build)",
+            "type": "Onsite / In-Person Event",
+            "date": "Saturday, October 3, 2026 | 11:00 AM – 3:00 PM IST",
+            "location": "Vanshiv Technologies, New Sanganer Road, Jaipur 302020",
+            "organizer": "UiPath Community Jaipur Chapter (Host: Gaurav Kheterpal)",
+            "event_url": "https://community.uipath.com/events/details/uipath-jaipur-presents-agentic-automation-in-practice-maestro-flow-live-build-and-hands-on-lab-in-person-meetup/",
+            "achievement": "🏆 Achieved 6th Rank in Live Technical Quiz & Received Official UiPath Swag Gift (Orange Cable / Charger Set)",
+            "learnings": [
+                "Agentic AI & Maestro Flow Orchestration: Built live and orchestrated Agentic AI workflows using UiPath Maestro Flow, Autopilot, and AI Agent Builder from an empty canvas to running execution.",
+                "Hands-On Complaint Classifier Lab: Built a working AI-driven complaint intake & classification process with human-in-the-loop approval workflows.",
+                "Real Enterprise Problem Solving: Mastered agentic vs rule-based architecture trade-offs, token economics, cost optimization at scale, and production observability logging."
+            ]
+        },
+        {
             "title": "BrowserStack Testathon Jaipur 2026",
             "type": "Onsite / In-Person Event",
             "date": "Saturday, September 5, 2026 | 10:00 AM IST onwards",
