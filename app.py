@@ -60,9 +60,15 @@ user_data = {
             "type": "Onsite / In-Person Event",
             "date": "Saturday, October 3, 2026 | 11:00 AM – 3:00 PM IST",
             "location": "Vanshiv Technologies, New Sanganer Road, Jaipur 302020",
-            "organizer": "UiPath Community Jaipur Chapter (Host: Gaurav Kheterpal)",
+            "organizer": "UiPath Community Jaipur Chapter (Host: Gaurav Kheterpal | Speakers: Umesh Dutt Sharma - AI Solutions Architect, Shashwat Raghuwanshi - Nagarro Senior Engineer, Aayushi Saxena)",
             "event_url": "https://community.uipath.com/events/details/uipath-jaipur-presents-agentic-automation-in-practice-maestro-flow-live-build-and-hands-on-lab-in-person-meetup/",
-            "achievement": "🏆 Achieved 6th Rank in Live Technical Quiz & Received Official UiPath Swag Gift (Orange Cable / Charger Set)",
+            "achievement": "🏆 Achieved 6th Rank in Live Technical Quiz & Received Official UiPath Swag Gift (Orange Multi-Cable Charger Set)",
+            "images": [
+                "images/uipath_speakers.jpg",
+                "images/uipath_quiz_1.jpg",
+                "images/uipath_quiz_2.jpg",
+                "images/uipath_swag.jpg"
+            ],
             "learnings": [
                 "Agentic AI & Maestro Flow Orchestration: Built live and orchestrated Agentic AI workflows using UiPath Maestro Flow, Autopilot, and AI Agent Builder from an empty canvas to running execution.",
                 "Hands-On Complaint Classifier Lab: Built a working AI-driven complaint intake & classification process with human-in-the-loop approval workflows.",
