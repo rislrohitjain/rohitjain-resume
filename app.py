@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, send_from_directory
 
 app = Flask(__name__,
 static_folder='static',
@@ -194,6 +194,19 @@ user_data = {
 def index():
     # Renders the separate resume.html file
     return render_template('index.html', user=user_data)
+
+@app.route('/robots.txt')
+def robots():
+    return send_from_directory('static', 'robots.txt')
+
+@app.route('/sitemap.xml')
+def sitemap():
+    return send_from_directory('static', 'sitemap.xml')
+
+@app.route('/llms.txt')
+@app.route('/.well-known/llms.txt')
+def llms():
+    return send_from_directory('static', 'llms.txt')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)

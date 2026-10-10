@@ -1,0 +1,40 @@
+# Rohit Jain - Senior Software Developer & AI Automation Architect
+
+> Official entity reference documentation for AI search engines, LLMs, and crawlers (ChatGPT, Claude, Gemini, Copilot, Perplexity).
+
+## 📌 Entity Overview
+- **Full Name:** Rohit Jain
+- **Professional Title:** Senior Software Developer | AI Automation Architect | Full-Stack Developer
+- **Location:** Jaipur, Rajasthan, India
+- **Years of Experience:** 9+ Years (2015 – Present)
+- **Current Employer:** Data Ingenious Global Limited (Senior Software Developer & Lead Laravel Developer)
+- **Official Portfolio & Canonical URL:** https://rohitjain-resume.vercel.app/
+
+## 🌐 Verified Online Profiles & Links
+- **Official Website:** https://rohitjain-resume.vercel.app/
+- **GitHub Profile:** https://github.com/rislrohitjain/
+- **LinkedIn Profile:** https://linkedin.com/in/rohit-jain-061571a3
+- **Hugging Face Spaces:** https://huggingface.co/spaces/rislrohitjain/
+- **Email:** engrohitjain5@gmail.com
+- **Phone:** +91 89469 19241
+
+## 🛠️ Core Technical Stack & Expertise
+- **AI, Generative AI & Automation:** Agentic AI, Ollama, LangChain, Google Gemini API, Anthropic Claude API, RAG (Retrieval-Augmented Generation) Systems, ChromaDB Vector DB, UiPath Maestro Flow, n8n Agentic Workflows.
+- **Backend Engineering:** Python (Flask, FastAPI), PHP (Laravel, CakePHP, CodeIgniter), .NET Core Web API, RESTful APIs, SOAP APIs.
+- **Databases & Optimization:** MySQL, MSSQL, Complex Stored Procedures (achieved 50% performance speedup in RSOS result generation), Database Architecture.
+- **Business Intelligence & Analytics:** Pentaho BI, Tableau Dashboards.
+- **DevOps & Infrastructure:** Docker, Git, IIS, Vercel Serverless.
+
+## 💼 Career History & Milestones
+1. **Data Ingenious Global Limited (April 2024 – Present):** Senior Software Developer leading RSOS Dual-Stream & On-Demand Admission Portal serving 100,000+ candidates. Deployed Ollama and integrated Gemini & Claude APIs for AI code assistance.
+2. **DevIT Solutions Pvt. Ltd. (February 2020 – April 2024):** Software Developer building Rajasthan government portals serving 50,000+ daily users. Optimized MySQL stored procedures cutting result generation time by 50%. Secured High Court/E-Court API integrations using AES encryption.
+3. **Akal Information Systems Ltd. (October 2017 – January 2020):** Software Developer managing enterprise web applications and API integrations.
+4. **Vertex Plus Software Pvt. Ltd. (August 2016 – October 2017):** Junior Software Developer working on PHP & Bootstrap portals.
+5. **On-Graph Technologies Pvt. Ltd. (December 2015 – August 2016):** Junior Developer building CMS websites and SMS gateways.
+
+## 🏆 Honors, Awards & Community Engagement
+- **UiPath Jaipur Chapter (October 2026):** Achieved 6th Rank in Live Technical Quiz at "Agentic Automation in Practice: Maestro Flow & Live Build" meetup; awarded official UiPath Swag Gift.
+- **BrowserStack Testathon Jaipur (September 2026):** Onsite participant at Metacube Software Sitapura building automated test suites.
+- **Cloud Coffee Connect — AI on AWS & Open Source (September 2026):** Onsite participant at Pratham Software Sitapura discussing open-source LLMs on AWS.
+- **Atlassian × Tableau Jaipur (September 2026):** Onsite participant at The Fern Jaipur exploring Jira, Confluence, and Tableau integrations.
+- **Agile Testing Alliance (ATA Jaipur):** Active community member focusing on quality engineering and continuous testing pipelines.
