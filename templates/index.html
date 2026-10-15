@@ -138,9 +138,9 @@
         }
 
         /* --- Custom UI Components --- */
-        .profile-box { grid-column: span 1; grid-row: span 3; }
+        .profile-box { grid-column: span 1; grid-row: span 2; }
         .hero-box { grid-column: span 3; background: linear-gradient(135deg, #111, #1a1a1a); }
-        .map-box { grid-column: span 2; padding: 0; overflow: hidden; position: relative; height: 250px; }
+        .stats-bar { grid-column: span 3; }
         
         .skill-progress {
             height: 6px;
@@ -266,13 +266,18 @@
             <p class="lead text-secondary w-75">{{ user.summary }}</p>
         </section>
 
-        <!-- Stats Grid -->
-        {% for stat in user.stats %}
-        <div class="bento-item text-center d-flex flex-column justify-content-center">
-            <h3 class="fw-bold text-info display-6 mb-0">{{ stat.value }}</h3>
-            <span class="text-secondary small text-uppercase tracking-widest">{{ stat.label }}</span>
+        <!-- Stats Grid (Aligned in Col 2-4 next to Profile Card) -->
+        <div class="bento-item p-4 d-flex justify-content-between align-items-center flex-wrap gap-3 stats-bar" style="grid-column: span 3; background: linear-gradient(135deg, rgba(255, 255, 255, 0.02), rgba(17, 17, 17, 0.95)); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 28px;">
+            {% for stat in user.stats %}
+            <div class="text-center flex-grow-1 px-3">
+                <h3 class="fw-bold text-info display-6 mb-0">{{ stat.value }}</h3>
+                <span class="text-secondary small text-uppercase tracking-widest font-monospace" style="font-size: 0.75rem;">{{ stat.label }}</span>
+            </div>
+            {% if not loop.last %}
+            <div class="d-none d-md-block" style="width: 1px; height: 45px; background: rgba(255,255,255,0.12);"></div>
+            {% endif %}
+            {% endfor %}
         </div>
-        {% endfor %}
 
 
 
@@ -395,17 +400,59 @@
                 <i class="bi bi-box-arrow-up-right me-1"></i> Open Video in New Tab
             </a>
             {% if user.learning_project.presentation_url %}
-            <a href="{{ url_for('static', filename=user.learning_project.presentation_url) }}" download class="btn btn-warning text-dark font-monospace py-2 px-3 rounded-3 fw-bold text-decoration-none shadow-sm">
-                <i class="bi bi-file-earmark-slides-fill me-1"></i> Download Deck (.PPTX)
+            <a href="{{ user.learning_project.presentation_view_url }}" target="_blank" class="btn btn-warning text-dark font-monospace py-2 px-3 rounded-3 fw-bold text-decoration-none shadow-sm">
+                <i class="bi bi-eye-fill me-1"></i> View PPTX in New Tab
+            </a>
+            <a href="{{ url_for('static', filename=user.learning_project.presentation_url) }}" download class="btn btn-outline-warning font-monospace py-2 px-3 rounded-3 text-decoration-none">
+                <i class="bi bi-download me-1"></i> Download .PPTX
             </a>
             {% endif %}
         </div>
     </div>
 
-    <!-- Project Overview & Live Video Player Split -->
+    <!-- Widescreen Live Project Demo Recording Theater Box -->
+    <div class="p-4 border border-secondary border-opacity-25 rounded-4 mb-4" style="background: rgba(0, 0, 0, 0.65); backdrop-filter: blur(12px); box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);">
+        <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+            <div class="d-flex align-items-center gap-2">
+                <span class="fs-4 text-info"><i class="bi bi-camera-video-fill"></i></span>
+                <div>
+                    <h5 class="text-white fw-bold mb-0">Live Project Demo Recording & System Execution</h5>
+                    <span class="text-secondary font-monospace small" style="font-size: 0.75rem;">Full-scale demonstration of automated email ingestion, Ollama Llama extraction, PostgreSQL tracking & Excel report generation</span>
+                </div>
+            </div>
+            <div class="d-flex align-items-center gap-2 flex-wrap">
+                <span class="badge bg-dark border border-info text-info font-monospace py-2 px-3" style="font-size: 0.72rem;">
+                    <i class="bi bi-film me-1"></i> 1080p Full HD
+                </span>
+                <span class="badge bg-dark border border-warning text-warning font-monospace py-2 px-3" style="font-size: 0.72rem;">
+                    <i class="bi bi-box-seam-fill me-1"></i> Running on Local Docker
+                </span>
+                <button type="button" class="btn btn-sm btn-outline-info font-monospace py-1 px-3 rounded-3" data-bs-toggle="modal" data-bs-target="#videoModal" onclick="playEventVideo('{{ url_for('static', filename=user.learning_project.video_url) }}', '{{ user.learning_project.video_title }}')">
+                    <i class="bi bi-arrows-fullscreen me-1"></i> Expand Modal
+                </button>
+                <a href="{{ url_for('static', filename=user.learning_project.video_url) }}" target="_blank" class="btn btn-sm btn-info text-dark font-monospace py-1 px-3 rounded-3 fw-bold text-decoration-none">
+                    <i class="bi bi-box-arrow-up-right me-1"></i> Open Video in New Tab
+                </a>
+            </div>
+        </div>
+
+        <!-- Generous Widescreen Video Player Container -->
+        <div class="position-relative rounded-4 overflow-hidden border border-secondary border-opacity-30 shadow" style="background: #000; text-align: center;">
+            <video controls class="w-100 d-block mx-auto" style="max-height: 520px; object-fit: contain; width: 100%;" preload="metadata">
+                <source src="{{ url_for('static', filename=user.learning_project.video_url) }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mt-3 pt-2 border-top border-secondary border-opacity-15 font-monospace small text-secondary" style="font-size: 0.75rem;">
+            <span><i class="bi bi-info-circle me-1 text-info"></i> Recorded on developer workstation demonstrating real-time cron execution & live task ingestion.</span>
+            <span><i class="bi bi-file-earmark-play me-1 text-info"></i> MP4 Format • High Resolution</span>
+        </div>
+    </div>
+
+    <!-- Architecture & Presentation Split -->
     <div class="row g-4 mb-4">
         <!-- Left: Workflow & Capabilities -->
-        <div class="col-lg-7 d-flex flex-column">
+        <div class="col-lg-8 d-flex flex-column">
             <div class="p-4 border border-secondary border-opacity-20 rounded-4 h-100 d-flex flex-column justify-content-between" style="background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(8px);">
                 <div>
                     <h5 class="text-white fw-bold mb-3 d-flex align-items-center">
@@ -431,45 +478,39 @@
                     <span class="badge bg-dark border border-info text-info font-monospace py-1 px-2" style="font-size: 0.7rem;"><i class="bi bi-diagram-3 me-1"></i>LangGraph Agentic Flows</span>
                     <span class="badge bg-dark border border-info text-info font-monospace py-1 px-2" style="font-size: 0.7rem;"><i class="bi bi-database me-1"></i>PostgreSQL Persistence</span>
                     <span class="badge bg-dark border border-info text-info font-monospace py-1 px-2" style="font-size: 0.7rem;"><i class="bi bi-file-earmark-spreadsheet me-1"></i>Pivoted Excel Worksheets</span>
-                    {% if user.learning_project.presentation_url %}
-                    <a href="{{ url_for('static', filename=user.learning_project.presentation_url) }}" download class="badge bg-dark border border-warning text-warning font-monospace py-1 px-2 text-decoration-none"><i class="bi bi-file-earmark-slides-fill me-1"></i>Executive Deck (.PPTX)</a>
-                    {% endif %}
                 </div>
             </div>
         </div>
 
-        <!-- Right: Video Player Preview & Controls -->
-        <div class="col-lg-5 d-flex flex-column">
-            <div class="p-3 border border-secondary border-opacity-20 rounded-4 h-100 d-flex flex-column justify-content-between" style="background: rgba(0, 0, 0, 0.55); backdrop-filter: blur(8px);">
+        <!-- Right: Executive Presentation Card -->
+        <div class="col-lg-4 d-flex flex-column">
+            <div class="p-4 border border-warning border-opacity-30 rounded-4 h-100 d-flex flex-column justify-content-between" style="background: linear-gradient(135deg, rgba(255, 193, 7, 0.05), rgba(17, 17, 17, 0.95)); backdrop-filter: blur(8px);">
                 <div>
-                    <div class="d-flex justify-content-between align-items-center mb-2 px-1">
-                        <span class="font-monospace small text-info"><i class="bi bi-camera-video-fill me-1"></i> Live Project Demo Recording</span>
-                        <span class="badge bg-dark border border-secondary text-secondary font-monospace" style="font-size: 0.65rem;">MP4 • High Definition</span>
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center bg-dark border border-warning me-2" style="width: 44px; height: 44px; min-width: 44px; box-shadow: 0 0 10px rgba(255, 193, 7, 0.2);">
+                            <i class="bi bi-file-earmark-slides-fill text-warning fs-5"></i>
+                        </div>
+                        <div>
+                            <h6 class="text-white fw-bold mb-0">Executive Presentation Deck</h6>
+                            <span class="badge bg-dark border border-warning text-warning font-monospace" style="font-size: 0.65rem;">Microsoft PowerPoint (.PPTX)</span>
+                        </div>
                     </div>
-                    <div class="position-relative rounded-3 overflow-hidden border border-secondary border-opacity-25" style="background: #000;">
-                        <video controls class="w-100 d-block" style="max-height: 290px; object-fit: contain;" preload="metadata">
-                            <source src="{{ url_for('static', filename=user.learning_project.video_url) }}" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
+                    <p class="text-secondary small leading-relaxed mb-3" style="font-size: 0.82rem;">
+                        Detailed architectural slide deck covering executive ROI analysis, cron workflow benchmarks, on-premise Ollama security, PostgreSQL schema design, and daily work sheet pivot tables.
+                    </p>
+                    <div class="p-2 rounded-3 border border-secondary border-opacity-25 mb-3 bg-dark bg-opacity-50">
+                        <span class="d-block text-warning font-monospace small"><i class="bi bi-check2-all me-1"></i> Ready for Immediate Browser Viewing</span>
+                        <span class="d-block text-secondary small" style="font-size: 0.75rem;">View live in full-screen in a new tab without downloading.</span>
                     </div>
                 </div>
-                <div class="mt-3">
-                    <div class="d-flex justify-content-between align-items-center gap-2 flex-wrap">
-                        <button type="button" class="btn btn-sm btn-outline-info font-monospace flex-grow-1 py-2" data-bs-toggle="modal" data-bs-target="#videoModal" onclick="playEventVideo('{{ url_for('static', filename=user.learning_project.video_url) }}', '{{ user.learning_project.video_title }}')">
-                            <i class="bi bi-play-circle-fill me-1"></i> Play in Popup Modal
-                        </button>
-                        <a href="{{ url_for('static', filename=user.learning_project.video_url) }}" target="_blank" class="btn btn-sm btn-info text-dark font-monospace flex-grow-1 py-2 text-decoration-none text-center fw-bold">
-                            <i class="bi bi-box-arrow-up-right me-1"></i> Open in New Tab
-                        </a>
-                        {% if user.learning_project.presentation_url %}
-                        <a href="{{ url_for('static', filename=user.learning_project.presentation_url) }}" download class="btn btn-sm btn-outline-warning font-monospace w-100 py-2 text-decoration-none text-center mt-1">
-                            <i class="bi bi-file-earmark-slides-fill me-1"></i> Download Executive PPTX Deck (116 KB)
-                        </a>
-                        {% endif %}
-                    </div>
-                    <span class="text-secondary font-monospace small d-block text-center mt-2" style="font-size: 0.7rem;">
-                        <i class="bi bi-info-circle me-1"></i> Click to play right here, expand in modal, or watch full-screen in a separate tab.
-                    </span>
+
+                <div class="d-flex flex-column gap-2 mt-auto">
+                    <a href="{{ user.learning_project.presentation_view_url }}" target="_blank" class="btn btn-warning text-dark font-monospace py-2 px-3 rounded-3 fw-bold text-decoration-none shadow-sm text-center">
+                        <i class="bi bi-eye-fill me-1"></i> View PPTX Slides in New Tab
+                    </a>
+                    <a href="{{ url_for('static', filename=user.learning_project.presentation_url) }}" download class="btn btn-outline-warning font-monospace py-2 px-3 rounded-3 text-decoration-none text-center">
+                        <i class="bi bi-download me-1"></i> Download Deck (.PPTX - 116 KB)
+                    </a>
                 </div>
             </div>
         </div>

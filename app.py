@@ -1,4 +1,4 @@
-from flask import Flask, render_template, send_from_directory
+from flask import Flask, render_template, send_from_directory, redirect
 
 app = Flask(__name__,
 static_folder='static',
@@ -41,6 +41,7 @@ user_data = {
         "video_url": "Mail_Read_Every_Set_cron_using_ollama_llama_postgressql.mp4",
         "video_title": "Support Task Dashboard Project Demo (Python + Ollama + Llama + PostgreSQL + LangGraph on Local Docker)",
         "presentation_url": "RSOS_AI_Task_Automation_Executive_Presentation.pptx",
+        "presentation_view_url": "https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Frohitjain-resume.vercel.app%2Fstatic%2FRSOS_AI_Task_Automation_Executive_Presentation.pptx",
         "presentation_title": "RSOS AI Task Automation Executive Presentation",
         "summary": "An end-to-end automated system engineered to ingest support emails from designated mailboxes via scheduled cron jobs, parse unstructured email threads into structured task reports using local Llama models with Ollama and LangGraph, persist data into PostgreSQL, and present insights on a unified portal with graphical charts, CSV, and pivoted Excel exports for daily work sheets. Deployed and orchestrated via Docker strictly on the local machine to guarantee 100% data confidentiality and zero external API dependencies.",
         "highlights": [
@@ -272,6 +273,10 @@ def sitemap():
 @app.route('/.well-known/llms.txt')
 def llms():
     return send_from_directory('static', 'llms.txt')
+
+@app.route('/presentation')
+def presentation():
+    return redirect("https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Frohitjain-resume.vercel.app%2Fstatic%2FRSOS_AI_Task_Automation_Executive_Presentation.pptx")
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)
