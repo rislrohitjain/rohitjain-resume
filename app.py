@@ -29,10 +29,64 @@ user_data = {
         {"value": "8", "label": "AI Applications"}
     ],
     "skills": {
-        "AI & LLM": ["Python Agentic AI", "Ollama", "LangChain", "Gemini API", "Claude", "RAG Systems", "ChromaDB Vector DB", "n8n"],
+        "AI & LLM": ["Python Agentic AI", "LangGraph", "Ollama & Llama", "LangChain", "Gemini API", "Claude", "RAG Systems", "ChromaDB Vector DB", "n8n"],
         "Backend": ["Python (Intermediate)", "FastAPI", "Flask", "PHP (Laravel/CakePHP)", ".NET Core Web API", "REST/SOAP APIs"],
-        "Database": ["MySQL", "MSSQL", "ChromaDB Vector DB", "Stored Procedures"],
+        "Database": ["PostgreSQL", "MySQL", "MSSQL", "ChromaDB Vector DB", "Stored Procedures"],
         "BI & DevOps": ["Pentaho", "Tableau", "Git", "Docker", "IIS"]
+    },
+    "learning_project": {
+        "title": "Support Task Dashboard — Automated Email Intelligence & Work Tracking",
+        "badge": "Applied AI Engineering Demo",
+        "tagline": "Automated email ingestion, local LLM parsing, PostgreSQL tracking, interactive dashboard portal, and pivoted Excel daily work sheets.",
+        "video_url": "Mail_Read_Every_Set_cron_using_ollama_llama_postgressql.mp4",
+        "video_title": "Support Task Dashboard Project Demo (Python + Ollama + Llama + PostgreSQL + LangGraph)",
+        "summary": "An end-to-end automated system engineered to ingest support emails from designated mailboxes via scheduled cron jobs, parse unstructured email threads into structured task reports using local Llama models with Ollama and LangGraph, persist data into PostgreSQL, and present insights on a unified portal with graphical charts, CSV, and pivoted Excel exports for daily work sheets.",
+        "highlights": [
+            "Scheduled Cron Email Ingestion: Background automation continuously polls and fetches emails from specific support inboxes via IMAP/APIs.",
+            "Local LLM Inference with Ollama & Llama: Privacy-preserving, zero-data-leakage extraction of user tasks, ticket resolutions, and activity logs without external API costs.",
+            "LangGraph Agentic Orchestration: Structured state graphs managing extraction pipelines, schema validation, error correction, and fallback rules.",
+            "PostgreSQL Relational Persistence: Normalizes and stores task records, ticket statuses, timestamps, developer IDs, and email metadata into an ACID-compliant schema.",
+            "Interactive Web Dashboard Portal: Modern web UI providing live task monitoring, team workload tracking, search, filtering, and real-time support status.",
+            "Multi-Format Reporting & Work Sheets: Instant exports to graphical charts, CSV data, and formatted/pivoted Excel files detailing per-user work per email for daily worksheet submissions."
+        ],
+        "skills_explained": [
+            {
+                "name": "Python",
+                "badge": "Core Engine & Automation",
+                "icon": "bi-code-slash",
+                "desc": "Built automated pipelines, IMAP mail fetchers, cron daemons, data manipulation with Pandas, and dynamic Excel generation."
+            },
+            {
+                "name": "Ollama & Llama Model",
+                "badge": "Local AI Inference",
+                "icon": "bi-cpu-fill",
+                "desc": "Zero-cloud-cost, privacy-first local LLM inference to extract structured JSON data from messy enterprise emails."
+            },
+            {
+                "name": "LangGraph",
+                "badge": "Agentic Orchestration",
+                "icon": "bi-diagram-3-fill",
+                "desc": "State graph design patterns with self-correction, schema validation, and fallback mechanisms for reliable pipeline execution."
+            },
+            {
+                "name": "PostgreSQL",
+                "badge": "Enterprise Relational DB",
+                "icon": "bi-database-fill",
+                "desc": "Structured table schemas, foreign key relationships, indexed search queries, and historical work logging."
+            },
+            {
+                "name": "Excel Automation & Charting",
+                "badge": "Reporting & Analytics",
+                "icon": "bi-file-earmark-spreadsheet-fill",
+                "desc": "Automated generation of graphical charts and formatted, pivoted Excel sheets for daily team worksheet reporting."
+            },
+            {
+                "name": "Crontab / Scheduler",
+                "badge": "Automated Scheduling",
+                "icon": "bi-clock-history",
+                "desc": "Configured automated execution intervals for 24/7 autonomous monitoring of support mail queues."
+            }
+        ]
     },
     "agentic_team": [
         {"name": "Business Analyst Agent", "role": "Requirements & Domain Modeling"},
