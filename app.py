@@ -36,20 +36,30 @@ user_data = {
     },
     "learning_project": {
         "title": "Support Task Dashboard — Automated Email Intelligence & Work Tracking",
-        "badge": "Applied AI Engineering Demo",
-        "tagline": "Automated email ingestion, local LLM parsing, PostgreSQL tracking, interactive dashboard portal, and pivoted Excel daily work sheets.",
+        "badge": "Project #1 • 100% Local Machine & Docker",
+        "tagline": "Automated email ingestion, local LLM parsing, PostgreSQL tracking, interactive dashboard portal, and pivoted Excel daily work sheets — running entirely via Docker on local machine only for 100% privacy.",
         "video_url": "Mail_Read_Every_Set_cron_using_ollama_llama_postgressql.mp4",
-        "video_title": "Support Task Dashboard Project Demo (Python + Ollama + Llama + PostgreSQL + LangGraph)",
-        "summary": "An end-to-end automated system engineered to ingest support emails from designated mailboxes via scheduled cron jobs, parse unstructured email threads into structured task reports using local Llama models with Ollama and LangGraph, persist data into PostgreSQL, and present insights on a unified portal with graphical charts, CSV, and pivoted Excel exports for daily work sheets.",
+        "video_title": "Support Task Dashboard Project Demo (Python + Ollama + Llama + PostgreSQL + LangGraph on Local Docker)",
+        "presentation_url": "RSOS_AI_Task_Automation_Executive_Presentation.pptx",
+        "presentation_title": "RSOS AI Task Automation Executive Presentation",
+        "summary": "An end-to-end automated system engineered to ingest support emails from designated mailboxes via scheduled cron jobs, parse unstructured email threads into structured task reports using local Llama models with Ollama and LangGraph, persist data into PostgreSQL, and present insights on a unified portal with graphical charts, CSV, and pivoted Excel exports for daily work sheets. Deployed and orchestrated via Docker strictly on the local machine to guarantee 100% data confidentiality and zero external API dependencies.",
         "highlights": [
+            "100% Local Machine & Docker Orchestration: The entire multi-service stack (Python App, Ollama Local LLM, and PostgreSQL Database) runs locally in isolated Docker containers on the local machine only—guaranteeing complete data privacy, zero cloud data leakage, and zero recurring API costs.",
             "Scheduled Cron Email Ingestion: Background automation continuously polls and fetches emails from specific support inboxes via IMAP/APIs.",
             "Local LLM Inference with Ollama & Llama: Privacy-preserving, zero-data-leakage extraction of user tasks, ticket resolutions, and activity logs without external API costs.",
             "LangGraph Agentic Orchestration: Structured state graphs managing extraction pipelines, schema validation, error correction, and fallback rules.",
             "PostgreSQL Relational Persistence: Normalizes and stores task records, ticket statuses, timestamps, developer IDs, and email metadata into an ACID-compliant schema.",
             "Interactive Web Dashboard Portal: Modern web UI providing live task monitoring, team workload tracking, search, filtering, and real-time support status.",
-            "Multi-Format Reporting & Work Sheets: Instant exports to graphical charts, CSV data, and formatted/pivoted Excel files detailing per-user work per email for daily worksheet submissions."
+            "Multi-Format Reporting & Work Sheets: Instant exports to graphical charts, CSV data, and formatted/pivoted Excel files detailing per-user work per email for daily worksheet submissions.",
+            "Executive Slide Deck Available: Downloadable comprehensive presentation (.pptx) detailing architecture, ROI analysis, and enterprise automation impact."
         ],
         "skills_explained": [
+            {
+                "name": "Docker (Local Machine Only)",
+                "badge": "100% Private Deployment",
+                "icon": "bi-box-seam-fill",
+                "desc": "Orchestrated the entire multi-service stack (Python App, Ollama LLM, and PostgreSQL) via Docker on the local machine only, ensuring zero cloud dependence and absolute data privacy."
+            },
             {
                 "name": "Python",
                 "badge": "Core Engine & Automation",

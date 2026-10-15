@@ -26,10 +26,11 @@
 - **DevOps & Infrastructure:** Docker, Git, IIS, Vercel Serverless, Scheduled Cron Daemons.
 
 ## 🚀 Featured Applied AI & Learning Projects
-- **Support Task Dashboard Project (Automated Email Intelligence & Work Tracking):**
-  - **Overview:** End-to-end automated email ingestion and task tracking system. Cron background scheduler monitors specific support mailboxes, local Ollama running Llama models with LangGraph extracts tasks and developer activities from unstructured emails, persists structured records into PostgreSQL, displays real-time metrics on an interactive web portal, and exports graphical charts, CSV, and formatted/pivoted Excel files for daily team worksheet submissions.
-  - **Tech Stack:** Python, Ollama, Llama Model, LangGraph, PostgreSQL, IMAP/Cron Automation, Pandas/OpenPyXL.
+- **Project #1: Support Task Dashboard Project (Automated Email Intelligence & Work Tracking):**
+  - **Overview:** End-to-end automated email ingestion and task tracking system running entirely via Docker on local machine only for 100% data privacy and security. Cron background scheduler monitors specific support mailboxes, local Ollama running Llama models with LangGraph extracts tasks and developer activities from unstructured emails without sending any sensitive data to external clouds, persists structured records into local PostgreSQL, displays real-time metrics on an interactive web portal, and exports graphical charts, CSV, and formatted/pivoted Excel files for daily team worksheet submissions.
+  - **Tech Stack:** Docker (Local Machine Only), Python, Ollama, Llama Model, LangGraph, PostgreSQL, IMAP/Cron Automation, Pandas/OpenPyXL.
   - **Live Video Demo Available:** `Mail_Read_Every_Set_cron_using_ollama_llama_postgressql.mp4` on portfolio site.
+  - **Executive Presentation Deck Available:** `RSOS_AI_Task_Automation_Executive_Presentation.pptx` downloadable directly from portfolio.
 
 ## 💼 Career History & Milestones
 1. **Data Ingenious Global Limited (April 2024 – Present):** Senior Software Developer leading RSOS Dual-Stream & On-Demand Admission Portal serving 100,000+ candidates. Deployed Ollama and integrated Gemini & Claude APIs for AI code assistance.

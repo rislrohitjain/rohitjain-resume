@@ -1,0 +1,11 @@
+.git
+.github
+.venv
+.vercel
+.antigravitycli
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.env
+.pytest_cache
