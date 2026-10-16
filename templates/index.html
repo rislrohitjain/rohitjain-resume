@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -102,26 +102,7 @@
     
     <style>
         :root {
-            /* Clean, modern, highly readable theme (Default Light) */
-            --bg: #f8fafc;
-            --card-bg: #ffffff;
-            --card-inner: #f1f5f9;
-            --card-border: #e2e8f0;
-            --card-hover-border: #94a3b8;
-            --text-main: #0f172a;
-            --text-body: #334155;
-            --text-dim: #64748b;
-            --accent: #0284c7;
-            --primary: #2563eb;
-            --primary-hover: #1d4ed8;
-            --badge-bg: #eff6ff;
-            --badge-text: #1d4ed8;
-            --badge-border: #bfdbfe;
-            --shadow: 0 2px 12px rgba(15, 23, 42, 0.06);
-        }
-
-        [data-theme="dark"] {
-            /* High-contrast, clean dark theme */
+            /* High-contrast, clean dark theme (Default) */
             --bg: #0b1120;
             --card-bg: #1e293b;
             --card-inner: #0f172a;
@@ -137,6 +118,44 @@
             --badge-text: #38bdf8;
             --badge-border: #334155;
             --shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        [data-theme="dark"] {
+            /* Explicit dark theme */
+            --bg: #0b1120;
+            --card-bg: #1e293b;
+            --card-inner: #0f172a;
+            --card-border: #334155;
+            --card-hover-border: #38bdf8;
+            --text-main: #f8fafc;
+            --text-body: #cbd5e1;
+            --text-dim: #94a3b8;
+            --accent: #38bdf8;
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --badge-bg: #0f172a;
+            --badge-text: #38bdf8;
+            --badge-border: #334155;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        [data-theme="light"] {
+            /* High-contrast, clean light theme: Deep Slate Text, NEVER invisible */
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --card-inner: #f1f5f9;
+            --card-border: #cbd5e1;
+            --card-hover-border: #64748b;
+            --text-main: #0f172a;
+            --text-body: #1e293b;
+            --text-dim: #475569;
+            --accent: #0284c7;
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --badge-bg: #e2e8f0;
+            --badge-text: #0f172a;
+            --badge-border: #94a3b8;
+            --shadow: 0 2px 12px rgba(15, 23, 42, 0.08);
         }
 
         body {
@@ -157,8 +176,54 @@
         .text-info { color: var(--accent) !important; }
         .text-secondary { color: var(--text-dim) !important; }
         .text-dim { color: var(--text-body) !important; }
-        .text-white { color: var(--text-main) !important; }
-        .text-light { color: var(--text-body) !important; }
+
+        /* Perfect contrast across light and dark modes */
+        [data-theme="dark"] .text-white { color: #f8fafc !important; }
+        [data-theme="dark"] .text-light { color: #cbd5e1 !important; }
+
+        [data-theme="light"] .text-white:not(.btn):not(.btn *):not(.badge.bg-primary):not(.badge.bg-success):not(.badge.bg-danger):not(.badge.bg-secondary):not(.badge.bg-dark) {
+            color: #0f172a !important;
+        }
+        [data-theme="light"] .text-light {
+            color: #334155 !important;
+        }
+        [data-theme="light"] .text-secondary {
+            color: #475569 !important;
+        }
+        [data-theme="light"] .text-muted {
+            color: #475569 !important;
+        }
+
+        /* Buttons & Badges guaranteed contrast */
+        .btn-primary, .btn-primary * {
+            color: #ffffff !important;
+        }
+        .btn-info {
+            color: #0f172a !important;
+        }
+        .btn-warning {
+            color: #0f172a !important;
+        }
+
+        /* Modal Close Button Visibility */
+        [data-theme="dark"] .btn-close {
+            filter: invert(1) grayscale(100%) brightness(200%);
+        }
+        [data-theme="light"] .btn-close {
+            filter: none;
+        }
+
+        /* Custom Badge Styling */
+        .custom-badge {
+            background: var(--card-inner) !important;
+            color: var(--text-main) !important;
+            border: 1px solid var(--card-border) !important;
+        }
+        [data-theme="light"] .custom-badge {
+            background: #e2e8f0 !important;
+            color: #0f172a !important;
+            border-color: #cbd5e1 !important;
+        }
 
         /* Bootstrap Dark / Secondary Overrides for Clean Harmonious Palette */
         .bg-dark {
@@ -174,6 +239,30 @@
 
         .border-secondary {
             border-color: var(--card-border) !important;
+        }
+
+        /* --- Project Navigation Tabs Styling --- */
+        .nav-pills .nav-link {
+            background: var(--card-bg);
+            color: var(--text-dim);
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+            transition: all 0.2s ease;
+        }
+        .nav-pills .nav-link:hover {
+            color: var(--text-main);
+            border-color: var(--card-hover-border);
+        }
+        .nav-pills .nav-link.active {
+            background: var(--primary) !important;
+            color: #ffffff !important;
+            border-color: var(--primary) !important;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+        }
+        .nav-pills .nav-link.active .badge {
+            background: rgba(255, 255, 255, 0.25) !important;
+            color: #ffffff !important;
+            border-color: rgba(255, 255, 255, 0.4) !important;
         }
 
         /* --- Bento Grid Layout --- */
@@ -262,7 +351,7 @@
 <!-- Floating Theme Toggle (Light / Dark) -->
 <div class="position-fixed top-0 end-0 m-3" style="z-index: 1060;">
     <button id="themeToggleBtn" onclick="toggleTheme()" class="btn btn-sm shadow rounded-pill font-monospace fw-bold py-2 px-3" style="background: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-main); backdrop-filter: blur(10px); transition: all 0.2s ease;">
-        <i class="bi bi-sun-fill me-1 text-warning" id="themeIcon"></i> <span id="themeText">Light</span>
+        <i class="bi bi-moon-stars-fill me-1 text-info" id="themeIcon"></i> <span id="themeText">Dark</span>
     </button>
 </div>
 
@@ -453,208 +542,355 @@
             </div>
         </div>
 
-<!-- Project Learning & Live Demo Showcase Section -->
-{% if user.learning_project %}
-<div id="learning-demo" class="bento-item" style="grid-column: span 4;">
-    <!-- Header with Action Buttons -->
-    <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 mb-4 pb-3 border-bottom border-secondary border-opacity-20">
+<!-- Featured Enterprise & AI Projects Showcase Section (Tabbed) -->
+{% if user.projects %}
+<div id="projects" class="bento-item" style="grid-column: span 4;">
+    <!-- Section Title -->
+    <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3 pb-2 border-bottom" style="border-color: var(--card-border) !important;">
         <div class="d-flex align-items-center">
             <span class="fs-1 me-3">🚀</span>
             <div>
-                <div class="d-flex align-items-center gap-2 flex-wrap">
-                    <h3 class="fw-bold mb-0 text-white">{{ user.learning_project.title }}</h3>
-                    <span class="badge bg-primary text-white font-monospace" style="font-size: 0.75rem;">{{ user.learning_project.badge }}</span>
-                </div>
-                <p class="text-secondary small mb-0 mt-1">{{ user.learning_project.tagline }}</p>
+                <h3 class="fw-bold mb-0" style="color: var(--text-main);">Featured Projects & Enterprise Solutions</h3>
+                <p class="small mb-0 font-monospace" style="color: var(--text-dim);">Production Systems, AI Automation & Mission-Critical Architectures</p>
             </div>
         </div>
-        <div class="d-flex gap-2 flex-wrap">
-            <button type="button" class="btn btn-sm btn-outline-info font-monospace py-2 px-3 rounded-3" data-bs-toggle="modal" data-bs-target="#videoModal" onclick="playEventVideo('{{ url_for('static', filename=user.learning_project.video_url) }}', '{{ user.learning_project.video_title }}')">
-                <i class="bi bi-arrows-fullscreen me-1"></i> Full Modal Video
-            </button>
-            {% if user.learning_project.presentation_url %}
-            <a href="{{ user.learning_project.presentation_view_url }}" target="_blank" class="btn btn-sm btn-outline-warning font-monospace py-2 px-3 rounded-3 text-decoration-none">
-                <i class="bi bi-box-arrow-up-right me-1"></i> Full Tab Slides
-            </a>
-            <a href="{{ url_for('static', filename=user.learning_project.presentation_url) }}" download class="btn btn-sm btn-warning text-dark font-monospace py-2 px-3 rounded-3 fw-bold text-decoration-none shadow-sm">
-                <i class="bi bi-download me-1"></i> Download .PPTX
-            </a>
-            {% endif %}
-        </div>
+        <span class="badge py-2 px-3 rounded-pill font-monospace" style="background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.25); color: var(--accent);">
+            <i class="bi bi-layers-fill me-1"></i> {{ user.projects|length }} Production Projects
+        </span>
     </div>
 
-    <!-- Media Toggle Bar (Play in This Screen Page) -->
-    <div class="d-flex justify-content-center align-items-center mb-3">
-        <div class="p-1 rounded-pill d-inline-flex gap-1" style="background: var(--card-inner); border: 1px solid var(--card-border);">
-            <button type="button" class="btn btn-sm px-4 py-2 rounded-pill font-monospace fw-bold" id="btn-show-video" onclick="showMediaTab('video')" style="background: var(--primary); color: #ffffff; transition: all 0.2s ease;">
-                <i class="bi bi-play-circle-fill me-2"></i> 📹 Watch Video Demo
+    <!-- Navigation Tabs for Project Titles -->
+    <ul class="nav nav-pills gap-2 mb-4 p-2 rounded-4" id="projectNavTabs" role="tablist" style="background: var(--card-inner); border: 1px solid var(--card-border);">
+        {% for proj in user.projects %}
+        <li class="nav-item flex-grow-1" role="presentation">
+            <button class="nav-link w-100 text-start {% if loop.first %}active{% endif %} font-monospace fw-bold py-2 px-3 rounded-3 d-flex align-items-center justify-content-between gap-2" 
+                    id="tab-btn-{{ proj.id }}" 
+                    data-bs-toggle="pill" 
+                    data-bs-target="#pane-{{ proj.id }}" 
+                    type="button" 
+                    role="tab" 
+                    aria-controls="pane-{{ proj.id }}" 
+                    aria-selected="{% if loop.first %}true{% else %}false{% endif %}"
+                    onclick="onProjectTabChange('{{ proj.id }}')"
+                    style="font-size: 0.84rem;">
+                <span class="text-truncate">{{ proj.tab_title or proj.title }}</span>
+                <span class="badge rounded-pill" style="font-size: 0.68rem; background: var(--card-inner); color: var(--text-dim); border: 1px solid var(--card-border);">Project #{{ loop.index }}</span>
             </button>
-            <button type="button" class="btn btn-sm px-4 py-2 rounded-pill font-monospace fw-bold" id="btn-show-ppt" onclick="showMediaTab('ppt')" style="background: transparent; color: var(--text-dim); transition: all 0.2s ease;">
-                <i class="bi bi-file-earmark-slides-fill me-2 text-warning"></i> 📊 View PPT Presentation
-            </button>
-        </div>
-    </div>
+        </li>
+        {% endfor %}
+    </ul>
 
-    <!-- Media Screen Box (Plays directly on this screen page) -->
-    <div class="p-3 rounded-4 mb-4" style="background: var(--card-inner); border: 1px solid var(--card-border);">
-        <!-- Panel 1: Video Player Panel -->
-        <div id="media-video-panel">
-            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3 px-2">
-                <div class="d-flex align-items-center gap-2">
-                    <span class="fs-5 text-info"><i class="bi bi-camera-video-fill"></i></span>
+    <!-- Tab Panes Content -->
+    <div class="tab-content" id="projectTabContent">
+        {% for proj in user.projects %}
+        <div class="tab-pane fade {% if loop.first %}show active{% endif %}" 
+             id="pane-{{ proj.id }}" 
+             role="tabpanel" 
+             aria-labelledby="tab-btn-{{ proj.id }}">
+            
+            <!-- Project Header & Action Buttons -->
+            <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 mb-3 pb-3 border-bottom" style="border-color: var(--card-border) !important;">
+                <div class="d-flex align-items-start gap-3">
+                    <span class="fs-2 text-info">
+                        {% if 'AI' in proj.badge or 'Ollama' in proj.badge or 'Intelligence' in proj.title %}
+                            <i class="bi bi-robot"></i>
+                        {% elif 'Admission' in proj.title %}
+                            <i class="bi bi-mortarboard-fill"></i>
+                        {% else %}
+                            <i class="bi bi-shield-lock-fill"></i>
+                        {% endif %}
+                    </span>
                     <div>
-                        <h6 class="fw-bold mb-0" style="color: var(--text-main);">Live System Execution Demo (Video)</h6>
-                        <span class="small font-monospace" style="color: var(--text-dim); font-size: 0.72rem;">Playing directly on screen page • Cron ingestion & local Ollama parsing</span>
+                        <div class="d-flex align-items-center gap-2 flex-wrap">
+                            <h4 class="fw-bold mb-0" style="color: var(--text-main);">{{ proj.title }}</h4>
+                            <span class="badge font-monospace" style="background: var(--primary); color: #ffffff; font-size: 0.72rem;">{{ proj.badge }}</span>
+                        </div>
+                        <p class="small mb-0 mt-1" style="color: var(--text-dim);">{{ proj.tagline }}</p>
                     </div>
                 </div>
-                <div class="d-flex align-items-center gap-2 flex-wrap">
-                    <span class="badge font-monospace py-1 px-2" style="background: var(--badge-bg); color: var(--badge-text); border: 1px solid var(--badge-border); font-size: 0.7rem;">
-                        <i class="bi bi-film me-1"></i> 1080p Full HD
-                    </span>
-                    <span class="badge font-monospace py-1 px-2" style="background: rgba(245, 158, 11, 0.1); color: #d97706; border: 1px solid rgba(245, 158, 11, 0.3); font-size: 0.7rem;">
-                        <i class="bi bi-box-seam-fill me-1"></i> Local Docker
-                    </span>
-                    <button type="button" class="btn btn-sm btn-outline-info font-monospace py-1 px-2 rounded-2" style="font-size: 0.75rem;" data-bs-toggle="modal" data-bs-target="#videoModal" onclick="playEventVideo('{{ url_for('static', filename=user.learning_project.video_url) }}', '{{ user.learning_project.video_title }}')">
-                        <i class="bi bi-arrows-fullscreen me-1"></i> Expand Modal
+                <div class="d-flex gap-2 flex-wrap">
+                    {% if proj.live_url %}
+                    <a href="{{ proj.live_url }}" target="_blank" class="btn btn-sm btn-info text-dark font-monospace py-2 px-3 rounded-3 fw-bold text-decoration-none shadow-sm">
+                        <i class="bi bi-box-arrow-up-right me-1"></i> Open Live App in New Tab
+                    </a>
+                    {% endif %}
+                    {% if proj.video_url %}
+                    <button type="button" class="btn btn-sm btn-outline-info font-monospace py-2 px-3 rounded-3" data-bs-toggle="modal" data-bs-target="#videoModal" onclick="playEventVideo('{{ url_for('static', filename=proj.video_url) }}', '{{ proj.video_title or proj.title }}')">
+                        <i class="bi bi-arrows-fullscreen me-1"></i> Full Modal Video
                     </button>
-                    <a href="{{ url_for('static', filename=user.learning_project.video_url) }}" target="_blank" class="btn btn-sm btn-info text-dark font-monospace py-1 px-2 rounded-2 fw-bold text-decoration-none" style="font-size: 0.75rem;">
-                        <i class="bi bi-box-arrow-up-right me-1"></i> New Tab
+                    {% endif %}
+                    {% if proj.presentation_url %}
+                    <a href="{{ proj.presentation_view_url }}" target="_blank" class="btn btn-sm btn-outline-warning font-monospace py-2 px-3 rounded-3 text-decoration-none">
+                        <i class="bi bi-box-arrow-up-right me-1"></i> Full Tab Slides
                     </a>
-                </div>
-            </div>
-
-            <div class="position-relative rounded-3 overflow-hidden" style="background: #000; text-align: center;">
-                <video id="dashboardInlinePlayer" controls class="w-100 d-block mx-auto" style="max-height: 500px; object-fit: contain; width: 100%;" preload="metadata">
-                    <source src="{{ url_for('static', filename=user.learning_project.video_url) }}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mt-2 px-2 small font-monospace" style="color: var(--text-dim); font-size: 0.72rem;">
-                <span><i class="bi bi-info-circle me-1 text-info"></i> Recorded on developer workstation demonstrating real-time cron execution & live task ingestion.</span>
-                <span><i class="bi bi-file-earmark-play me-1 text-info"></i> MP4 Format • High Resolution</span>
-            </div>
-        </div>
-
-        <!-- Panel 2: PowerPoint Presentation Panel -->
-        <div id="media-ppt-panel" style="display: none;">
-            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3 px-2">
-                <div class="d-flex align-items-center gap-2">
-                    <span class="fs-5 text-warning"><i class="bi bi-file-earmark-slides-fill"></i></span>
-                    <div>
-                        <h6 class="fw-bold mb-0" style="color: var(--text-main);">Executive Presentation Slide Deck (PPTX)</h6>
-                        <span class="small font-monospace" style="color: var(--text-dim); font-size: 0.72rem;">Interactive slide deck playing directly on screen page • Click slides or arrows to navigate</span>
-                    </div>
-                </div>
-                <div class="d-flex align-items-center gap-2 flex-wrap">
-                    <span class="badge font-monospace py-1 px-2" style="background: rgba(245, 158, 11, 0.1); color: #d97706; border: 1px solid rgba(245, 158, 11, 0.3); font-size: 0.7rem;">
-                        <i class="bi bi-filetype-pptx me-1"></i> PowerPoint Interactive
-                    </span>
-                    <a href="{{ user.learning_project.presentation_view_url }}" target="_blank" class="btn btn-sm btn-warning text-dark font-monospace py-1 px-3 rounded-2 fw-bold text-decoration-none" style="font-size: 0.75rem;">
-                        <i class="bi bi-box-arrow-up-right me-1"></i> Open in Full New Tab
-                    </a>
-                    <a href="{{ url_for('static', filename=user.learning_project.presentation_url) }}" download class="btn btn-sm btn-outline-warning font-monospace py-1 px-3 rounded-2 text-decoration-none" style="font-size: 0.75rem;">
+                    <a href="{{ url_for('static', filename=proj.presentation_url) }}" download class="btn btn-sm btn-warning text-dark font-monospace py-2 px-3 rounded-3 fw-bold text-decoration-none shadow-sm">
                         <i class="bi bi-download me-1"></i> Download .PPTX
                     </a>
+                    {% endif %}
                 </div>
             </div>
 
-            <!-- Embedded Interactive Presentation Frame -->
-            <div class="position-relative rounded-3 overflow-hidden border" style="background: #000; height: 480px; border-color: var(--card-border) !important;">
-                <iframe 
-                    id="pptEmbedFrame"
-                    src="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Frohitjain-resume.vercel.app%2Fstatic%2FRSOS_AI_Task_Automation_Executive_Presentation.pptx" 
-                    width="100%" 
-                    height="100%" 
-                    frameborder="0" 
-                    style="border:0;" 
-                    allowfullscreen="true">
-                </iframe>
-            </div>
-            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mt-2 px-2 small font-monospace" style="color: var(--text-dim); font-size: 0.72rem;">
-                <span><i class="bi bi-info-circle me-1 text-warning"></i> Powered by Office Live Embed. Use bottom controls to flip slides, zoom, or go full-screen.</span>
-                <span><i class="bi bi-shield-check me-1 text-success"></i> Official RSOS AI Architecture Deck</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- Architecture & Problem Solved with Integrated Executive Presentation (Zero Extra Space) -->
-    <div class="p-4 rounded-4 mb-4" style="background: var(--card-inner); border: 1px solid var(--card-border);">
-        <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-3 pb-3 border-bottom" style="border-color: var(--card-border) !important;">
-            <div>
-                <h5 class="fw-bold mb-1 d-flex align-items-center" style="color: var(--text-main);">
-                    <i class="bi bi-gear-wide-connected text-info me-2"></i> Project Architecture & Problem Solved
-                </h5>
-                <span class="small font-monospace" style="color: var(--text-dim);">Automated Email Intelligence, Local Docker Inference & Relational Logging</span>
-            </div>
-            <!-- Executive Deck Action Bar -->
-            <div class="d-flex align-items-center gap-2 flex-wrap">
-                <span class="badge py-2 px-3 font-monospace" style="background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); color: #d97706;">
-                    <i class="bi bi-file-earmark-slides-fill me-1"></i> Executive Deck (.PPTX)
-                </span>
-                <button type="button" class="btn btn-sm btn-warning text-dark font-monospace py-2 px-3 rounded-3 fw-bold shadow-sm" onclick="showMediaTab('ppt', true)">
-                    <i class="bi bi-file-earmark-slides-fill me-1"></i> View Slides on Screen
-                </button>
-                <a href="{{ user.learning_project.presentation_view_url }}" target="_blank" class="btn btn-sm btn-outline-info font-monospace py-2 px-3 rounded-3">
-                    <i class="bi bi-box-arrow-up-right me-1"></i> Full Tab
-                </a>
-                <a href="{{ url_for('static', filename=user.learning_project.presentation_url) }}" download class="btn btn-sm btn-outline-secondary font-monospace py-2 px-3 rounded-3 text-decoration-none" style="color: var(--text-main);">
-                    <i class="bi bi-download me-1"></i> Download .PPTX
-                </a>
-            </div>
-        </div>
-
-        <p class="small leading-relaxed mb-4" style="color: var(--text-body);">
-            {{ user.learning_project.summary }}
-        </p>
-
-        <div class="row g-3 mb-4">
-            <div class="col-12">
-                <h6 class="text-uppercase text-info small font-monospace mb-2" style="font-size: 0.75rem;">
-                    <i class="bi bi-check2-circle me-1"></i> Automated Pipeline & Core Features:
-                </h6>
-            </div>
-            {% for item in user.learning_project.highlights %}
-            <div class="col-md-6">
-                <div class="p-3 rounded-3 h-100" style="background: var(--card-bg); border: 1px solid var(--card-border);">
-                    <span class="small d-block leading-relaxed" style="color: var(--text-body); font-size: 0.82rem;">
-                        <i class="bi bi-check-circle-fill text-info me-2"></i>{{ item }}
-                    </span>
+            <!-- Media Section (If Project has Live Web App, Video or PPT) -->
+            {% if proj.live_url or proj.video_url or proj.presentation_url %}
+            <!-- Media Toggle Bar (Play in This Screen Page) -->
+            {% if (proj.video_url and proj.presentation_url) %}
+            <div class="d-flex justify-content-center align-items-center mb-3">
+                <div class="p-1 rounded-pill d-inline-flex gap-1" style="background: var(--card-inner); border: 1px solid var(--card-border);">
+                    <button type="button" class="btn btn-sm px-4 py-2 rounded-pill font-monospace fw-bold" id="btn-show-video-{{ proj.id }}" onclick="showProjectMediaTab('{{ proj.id }}', 'video')" style="background: var(--primary); color: #ffffff; transition: all 0.2s ease;">
+                        <i class="bi bi-play-circle-fill me-2"></i> 📹 Watch Video Demo
+                    </button>
+                    <button type="button" class="btn btn-sm px-4 py-2 rounded-pill font-monospace fw-bold" id="btn-show-ppt-{{ proj.id }}" onclick="showProjectMediaTab('{{ proj.id }}', 'ppt')" style="background: transparent; color: var(--text-dim); transition: all 0.2s ease;">
+                        <i class="bi bi-file-earmark-slides-fill me-2 text-warning"></i> 📊 View PPT Presentation
+                    </button>
                 </div>
             </div>
-            {% endfor %}
-        </div>
+            {% endif %}
 
-        <div class="pt-3 border-top d-flex gap-2 flex-wrap" style="border-color: var(--card-border) !important;">
-            <span class="badge font-monospace py-2 px-3" style="background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); color: #d97706;"><i class="bi bi-box-seam-fill me-1"></i>Docker (Local Machine Only • 100% Privacy)</span>
-            <span class="badge py-2 px-3 font-monospace" style="background: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-body);"><i class="bi bi-envelope-check me-1 text-info"></i>Automated IMAP Cron</span>
-            <span class="badge py-2 px-3 font-monospace" style="background: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-body);"><i class="bi bi-cpu me-1 text-info"></i>Local Ollama Llama</span>
-            <span class="badge py-2 px-3 font-monospace" style="background: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-body);"><i class="bi bi-diagram-3 me-1 text-info"></i>LangGraph Agentic Flows</span>
-            <span class="badge py-2 px-3 font-monospace" style="background: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-body);"><i class="bi bi-database me-1 text-info"></i>PostgreSQL Persistence</span>
-            <span class="badge py-2 px-3 font-monospace" style="background: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-body);"><i class="bi bi-file-earmark-spreadsheet me-1 text-info"></i>Pivoted Excel Worksheets</span>
-        </div>
-    </div>
-
-    <!-- Skills Explained Deep-Dive Grid -->
-    <div>
-        <h5 class="fw-bold mb-3 d-flex align-items-center" style="color: var(--text-main);">
-            <i class="bi bi-mortarboard-fill text-info me-2"></i> Key Skills & Applied Technologies Explained
-        </h5>
-        <div class="row g-3">
-            {% for skill in user.learning_project.skills_explained %}
-            <div class="col-md-6 col-lg-4">
-                <div class="p-3 rounded-3 h-100" style="background: var(--card-inner); border: 1px solid var(--card-border);">
-                    <div class="d-flex justify-content-between align-items-center mb-2">
-                        <div class="d-flex align-items-center">
-                            <i class="bi {{ skill.icon }} text-info me-2 fs-5"></i>
-                            <h6 class="fw-bold mb-0 small" style="color: var(--text-main);">{{ skill.name }}</h6>
+            <!-- Media Screen Box (Plays directly on this screen page) -->
+            <div class="p-3 rounded-4 mb-4" style="background: var(--card-inner); border: 1px solid var(--card-border);">
+                {% if proj.live_url %}
+                <!-- Panel: Live Web Application Preview -->
+                <div id="media-live-panel-{{ proj.id }}">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3 px-2">
+                        <div class="d-flex align-items-center gap-2">
+                            <span class="fs-5 text-info"><i class="bi bi-window-desktop"></i></span>
+                            <div>
+                                <h6 class="fw-bold mb-0" style="color: var(--text-main);">Interactive Live Web Application Preview</h6>
+                                <span class="small font-monospace" style="color: var(--text-dim); font-size: 0.72rem;">Live production site running directly on screen • Test LIC MITRA chatbot, voice search & scheme filters</span>
+                            </div>
                         </div>
-                        <span class="badge custom-badge font-monospace" style="font-size: 0.65rem;">{{ skill.badge }}</span>
+                        <div class="d-flex align-items-center gap-2 flex-wrap">
+                            <span class="badge font-monospace py-1 px-2" style="background: rgba(16, 185, 129, 0.1); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); font-size: 0.7rem;">
+                                <i class="bi bi-check-circle-fill me-1"></i> Live Production
+                            </span>
+                            <span class="badge font-monospace py-1 px-2" style="background: var(--badge-bg); color: var(--badge-text); border: 1px solid var(--badge-border); font-size: 0.7rem;">
+                                <i class="bi bi-lightning-charge-fill me-1"></i> Vercel Edge Serverless
+                            </span>
+                            <span class="badge font-monospace py-1 px-2" style="background: rgba(245, 158, 11, 0.1); color: #d97706; border: 1px solid rgba(245, 158, 11, 0.3); font-size: 0.7rem;">
+                                ⭐ 5.0 Google Reviews
+                            </span>
+                            <a href="{{ proj.live_url }}" target="_blank" class="btn btn-sm btn-info text-dark font-monospace py-1 px-3 rounded-2 fw-bold text-decoration-none" style="font-size: 0.75rem;">
+                                <i class="bi bi-box-arrow-up-right me-1"></i> Open in New Tab
+                            </a>
+                        </div>
                     </div>
-                    <p class="small mb-0" style="color: var(--text-body); font-size: 0.8rem; line-height: 1.45;">{{ skill.desc }}</p>
+
+                    <!-- Embedded Interactive Live App Frame -->
+                    <div class="position-relative rounded-3 overflow-hidden border shadow-sm" style="background: #0f172a; height: 580px; border-color: var(--card-border) !important;">
+                        <iframe 
+                            id="liveEmbedFrame_{{ proj.id }}"
+                            src="{{ proj.live_url }}" 
+                            width="100%" 
+                            height="100%" 
+                            frameborder="0" 
+                            style="border:0;" 
+                            allow="microphone"
+                            allowfullscreen="true">
+                        </iframe>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mt-2 px-2 small font-monospace" style="color: var(--text-dim); font-size: 0.72rem;">
+                        <span><i class="bi bi-info-circle me-1 text-info"></i> Direct live mirror of <strong>{{ proj.live_url }}</strong>. Fully interactive on this screen page.</span>
+                        <a href="{{ proj.live_url }}" target="_blank" class="text-info text-decoration-none fw-bold"><i class="bi bi-box-arrow-up-right me-1"></i> Launch Full Screen</a>
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if proj.video_url %}
+                <!-- Panel 1: Video Player Panel -->
+                <div id="media-video-panel-{{ proj.id }}">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3 px-2">
+                        <div class="d-flex align-items-center gap-2">
+                            <span class="fs-5 text-info"><i class="bi bi-camera-video-fill"></i></span>
+                            <div>
+                                <h6 class="fw-bold mb-0" style="color: var(--text-main);">Live System Execution Demo (Video)</h6>
+                                <span class="small font-monospace" style="color: var(--text-dim); font-size: 0.72rem;">Playing directly on screen page • Cron ingestion & local Ollama parsing</span>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center gap-2 flex-wrap">
+                            <span class="badge font-monospace py-1 px-2" style="background: var(--badge-bg); color: var(--badge-text); border: 1px solid var(--badge-border); font-size: 0.7rem;">
+                                <i class="bi bi-film me-1"></i> 1080p Full HD
+                            </span>
+                            <span class="badge font-monospace py-1 px-2" style="background: rgba(245, 158, 11, 0.1); color: #d97706; border: 1px solid rgba(245, 158, 11, 0.3); font-size: 0.7rem;">
+                                <i class="bi bi-box-seam-fill me-1"></i> Local Docker
+                            </span>
+                            <button type="button" class="btn btn-sm btn-outline-info font-monospace py-1 px-2 rounded-2" style="font-size: 0.75rem;" data-bs-toggle="modal" data-bs-target="#videoModal" onclick="playEventVideo('{{ url_for('static', filename=proj.video_url) }}', '{{ proj.video_title or proj.title }}')">
+                                <i class="bi bi-arrows-fullscreen me-1"></i> Expand Modal
+                            </button>
+                            <a href="{{ url_for('static', filename=proj.video_url) }}" target="_blank" class="btn btn-sm btn-info text-dark font-monospace py-1 px-2 rounded-2 fw-bold text-decoration-none" style="font-size: 0.75rem;">
+                                <i class="bi bi-box-arrow-up-right me-1"></i> New Tab
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="position-relative rounded-3 overflow-hidden" style="background: #000; text-align: center;">
+                        <video id="dashboardInlinePlayer_{{ proj.id }}" controls class="w-100 d-block mx-auto" style="max-height: 500px; object-fit: contain; width: 100%;" preload="metadata">
+                            <source src="{{ url_for('static', filename=proj.video_url) }}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mt-2 px-2 small font-monospace" style="color: var(--text-dim); font-size: 0.72rem;">
+                        <span><i class="bi bi-info-circle me-1 text-info"></i> Recorded on developer workstation demonstrating real-time cron execution & live task ingestion.</span>
+                        <span><i class="bi bi-file-earmark-play me-1 text-info"></i> MP4 Format • High Resolution</span>
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if proj.presentation_url %}
+                <!-- Panel 2: PowerPoint Presentation Panel -->
+                <div id="media-ppt-panel-{{ proj.id }}" {% if proj.video_url %}style="display: none;"{% endif %}>
+                    <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3 px-2">
+                        <div class="d-flex align-items-center gap-2">
+                            <span class="fs-5 text-warning"><i class="bi bi-file-earmark-slides-fill"></i></span>
+                            <div>
+                                <h6 class="fw-bold mb-0" style="color: var(--text-main);">Executive Presentation Slide Deck (PPTX)</h6>
+                                <span class="small font-monospace" style="color: var(--text-dim); font-size: 0.72rem;">Interactive slide deck playing directly on screen page • Click slides or arrows to navigate</span>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center gap-2 flex-wrap">
+                            <span class="badge font-monospace py-1 px-2" style="background: rgba(245, 158, 11, 0.1); color: #d97706; border: 1px solid rgba(245, 158, 11, 0.3); font-size: 0.7rem;">
+                                <i class="bi bi-filetype-pptx me-1"></i> PowerPoint Interactive
+                            </span>
+                            <a href="{{ proj.presentation_view_url }}" target="_blank" class="btn btn-sm btn-warning text-dark font-monospace py-1 px-3 rounded-2 fw-bold text-decoration-none" style="font-size: 0.75rem;">
+                                <i class="bi bi-box-arrow-up-right me-1"></i> Open in Full New Tab
+                            </a>
+                            <a href="{{ url_for('static', filename=proj.presentation_url) }}" download class="btn btn-sm btn-outline-warning font-monospace py-1 px-3 rounded-2 text-decoration-none" style="font-size: 0.75rem;">
+                                <i class="bi bi-download me-1"></i> Download .PPTX
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Embedded Interactive Presentation Frame -->
+                    <div class="position-relative rounded-3 overflow-hidden border" style="background: #000; height: 480px; border-color: var(--card-border) !important;">
+                        <iframe 
+                            id="pptEmbedFrame_{{ proj.id }}"
+                            src="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Frohitjain-resume.vercel.app%2Fstatic%2F{{ proj.presentation_url }}" 
+                            width="100%" 
+                            height="100%" 
+                            frameborder="0" 
+                            style="border:0;" 
+                            allowfullscreen="true">
+                        </iframe>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mt-2 px-2 small font-monospace" style="color: var(--text-dim); font-size: 0.72rem;">
+                        <span><i class="bi bi-info-circle me-1 text-warning"></i> Powered by Office Live Embed. Use bottom controls to flip slides, zoom, or go full-screen.</span>
+                        <span><i class="bi bi-shield-check me-1 text-success"></i> Official RSOS AI Architecture Deck</span>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+            {% endif %}
+
+            <!-- Architecture & Problem Solved (Zero Extra Space) -->
+            <div class="p-4 rounded-4 mb-4" style="background: var(--card-inner); border: 1px solid var(--card-border);">
+                <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-3 pb-3 border-bottom" style="border-color: var(--card-border) !important;">
+                    <div>
+                        <h5 class="fw-bold mb-1 d-flex align-items-center" style="color: var(--text-main);">
+                            <i class="bi bi-gear-wide-connected text-info me-2"></i> Project Architecture & Problem Solved
+                        </h5>
+                        <span class="small font-monospace" style="color: var(--text-dim);">Enterprise engineering, architectural design & impact</span>
+                    </div>
+                    {% if proj.presentation_url %}
+                    <!-- Executive Deck Action Bar -->
+                    <div class="d-flex align-items-center gap-2 flex-wrap">
+                        <span class="badge py-2 px-3 font-monospace" style="background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); color: #d97706;">
+                            <i class="bi bi-file-earmark-slides-fill me-1"></i> Executive Deck (.PPTX)
+                        </span>
+                        <button type="button" class="btn btn-sm btn-warning text-dark font-monospace py-2 px-3 rounded-3 fw-bold shadow-sm" onclick="showProjectMediaTab('{{ proj.id }}', 'ppt', true)">
+                            <i class="bi bi-file-earmark-slides-fill me-1"></i> View Slides on Screen
+                        </button>
+                        <a href="{{ proj.presentation_view_url }}" target="_blank" class="btn btn-sm btn-outline-info font-monospace py-2 px-3 rounded-3">
+                            <i class="bi bi-box-arrow-up-right me-1"></i> Full Tab
+                        </a>
+                        <a href="{{ url_for('static', filename=proj.presentation_url) }}" download class="btn btn-sm btn-outline-secondary font-monospace py-2 px-3 rounded-3 text-decoration-none" style="color: var(--text-main);">
+                            <i class="bi bi-download me-1"></i> Download .PPTX
+                        </a>
+                    </div>
+                    {% endif %}
+                </div>
+
+                <p class="small leading-relaxed mb-4" style="color: var(--text-body);">
+                    {{ proj.summary }}
+                </p>
+
+                <div class="row g-3 mb-4">
+                    <div class="col-12">
+                        <h6 class="text-uppercase text-info small font-monospace mb-2" style="font-size: 0.75rem;">
+                            <i class="bi bi-check2-circle me-1"></i> Core Deliverables & Technical Highlights:
+                        </h6>
+                    </div>
+                    {% for item in proj.highlights %}
+                    <div class="col-md-6">
+                        <div class="p-3 rounded-3 h-100" style="background: var(--card-bg); border: 1px solid var(--card-border);">
+                            <span class="small d-block leading-relaxed" style="color: var(--text-body); font-size: 0.82rem;">
+                                <i class="bi bi-check-circle-fill text-info me-2"></i>{{ item }}
+                            </span>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <!-- Footer Badges -->
+                {% if proj.id == "support-task-dashboard" %}
+                <div class="pt-3 border-top d-flex gap-2 flex-wrap" style="border-color: var(--card-border) !important;">
+                    <span class="badge font-monospace py-2 px-3" style="background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); color: #d97706;"><i class="bi bi-box-seam-fill me-1"></i>Docker (Local Machine Only • 100% Privacy)</span>
+                    <span class="badge py-2 px-3 font-monospace" style="background: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-body);"><i class="bi bi-envelope-check me-1 text-info"></i>Automated IMAP Cron</span>
+                    <span class="badge py-2 px-3 font-monospace" style="background: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-body);"><i class="bi bi-cpu me-1 text-info"></i>Local Ollama Llama</span>
+                    <span class="badge py-2 px-3 font-monospace" style="background: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-body);"><i class="bi bi-diagram-3 me-1 text-info"></i>LangGraph Agentic Flows</span>
+                    <span class="badge py-2 px-3 font-monospace" style="background: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-body);"><i class="bi bi-database me-1 text-info"></i>PostgreSQL Persistence</span>
+                    <span class="badge py-2 px-3 font-monospace" style="background: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-body);"><i class="bi bi-file-earmark-spreadsheet me-1 text-info"></i>Pivoted Excel Worksheets</span>
+                </div>
+                {% elif proj.id == "aimukeshajmera" %}
+                <div class="pt-3 border-top d-flex gap-2 flex-wrap" style="border-color: var(--card-border) !important;">
+                    <span class="badge font-monospace py-2 px-3" style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); color: #10b981;"><i class="bi bi-globe me-1"></i>Live on Vercel: aimukeshajmera.vercel.app</span>
+                    <span class="badge py-2 px-3 font-monospace" style="background: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-body);"><i class="bi bi-filetype-py me-1 text-info"></i>Python Web Architecture</span>
+                    <span class="badge py-2 px-3 font-monospace" style="background: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-body);"><i class="bi bi-database me-1 text-info"></i>Relational Database Leads</span>
+                    <span class="badge py-2 px-3 font-monospace" style="background: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-body);"><i class="bi bi-robot me-1 text-info"></i>LIC MITRA AI Chatbot</span>
+                    <span class="badge py-2 px-3 font-monospace" style="background: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-body);"><i class="bi bi-mic me-1 text-info"></i>Voice Speech Recognition</span>
+                    <span class="badge py-2 px-3 font-monospace" style="background: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-body);"><i class="bi bi-file-earmark-spreadsheet me-1 text-info"></i>SheetJS Excel Engine</span>
+                </div>
+                {% elif proj.id == "rsos-admission-portal" %}
+                <div class="pt-3 border-top d-flex gap-2 flex-wrap" style="border-color: var(--card-border) !important;">
+                    <span class="badge font-monospace py-2 px-3" style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); color: #10b981;"><i class="bi bi-people-fill me-1"></i>100,000+ Active Users</span>
+                    <span class="badge py-2 px-3 font-monospace" style="background: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-body);"><i class="bi bi-cpu me-1 text-info"></i>PHP & Laravel Architecture</span>
+                    <span class="badge py-2 px-3 font-monospace" style="background: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-body);"><i class="bi bi-lightning-charge me-1 text-info"></i>MySQL Stored Procedures (50% Faster)</span>
+                    <span class="badge py-2 px-3 font-monospace" style="background: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-body);"><i class="bi bi-shield-check me-1 text-info"></i>15+ RBAC Security Roles</span>
+                    <span class="badge py-2 px-3 font-monospace" style="background: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-body);"><i class="bi bi-bar-chart-line me-1 text-info"></i>Pentaho & Tableau BI</span>
+                </div>
+                {% else %}
+                <div class="pt-3 border-top d-flex gap-2 flex-wrap" style="border-color: var(--card-border) !important;">
+                    <span class="badge font-monospace py-2 px-3" style="background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.3); color: var(--accent);"><i class="bi bi-shield-lock-fill me-1"></i>AES End-to-End Encryption</span>
+                    <span class="badge py-2 px-3 font-monospace" style="background: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-body);"><i class="bi bi-arrow-left-right me-1 text-info"></i>High Court & E-Court Protocols</span>
+                    <span class="badge py-2 px-3 font-monospace" style="background: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-body);"><i class="bi bi-code-square me-1 text-info"></i>SOAP XML & REST JSON Adapters</span>
+                    <span class="badge py-2 px-3 font-monospace" style="background: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-body);"><i class="bi bi-clock-history me-1 text-info"></i>99.9% Uptime SLA</span>
+                </div>
+                {% endif %}
+            </div>
+
+            <!-- Skills Explained Deep-Dive Grid -->
+            <div>
+                <h5 class="fw-bold mb-3 d-flex align-items-center" style="color: var(--text-main);">
+                    <i class="bi bi-mortarboard-fill text-info me-2"></i> Key Skills & Applied Technologies Explained
+                </h5>
+                <div class="row g-3">
+                    {% for skill in proj.skills_explained %}
+                    <div class="col-md-6 col-lg-4">
+                        <div class="p-3 rounded-3 h-100" style="background: var(--card-inner); border: 1px solid var(--card-border);">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <div class="d-flex align-items-center">
+                                    <i class="bi {{ skill.icon }} text-info me-2 fs-5"></i>
+                                    <h6 class="fw-bold mb-0 small" style="color: var(--text-main);">{{ skill.name }}</h6>
+                                </div>
+                                <span class="badge custom-badge font-monospace" style="font-size: 0.65rem;">{{ skill.badge }}</span>
+                            </div>
+                            <p class="small mb-0" style="color: var(--text-body); font-size: 0.8rem; line-height: 1.45;">{{ skill.desc }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
                 </div>
             </div>
-            {% endfor %}
+
         </div>
+        {% endfor %}
     </div>
 </div>
 {% endif %}
@@ -856,7 +1092,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     function initTheme() {
-        var savedTheme = localStorage.getItem('site-theme') || 'light';
+        var savedTheme = localStorage.getItem('site-theme') || 'dark';
         setTheme(savedTheme);
     }
 
@@ -875,16 +1111,23 @@
     }
 
     function toggleTheme() {
-        var current = document.documentElement.getAttribute('data-theme') || 'light';
+        var current = document.documentElement.getAttribute('data-theme') || 'dark';
         setTheme(current === 'dark' ? 'light' : 'dark');
     }
 
-    function showMediaTab(tab, shouldScroll) {
-        var vPanel = document.getElementById('media-video-panel');
-        var pPanel = document.getElementById('media-ppt-panel');
-        var bVideo = document.getElementById('btn-show-video');
-        var bPpt = document.getElementById('btn-show-ppt');
-        var vPlayer = document.getElementById('dashboardInlinePlayer');
+    function onProjectTabChange(projId) {
+        // Pause any running inline video across all tabs when switching
+        document.querySelectorAll('video').forEach(function(v) {
+            try { v.pause(); } catch(e) {}
+        });
+    }
+
+    function showProjectMediaTab(projId, tab, shouldScroll) {
+        var vPanel = document.getElementById('media-video-panel-' + projId);
+        var pPanel = document.getElementById('media-ppt-panel-' + projId);
+        var bVideo = document.getElementById('btn-show-video-' + projId);
+        var bPpt = document.getElementById('btn-show-ppt-' + projId);
+        var vPlayer = document.getElementById('dashboardInlinePlayer_' + projId);
 
         if (tab === 'video') {
             if (vPanel) vPanel.style.display = 'block';
@@ -899,7 +1142,7 @@
             }
         } else if (tab === 'ppt') {
             if (vPlayer) {
-                vPlayer.pause();
+                try { vPlayer.pause(); } catch(e) {}
             }
             if (vPanel) vPanel.style.display = 'none';
             if (pPanel) pPanel.style.display = 'block';
@@ -914,11 +1157,15 @@
         }
 
         if (shouldScroll) {
-            var target = document.getElementById('learning-demo');
+            var target = document.getElementById('projects');
             if (target) {
                 target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         }
+    }
+
+    function showMediaTab(tab, shouldScroll) {
+        showProjectMediaTab('support-task-dashboard', tab, shouldScroll);
     }
 
     function playEventVideo(videoUrl, title) {
