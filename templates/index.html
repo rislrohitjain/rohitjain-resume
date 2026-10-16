@@ -983,6 +983,9 @@
                                 {% if event.event_url %}
                                 <a href="{{ event.event_url }}" target="_blank" class="badge bg-outline-info text-info border border-info text-decoration-none ms-2 font-monospace" style="font-size: 0.7rem;"><i class="bi bi-box-arrow-up-right me-1"></i>Official Event Details</a>
                                 {% endif %}
+                                {% if event.ticket_url %}
+                                <a href="{{ event.ticket_url }}" target="_blank" class="badge bg-success text-white text-decoration-none ms-2 font-monospace shadow-sm" style="font-size: 0.7rem;"><i class="bi bi-ticket-perforated-fill me-1"></i>My Ticket (Confirmed)</a>
+                                {% endif %}
                                 {% if event.video_url %}
                                 <button type="button" class="btn btn-sm btn-outline-info ms-2 font-monospace py-0 px-2" style="font-size: 0.75rem;" data-bs-toggle="modal" data-bs-target="#videoModal" onclick="playEventVideo('{{ url_for('static', filename=event.video_url) }}', '{{ event.title }}')">
                                     <i class="bi bi-play-circle-fill me-1"></i>Play Video Highlights
@@ -994,6 +997,11 @@
                             </div>
                             {% if event.organizer %}
                             <div class="mb-2" style="color: var(--text-dim);"><i class="bi bi-people-fill text-info me-2"></i><strong>Organizer:</strong> <span style="color: var(--text-body);">{{ event.organizer }}</span></div>
+                            {% endif %}
+                            {% if event.status %}
+                            <div class="mb-2 p-2 rounded-3 font-monospace" style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); color: #10b981; font-size: 0.78rem;">
+                                <i class="bi bi-calendar-check-fill me-2"></i>{{ event.status }}
+                            </div>
                             {% endif %}
                             {% if event.achievement %}
                             <div class="mb-2 p-2 rounded-3 font-monospace" style="background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); color: #d97706; font-size: 0.78rem;">
@@ -1013,7 +1021,13 @@
                         </div>
 
                         <div class="mt-auto">
-                            <h6 class="text-uppercase text-info small font-monospace mb-2" style="font-size: 0.75rem;"><i class="bi bi-mortarboard-fill me-1"></i>Key Onsite Learnings & Skills Acquired:</h6>
+                            <h6 class="text-uppercase text-info small font-monospace mb-2" style="font-size: 0.75rem;">
+                                {% if event.type and 'Upcoming' in event.type %}
+                                <i class="bi bi-mortarboard-fill me-1"></i>Key Topics & Agenda:
+                                {% else %}
+                                <i class="bi bi-mortarboard-fill me-1"></i>Key Onsite Learnings & Skills Acquired:
+                                {% endif %}
+                            </h6>
                             <ul class="small ps-3 mb-0" style="color: var(--text-body);">
                                 {% for item in event.learnings %}
                                 <li class="mb-2 leading-relaxed">{{ item }}</li>

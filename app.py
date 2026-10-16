@@ -262,6 +262,24 @@ user_data = {
     ],
     "events": [
         {
+            "title": "Claude Community Jaipur Meetup",
+            "type": "Upcoming In-Person Event",
+            "status": "🎟️ Event Registered • Waiting for Event Date (October 24, 2026)",
+            "registration_date": "Confirmed RSVP • Ticket Issued",
+            "date": "Saturday, October 24, 2026 | 10:30 AM – 1:00 PM GMT+5:30",
+            "location": "Malaviya National Institute of Technology (MNIT), JLN Marg, Malviya Nagar, Jaipur, Rajasthan 302017",
+            "organizer": "Claude Community Jaipur in collaboration with Jaipur Data & AI Community (Speakers: Jason Sears - Engineering Lead, Origin Digital Chicago ✈️ | Ajay Sharma - Senior Solution Architect, Origin Digital Jaipur)",
+            "event_url": "https://luma.link/XxRFO63oFj",
+            "ticket_url": "https://luma.link/rXSoj2F9sT",
+            "map_url": "https://luma.link/7cBc9mWN8q",
+            "learnings": [
+                "Claude Code & MCP (Model Context Protocol): Practical deep-dive into Anthropic's Model Context Protocol (MCP) server standards, tool calling, and autonomous developer workflows.",
+                "Production Agentic AI Architectures: Engineering multi-agent coordination, prompt caching economics, and real-world generative AI production deployment.",
+                "Global Speaker Keynote & Lightning Demos: Insights from Jason Sears (Engineering Lead, Origin Digital Chicago) and Ajay Sharma on enterprise-scale LLMs.",
+                "Jaipur AI Community Collaboration: Live in-person networking and peer architecture discussions with Jaipur's leading AI engineers, founders, and developers at MNIT Jaipur."
+            ]
+        },
+        {
             "title": "UiPath Jaipur: Agentic Automation in Practice (Maestro Flow & Live Build)",
             "type": "Onsite / In-Person Event",
             "date": "Saturday, October 3, 2026 | 11:00 AM – 3:00 PM IST",
