@@ -102,18 +102,78 @@
     
     <style>
         :root {
-            --bg: #050505;
-            --card-bg: #111111;
-            --accent: #00d4ff;
-            --text-main: #ffffff;
-            --text-dim: #a0a0a0;
+            /* Clean, modern, highly readable theme (Default Light) */
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --card-inner: #f1f5f9;
+            --card-border: #e2e8f0;
+            --card-hover-border: #94a3b8;
+            --text-main: #0f172a;
+            --text-body: #334155;
+            --text-dim: #64748b;
+            --accent: #0284c7;
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+            --badge-border: #bfdbfe;
+            --shadow: 0 2px 12px rgba(15, 23, 42, 0.06);
+        }
+
+        [data-theme="dark"] {
+            /* High-contrast, clean dark theme */
+            --bg: #0b1120;
+            --card-bg: #1e293b;
+            --card-inner: #0f172a;
+            --card-border: #334155;
+            --card-hover-border: #38bdf8;
+            --text-main: #f8fafc;
+            --text-body: #cbd5e1;
+            --text-dim: #94a3b8;
+            --accent: #38bdf8;
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --badge-bg: #0f172a;
+            --badge-text: #38bdf8;
+            --badge-border: #334155;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
         }
 
         body {
             background-color: var(--bg);
+            color: var(--text-body);
+            font-family: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            letter-spacing: -0.01em;
+            line-height: 1.6;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
             color: var(--text-main);
-            font-family: 'Plus Jakarta Sans', sans-serif;
             letter-spacing: -0.02em;
+        }
+
+        .text-main { color: var(--text-main) !important; }
+        .text-info { color: var(--accent) !important; }
+        .text-secondary { color: var(--text-dim) !important; }
+        .text-dim { color: var(--text-body) !important; }
+        .text-white { color: var(--text-main) !important; }
+        .text-light { color: var(--text-body) !important; }
+
+        /* Bootstrap Dark / Secondary Overrides for Clean Harmonious Palette */
+        .bg-dark {
+            background-color: var(--card-inner) !important;
+            color: var(--text-main) !important;
+        }
+
+        .badge.bg-dark {
+            background-color: var(--badge-bg) !important;
+            color: var(--badge-text) !important;
+            border-color: var(--badge-border) !important;
+        }
+
+        .border-secondary {
+            border-color: var(--card-border) !important;
         }
 
         /* --- Bento Grid Layout --- */
@@ -121,72 +181,90 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             grid-gap: 20px;
-            padding: 50px 0;
+            padding: 40px 0;
         }
 
         .bento-item {
             background: var(--card-bg);
-            border: 1px solid #222;
-            border-radius: 28px;
-            padding: 30px;
-            transition: 0.4s ease;
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 28px;
+            transition: all 0.25s ease;
+            box-shadow: var(--shadow);
         }
 
         .bento-item:hover {
-            border-color: var(--accent);
-            transform: translateY(-5px);
+            border-color: var(--card-hover-border);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
         }
 
         /* --- Custom UI Components --- */
         .profile-box { grid-column: span 1; grid-row: span 2; }
-        .hero-box { grid-column: span 3; background: linear-gradient(135deg, #111, #1a1a1a); }
+        .hero-box { grid-column: span 3; }
         .stats-bar { grid-column: span 3; }
         
         .skill-progress {
-            height: 6px;
-            background: #222;
+            height: 8px;
+            background: var(--card-inner);
             border-radius: 10px;
             margin-bottom: 20px;
             position: relative;
+            border: 1px solid var(--card-border);
+            overflow: hidden;
         }
 
         .progress-fill {
             height: 100%;
-            background: var(--accent);
-            box-shadow: 0 0 15px var(--accent);
+            background: var(--primary);
             border-radius: 10px;
         }
 
         .btn-download {
-            background: var(--accent);
-            color: #000;
-            font-weight: 700;
-            border-radius: 14px;
+            background: var(--primary);
+            color: #ffffff;
+            font-weight: 600;
+            border-radius: 12px;
             width: 100%;
-            padding: 15px;
+            padding: 13px;
             text-decoration: none;
             display: inline-block;
             text-align: center;
-            transition: 0.3s;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 10px rgba(37, 99, 235, 0.25);
         }
 
         .btn-download:hover {
-            background: white;
-            box-shadow: 0 0 20px var(--accent);
+            background: var(--primary-hover);
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
         }
 
         .contact-link {
-            color: var(--text-dim);
+            color: var(--text-body);
             text-decoration: none;
             transition: color 0.2s ease;
         }
 
         .contact-link:hover {
-            color: var(--accent);
+            color: var(--primary);
+        }
+
+        .inner-box {
+            background: var(--card-inner);
+            border: 1px solid var(--card-border);
+            border-radius: 14px;
         }
     </style>
 </head>
 <body>
+
+<!-- Floating Theme Toggle (Light / Dark) -->
+<div class="position-fixed top-0 end-0 m-3" style="z-index: 1060;">
+    <button id="themeToggleBtn" onclick="toggleTheme()" class="btn btn-sm shadow rounded-pill font-monospace fw-bold py-2 px-3" style="background: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-main); backdrop-filter: blur(10px); transition: all 0.2s ease;">
+        <i class="bi bi-sun-fill me-1 text-warning" id="themeIcon"></i> <span id="themeText">Light</span>
+    </button>
+</div>
 
 <div class="container">
     <div class="bento-container">
@@ -196,8 +274,8 @@
             <div class="mb-4">
                
 				
-				<div class="rounded-circle bg-secondary d-inline-block p-1 mb-3" 
-					 style="width: 120px; height: 120px; background: url('{{ url_for('static', filename='images/RohitPhoto.jpg') }}') center/cover;">
+				<div class="rounded-circle d-inline-block p-1 mb-3 shadow-sm border border-2" 
+					 style="width: 120px; height: 120px; background: url('{{ url_for('static', filename='images/RohitPhoto.jpg') }}') center/cover; border-color: var(--card-border) !important;">
 				</div>
 
 				<h2 class="h4 fw-bold mb-1">{{ user.header.name }}</h2>
@@ -267,119 +345,117 @@
         </section>
 
         <!-- Stats Grid (Aligned in Col 2-4 next to Profile Card) -->
-        <div class="bento-item p-4 d-flex justify-content-between align-items-center flex-wrap gap-3 stats-bar" style="grid-column: span 3; background: linear-gradient(135deg, rgba(255, 255, 255, 0.02), rgba(17, 17, 17, 0.95)); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 28px;">
+        <div class="bento-item stats-bar d-flex justify-content-between align-items-center flex-wrap gap-3">
             {% for stat in user.stats %}
             <div class="text-center flex-grow-1 px-3">
                 <h3 class="fw-bold text-info display-6 mb-0">{{ stat.value }}</h3>
                 <span class="text-secondary small text-uppercase tracking-widest font-monospace" style="font-size: 0.75rem;">{{ stat.label }}</span>
             </div>
             {% if not loop.last %}
-            <div class="d-none d-md-block" style="width: 1px; height: 45px; background: rgba(255,255,255,0.12);"></div>
+            <div class="d-none d-md-block" style="width: 1px; height: 45px; background: var(--card-border);"></div>
             {% endif %}
             {% endfor %}
         </div>
 
-
-
         <!-- Interactive HQ & Google Business Location Card -->
-        <div class="bento-item" style="grid-column: span 4; background: linear-gradient(135deg, rgba(0, 212, 255, 0.03), rgba(17, 17, 17, 0.95)); border: 1px solid rgba(0, 212, 255, 0.3); border-radius: 28px; padding: 25px; box-shadow: 0 8px 32px 0 rgba(0, 212, 255, 0.08);">
+        <div class="bento-item" style="grid-column: span 4;">
             <!-- Map Header -->
-            <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-3 pb-2 border-bottom border-secondary border-opacity-20">
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-3 pb-3 border-bottom" style="border-color: var(--card-border) !important;">
                 <div class="d-flex align-items-center">
-                    <span class="fs-3 me-3 text-info"><i class="bi bi-geo-alt-fill"></i></span>
+                    <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 44px; height: 44px; background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.3);">
+                        <i class="bi bi-geo-alt-fill text-info fs-5"></i>
+                    </div>
                     <div>
                         <div class="d-flex align-items-center gap-2 flex-wrap">
-                            <h4 class="fw-bold text-white mb-0">Development Studio & Office Location</h4>
-                            <span class="badge bg-info text-dark font-monospace" style="font-size: 0.75rem;">Verified Google Location</span>
+                            <h4 class="fw-bold mb-0" style="color: var(--text-main);">Development Studio & Office Location</h4>
+                            <span class="badge font-monospace" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); font-size: 0.75rem;">Verified Google Location</span>
                         </div>
-                        <p class="text-secondary small mb-0 font-monospace mt-1">
+                        <p class="small mb-0 font-monospace mt-1" style="color: var(--text-dim);">
                             Jaipur Nagar Nigam Area, Rajasthan 302026 • Astha Empire 2, Chordiya City
                         </p>
                     </div>
                 </div>
 
                 <div class="d-flex align-items-center gap-2 flex-wrap">
-                    <div class="px-3 py-1 rounded-pill border border-warning border-opacity-30 d-flex align-items-center gap-2" style="background: rgba(255, 193, 7, 0.08);">
-                        <span class="text-warning fw-bold fs-6">★ 3.4</span>
-                        <div class="text-warning small" style="font-size: 0.75rem;">
+                    <div class="px-3 py-1 rounded-pill d-flex align-items-center gap-2" style="background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3);">
+                        <span class="fw-bold fs-6" style="color: #f59e0b;">★ 3.4</span>
+                        <div class="small" style="color: #f59e0b; font-size: 0.75rem;">
                             <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i><i class="bi bi-star"></i>
                         </div>
-                        <span class="text-secondary small font-monospace" style="font-size: 0.7rem;">(5 Reviews)</span>
+                        <span class="small font-monospace" style="color: var(--text-dim); font-size: 0.72rem;">(5 Reviews)</span>
                     </div>
-                    <span class="badge bg-dark border border-secondary text-info font-monospace py-2 px-3" style="font-size: 0.75rem;">
-                        <span class="d-inline-block rounded-circle bg-success me-1" style="width: 7px; height: 7px; box-shadow: 0 0 8px #00ff88;"></span>
+                    <span class="badge py-2 px-3 font-monospace custom-badge" style="font-size: 0.75rem;">
+                        <span class="d-inline-block rounded-circle bg-success me-1" style="width: 7px; height: 7px;"></span>
                         Software Company
                     </span>
                 </div>
             </div>
 
-            <!-- Map Viewport with Floating Glassmorphic Details Overlay -->
-            <div class="position-relative rounded-4 overflow-hidden border border-secondary border-opacity-25 shadow-lg" style="height: 380px;">
+            <!-- Map Viewport -->
+            <div class="position-relative rounded-4 overflow-hidden border mb-3" style="height: 360px; border-color: var(--card-border) !important;">
                 <iframe 
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d718.1137258027256!2d75.70927580317746!3d26.887651215698895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db52cbbd5a387%3A0xb8755b323c8a6581!2sRohit%20Jain%20software%20engineer!5e1!3m2!1sen!2sin!4v1777626329164!5m2!1sen!2sin" 
                     width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
-
-                <!-- Top Right Live Radar Badge -->
-                <div class="position-absolute top-0 end-0 m-3 d-none d-sm-block" style="z-index: 10;">
-                    <span class="badge bg-dark text-info border border-info border-opacity-40 py-2 px-3 rounded-pill shadow font-monospace" style="backdrop-filter: blur(8px); background: rgba(10, 10, 10, 0.85) !important;">
-                        <span class="spinner-grow spinner-grow-sm text-info me-1" role="status" style="width: 0.55rem; height: 0.55rem; vertical-align: middle;"></span>
+                <!-- Coordinates Badge -->
+                <div class="position-absolute top-0 end-0 m-3 d-none d-sm-block">
+                    <span class="badge py-2 px-3 rounded-pill font-monospace custom-badge shadow-sm">
+                        <span class="spinner-grow spinner-grow-sm text-info me-1" role="status" style="width: 0.5rem; height: 0.5rem; vertical-align: middle;"></span>
                         26.88768° N, 75.70664° E
                     </span>
                 </div>
+            </div>
 
-                <!-- Bottom Glassmorphic Business Profile Card -->
-                <div class="position-absolute bottom-0 start-0 end-0 p-3" style="z-index: 10; background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.7) 70%, transparent 100%);">
-                    <div class="p-3 rounded-3 d-flex justify-content-between align-items-center flex-wrap gap-3" style="background: rgba(18, 22, 28, 0.88); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid rgba(0, 212, 255, 0.35); box-shadow: 0 10px 30px rgba(0,0,0,0.7);">
-                        <div class="d-flex align-items-center gap-3">
-                            <div class="rounded-circle d-flex align-items-center justify-content-center bg-dark border border-info" style="width: 48px; height: 48px; min-width: 48px; box-shadow: 0 0 12px rgba(0, 212, 255, 0.3);">
-                                <i class="bi bi-building-gear text-info fs-4"></i>
-                            </div>
-                            <div>
-                                <div class="d-flex align-items-center gap-2 flex-wrap">
-                                    <h5 class="text-white fw-bold mb-0" style="letter-spacing: -0.01em;">Rohit Jain software engineer</h5>
-                                    <span class="badge bg-secondary bg-opacity-25 text-info font-monospace small" style="font-size: 0.72rem;">रोहित जैन सॉफ्टवेयर इंजीनियर</span>
-                                </div>
-                                <span class="text-secondary d-block small mt-1" style="font-size: 0.8rem;">
-                                    <i class="bi bi-pin-map-fill text-danger me-1"></i>Flat No. 103, Astha Empire 2, near Chaitanya School, Chordiya City, Keshupura, Jaipur, Rajasthan 302026
-                                </span>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-center gap-2 flex-wrap ms-auto">
-                            <a href="https://www.google.com/maps/dir/?api=1&destination=26.8876761,75.7092192" target="_blank" class="btn btn-sm btn-outline-info font-monospace py-2 px-3 rounded-3 text-decoration-none">
-                                <i class="bi bi-sign-turn-right-fill me-1"></i>Get Directions
-                            </a>
-                            <a href="https://www.google.com/maps/place/Rohit+Jain+software+engineer/@26.8876809,75.7066443,17z/data=!3m1!4b1!4m6!3m5!1s0x396db52cbbd5a387:0xb8755b323c8a6581!8m2!3d26.8876761!4d75.7092192!16s%2Fg%2F11szc_c7td" target="_blank" class="btn btn-sm btn-info text-dark font-monospace py-2 px-3 rounded-3 text-decoration-none fw-bold shadow-sm">
-                                <i class="bi bi-box-arrow-up-right me-1"></i>Open Google Maps
-                            </a>
-                        </div>
+            <!-- Address & Action Card directly beneath map -->
+            <div class="p-3 rounded-3 d-flex justify-content-between align-items-center flex-wrap gap-3" style="background: var(--card-inner); border: 1px solid var(--card-border);">
+                <div class="d-flex align-items-center gap-3">
+                    <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 44px; height: 44px; min-width: 44px; background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.25);">
+                        <i class="bi bi-building text-info fs-5"></i>
                     </div>
+                    <div>
+                        <div class="d-flex align-items-center gap-2 flex-wrap">
+                            <h6 class="fw-bold mb-0" style="color: var(--text-main);">Rohit Jain software engineer</h6>
+                            <span class="badge font-monospace" style="background: var(--card-bg); color: var(--text-dim); border: 1px solid var(--card-border); font-size: 0.72rem;">रोहित जैन सॉफ्टवेयर इंजीनियर</span>
+                        </div>
+                        <span class="d-block small mt-1" style="color: var(--text-body); font-size: 0.82rem;">
+                            <i class="bi bi-geo-alt-fill text-danger me-1"></i>Flat No. 103, Astha Empire 2, near Chaitanya School, Chordiya City, Keshupura, Jaipur, Rajasthan 302026
+                        </span>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center gap-2 flex-wrap ms-auto">
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=26.8876761,75.7092192" target="_blank" class="btn btn-sm btn-outline-info font-monospace py-2 px-3 rounded-3 text-decoration-none">
+                        <i class="bi bi-sign-turn-right-fill me-1"></i>Get Directions
+                    </a>
+                    <a href="https://www.google.com/maps/place/Rohit+Jain+software+engineer/@26.8876809,75.7066443,17z/data=!3m1!4b1!4m6!3m5!1s0x396db52cbbd5a387:0xb8755b323c8a6581!8m2!3d26.8876761!4d75.7092192!16s%2Fg%2F11szc_c7td" target="_blank" class="btn btn-sm btn-info text-dark font-monospace py-2 px-3 rounded-3 text-decoration-none fw-bold shadow-sm">
+                        <i class="bi bi-box-arrow-up-right me-1"></i>Open Google Maps
+                    </a>
                 </div>
             </div>
         </div>
 
-<div class="bento-item text-center" style="grid-column: span 4; background: linear-gradient(135deg, rgba(0, 123, 255, 0.05), rgba(17, 17, 17, 0.95)); border: 1px solid rgba(0, 123, 255, 0.2); padding: 40px 30px;">
-    <div class="philosophy-text mb-4">
-        <p class="fst-italic text-secondary fs-5 max-w-700 mx-auto leading-relaxed mb-0" style="max-width: 750px; margin: 0 auto; color: #d0d0d0;">
-            <i class="bi bi-quote text-info fs-3 align-middle me-1"></i>Bridging the gap between legacy enterprise systems and modern AI automation.<i class="bi bi-quote text-info fs-3 align-middle ms-1"></i>
-        </p>
-    </div>
+        <!-- Focus & Collaboration Card -->
+        <div class="bento-item text-center" style="grid-column: span 4; padding: 36px 30px;">
+            <div class="philosophy-text mb-4">
+                <p class="fst-italic text-secondary fs-5 max-w-700 mx-auto leading-relaxed mb-0" style="max-width: 750px; margin: 0 auto; color: var(--text-body);">
+                    <i class="bi bi-quote text-info fs-3 align-middle me-1"></i>Bridging the gap between legacy enterprise systems and modern AI automation.<i class="bi bi-quote text-info fs-3 align-middle ms-1"></i>
+                </p>
+            </div>
 
-    <div class="action-bar d-flex justify-content-center align-items-center gap-3 flex-wrap">
-        <div class="focus-tag px-3 py-2 rounded-3 text-info font-monospace small" style="background: rgba(0, 123, 255, 0.08); border: 1px solid rgba(0, 123, 255, 0.25);">
-            <span class="d-inline-block rounded-circle bg-info me-2" style="width: 8px; height: 8px; box-shadow: 0 0 10px #00d4ff;"></span>
-            Currently Piloting: <strong>Agentic AI & Python</strong>
+            <div class="action-bar d-flex justify-content-center align-items-center gap-3 flex-wrap">
+                <div class="focus-tag px-3 py-2 rounded-3 text-info font-monospace small" style="background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.25);">
+                    <span class="d-inline-block rounded-circle bg-info me-2" style="width: 8px; height: 8px;"></span>
+                    Currently Piloting: <strong>Agentic AI & Python</strong>
+                </div>
+
+                <a href="mailto:engrohitjain5@gmail.com" class="btn btn-info text-dark fw-bold px-4 py-2 rounded-3 text-decoration-none shadow-sm" style="transition: all 0.3s ease;">
+                    Let's Collaborate <i class="bi bi-arrow-right-short ms-1"></i>
+                </a>
+            </div>
         </div>
-
-        <a href="mailto:engrohitjain5@gmail.com" class="btn btn-info text-dark fw-bold px-4 py-2 rounded-3 text-decoration-none shadow-sm" style="transition: all 0.3s ease;">
-            Let's Collaborate <i class="bi bi-arrow-right-short ms-1"></i>
-        </a>
-    </div>
-</div>
 
 <!-- Project Learning & Live Demo Showcase Section -->
 {% if user.learning_project %}
-<div id="learning-demo" class="bento-item" style="grid-column: span 4; background: linear-gradient(135deg, rgba(0, 212, 255, 0.04), rgba(17, 17, 17, 0.96)); border: 1px solid rgba(0, 212, 255, 0.35); border-radius: 28px; padding: 35px; box-shadow: 0 8px 32px 0 rgba(0, 212, 255, 0.12);">
+<div id="learning-demo" class="bento-item" style="grid-column: span 4;">
     <!-- Header with Action Buttons -->
     <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 mb-4 pb-3 border-bottom border-secondary border-opacity-20">
         <div class="d-flex align-items-center">
@@ -387,152 +463,194 @@
             <div>
                 <div class="d-flex align-items-center gap-2 flex-wrap">
                     <h3 class="fw-bold mb-0 text-white">{{ user.learning_project.title }}</h3>
-                    <span class="badge bg-info text-dark font-monospace" style="font-size: 0.75rem;">{{ user.learning_project.badge }}</span>
+                    <span class="badge bg-primary text-white font-monospace" style="font-size: 0.75rem;">{{ user.learning_project.badge }}</span>
                 </div>
-                <p class="text-info small mb-0 font-monospace mt-1">{{ user.learning_project.tagline }}</p>
+                <p class="text-secondary small mb-0 mt-1">{{ user.learning_project.tagline }}</p>
             </div>
         </div>
         <div class="d-flex gap-2 flex-wrap">
-            <button type="button" class="btn btn-outline-info font-monospace py-2 px-3 rounded-3" data-bs-toggle="modal" data-bs-target="#videoModal" onclick="playEventVideo('{{ url_for('static', filename=user.learning_project.video_url) }}', '{{ user.learning_project.video_title }}')">
-                <i class="bi bi-play-circle-fill me-1"></i> Watch Demo in Popup
+            <button type="button" class="btn btn-sm btn-outline-info font-monospace py-2 px-3 rounded-3" data-bs-toggle="modal" data-bs-target="#videoModal" onclick="playEventVideo('{{ url_for('static', filename=user.learning_project.video_url) }}', '{{ user.learning_project.video_title }}')">
+                <i class="bi bi-arrows-fullscreen me-1"></i> Full Modal Video
             </button>
-            <a href="{{ url_for('static', filename=user.learning_project.video_url) }}" target="_blank" class="btn btn-info text-dark font-monospace py-2 px-3 rounded-3 fw-bold text-decoration-none">
-                <i class="bi bi-box-arrow-up-right me-1"></i> Open Video in New Tab
-            </a>
             {% if user.learning_project.presentation_url %}
-            <a href="{{ user.learning_project.presentation_view_url }}" target="_blank" class="btn btn-warning text-dark font-monospace py-2 px-3 rounded-3 fw-bold text-decoration-none shadow-sm">
-                <i class="bi bi-eye-fill me-1"></i> View PPTX in New Tab
+            <a href="{{ user.learning_project.presentation_view_url }}" target="_blank" class="btn btn-sm btn-outline-warning font-monospace py-2 px-3 rounded-3 text-decoration-none">
+                <i class="bi bi-box-arrow-up-right me-1"></i> Full Tab Slides
             </a>
-            <a href="{{ url_for('static', filename=user.learning_project.presentation_url) }}" download class="btn btn-outline-warning font-monospace py-2 px-3 rounded-3 text-decoration-none">
+            <a href="{{ url_for('static', filename=user.learning_project.presentation_url) }}" download class="btn btn-sm btn-warning text-dark font-monospace py-2 px-3 rounded-3 fw-bold text-decoration-none shadow-sm">
                 <i class="bi bi-download me-1"></i> Download .PPTX
             </a>
             {% endif %}
         </div>
     </div>
 
-    <!-- Widescreen Live Project Demo Recording Theater Box -->
-    <div class="p-4 border border-secondary border-opacity-25 rounded-4 mb-4" style="background: rgba(0, 0, 0, 0.65); backdrop-filter: blur(12px); box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);">
-        <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
-            <div class="d-flex align-items-center gap-2">
-                <span class="fs-4 text-info"><i class="bi bi-camera-video-fill"></i></span>
-                <div>
-                    <h5 class="text-white fw-bold mb-0">Live Project Demo Recording & System Execution</h5>
-                    <span class="text-secondary font-monospace small" style="font-size: 0.75rem;">Full-scale demonstration of automated email ingestion, Ollama Llama extraction, PostgreSQL tracking & Excel report generation</span>
+    <!-- Media Toggle Bar (Play in This Screen Page) -->
+    <div class="d-flex justify-content-center align-items-center mb-3">
+        <div class="p-1 rounded-pill d-inline-flex gap-1" style="background: var(--card-inner); border: 1px solid var(--card-border);">
+            <button type="button" class="btn btn-sm px-4 py-2 rounded-pill font-monospace fw-bold" id="btn-show-video" onclick="showMediaTab('video')" style="background: var(--primary); color: #ffffff; transition: all 0.2s ease;">
+                <i class="bi bi-play-circle-fill me-2"></i> 📹 Watch Video Demo
+            </button>
+            <button type="button" class="btn btn-sm px-4 py-2 rounded-pill font-monospace fw-bold" id="btn-show-ppt" onclick="showMediaTab('ppt')" style="background: transparent; color: var(--text-dim); transition: all 0.2s ease;">
+                <i class="bi bi-file-earmark-slides-fill me-2 text-warning"></i> 📊 View PPT Presentation
+            </button>
+        </div>
+    </div>
+
+    <!-- Media Screen Box (Plays directly on this screen page) -->
+    <div class="p-3 rounded-4 mb-4" style="background: var(--card-inner); border: 1px solid var(--card-border);">
+        <!-- Panel 1: Video Player Panel -->
+        <div id="media-video-panel">
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3 px-2">
+                <div class="d-flex align-items-center gap-2">
+                    <span class="fs-5 text-info"><i class="bi bi-camera-video-fill"></i></span>
+                    <div>
+                        <h6 class="fw-bold mb-0" style="color: var(--text-main);">Live System Execution Demo (Video)</h6>
+                        <span class="small font-monospace" style="color: var(--text-dim); font-size: 0.72rem;">Playing directly on screen page • Cron ingestion & local Ollama parsing</span>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center gap-2 flex-wrap">
+                    <span class="badge font-monospace py-1 px-2" style="background: var(--badge-bg); color: var(--badge-text); border: 1px solid var(--badge-border); font-size: 0.7rem;">
+                        <i class="bi bi-film me-1"></i> 1080p Full HD
+                    </span>
+                    <span class="badge font-monospace py-1 px-2" style="background: rgba(245, 158, 11, 0.1); color: #d97706; border: 1px solid rgba(245, 158, 11, 0.3); font-size: 0.7rem;">
+                        <i class="bi bi-box-seam-fill me-1"></i> Local Docker
+                    </span>
+                    <button type="button" class="btn btn-sm btn-outline-info font-monospace py-1 px-2 rounded-2" style="font-size: 0.75rem;" data-bs-toggle="modal" data-bs-target="#videoModal" onclick="playEventVideo('{{ url_for('static', filename=user.learning_project.video_url) }}', '{{ user.learning_project.video_title }}')">
+                        <i class="bi bi-arrows-fullscreen me-1"></i> Expand Modal
+                    </button>
+                    <a href="{{ url_for('static', filename=user.learning_project.video_url) }}" target="_blank" class="btn btn-sm btn-info text-dark font-monospace py-1 px-2 rounded-2 fw-bold text-decoration-none" style="font-size: 0.75rem;">
+                        <i class="bi bi-box-arrow-up-right me-1"></i> New Tab
+                    </a>
                 </div>
             </div>
+
+            <div class="position-relative rounded-3 overflow-hidden" style="background: #000; text-align: center;">
+                <video id="dashboardInlinePlayer" controls class="w-100 d-block mx-auto" style="max-height: 500px; object-fit: contain; width: 100%;" preload="metadata">
+                    <source src="{{ url_for('static', filename=user.learning_project.video_url) }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mt-2 px-2 small font-monospace" style="color: var(--text-dim); font-size: 0.72rem;">
+                <span><i class="bi bi-info-circle me-1 text-info"></i> Recorded on developer workstation demonstrating real-time cron execution & live task ingestion.</span>
+                <span><i class="bi bi-file-earmark-play me-1 text-info"></i> MP4 Format • High Resolution</span>
+            </div>
+        </div>
+
+        <!-- Panel 2: PowerPoint Presentation Panel -->
+        <div id="media-ppt-panel" style="display: none;">
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3 px-2">
+                <div class="d-flex align-items-center gap-2">
+                    <span class="fs-5 text-warning"><i class="bi bi-file-earmark-slides-fill"></i></span>
+                    <div>
+                        <h6 class="fw-bold mb-0" style="color: var(--text-main);">Executive Presentation Slide Deck (PPTX)</h6>
+                        <span class="small font-monospace" style="color: var(--text-dim); font-size: 0.72rem;">Interactive slide deck playing directly on screen page • Click slides or arrows to navigate</span>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center gap-2 flex-wrap">
+                    <span class="badge font-monospace py-1 px-2" style="background: rgba(245, 158, 11, 0.1); color: #d97706; border: 1px solid rgba(245, 158, 11, 0.3); font-size: 0.7rem;">
+                        <i class="bi bi-filetype-pptx me-1"></i> PowerPoint Interactive
+                    </span>
+                    <a href="{{ user.learning_project.presentation_view_url }}" target="_blank" class="btn btn-sm btn-warning text-dark font-monospace py-1 px-3 rounded-2 fw-bold text-decoration-none" style="font-size: 0.75rem;">
+                        <i class="bi bi-box-arrow-up-right me-1"></i> Open in Full New Tab
+                    </a>
+                    <a href="{{ url_for('static', filename=user.learning_project.presentation_url) }}" download class="btn btn-sm btn-outline-warning font-monospace py-1 px-3 rounded-2 text-decoration-none" style="font-size: 0.75rem;">
+                        <i class="bi bi-download me-1"></i> Download .PPTX
+                    </a>
+                </div>
+            </div>
+
+            <!-- Embedded Interactive Presentation Frame -->
+            <div class="position-relative rounded-3 overflow-hidden border" style="background: #000; height: 480px; border-color: var(--card-border) !important;">
+                <iframe 
+                    id="pptEmbedFrame"
+                    src="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Frohitjain-resume.vercel.app%2Fstatic%2FRSOS_AI_Task_Automation_Executive_Presentation.pptx" 
+                    width="100%" 
+                    height="100%" 
+                    frameborder="0" 
+                    style="border:0;" 
+                    allowfullscreen="true">
+                </iframe>
+            </div>
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mt-2 px-2 small font-monospace" style="color: var(--text-dim); font-size: 0.72rem;">
+                <span><i class="bi bi-info-circle me-1 text-warning"></i> Powered by Office Live Embed. Use bottom controls to flip slides, zoom, or go full-screen.</span>
+                <span><i class="bi bi-shield-check me-1 text-success"></i> Official RSOS AI Architecture Deck</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Architecture & Problem Solved with Integrated Executive Presentation (Zero Extra Space) -->
+    <div class="p-4 rounded-4 mb-4" style="background: var(--card-inner); border: 1px solid var(--card-border);">
+        <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-3 pb-3 border-bottom" style="border-color: var(--card-border) !important;">
+            <div>
+                <h5 class="fw-bold mb-1 d-flex align-items-center" style="color: var(--text-main);">
+                    <i class="bi bi-gear-wide-connected text-info me-2"></i> Project Architecture & Problem Solved
+                </h5>
+                <span class="small font-monospace" style="color: var(--text-dim);">Automated Email Intelligence, Local Docker Inference & Relational Logging</span>
+            </div>
+            <!-- Executive Deck Action Bar -->
             <div class="d-flex align-items-center gap-2 flex-wrap">
-                <span class="badge bg-dark border border-info text-info font-monospace py-2 px-3" style="font-size: 0.72rem;">
-                    <i class="bi bi-film me-1"></i> 1080p Full HD
+                <span class="badge py-2 px-3 font-monospace" style="background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); color: #d97706;">
+                    <i class="bi bi-file-earmark-slides-fill me-1"></i> Executive Deck (.PPTX)
                 </span>
-                <span class="badge bg-dark border border-warning text-warning font-monospace py-2 px-3" style="font-size: 0.72rem;">
-                    <i class="bi bi-box-seam-fill me-1"></i> Running on Local Docker
-                </span>
-                <button type="button" class="btn btn-sm btn-outline-info font-monospace py-1 px-3 rounded-3" data-bs-toggle="modal" data-bs-target="#videoModal" onclick="playEventVideo('{{ url_for('static', filename=user.learning_project.video_url) }}', '{{ user.learning_project.video_title }}')">
-                    <i class="bi bi-arrows-fullscreen me-1"></i> Expand Modal
+                <button type="button" class="btn btn-sm btn-warning text-dark font-monospace py-2 px-3 rounded-3 fw-bold shadow-sm" onclick="showMediaTab('ppt', true)">
+                    <i class="bi bi-file-earmark-slides-fill me-1"></i> View Slides on Screen
                 </button>
-                <a href="{{ url_for('static', filename=user.learning_project.video_url) }}" target="_blank" class="btn btn-sm btn-info text-dark font-monospace py-1 px-3 rounded-3 fw-bold text-decoration-none">
-                    <i class="bi bi-box-arrow-up-right me-1"></i> Open Video in New Tab
+                <a href="{{ user.learning_project.presentation_view_url }}" target="_blank" class="btn btn-sm btn-outline-info font-monospace py-2 px-3 rounded-3">
+                    <i class="bi bi-box-arrow-up-right me-1"></i> Full Tab
+                </a>
+                <a href="{{ url_for('static', filename=user.learning_project.presentation_url) }}" download class="btn btn-sm btn-outline-secondary font-monospace py-2 px-3 rounded-3 text-decoration-none" style="color: var(--text-main);">
+                    <i class="bi bi-download me-1"></i> Download .PPTX
                 </a>
             </div>
         </div>
 
-        <!-- Generous Widescreen Video Player Container -->
-        <div class="position-relative rounded-4 overflow-hidden border border-secondary border-opacity-30 shadow" style="background: #000; text-align: center;">
-            <video controls class="w-100 d-block mx-auto" style="max-height: 520px; object-fit: contain; width: 100%;" preload="metadata">
-                <source src="{{ url_for('static', filename=user.learning_project.video_url) }}" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-        <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mt-3 pt-2 border-top border-secondary border-opacity-15 font-monospace small text-secondary" style="font-size: 0.75rem;">
-            <span><i class="bi bi-info-circle me-1 text-info"></i> Recorded on developer workstation demonstrating real-time cron execution & live task ingestion.</span>
-            <span><i class="bi bi-file-earmark-play me-1 text-info"></i> MP4 Format • High Resolution</span>
-        </div>
-    </div>
+        <p class="small leading-relaxed mb-4" style="color: var(--text-body);">
+            {{ user.learning_project.summary }}
+        </p>
 
-    <!-- Architecture & Presentation Split -->
-    <div class="row g-4 mb-4">
-        <!-- Left: Workflow & Capabilities -->
-        <div class="col-lg-8 d-flex flex-column">
-            <div class="p-4 border border-secondary border-opacity-20 rounded-4 h-100 d-flex flex-column justify-content-between" style="background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(8px);">
-                <div>
-                    <h5 class="text-white fw-bold mb-3 d-flex align-items-center">
-                        <i class="bi bi-gear-wide-connected text-info me-2"></i> Project Architecture & Problem Solved
-                    </h5>
-                    <p class="text-secondary small leading-relaxed mb-3">
-                        {{ user.learning_project.summary }}
-                    </p>
-                    <h6 class="text-uppercase text-info small font-monospace mb-2" style="font-size: 0.75rem;">
-                        <i class="bi bi-check2-circle me-1"></i> Automated Pipeline & Core Features:
-                    </h6>
-                    <ul class="text-dim small ps-3 mb-0">
-                        {% for item in user.learning_project.highlights %}
-                        <li class="mb-2 leading-relaxed">{{ item }}</li>
-                        {% endfor %}
-                    </ul>
-                </div>
-                
-                <div class="mt-3 pt-3 border-top border-secondary border-opacity-15 d-flex gap-2 flex-wrap">
-                    <span class="badge bg-dark border border-warning text-warning font-monospace py-1 px-2" style="font-size: 0.7rem;"><i class="bi bi-box-seam-fill me-1"></i>Docker (Local Machine Only • 100% Privacy)</span>
-                    <span class="badge bg-dark border border-info text-info font-monospace py-1 px-2" style="font-size: 0.7rem;"><i class="bi bi-envelope-check me-1"></i>Automated IMAP Cron</span>
-                    <span class="badge bg-dark border border-info text-info font-monospace py-1 px-2" style="font-size: 0.7rem;"><i class="bi bi-cpu me-1"></i>Local Ollama Llama</span>
-                    <span class="badge bg-dark border border-info text-info font-monospace py-1 px-2" style="font-size: 0.7rem;"><i class="bi bi-diagram-3 me-1"></i>LangGraph Agentic Flows</span>
-                    <span class="badge bg-dark border border-info text-info font-monospace py-1 px-2" style="font-size: 0.7rem;"><i class="bi bi-database me-1"></i>PostgreSQL Persistence</span>
-                    <span class="badge bg-dark border border-info text-info font-monospace py-1 px-2" style="font-size: 0.7rem;"><i class="bi bi-file-earmark-spreadsheet me-1"></i>Pivoted Excel Worksheets</span>
+        <div class="row g-3 mb-4">
+            <div class="col-12">
+                <h6 class="text-uppercase text-info small font-monospace mb-2" style="font-size: 0.75rem;">
+                    <i class="bi bi-check2-circle me-1"></i> Automated Pipeline & Core Features:
+                </h6>
+            </div>
+            {% for item in user.learning_project.highlights %}
+            <div class="col-md-6">
+                <div class="p-3 rounded-3 h-100" style="background: var(--card-bg); border: 1px solid var(--card-border);">
+                    <span class="small d-block leading-relaxed" style="color: var(--text-body); font-size: 0.82rem;">
+                        <i class="bi bi-check-circle-fill text-info me-2"></i>{{ item }}
+                    </span>
                 </div>
             </div>
+            {% endfor %}
         </div>
 
-        <!-- Right: Executive Presentation Card -->
-        <div class="col-lg-4 d-flex flex-column">
-            <div class="p-4 border border-warning border-opacity-30 rounded-4 h-100 d-flex flex-column justify-content-between" style="background: linear-gradient(135deg, rgba(255, 193, 7, 0.05), rgba(17, 17, 17, 0.95)); backdrop-filter: blur(8px);">
-                <div>
-                    <div class="d-flex align-items-center mb-3">
-                        <div class="rounded-circle d-flex align-items-center justify-content-center bg-dark border border-warning me-2" style="width: 44px; height: 44px; min-width: 44px; box-shadow: 0 0 10px rgba(255, 193, 7, 0.2);">
-                            <i class="bi bi-file-earmark-slides-fill text-warning fs-5"></i>
-                        </div>
-                        <div>
-                            <h6 class="text-white fw-bold mb-0">Executive Presentation Deck</h6>
-                            <span class="badge bg-dark border border-warning text-warning font-monospace" style="font-size: 0.65rem;">Microsoft PowerPoint (.PPTX)</span>
-                        </div>
-                    </div>
-                    <p class="text-secondary small leading-relaxed mb-3" style="font-size: 0.82rem;">
-                        Detailed architectural slide deck covering executive ROI analysis, cron workflow benchmarks, on-premise Ollama security, PostgreSQL schema design, and daily work sheet pivot tables.
-                    </p>
-                    <div class="p-2 rounded-3 border border-secondary border-opacity-25 mb-3 bg-dark bg-opacity-50">
-                        <span class="d-block text-warning font-monospace small"><i class="bi bi-check2-all me-1"></i> Ready for Immediate Browser Viewing</span>
-                        <span class="d-block text-secondary small" style="font-size: 0.75rem;">View live in full-screen in a new tab without downloading.</span>
-                    </div>
-                </div>
-
-                <div class="d-flex flex-column gap-2 mt-auto">
-                    <a href="{{ user.learning_project.presentation_view_url }}" target="_blank" class="btn btn-warning text-dark font-monospace py-2 px-3 rounded-3 fw-bold text-decoration-none shadow-sm text-center">
-                        <i class="bi bi-eye-fill me-1"></i> View PPTX Slides in New Tab
-                    </a>
-                    <a href="{{ url_for('static', filename=user.learning_project.presentation_url) }}" download class="btn btn-outline-warning font-monospace py-2 px-3 rounded-3 text-decoration-none text-center">
-                        <i class="bi bi-download me-1"></i> Download Deck (.PPTX - 116 KB)
-                    </a>
-                </div>
-            </div>
+        <div class="pt-3 border-top d-flex gap-2 flex-wrap" style="border-color: var(--card-border) !important;">
+            <span class="badge font-monospace py-2 px-3" style="background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); color: #d97706;"><i class="bi bi-box-seam-fill me-1"></i>Docker (Local Machine Only • 100% Privacy)</span>
+            <span class="badge py-2 px-3 font-monospace" style="background: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-body);"><i class="bi bi-envelope-check me-1 text-info"></i>Automated IMAP Cron</span>
+            <span class="badge py-2 px-3 font-monospace" style="background: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-body);"><i class="bi bi-cpu me-1 text-info"></i>Local Ollama Llama</span>
+            <span class="badge py-2 px-3 font-monospace" style="background: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-body);"><i class="bi bi-diagram-3 me-1 text-info"></i>LangGraph Agentic Flows</span>
+            <span class="badge py-2 px-3 font-monospace" style="background: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-body);"><i class="bi bi-database me-1 text-info"></i>PostgreSQL Persistence</span>
+            <span class="badge py-2 px-3 font-monospace" style="background: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-body);"><i class="bi bi-file-earmark-spreadsheet me-1 text-info"></i>Pivoted Excel Worksheets</span>
         </div>
     </div>
 
     <!-- Skills Explained Deep-Dive Grid -->
     <div>
-        <h5 class="text-white fw-bold mb-3 d-flex align-items-center">
+        <h5 class="fw-bold mb-3 d-flex align-items-center" style="color: var(--text-main);">
             <i class="bi bi-mortarboard-fill text-info me-2"></i> Key Skills & Applied Technologies Explained
         </h5>
         <div class="row g-3">
             {% for skill in user.learning_project.skills_explained %}
             <div class="col-md-6 col-lg-4">
-                <div class="p-3 border border-secondary border-opacity-20 rounded-3 h-100" style="background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(4px);">
+                <div class="p-3 rounded-3 h-100" style="background: var(--card-inner); border: 1px solid var(--card-border);">
                     <div class="d-flex justify-content-between align-items-center mb-2">
                         <div class="d-flex align-items-center">
                             <i class="bi {{ skill.icon }} text-info me-2 fs-5"></i>
-                            <h6 class="fw-bold text-white mb-0 small">{{ skill.name }}</h6>
+                            <h6 class="fw-bold mb-0 small" style="color: var(--text-main);">{{ skill.name }}</h6>
                         </div>
-                        <span class="badge bg-dark border border-info text-info font-monospace" style="font-size: 0.65rem;">{{ skill.badge }}</span>
+                        <span class="badge custom-badge font-monospace" style="font-size: 0.65rem;">{{ skill.badge }}</span>
                     </div>
-                    <p class="text-secondary small mb-0" style="font-size: 0.8rem; line-height: 1.45;">{{ skill.desc }}</p>
+                    <p class="small mb-0" style="color: var(--text-body); font-size: 0.8rem; line-height: 1.45;">{{ skill.desc }}</p>
                 </div>
             </div>
             {% endfor %}
@@ -543,17 +661,17 @@
 
 		<!-- Technical Skills Grid -->
 <div class="bento-item" style="grid-column: span 4;">
-    <h4 class="fw-bold mb-4">Technical Expertise</h4>
+    <h4 class="fw-bold mb-4" style="color: var(--text-main);">Technical Expertise</h4>
     <div class="row g-4">
         {% for category, items in user.skills.items() %}
         <div class="col-md-6 col-lg-3">
-            <div class="p-4 border border-secondary border-opacity-10 rounded-4 h-100">
+            <div class="p-4 rounded-4 h-100" style="background: var(--card-inner); border: 1px solid var(--card-border);">
                 <h6 class="text-info fw-bold text-uppercase small mb-3" style="letter-spacing: 1px;">
                     {{ category }}
                 </h6>
                 <div class="d-flex flex-wrap gap-2">
                     {% for skill in items %}
-                    <span class="badge bg-dark border border-secondary border-opacity-25 px-3 py-2 rounded-pill font-monospace" style="font-size: 0.75rem; color: #e0e0e0;">
+                    <span class="badge custom-badge px-3 py-2 rounded-pill font-monospace" style="font-size: 0.75rem;">
                         {{ skill }}
                     </span>
                     {% endfor %}
@@ -562,25 +680,27 @@
         </div>
         {% endfor %}
     </div>
+</div>
+
 <!-- Autonomous Agentic Ecosystem Section -->
 {% if user.agentic_team %}
-<div class="bento-item" style="grid-column: span 4; background: linear-gradient(135deg, rgba(0, 212, 255, 0.04), rgba(17, 17, 17, 0.95)); border: 1px solid rgba(0, 212, 255, 0.3); border-radius: 28px; padding: 35px;">
+<div class="bento-item" style="grid-column: span 4; padding: 32px;">
     <div class="d-flex align-items-center mb-4">
         <span class="fs-2 me-3">🤖</span>
         <div>
-            <h4 class="fw-bold mb-0 text-white">Autonomous Agentic AI Ecosystem</h4>
+            <h4 class="fw-bold mb-0" style="color: var(--text-main);">Autonomous Agentic AI Ecosystem</h4>
             <p class="text-info small mb-0 font-monospace">19 Specialized AI Agents Orchestrated for End-to-End Software Lifecycle</p>
         </div>
     </div>
     <div class="row g-3">
         {% for agent in user.agentic_team %}
         <div class="col-md-6 col-lg-4">
-            <div class="p-3 border border-secondary border-opacity-20 rounded-3 h-100" style="background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(4px);">
+            <div class="p-3 rounded-3 h-100" style="background: var(--card-inner); border: 1px solid var(--card-border);">
                 <div class="d-flex align-items-center mb-1">
                     <i class="bi bi-cpu text-info me-2"></i>
-                    <h6 class="fw-bold text-white mb-0 small">{{ agent.name }}</h6>
+                    <h6 class="fw-bold mb-0 small" style="color: var(--text-main);">{{ agent.name }}</h6>
                 </div>
-                <span class="badge bg-dark border border-secondary text-dim font-monospace" style="font-size: 0.65rem;">{{ agent.role }}</span>
+                <span class="badge custom-badge font-monospace" style="font-size: 0.68rem;">{{ agent.role }}</span>
             </div>
         </div>
         {% endfor %}
@@ -590,37 +710,37 @@
 
         <!-- Tech Events & Community Participation Section -->
         {% if user.events %}
-        <div id="events" class="bento-item" style="grid-column: span 4; background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(0, 212, 255, 0.35); border-radius: 28px; padding: 35px; box-shadow: 0 8px 32px 0 rgba(0, 212, 255, 0.1);">
+        <div id="events" class="bento-item" style="grid-column: span 4; padding: 32px;">
             <div class="d-flex align-items-center mb-4">
                 <span class="fs-2 me-3">📍</span>
                 <div>
-                    <h3 class="fw-bold mb-0 text-white">Tech Events & Community Participation <span class="badge bg-info text-dark font-monospace align-middle ms-2" style="font-size: 0.75rem;">Onsite & In-Person</span></h3>
+                    <h3 class="fw-bold mb-0" style="color: var(--text-main);">Tech Events & Community Participation <span class="badge bg-info text-dark font-monospace align-middle ms-2" style="font-size: 0.75rem;">Onsite & In-Person</span></h3>
                     <p class="text-info small mb-0 font-monospace">Active in-person tech community engagement, hackathons & conferences in Jaipur</p>
                 </div>
             </div>
             <div class="row g-4">
                 {% for event in user.events %}
                 <div class="col-md-6">
-                    <div class="p-4 border border-secondary border-opacity-20 rounded-4 h-100 d-flex flex-column" style="background: rgba(17, 17, 17, 0.7); backdrop-filter: blur(8px);">
+                    <div class="p-4 rounded-4 h-100 d-flex flex-column" style="background: var(--card-inner); border: 1px solid var(--card-border);">
                         <div class="d-flex justify-content-between align-items-start mb-2">
                             <h5 class="fw-bold text-info mb-0 fs-6">{{ event.title }}</h5>
                             {% if event.type %}
-                            <span class="badge bg-dark border border-info text-info font-monospace ms-2" style="font-size: 0.65rem;"><i class="bi bi-geo-alt-fill me-1"></i>{{ event.type }}</span>
+                            <span class="badge custom-badge font-monospace ms-2" style="font-size: 0.65rem;"><i class="bi bi-geo-alt-fill me-1"></i>{{ event.type }}</span>
                             {% endif %}
                         </div>
                         
                         <div class="mb-3 small">
-                            <div class="mb-2 p-2 rounded-3 border border-secondary border-opacity-25" style="background: rgba(0, 212, 255, 0.05);">
+                            <div class="mb-2 p-2 rounded-3" style="background: var(--card-bg); border: 1px solid var(--card-border);">
                                 <div class="d-flex justify-content-between align-items-center mb-1">
                                     <span class="text-info fw-bold"><i class="bi bi-clock-history me-1"></i>Date & Time:</span>
                                     {% if event.registration_date %}
-                                    <span class="badge bg-dark text-info border border-info font-monospace" style="font-size: 0.65rem;">{{ event.registration_date }}</span>
+                                    <span class="badge custom-badge font-monospace" style="font-size: 0.65rem;">{{ event.registration_date }}</span>
                                     {% endif %}
                                 </div>
-                                <span class="text-white font-monospace d-block">{{ event.date }}</span>
+                                <span class="font-monospace d-block" style="color: var(--text-main);">{{ event.date }}</span>
                             </div>
-                            <div class="text-secondary mb-1">
-                                <i class="bi bi-building text-info me-2"></i><strong>Venue (Onsite):</strong> <span class="text-light">{{ event.location }}</span>
+                            <div class="mb-1" style="color: var(--text-dim);">
+                                <i class="bi bi-building text-info me-2"></i><strong>Venue (Onsite):</strong> <span style="color: var(--text-body);">{{ event.location }}</span>
                                 {% if event.map_url %}
                                 <a href="{{ event.map_url }}" target="_blank" class="badge bg-info text-dark text-decoration-none ms-2 font-monospace" style="font-size: 0.7rem;"><i class="bi bi-map-fill me-1"></i>View on Google Maps</a>
                                 {% endif %}
@@ -637,10 +757,10 @@
                                 {% endif %}
                             </div>
                             {% if event.organizer %}
-                            <div class="text-secondary mb-2"><i class="bi bi-people-fill text-info me-2"></i><strong>Organizer:</strong> <span class="text-light">{{ event.organizer }}</span></div>
+                            <div class="mb-2" style="color: var(--text-dim);"><i class="bi bi-people-fill text-info me-2"></i><strong>Organizer:</strong> <span style="color: var(--text-body);">{{ event.organizer }}</span></div>
                             {% endif %}
                             {% if event.achievement %}
-                            <div class="mb-2 p-2 rounded-3 border border-warning border-opacity-30 font-monospace" style="background: rgba(255, 193, 7, 0.08); color: #ffc107; font-size: 0.78rem;">
+                            <div class="mb-2 p-2 rounded-3 font-monospace" style="background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); color: #d97706; font-size: 0.78rem;">
                                 <i class="bi bi-trophy-fill me-2"></i>{{ event.achievement }}
                             </div>
                             {% endif %}
@@ -649,7 +769,7 @@
                                 <span class="text-info font-monospace small d-block mb-1"><i class="bi bi-images me-1"></i>Event Photos:</span>
                                 <div class="d-flex gap-2 flex-wrap">
                                     {% for img in event.images %}
-                                    <img src="{{ url_for('static', filename=img) }}" class="rounded-3 border border-secondary border-opacity-50" style="width: 85px; height: 55px; object-fit: cover; cursor: pointer; transition: transform 0.2s ease;" onclick="openImageModal('{{ url_for('static', filename=img) }}')" alt="Event Photo">
+                                    <img src="{{ url_for('static', filename=img) }}" class="rounded-3 border" style="width: 85px; height: 55px; object-fit: cover; cursor: pointer; transition: transform 0.2s ease; border-color: var(--card-border) !important;" onclick="openImageModal('{{ url_for('static', filename=img) }}')" alt="Event Photo">
                                     {% endfor %}
                                 </div>
                             </div>
@@ -658,7 +778,7 @@
 
                         <div class="mt-auto">
                             <h6 class="text-uppercase text-info small font-monospace mb-2" style="font-size: 0.75rem;"><i class="bi bi-mortarboard-fill me-1"></i>Key Onsite Learnings & Skills Acquired:</h6>
-                            <ul class="text-dim small ps-3 mb-0">
+                            <ul class="small ps-3 mb-0" style="color: var(--text-body);">
                                 {% for item in event.learnings %}
                                 <li class="mb-2 leading-relaxed">{{ item }}</li>
                                 {% endfor %}
@@ -673,17 +793,17 @@
 
         <!-- Professional Timeline -->
         <div class="bento-item" style="grid-column: span 4;">
-            <h4 class="fw-bold mb-4">Milestones</h4>
+            <h4 class="fw-bold mb-4" style="color: var(--text-main);">Milestones</h4>
             <div class="row g-4">
                 {% for job in user.experience %}
                 <div class="col-md-6">
-                    <div class="p-4 border border-secondary border-opacity-10 rounded-4 h-100">
-                        <span class="badge bg-dark border border-info text-info mb-2">{{ job.period }}</span>
-                        <h5 class="fw-bold mb-1">{{ job.role }}</h5>
-                        <p class="text-secondary small mb-3">{{ job.company }}</p>
-                        <ul class="text-dim small">
+                    <div class="p-4 rounded-4 h-100" style="background: var(--card-inner); border: 1px solid var(--card-border);">
+                        <span class="badge custom-badge mb-2 font-monospace" style="font-size: 0.75rem;">{{ job.period }}</span>
+                        <h5 class="fw-bold mb-1" style="color: var(--text-main);">{{ job.role }}</h5>
+                        <p class="small mb-3" style="color: var(--text-dim);">{{ job.company }}</p>
+                        <ul class="small mb-0" style="color: var(--text-body);">
                             {% for detail in job.details %}
-                            <li class="mb-2">{{ detail }}</li>
+                            <li class="mb-2 leading-relaxed">{{ detail }}</li>
                             {% endfor %}
                         </ul>
                     </div>
@@ -701,12 +821,12 @@
 <!-- Event & Project Video Modal -->
 <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl">
-        <div class="modal-content bg-dark text-white border border-secondary border-opacity-25 rounded-4 overflow-hidden shadow-lg">
-            <div class="modal-header border-secondary border-opacity-20 bg-dark px-4 py-3">
+        <div class="modal-content rounded-4 overflow-hidden shadow-lg" style="background: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-main);">
+            <div class="modal-header px-4 py-3" style="background: var(--card-inner); border-bottom: 1px solid var(--card-border);">
                 <h5 class="modal-title font-monospace text-info d-flex align-items-center" id="videoModalLabel">
                     <i class="bi bi-play-circle-fill me-2"></i>Video Showcase
                 </h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" onclick="stopEventVideo()"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="stopEventVideo()"></button>
             </div>
             <div class="modal-body p-0 bg-black text-center">
                 <video id="eventPlayer" controls class="w-100" style="max-height: 80vh; background: #000;">
@@ -721,10 +841,10 @@
 <!-- Event Image Modal -->
 <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl">
-        <div class="modal-content bg-dark text-white border border-secondary border-opacity-25 rounded-4 overflow-hidden">
-            <div class="modal-header border-secondary border-opacity-20">
+        <div class="modal-content rounded-4 overflow-hidden" style="background: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-main);">
+            <div class="modal-header px-4 py-3" style="background: var(--card-inner); border-bottom: 1px solid var(--card-border);">
                 <h5 class="modal-title font-monospace text-info" id="imageModalLabel"><i class="bi bi-images me-2"></i>Event Photo</h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body p-0 bg-black text-center">
                 <img id="modalFullImage" src="" class="img-fluid rounded-bottom" style="max-height: 85vh; object-fit: contain;" alt="Full Event Photo">
@@ -735,6 +855,72 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
+    function initTheme() {
+        var savedTheme = localStorage.getItem('site-theme') || 'light';
+        setTheme(savedTheme);
+    }
+
+    function setTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('site-theme', theme);
+        var icon = document.getElementById('themeIcon');
+        var text = document.getElementById('themeText');
+        if (theme === 'dark') {
+            if (icon) icon.className = 'bi bi-moon-stars-fill me-1 text-info';
+            if (text) text.innerText = 'Dark';
+        } else {
+            if (icon) icon.className = 'bi bi-sun-fill me-1 text-warning';
+            if (text) text.innerText = 'Light';
+        }
+    }
+
+    function toggleTheme() {
+        var current = document.documentElement.getAttribute('data-theme') || 'light';
+        setTheme(current === 'dark' ? 'light' : 'dark');
+    }
+
+    function showMediaTab(tab, shouldScroll) {
+        var vPanel = document.getElementById('media-video-panel');
+        var pPanel = document.getElementById('media-ppt-panel');
+        var bVideo = document.getElementById('btn-show-video');
+        var bPpt = document.getElementById('btn-show-ppt');
+        var vPlayer = document.getElementById('dashboardInlinePlayer');
+
+        if (tab === 'video') {
+            if (vPanel) vPanel.style.display = 'block';
+            if (pPanel) pPanel.style.display = 'none';
+            if (bVideo) {
+                bVideo.style.background = 'var(--primary)';
+                bVideo.style.color = '#ffffff';
+            }
+            if (bPpt) {
+                bPpt.style.background = 'transparent';
+                bPpt.style.color = 'var(--text-dim)';
+            }
+        } else if (tab === 'ppt') {
+            if (vPlayer) {
+                vPlayer.pause();
+            }
+            if (vPanel) vPanel.style.display = 'none';
+            if (pPanel) pPanel.style.display = 'block';
+            if (bPpt) {
+                bPpt.style.background = 'var(--primary)';
+                bPpt.style.color = '#ffffff';
+            }
+            if (bVideo) {
+                bVideo.style.background = 'transparent';
+                bVideo.style.color = 'var(--text-dim)';
+            }
+        }
+
+        if (shouldScroll) {
+            var target = document.getElementById('learning-demo');
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+    }
+
     function playEventVideo(videoUrl, title) {
         var player = document.getElementById('eventPlayer');
         var source = document.getElementById('eventVideoSource');
@@ -764,6 +950,9 @@
     document.getElementById('videoModal').addEventListener('hidden.bs.modal', function () {
         stopEventVideo();
     });
+
+    // Initialize theme on page load
+    initTheme();
 </script>
 
 </body>
