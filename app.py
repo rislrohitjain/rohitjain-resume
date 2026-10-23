@@ -21,9 +21,10 @@ user_data = {
         ],
         "resume_url": "static/Resume_Original_Rohit_Jain.pdf"  # Replace with actual file download link
     },
-    "summary": "Results-driven Full-Stack Developer and AI Automation Architect with 9+ years of experience delivering high-impact government portals and enterprise systems serving 100,000+ users. Proven track record of cutting result generation time by 50% via optimized stored procedures[cite: 1].",
+    "summary": "Results-driven Full-Stack Developer and AI Automation Architect with 9+ years of experience delivering high-impact government portals and enterprise systems serving 100,000+ users. 1st Rank Winner & Champion at BrowserStack Testathon Jaipur ($105 USD Prize). Proven track record of cutting result generation time by 50% via optimized stored procedures[cite: 1].",
     "stats": [
         {"value": "9+", "label": "Years Exp"},
+        {"value": "1st Rank", "label": "BrowserStack Winner ($105)"},
         {"value": "100K+", "label": "Users Served"},
         {"value": "50K+", "label": "Daily API Calls"},
         {"value": "8", "label": "AI Applications"}
@@ -280,6 +281,24 @@ user_data = {
             ]
         },
         {
+            "title": "BrowserStack Testathon Jaipur 2026",
+            "type": "Onsite Hackathon & Championship Competition",
+            "is_champion": True,
+            "rank": "1st Rank Champion",
+            "prize": "$105 USD Prize Awarded by BrowserStack",
+            "badge": "🥇 1st Rank Champion • $105 USD Prize",
+            "achievement": "🏆 1st Rank Winner & Champion — Awarded 1st Prize of $105 USD from BrowserStack in Live 3-Hour Automation Hackathon",
+            "date": "Saturday, September 5, 2026 | 10:00 AM IST onwards",
+            "location": "Metacube Software Pvt. Ltd., Sitapura Industrial Area, Jaipur",
+            "organizer": "BrowserStack Community Team – Jaipur",
+            "learnings": [
+                "🥇 1st Rank Champion (1st Prize of $105 USD): Secured the 1st Rank across all participating software engineers and QA professionals in Jaipur, winning the top cash prize of $105 USD awarded directly by BrowserStack.",
+                "⚡ 3-Hour Live Hackathon & Bug Hunting: Built, documented, and executed a complete end-to-end automated test suite for an intentionally buggy live web application under strict 3-hour time constraints, maximizing defect discovery and assertion coverage.",
+                "☁️ BrowserStack Cloud Test Suite: Mastered and deployed BrowserStack Automate (parallel cross-browser and real mobile device testing), BrowserStack Test Management, Test Companion, and Test Observability for automated failure and log analysis.",
+                "🛠️ Framework & SDK Integration: Integrated automated Selenium/Playwright test scripts using BrowserStack SDK, configuring continuous test execution and publishing complete test suites to GitHub."
+            ]
+        },
+        {
             "title": "UiPath Jaipur: Agentic Automation in Practice (Maestro Flow & Live Build)",
             "type": "Onsite / In-Person Event",
             "date": "Saturday, October 3, 2026 | 11:00 AM – 3:00 PM IST",
@@ -299,18 +318,7 @@ user_data = {
                 "Real Enterprise Problem Solving: Mastered agentic vs rule-based architecture trade-offs, token economics, cost optimization at scale, and production observability logging."
             ]
         },
-        {
-            "title": "BrowserStack Testathon Jaipur 2026",
-            "type": "Onsite / In-Person Event",
-            "date": "Saturday, September 5, 2026 | 10:00 AM IST onwards",
-            "location": "Metacube Software Pvt. Ltd., Sitapura Industrial Area, Jaipur",
-            "organizer": "BrowserStack Community Team – Jaipur",
-            "learnings": [
-                "3-Hour Live Hackathon: Designed, documented, and built an end-to-end automated test suite for a live buggy web application under strict 3-hour time constraints.",
-                "BrowserStack Suite Mastery: Gained hands-on experience using BrowserStack Automate (cross-browser/device execution), BrowserStack Test Management, Test Companion, and Test Observability for failure analysis.",
-                "Framework & SDK Integration: Integrated Selenium/Playwright test scripts using BrowserStack SDK and published complete test repositories to GitHub."
-            ]
-        },
+
         {
             "title": "Cloud Coffee Connect — AI on AWS & Open Source",
             "type": "Onsite / In-Person Event",
