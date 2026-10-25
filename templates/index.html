@@ -81,6 +81,7 @@
       ],
       "award": [
         "1st Rank Winner & Champion ($105 USD Prize) - BrowserStack Testathon Jaipur (2026)",
+        "Top 5 Winner - Social Media Contest at Claude Community Jaipur Meetup Launch (2026)",
         "6th Rank in UiPath Jaipur Agentic Automation Live Technical Quiz (2026)"
       ]
     }
@@ -1012,6 +1013,9 @@
                                 {% if event.ticket_url %}
                                 <a href="{{ event.ticket_url }}" target="_blank" class="badge bg-success text-white text-decoration-none ms-2 font-monospace shadow-sm" style="font-size: 0.7rem;"><i class="bi bi-ticket-perforated-fill me-1"></i>My Ticket (Confirmed)</a>
                                 {% endif %}
+                                {% if event.linkedin_post %}
+                                <a href="{{ event.linkedin_post }}" target="_blank" class="badge text-white text-decoration-none ms-2 font-monospace shadow-sm" style="background: #0077b5; font-size: 0.7rem;"><i class="bi bi-linkedin me-1"></i>View LinkedIn Post</a>
+                                {% endif %}
                                 {% if event.video_url %}
                                 <button type="button" class="btn btn-sm btn-outline-info ms-2 font-monospace py-0 px-2" style="font-size: 0.75rem;" data-bs-toggle="modal" data-bs-target="#videoModal" onclick="playEventVideo('{{ url_for('static', filename=event.video_url) }}', '{{ event.title }}')">
                                     <i class="bi bi-play-circle-fill me-1"></i>Play Video Highlights
@@ -1038,12 +1042,29 @@
                                 <i class="bi bi-trophy-fill me-2" style="color: #d97706;"></i>{{ event.achievement }}
                             </div>
                             {% endif %}
+                            {% if event.post_content %}
+                            <div class="mb-2 p-3 rounded-3" style="background: rgba(0, 119, 181, 0.08); border-left: 3px solid #0077b5; border-top: 1px solid var(--card-border); border-right: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border);">
+                                <div class="d-flex justify-content-between align-items-center mb-1">
+                                    <span class="fw-bold font-monospace" style="color: #0077b5; font-size: 0.74rem;">
+                                        {% if event.is_champion %}
+                                        <i class="bi bi-megaphone-fill me-1"></i>Official Winner Announcement:
+                                        {% else %}
+                                        <i class="bi bi-linkedin me-1"></i>Official Event Post:
+                                        {% endif %}
+                                    </span>
+                                    {% if event.linkedin_post %}
+                                    <a href="{{ event.linkedin_post }}" target="_blank" class="text-decoration-none font-monospace small" style="color: #0077b5; font-size: 0.72rem;">Open on LinkedIn <i class="bi bi-box-arrow-up-right ms-1"></i></a>
+                                    {% endif %}
+                                </div>
+                                <p class="mb-0 small" style="color: var(--text-body); font-size: 0.78rem; line-height: 1.5; font-style: italic;">"{{ event.post_content }}"</p>
+                            </div>
+                            {% endif %}
                             {% if event.images %}
                             <div class="mt-2 mb-2">
-                                <span class="text-info font-monospace small d-block mb-1"><i class="bi bi-images me-1"></i>Event Photos:</span>
+                                <span class="text-info font-monospace small d-block mb-1"><i class="bi bi-images me-1"></i>{% if event.is_champion %}Winner Announcement &amp; Award Verification Proofs:{% else %}Event Photos:{% endif %}</span>
                                 <div class="d-flex gap-2 flex-wrap">
                                     {% for img in event.images %}
-                                    <img src="{{ url_for('static', filename=img) }}" class="rounded-3 border" style="width: 85px; height: 55px; object-fit: cover; cursor: pointer; transition: transform 0.2s ease; border-color: var(--card-border) !important;" onclick="openImageModal('{{ url_for('static', filename=img) }}')" alt="Event Photo">
+                                    <img src="{{ url_for('static', filename=img) }}" class="rounded-3 border" style="width: 95px; height: 65px; object-fit: cover; cursor: pointer; transition: transform 0.2s ease; border-color: var(--card-border) !important;" onclick="openImageModal('{{ url_for('static', filename=img) }}')" alt="Event Photo">
                                     {% endfor %}
                                 </div>
                             </div>

@@ -264,20 +264,31 @@ user_data = {
     "events": [
         {
             "title": "Claude Community Jaipur Meetup",
-            "type": "Upcoming In-Person Event",
-            "status": "🎟️ Event Registered • Waiting for Event Date (October 24, 2026)",
-            "registration_date": "Confirmed RSVP • Ticket Issued",
-            "date": "Saturday, October 24, 2026 | 10:30 AM – 1:00 PM GMT+5:30",
-            "location": "Malaviya National Institute of Technology (MNIT), JLN Marg, Malviya Nagar, Jaipur, Rajasthan 302017",
-            "organizer": "Claude Community Jaipur in collaboration with Jaipur Data & AI Community (Speakers: Jason Sears - Engineering Lead, Origin Digital Chicago ✈️ | Ajay Sharma - Senior Solution Architect, Origin Digital Jaipur)",
+            "type": "Onsite / In-Person Event",
+            "badge": "🏆 Top 5 Contest Winner",
+            "achievement": "🏆 Top 5 Winner — Social Media Contest at Claude Community Jaipur Meetup Launch (Award presented on stage by Jason Sears, Origin Chicago)",
+            "status": "✅ Attended Onsite on October 24, 2026 • Top 5 Contest Winner",
+            "date": "Saturday, October 24, 2026 | 10:00 AM – 1:30 PM IST",
+            "location": "JECRC Foundation, Jaipur, Rajasthan",
+            "organizer": "Claude Community Jaipur in collaboration with Jaipur Data & AI Community (Sponsored by ORIGIN | Panellists: Jagmohan Rathore, Jobin Ephrem, Stuart Brown, Jaideep Singh, Arpit Bhargava | Award Presenter: Jason Sears - Engineering Lead, Origin Chicago)",
             "event_url": "https://luma.link/XxRFO63oFj",
             "ticket_url": "https://luma.link/rXSoj2F9sT",
             "map_url": "https://luma.link/7cBc9mWN8q",
+            "linkedin_post": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7519990052261625856/?openCollaboratorList=false",
+            "post_content": "🏆 Honored to win the Social Media Contest (Top 5) at the Claude Community Jaipur Meetup launch! A huge thank you to Jason Sears (Origin) for presenting the award, and to everyone who engaged with my posts. Spent an electric Saturday morning at JECRC with 100+ builders discussing Enterprise Data and Agentic AI. My biggest takeaway? The future isn't humans vs. agents—it's humans WITH agents. The AI-native SDLC is already transforming how we plan, code, and deploy.",
+            "images": [
+                "images/claude_event_1.jpg",
+                "images/claude_event_5.jpg",
+                "images/claude_event_3.jpg",
+                "images/claude_event_2.jpg",
+                "images/claude_event_4.jpg",
+                "images/claude_event_6.jpg"
+            ],
             "learnings": [
-                "Claude Code & MCP (Model Context Protocol): Practical deep-dive into Anthropic's Model Context Protocol (MCP) server standards, tool calling, and autonomous developer workflows.",
-                "Production Agentic AI Architectures: Engineering multi-agent coordination, prompt caching economics, and real-world generative AI production deployment.",
-                "Global Speaker Keynote & Lightning Demos: Insights from Jason Sears (Engineering Lead, Origin Digital Chicago) and Ajay Sharma on enterprise-scale LLMs.",
-                "Jaipur AI Community Collaboration: Live in-person networking and peer architecture discussions with Jaipur's leading AI engineers, founders, and developers at MNIT Jaipur."
+                "🏆 Social Media Contest Winner (Top 5): Honored on stage with official Origin & Claude Community Jaipur award and swag kit presented directly by Jason Sears (Engineering Lead, Origin Chicago).",
+                "Enterprise Data & Agentic AI: Engaged in deep technical sessions with 100+ builders on scaling enterprise workflows and navigating the transition from ad-hoc prompting to robust agentic architectures.",
+                "The AI-Native SDLC (Humans WITH Agents): Explored the paradigm where autonomous agents collaborate with software engineers across planning, architecture, coding, unit testing, and deployment.",
+                "Claude Code & Anthropic Model Context Protocol (MCP): Practical insights on MCP server architecture, prompt caching economics, and multi-agent systems from international engineering leaders."
             ]
         },
         {
@@ -290,7 +301,12 @@ user_data = {
             "achievement": "🏆 1st Rank Winner & Champion — Awarded 1st Prize of $105 USD from BrowserStack in Live 3-Hour Automation Hackathon",
             "date": "Saturday, September 5, 2026 | 10:00 AM IST onwards",
             "location": "Metacube Software Pvt. Ltd., Sitapura Industrial Area, Jaipur",
-            "organizer": "BrowserStack Community Team – Jaipur",
+            "organizer": "BrowserStack Community Team – Jaipur (Hosted at Metacube Software Pvt. Ltd.)",
+            "post_content": "Jaipur #Testathon, that's a wrap! 🚀 Huge congratulations to our winners who put their testing skills to the test and came out on top: 🥇 First Place: Rohit Jain, 🥈 Second Place: Satvik Choudhary, 🥉 Third Place: Bhomesh Razdan — BrowserStack Official Announcement",
+            "images": [
+                "images/browserstack_winner_announcement.jpg",
+                "images/browserstack_reward_usd105.jpg"
+            ],
             "learnings": [
                 "🥇 1st Rank Champion (1st Prize of $105 USD): Secured the 1st Rank across all participating software engineers and QA professionals in Jaipur, winning the top cash prize of $105 USD awarded directly by BrowserStack.",
                 "⚡ 3-Hour Live Hackathon & Bug Hunting: Built, documented, and executed a complete end-to-end automated test suite for an intentionally buggy live web application under strict 3-hour time constraints, maximizing defect discovery and assertion coverage.",

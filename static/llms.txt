@@ -40,6 +40,7 @@
 5. **On-Graph Technologies Pvt. Ltd. (December 2015 – August 2016):** Junior Developer building CMS websites and SMS gateways.
 
 ## 🏆 Honors, Awards & Community Engagement
+- **Claude Community Jaipur Meetup Launch (October 2026):** 🏆 Top 5 Winner in Social Media Contest; awarded official Claude Community Jaipur & Origin swag kit on stage by Jason Sears (Engineering Lead, Origin Chicago) at JECRC Foundation.
 - **UiPath Jaipur Chapter (October 2026):** Achieved 6th Rank in Live Technical Quiz at "Agentic Automation in Practice: Maestro Flow & Live Build" meetup; awarded official UiPath Swag Gift.
 - **BrowserStack Testathon Jaipur (September 2026):** 🏆 1st Rank Winner & Champion — Awarded 1st Prize of $105 USD by BrowserStack for engineering an end-to-end automated test suite under a 3-hour live hackathon challenge at Metacube Software.
 - **Cloud Coffee Connect — AI on AWS & Open Source (September 2026):** Onsite participant at Pratham Software Sitapura discussing open-source LLMs on AWS.
