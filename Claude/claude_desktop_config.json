@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "rohitjain-resume": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "D:\\projects\\python\\rohitjain-resume"
+      ]
+    }
+  }
+}
