@@ -22,7 +22,7 @@ user_data = {
         ],
         "resume_url": "static/Resume_Original_Rohit_Jain.pdf"  # Replace with actual file download link
     },
-    "summary": "Results-driven Full-Stack Developer and AI Automation Architect with 9+ years of experience delivering high-impact government portals and enterprise systems serving 100,000+ users. 1st Rank Winner & Champion at BrowserStack Testathon Jaipur ($105 USD Prize). Proven track record of cutting result generation time by 50% via optimized stored procedures[cite: 1].",
+    "summary": "Results-driven Senior Full-Stack Developer & AI Automation Architect with 9+ years of experience delivering mission-critical enterprise systems serving 100,000+ users. 1st Rank Champion at BrowserStack Testathon Jaipur ($105 USD Prize) and Top 5 Winner at Claude Community Jaipur Meetup. Proven track record of architecting agentic AI pipelines and cutting result generation time by 50% via optimized database stored procedures.",
     "stats": [
         {"value": "9+", "label": "Years Exp"},
         {"value": "1st Rank", "label": "BrowserStack Winner ($105)"},
@@ -32,7 +32,7 @@ user_data = {
     ],
     "skills": {
         "AI & LLM": ["Python Agentic AI", "LangGraph", "Ollama & Llama", "LangChain", "Gemini API", "Claude", "RAG Systems", "ChromaDB Vector DB", "n8n"],
-        "Backend": ["Python (Intermediate)", "FastAPI", "Flask", "PHP (Laravel/CakePHP)", ".NET Core Web API", "REST/SOAP APIs"],
+        "Backend": ["Python & Agentic Systems", "FastAPI", "Flask", "PHP (Laravel/CakePHP)", ".NET Core Web API", "REST/SOAP APIs"],
         "Database": ["PostgreSQL", "MySQL", "MSSQL", "ChromaDB Vector DB", "Stored Procedures"],
         "BI & DevOps": ["Pentaho", "Tableau", "Git", "Docker", "IIS"]
     },
@@ -389,9 +389,9 @@ user_data = {
                 "Architected full SDLC for a platform serving 100,000+ candidates.",
                 "Engineered automated seat-allotment modules, cutting processing time by 40%.",
                 "Implemented RBAC for 15+ user roles, achieving zero unauthorized access incidents.",
-                "Deployed Ollama for AI code-assistance, reducing manual code-reviews by 30%[cite: 1].",
-                "Integrated Gemini and Claude APIs into VS Code, reducing debugging time by 25%[cite: 1].",
-                "Piloting Agentic AI workflows (n8n, LangChain) and .NET Core microservices[cite: 1]."
+                "Deployed Ollama for AI code-assistance, reducing manual code-reviews by 30%.",
+                "Integrated Gemini and Claude APIs into VS Code, reducing debugging time by 25%.",
+                "Piloting Agentic AI workflows (n8n, LangChain) and .NET Core microservices."
             ]
         },
         {
@@ -399,12 +399,12 @@ user_data = {
             "company": "DevIT Solutions Pvt. Ltd.",
             "period": "February 2020 – April 2024",
             "details": [
-                "Delivered large-scale government portals serving 50,000+ daily users in Rajasthan[cite: 1].",
-                "Secured High Court/E-Court API integrations using AES encryption and tokens[cite: 1].",
-                "Reduced RSOS result-generation time by 50% via optimized MySQL stored procedures[cite: 1].",
-                "Built Paramedical Council seat-matrix algorithms with 99.9% accuracy[cite: 1].",
-                "Designed Pentaho and Tableau BI dashboards for real-time reporting on 10+ KPIs[cite: 1].",
-                "Managed full SDLC across Laravel, CakePHP, CodeIgniter, MySQL, and MSSQL[cite: 1]."
+                "Delivered large-scale government portals serving 50,000+ daily users in Rajasthan.",
+                "Secured High Court/E-Court API integrations using AES encryption and tokens.",
+                "Reduced RSOS result-generation time by 50% via optimized MySQL stored procedures.",
+                "Built Paramedical Council seat-matrix algorithms with 99.9% accuracy.",
+                "Designed Pentaho and Tableau BI dashboards for real-time reporting on 10+ KPIs.",
+                "Managed full SDLC across Laravel, CakePHP, CodeIgniter, MySQL, and MSSQL."
             ]
         },
         {
@@ -412,9 +412,9 @@ user_data = {
             "company": "Akal Information Systems Ltd.",
             "period": "October 2017 – January 2020",
             "details": [
-                "Developed enterprise web applications for government and corporate clients[cite: 1].",
-                "Contributed to complex API integrations and database optimization projects[cite: 1].",
-                "Collaborated with cross-functional teams to meet aggressive delivery timelines[cite: 1]."
+                "Developed enterprise web applications for government and corporate clients.",
+                "Contributed to complex API integrations and database optimization projects.",
+                "Collaborated with cross-functional teams to meet aggressive delivery timelines."
             ]
         },
         {
@@ -422,8 +422,8 @@ user_data = {
             "company": "Vertex Plus Software Pvt. Ltd.",
             "period": "August 2016 – October 2017",
             "details": [
-                "Built responsive web applications and client portals using PHP and Bootstrap[cite: 1].",
-                "Gained foundational expertise in SOAP and REST API consumption[cite: 1]."
+                "Built responsive web applications and client portals using PHP and Bootstrap.",
+                "Gained foundational expertise in SOAP and REST API consumption."
             ]
         },
         {
@@ -431,8 +431,8 @@ user_data = {
             "company": "On-Graph Technologies Pvt. Ltd.",
             "period": "December 2015 – August 2016",
             "details": [
-                "Developed CMS-driven websites and community portals[cite: 1].",
-                "Integrated SMS gateways and real-time notification systems[cite: 1]."
+                "Developed CMS-driven websites and community portals.",
+                "Integrated SMS gateways and real-time notification systems."
             ]
         }
     ]
