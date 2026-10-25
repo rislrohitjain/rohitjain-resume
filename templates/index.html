@@ -925,9 +925,153 @@
     </div>
 </div>
 
+<!-- Tech Events & Community Participation Section -->
+        {% if user.events %}
+        <div id="events" class="bento-item" style="grid-column: span 4; padding: 24px;">
+            <div class="d-flex align-items-center mb-3">
+                <span class="fs-2 me-3">📍</span>
+                <div>
+                    <h3 class="fw-bold mb-0" style="color: var(--text-main);">Tech Events & Community Participation <span class="badge bg-info text-dark font-monospace align-middle ms-2" style="font-size: 0.72rem;">Onsite & In-Person</span></h3>
+                    <p class="text-info small mb-0 font-monospace">Active in-person tech community engagement, hackathons & conferences in Jaipur</p>
+                </div>
+            </div>
+            <div class="row g-3">
+                {% for event in user.events %}
+                <div class="col-md-6">
+                    <div class="p-3 p-md-4 rounded-4 h-100 d-flex flex-column position-relative overflow-hidden" 
+                         style="background: {% if event.is_champion %}linear-gradient(145deg, rgba(245, 158, 11, 0.08) 0%, var(--card-inner) 100%){% else %}var(--card-inner){% endif %}; 
+                                border: {% if event.is_champion %}2px solid #f59e0b{% else %}1px solid var(--card-border){% endif %};
+                                box-shadow: {% if event.is_champion %}0 0 25px rgba(245, 158, 11, 0.22){% else %}none{% endif %};">
+                        
+                        {% if event.is_champion %}
+                        <div class="mb-2 p-2 px-3 rounded-3 d-flex align-items-center justify-content-between flex-wrap gap-2 shadow-sm" style="background: linear-gradient(90deg, #f59e0b, #d97706); color: #0f172a; font-weight: 800;">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-trophy-fill fs-5 me-2 text-dark"></i>
+                                <span class="font-monospace text-uppercase" style="font-size: 0.82rem; font-weight: 800; letter-spacing: 0.5px;">1st Rank Winner &amp; Champion</span>
+                            </div>
+                            <span class="badge bg-dark text-warning font-monospace px-2 py-1" style="font-size: 0.75rem; border: 1px solid rgba(245, 158, 11, 0.6);">
+                                <i class="bi bi-cash-stack me-1 text-warning"></i>$105 USD Prize Awarded
+                            </span>
+                        </div>
+                        {% endif %}
+
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="fw-bold {% if event.is_champion %}text-warning{% else %}text-info{% endif %} mb-0 fs-6">{{ event.title }}</h5>
+                            <div>
+                                {% if event.badge %}
+                                <span class="badge bg-warning text-dark font-monospace fw-bold ms-2" style="font-size: 0.68rem;"><i class="bi bi-award-fill me-1"></i>{{ event.badge }}</span>
+                                {% elif event.type %}
+                                <span class="badge custom-badge font-monospace ms-2" style="font-size: 0.65rem;"><i class="bi bi-geo-alt-fill me-1"></i>{{ event.type }}</span>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        {% if event.achievement %}
+                        <div class="mb-2 p-2 px-3 rounded-3 font-monospace {% if event.is_champion %}fw-bold shadow-sm{% endif %}" 
+                             style="background: {% if event.is_champion %}rgba(245, 158, 11, 0.18){% else %}rgba(245, 158, 11, 0.1){% endif %}; 
+                                    border: 1px solid {% if event.is_champion %}#f59e0b{% else %}rgba(245, 158, 11, 0.3){% endif %}; 
+                                    color: #d97706; 
+                                    font-size: 0.78rem; line-height: 1.4;">
+                            <i class="bi bi-trophy-fill me-2" style="color: #d97706;"></i>{{ event.achievement }}
+                        </div>
+                        {% elif event.status %}
+                        <div class="mb-2 p-2 px-3 rounded-3 font-monospace" style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); color: #10b981; font-size: 0.78rem;">
+                            <i class="bi bi-calendar-check-fill me-2"></i>{{ event.status }}
+                        </div>
+                        {% endif %}
+                        
+                        <!-- Compact Event Info & Action Links Box -->
+                        <div class="mb-2 p-2 px-3 rounded-3 small" style="background: var(--card-bg); border: 1px solid var(--card-border);">
+                            <div class="d-flex justify-content-between align-items-center flex-wrap gap-1 mb-1">
+                                <span style="color: var(--text-main); font-size: 0.76rem;"><i class="bi bi-calendar3 text-info me-1"></i><strong>{{ event.date }}</strong></span>
+                                {% if event.registration_date %}
+                                <span class="badge custom-badge font-monospace" style="font-size: 0.62rem;">{{ event.registration_date }}</span>
+                                {% endif %}
+                            </div>
+                            <div class="mb-1" style="color: var(--text-dim); font-size: 0.75rem;">
+                                <i class="bi bi-geo-alt-fill text-info me-1"></i><strong>Venue:</strong> <span style="color: var(--text-body);">{{ event.location }}</span>
+                                {% if event.organizer %}
+                                <span class="d-block mt-1" style="color: var(--text-dim);"><i class="bi bi-people-fill text-info me-1"></i><strong>Organizer:</strong> <span style="color: var(--text-body);">{{ event.organizer }}</span></span>
+                                {% endif %}
+                            </div>
+                            <div class="d-flex flex-wrap gap-1 pt-1 mt-1 border-top" style="border-color: var(--card-border) !important;">
+                                {% if event.map_url %}
+                                <a href="{{ event.map_url }}" target="_blank" class="badge bg-info text-dark text-decoration-none font-monospace py-1 px-2" style="font-size: 0.68rem;"><i class="bi bi-map-fill me-1"></i>Google Maps</a>
+                                {% endif %}
+                                {% if event.event_url %}
+                                <a href="{{ event.event_url }}" target="_blank" class="badge bg-outline-info text-info border border-info text-decoration-none font-monospace py-1 px-2" style="font-size: 0.68rem;"><i class="bi bi-box-arrow-up-right me-1"></i>Event Page</a>
+                                {% endif %}
+                                {% if event.ticket_url %}
+                                <a href="{{ event.ticket_url }}" target="_blank" class="badge bg-success text-white text-decoration-none font-monospace py-1 px-2 shadow-sm" style="font-size: 0.68rem;"><i class="bi bi-ticket-perforated-fill me-1"></i>My Ticket</a>
+                                {% endif %}
+                                {% if event.linkedin_post %}
+                                <a href="{{ event.linkedin_post }}" target="_blank" class="badge text-white text-decoration-none font-monospace py-1 px-2 shadow-sm" style="background: #0077b5; font-size: 0.68rem;"><i class="bi bi-linkedin me-1"></i>LinkedIn Post</a>
+                                {% endif %}
+                                {% if event.video_url %}
+                                <button type="button" class="btn btn-sm btn-outline-info font-monospace py-0 px-2" style="font-size: 0.7rem;" data-bs-toggle="modal" data-bs-target="#videoModal" onclick="playEventVideo('{{ url_for('static', filename=event.video_url) }}', '{{ event.title }}')">
+                                    <i class="bi bi-play-circle-fill me-1"></i>Video Highlights
+                                </button>
+                                <a href="{{ url_for('static', filename=event.video_url) }}" target="_blank" class="btn btn-sm btn-info text-dark font-monospace py-0 px-2" style="font-size: 0.7rem;">
+                                    <i class="bi bi-box-arrow-up-right me-1"></i>Open Video
+                                </a>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        {% if event.post_content %}
+                        <div class="mb-2 p-2 px-3 rounded-2" style="background: rgba(56, 189, 248, 0.05); border: 1px solid var(--card-border); border-left: 3px solid var(--accent); font-size: 0.75rem; line-height: 1.45;">
+                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                <span class="fw-bold font-monospace" style="color: var(--accent); font-size: 0.7rem;">
+                                    {% if event.is_champion %}
+                                    <i class="bi bi-megaphone-fill me-1"></i>Official Winner Announcement:
+                                    {% else %}
+                                    <i class="bi bi-linkedin me-1"></i>Official Event Post:
+                                    {% endif %}
+                                </span>
+                                {% if event.linkedin_post %}
+                                <a href="{{ event.linkedin_post }}" target="_blank" class="text-decoration-none font-monospace small" style="color: var(--accent); font-size: 0.68rem;">Open Post <i class="bi bi-box-arrow-up-right ms-1"></i></a>
+                                {% endif %}
+                            </div>
+                            <p class="mb-0 small" style="color: var(--text-body); font-style: italic;">"{{ event.post_content }}"</p>
+                        </div>
+                        {% endif %}
+
+                        {% if event.images %}
+                        <div class="mb-2">
+                            <span class="text-info font-monospace d-block mb-1" style="font-size: 0.7rem;"><i class="bi bi-images me-1"></i>{% if event.is_champion %}Winner Announcement &amp; Proofs (Click to expand):{% else %}Event Highlights (Click to expand):{% endif %}</span>
+                            <div class="d-flex gap-2 flex-wrap">
+                                {% for img in event.images %}
+                                <img src="{{ url_for('static', filename=img) }}" class="rounded-2 border" style="width: 76px; height: 52px; object-fit: cover; cursor: pointer; transition: transform 0.2s ease; border-color: var(--card-border) !important;" onclick="openImageModal('{{ url_for('static', filename=img) }}')" alt="Event Photo" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+                                {% endfor %}
+                            </div>
+                        </div>
+                        {% endif %}
+
+                        <!-- Natural flow without empty whitespace gaps -->
+                        <div class="mt-2 pt-2 border-top" style="border-color: var(--card-border) !important;">
+                            <h6 class="text-uppercase text-info small font-monospace mb-2" style="font-size: 0.72rem;">
+                                {% if event.type and 'Upcoming' in event.type %}
+                                <i class="bi bi-mortarboard-fill me-1"></i>Key Topics &amp; Agenda:
+                                {% else %}
+                                <i class="bi bi-mortarboard-fill me-1"></i>Key Onsite Learnings &amp; Skills Acquired:
+                                {% endif %}
+                            </h6>
+                            <ul class="small ps-3 mb-0" style="color: var(--text-body); font-size: 0.8rem;">
+                                {% for item in event.learnings %}
+                                <li class="mb-1 leading-normal">{{ item }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
 <!-- Autonomous Agentic Ecosystem Section -->
 {% if user.agentic_team %}
-<div class="bento-item" style="grid-column: span 4; padding: 32px;">
+<div class="bento-item" style="grid-column: span 4; padding: 24px;">
     <div class="d-flex align-items-center mb-4">
         <span class="fs-2 me-3">🤖</span>
         <div>
@@ -951,148 +1095,7 @@
 </div>
 {% endif %}
 
-        <!-- Tech Events & Community Participation Section -->
-        {% if user.events %}
-        <div id="events" class="bento-item" style="grid-column: span 4; padding: 32px;">
-            <div class="d-flex align-items-center mb-4">
-                <span class="fs-2 me-3">📍</span>
-                <div>
-                    <h3 class="fw-bold mb-0" style="color: var(--text-main);">Tech Events & Community Participation <span class="badge bg-info text-dark font-monospace align-middle ms-2" style="font-size: 0.75rem;">Onsite & In-Person</span></h3>
-                    <p class="text-info small mb-0 font-monospace">Active in-person tech community engagement, hackathons & conferences in Jaipur</p>
-                </div>
-            </div>
-            <div class="row g-4">
-                {% for event in user.events %}
-                <div class="col-md-6">
-                    <div class="p-4 rounded-4 h-100 d-flex flex-column position-relative overflow-hidden" 
-                         style="background: {% if event.is_champion %}linear-gradient(145deg, rgba(245, 158, 11, 0.08) 0%, var(--card-inner) 100%){% else %}var(--card-inner){% endif %}; 
-                                border: {% if event.is_champion %}2px solid #f59e0b{% else %}1px solid var(--card-border){% endif %};
-                                box-shadow: {% if event.is_champion %}0 0 25px rgba(245, 158, 11, 0.22){% else %}none{% endif %};">
-                        
-                        {% if event.is_champion %}
-                        <div class="mb-3 p-2 px-3 rounded-3 d-flex align-items-center justify-content-between flex-wrap gap-2 shadow-sm" style="background: linear-gradient(90deg, #f59e0b, #d97706); color: #0f172a; font-weight: 800;">
-                            <div class="d-flex align-items-center">
-                                <i class="bi bi-trophy-fill fs-5 me-2 text-dark"></i>
-                                <span class="font-monospace text-uppercase" style="font-size: 0.85rem; font-weight: 800; letter-spacing: 0.5px;">1st Rank Winner &amp; Champion</span>
-                            </div>
-                            <span class="badge bg-dark text-warning font-monospace px-2 py-1" style="font-size: 0.78rem; border: 1px solid rgba(245, 158, 11, 0.6);">
-                                <i class="bi bi-cash-stack me-1 text-warning"></i>$105 USD Prize Awarded
-                            </span>
-                        </div>
-                        {% endif %}
-
-                        <div class="d-flex justify-content-between align-items-start mb-2">
-                            <h5 class="fw-bold {% if event.is_champion %}text-warning{% else %}text-info{% endif %} mb-0 fs-6">{{ event.title }}</h5>
-                            <div>
-                                {% if event.badge %}
-                                <span class="badge bg-warning text-dark font-monospace fw-bold ms-2" style="font-size: 0.68rem;"><i class="bi bi-award-fill me-1"></i>{{ event.badge }}</span>
-                                {% elif event.type %}
-                                <span class="badge custom-badge font-monospace ms-2" style="font-size: 0.65rem;"><i class="bi bi-geo-alt-fill me-1"></i>{{ event.type }}</span>
-                                {% endif %}
-                            </div>
-                        </div>
-                        
-                        <div class="mb-3 small">
-                            <div class="mb-2 p-2 rounded-3" style="background: var(--card-bg); border: 1px solid var(--card-border);">
-                                <div class="d-flex justify-content-between align-items-center mb-1">
-                                    <span class="text-info fw-bold"><i class="bi bi-clock-history me-1"></i>Date & Time:</span>
-                                    {% if event.registration_date %}
-                                    <span class="badge custom-badge font-monospace" style="font-size: 0.65rem;">{{ event.registration_date }}</span>
-                                    {% endif %}
-                                </div>
-                                <span class="font-monospace d-block" style="color: var(--text-main);">{{ event.date }}</span>
-                            </div>
-                            <div class="mb-1" style="color: var(--text-dim);">
-                                <i class="bi bi-building text-info me-2"></i><strong>Venue (Onsite):</strong> <span style="color: var(--text-body);">{{ event.location }}</span>
-                                {% if event.map_url %}
-                                <a href="{{ event.map_url }}" target="_blank" class="badge bg-info text-dark text-decoration-none ms-2 font-monospace" style="font-size: 0.7rem;"><i class="bi bi-map-fill me-1"></i>View on Google Maps</a>
-                                {% endif %}
-                                {% if event.event_url %}
-                                <a href="{{ event.event_url }}" target="_blank" class="badge bg-outline-info text-info border border-info text-decoration-none ms-2 font-monospace" style="font-size: 0.7rem;"><i class="bi bi-box-arrow-up-right me-1"></i>Official Event Details</a>
-                                {% endif %}
-                                {% if event.ticket_url %}
-                                <a href="{{ event.ticket_url }}" target="_blank" class="badge bg-success text-white text-decoration-none ms-2 font-monospace shadow-sm" style="font-size: 0.7rem;"><i class="bi bi-ticket-perforated-fill me-1"></i>My Ticket (Confirmed)</a>
-                                {% endif %}
-                                {% if event.linkedin_post %}
-                                <a href="{{ event.linkedin_post }}" target="_blank" class="badge text-white text-decoration-none ms-2 font-monospace shadow-sm" style="background: #0077b5; font-size: 0.7rem;"><i class="bi bi-linkedin me-1"></i>View LinkedIn Post</a>
-                                {% endif %}
-                                {% if event.video_url %}
-                                <button type="button" class="btn btn-sm btn-outline-info ms-2 font-monospace py-0 px-2" style="font-size: 0.75rem;" data-bs-toggle="modal" data-bs-target="#videoModal" onclick="playEventVideo('{{ url_for('static', filename=event.video_url) }}', '{{ event.title }}')">
-                                    <i class="bi bi-play-circle-fill me-1"></i>Play Video Highlights
-                                </button>
-                                <a href="{{ url_for('static', filename=event.video_url) }}" target="_blank" class="btn btn-sm btn-info text-dark font-monospace py-0 px-2 ms-1" style="font-size: 0.75rem;">
-                                    <i class="bi bi-box-arrow-up-right me-1"></i>Open Video in New Tab
-                                </a>
-                                {% endif %}
-                            </div>
-                            {% if event.organizer %}
-                            <div class="mb-2" style="color: var(--text-dim);"><i class="bi bi-people-fill text-info me-2"></i><strong>Organizer:</strong> <span style="color: var(--text-body);">{{ event.organizer }}</span></div>
-                            {% endif %}
-                            {% if event.status %}
-                            <div class="mb-2 p-2 rounded-3 font-monospace" style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); color: #10b981; font-size: 0.78rem;">
-                                <i class="bi bi-calendar-check-fill me-2"></i>{{ event.status }}
-                            </div>
-                            {% endif %}
-                            {% if event.achievement %}
-                            <div class="mb-2 p-2 rounded-3 font-monospace {% if event.is_champion %}fw-bold shadow-sm{% endif %}" 
-                                 style="background: {% if event.is_champion %}rgba(245, 158, 11, 0.18){% else %}rgba(245, 158, 11, 0.1){% endif %}; 
-                                        border: 1px solid {% if event.is_champion %}#f59e0b{% else %}rgba(245, 158, 11, 0.3){% endif %}; 
-                                        color: #d97706; 
-                                        font-size: 0.8rem; line-height: 1.45;">
-                                <i class="bi bi-trophy-fill me-2" style="color: #d97706;"></i>{{ event.achievement }}
-                            </div>
-                            {% endif %}
-                            {% if event.post_content %}
-                            <div class="mb-2 p-3 rounded-3" style="background: rgba(0, 119, 181, 0.08); border-left: 3px solid #0077b5; border-top: 1px solid var(--card-border); border-right: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border);">
-                                <div class="d-flex justify-content-between align-items-center mb-1">
-                                    <span class="fw-bold font-monospace" style="color: #0077b5; font-size: 0.74rem;">
-                                        {% if event.is_champion %}
-                                        <i class="bi bi-megaphone-fill me-1"></i>Official Winner Announcement:
-                                        {% else %}
-                                        <i class="bi bi-linkedin me-1"></i>Official Event Post:
-                                        {% endif %}
-                                    </span>
-                                    {% if event.linkedin_post %}
-                                    <a href="{{ event.linkedin_post }}" target="_blank" class="text-decoration-none font-monospace small" style="color: #0077b5; font-size: 0.72rem;">Open on LinkedIn <i class="bi bi-box-arrow-up-right ms-1"></i></a>
-                                    {% endif %}
-                                </div>
-                                <p class="mb-0 small" style="color: var(--text-body); font-size: 0.78rem; line-height: 1.5; font-style: italic;">"{{ event.post_content }}"</p>
-                            </div>
-                            {% endif %}
-                            {% if event.images %}
-                            <div class="mt-2 mb-2">
-                                <span class="text-info font-monospace small d-block mb-1"><i class="bi bi-images me-1"></i>{% if event.is_champion %}Winner Announcement &amp; Award Verification Proofs:{% else %}Event Photos:{% endif %}</span>
-                                <div class="d-flex gap-2 flex-wrap">
-                                    {% for img in event.images %}
-                                    <img src="{{ url_for('static', filename=img) }}" class="rounded-3 border" style="width: 95px; height: 65px; object-fit: cover; cursor: pointer; transition: transform 0.2s ease; border-color: var(--card-border) !important;" onclick="openImageModal('{{ url_for('static', filename=img) }}')" alt="Event Photo">
-                                    {% endfor %}
-                                </div>
-                            </div>
-                            {% endif %}
-                        </div>
-
-                        <div class="mt-auto">
-                            <h6 class="text-uppercase text-info small font-monospace mb-2" style="font-size: 0.75rem;">
-                                {% if event.type and 'Upcoming' in event.type %}
-                                <i class="bi bi-mortarboard-fill me-1"></i>Key Topics & Agenda:
-                                {% else %}
-                                <i class="bi bi-mortarboard-fill me-1"></i>Key Onsite Learnings & Skills Acquired:
-                                {% endif %}
-                            </h6>
-                            <ul class="small ps-3 mb-0" style="color: var(--text-body);">
-                                {% for item in event.learnings %}
-                                <li class="mb-2 leading-relaxed">{{ item }}</li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-        {% endif %}
-
-        <!-- Professional Timeline -->
+<!-- Professional Timeline -->
         <div class="bento-item" style="grid-column: span 4;">
             <h4 class="fw-bold mb-4" style="color: var(--text-main);">Milestones</h4>
             <div class="row g-4">

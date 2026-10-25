@@ -267,7 +267,6 @@ user_data = {
             "type": "Onsite / In-Person Event",
             "badge": "🏆 Top 5 Contest Winner",
             "achievement": "🏆 Top 5 Winner — Social Media Contest at Claude Community Jaipur Meetup Launch (Award presented on stage by Jason Sears, Origin Chicago)",
-            "status": "✅ Attended Onsite on October 24, 2026 • Top 5 Contest Winner",
             "date": "Saturday, October 24, 2026 | 10:00 AM – 1:30 PM IST",
             "location": "JECRC Foundation, Jaipur, Rajasthan",
             "organizer": "Claude Community Jaipur in collaboration with Jaipur Data & AI Community (Sponsored by ORIGIN | Panellists: Jagmohan Rathore, Jobin Ephrem, Stuart Brown, Jaideep Singh, Arpit Bhargava | Award Presenter: Jason Sears - Engineering Lead, Origin Chicago)",
