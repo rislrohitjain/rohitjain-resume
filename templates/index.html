@@ -99,79 +99,72 @@
     <!-- Google Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Devicon Icons for Real Brand Logos -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='images/favicon.svg') }}">
     
     <style>
-        :root {
-            /* High-contrast, clean dark theme (Default) */
-            --bg: #0b1120;
-            --card-bg: #1e293b;
-            --card-inner: #0f172a;
-            --card-border: #334155;
-            --card-hover-border: #38bdf8;
+        :root, [data-theme="dark"] {
+            /* Linear / Vercel Minimalist Sleek Dark Theme (Default) */
+            --bg: #090d16;
+            --bg-grid: rgba(255, 255, 255, 0.04);
+            --card-bg: #0f1629;
+            --card-inner: #0a0f1d;
+            --card-border: rgba(255, 255, 255, 0.08);
+            --card-hover-border: rgba(56, 189, 248, 0.4);
             --text-main: #f8fafc;
             --text-body: #cbd5e1;
             --text-dim: #94a3b8;
             --accent: #38bdf8;
+            --accent-glow: rgba(56, 189, 248, 0.15);
             --primary: #2563eb;
             --primary-hover: #1d4ed8;
-            --badge-bg: #0f172a;
+            --badge-bg: #0a0f1d;
             --badge-text: #38bdf8;
-            --badge-border: #334155;
-            --shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
-        }
-
-        [data-theme="dark"] {
-            /* Explicit dark theme */
-            --bg: #0b1120;
-            --card-bg: #1e293b;
-            --card-inner: #0f172a;
-            --card-border: #334155;
-            --card-hover-border: #38bdf8;
-            --text-main: #f8fafc;
-            --text-body: #cbd5e1;
-            --text-dim: #94a3b8;
-            --accent: #38bdf8;
-            --primary: #2563eb;
-            --primary-hover: #1d4ed8;
-            --badge-bg: #0f172a;
-            --badge-text: #38bdf8;
-            --badge-border: #334155;
-            --shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+            --badge-border: rgba(56, 189, 248, 0.25);
+            --shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
         }
 
         [data-theme="light"] {
-            /* High-contrast, clean light theme: Deep Slate Text, NEVER invisible */
+            /* Linear / Vercel Clean Light Theme */
             --bg: #f8fafc;
+            --bg-grid: rgba(15, 23, 42, 0.04);
             --card-bg: #ffffff;
             --card-inner: #f1f5f9;
-            --card-border: #cbd5e1;
-            --card-hover-border: #64748b;
+            --card-border: #e2e8f0;
+            --card-hover-border: #0284c7;
             --text-main: #0f172a;
-            --text-body: #1e293b;
-            --text-dim: #475569;
+            --text-body: #334155;
+            --text-dim: #64748b;
             --accent: #0284c7;
+            --accent-glow: rgba(2, 132, 199, 0.15);
             --primary: #2563eb;
             --primary-hover: #1d4ed8;
-            --badge-bg: #e2e8f0;
-            --badge-text: #0f172a;
-            --badge-border: #94a3b8;
-            --shadow: 0 2px 12px rgba(15, 23, 42, 0.08);
+            --badge-bg: #f1f5f9;
+            --badge-text: #0284c7;
+            --badge-border: #cbd5e1;
+            --shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
         }
 
         body {
             background-color: var(--bg);
+            background-image: radial-gradient(var(--bg-grid) 1px, transparent 1px);
+            background-size: 24px 24px;
             color: var(--text-body);
-            font-family: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            letter-spacing: -0.01em;
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            letter-spacing: -0.015em;
             line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
             transition: background-color 0.2s ease, color 0.2s ease;
         }
 
         h1, h2, h3, h4, h5, h6 {
             color: var(--text-main);
-            letter-spacing: -0.02em;
+            letter-spacing: -0.025em;
+            font-weight: 700;
         }
 
         .text-main { color: var(--text-main) !important; }
@@ -179,7 +172,59 @@
         .text-secondary { color: var(--text-dim) !important; }
         .text-dim { color: var(--text-body) !important; }
 
-        /* Perfect contrast across light and dark modes */
+        /* Crisp Linear-Style Gradient Typography */
+        .gradient-text {
+            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+            display: inline-block;
+        }
+        [data-theme="light"] .gradient-text {
+            background: linear-gradient(135deg, #0284c7 0%, #4338ca 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-gradient {
+            background: linear-gradient(180deg, #ffffff 40%, #94a3b8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+        }
+        [data-theme="light"] .stat-gradient {
+            background: linear-gradient(180deg, #0f172a 40%, #475569 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Clean, Crisp Profile Avatar */
+        .profile-photo-ring {
+            width: 120px;
+            height: 120px;
+            padding: 3px;
+            background: rgba(56, 189, 248, 0.15);
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            border-radius: 50%;
+            display: inline-block;
+            margin-bottom: 0.85rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .profile-photo-ring:hover {
+            border-color: #38bdf8;
+            transform: scale(1.03);
+        }
+        .profile-photo-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-position: center;
+            background-size: cover;
+            border: 2px solid var(--card-bg);
+        }
+
+        /* Contrast across light and dark modes */
         [data-theme="dark"] .text-white { color: #f8fafc !important; }
         [data-theme="dark"] .text-light { color: #cbd5e1 !important; }
 
@@ -220,14 +265,15 @@
             background: var(--card-inner) !important;
             color: var(--text-main) !important;
             border: 1px solid var(--card-border) !important;
+            letter-spacing: 0.2px;
         }
         [data-theme="light"] .custom-badge {
-            background: #e2e8f0 !important;
+            background: #f1f5f9 !important;
             color: #0f172a !important;
             border-color: #cbd5e1 !important;
         }
 
-        /* Bootstrap Dark / Secondary Overrides for Clean Harmonious Palette */
+        /* Bootstrap Dark / Secondary Overrides */
         .bg-dark {
             background-color: var(--card-inner) !important;
             color: var(--text-main) !important;
@@ -243,63 +289,69 @@
             border-color: var(--card-border) !important;
         }
 
-        /* --- Project Navigation Tabs Styling --- */
+        /* Project Navigation Tabs Styling (Linear Style) */
         .nav-pills .nav-link {
-            background: var(--card-bg);
+            background: var(--card-inner);
             color: var(--text-dim);
             border: 1px solid var(--card-border);
             border-radius: 10px;
+            padding: 8px 14px;
+            font-weight: 600;
             transition: all 0.2s ease;
         }
         .nav-pills .nav-link:hover {
             color: var(--text-main);
-            border-color: var(--card-hover-border);
+            border-color: rgba(56, 189, 248, 0.4);
+            background: rgba(56, 189, 248, 0.04);
         }
         .nav-pills .nav-link.active {
             background: var(--primary) !important;
             color: #ffffff !important;
             border-color: var(--primary) !important;
-            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
         }
         .nav-pills .nav-link.active .badge {
-            background: rgba(255, 255, 255, 0.25) !important;
+            background: rgba(255, 255, 255, 0.2) !important;
             color: #ffffff !important;
-            border-color: rgba(255, 255, 255, 0.4) !important;
+            border-color: rgba(255, 255, 255, 0.3) !important;
         }
 
-        /* --- Bento Grid Layout --- */
+        /* Bento Grid Layout */
         .bento-container {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            grid-gap: 20px;
-            padding: 40px 0;
+            grid-gap: 18px;
+            padding: 32px 0 48px;
         }
 
         .bento-item {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
-            border-radius: 20px;
-            padding: 28px;
-            transition: all 0.25s ease;
+            border-radius: 16px;
+            padding: 24px 26px;
+            transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
             box-shadow: var(--shadow);
         }
 
         .bento-item:hover {
             border-color: var(--card-hover-border);
             transform: translateY(-2px);
+            box-shadow: 0 8px 30px -4px rgba(0, 0, 0, 0.4);
+        }
+        [data-theme="light"] .bento-item:hover {
             box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
         }
 
-        /* --- Custom UI Components --- */
+        /* Custom UI Components */
         .profile-box { grid-column: span 1; grid-row: span 2; }
         .hero-box { grid-column: span 3; }
         .stats-bar { grid-column: span 3; }
         
         .skill-progress {
-            height: 8px;
+            height: 5px;
             background: var(--card-inner);
-            border-radius: 10px;
-            margin-bottom: 20px;
+            border-radius: 6px;
+            margin-bottom: 16px;
             position: relative;
             border: 1px solid var(--card-border);
             overflow: hidden;
@@ -307,28 +359,30 @@
 
         .progress-fill {
             height: 100%;
-            background: var(--primary);
-            border-radius: 10px;
+            background: #38bdf8;
+            border-radius: 6px;
         }
 
         .btn-download {
             background: var(--primary);
-            color: #ffffff;
+            color: #ffffff !important;
             font-weight: 600;
-            border-radius: 12px;
+            border-radius: 10px;
             width: 100%;
-            padding: 13px;
+            padding: 11px;
             text-decoration: none;
             display: inline-block;
             text-align: center;
             transition: all 0.2s ease;
             box-shadow: 0 2px 10px rgba(37, 99, 235, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .btn-download:hover {
             background: var(--primary-hover);
-            color: #ffffff;
-            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+            color: #ffffff !important;
+            box-shadow: 0 4px 16px rgba(37, 99, 235, 0.4);
+            transform: translateY(-1px);
         }
 
         .contact-link {
@@ -338,13 +392,54 @@
         }
 
         .contact-link:hover {
-            color: var(--primary);
+            color: var(--accent);
         }
 
         .inner-box {
             background: var(--card-inner);
             border: 1px solid var(--card-border);
-            border-radius: 14px;
+            border-radius: 12px;
+        }
+
+        /* Real Brand Icons & WhatsApp Button */
+        .brand-icon {
+            display: inline-block;
+            vertical-align: middle;
+            flex-shrink: 0;
+        }
+        .brand-icon-box {
+            width: 24px;
+            height: 24px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .btn-whatsapp {
+            background: #25D366;
+            color: #ffffff !important;
+            font-weight: 700;
+            border-radius: 10px;
+            width: 100%;
+            padding: 10px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .btn-whatsapp:hover {
+            background: #20ba5a;
+            color: #ffffff !important;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+            transform: translateY(-1px);
+        }
+        .main-nav-pill {
+            font-size: 0.85rem;
+            letter-spacing: -0.01em;
         }
     </style>
 </head>
@@ -365,15 +460,21 @@
             <div class="mb-4">
                
 				
-				<div class="rounded-circle d-inline-block p-1 mb-3 shadow-sm border border-2" 
-					 style="width: 120px; height: 120px; background: url('{{ url_for('static', filename='images/RohitPhoto.jpg') }}') center/cover; border-color: var(--card-border) !important;">
+				<div class="profile-photo-ring">
+					<div class="profile-photo-inner" style="background-image: url('{{ url_for('static', filename='images/RohitPhoto.jpg') }}');"></div>
 				</div>
 
 				<h2 class="h4 fw-bold mb-1">{{ user.header.name }}</h2>
                 <p class="text-info small fw-bold mb-2">{{ user.header.title }}</p>
                 <div class="mb-3">
-                    <a href="#events" class="badge text-decoration-none py-1 px-2 d-inline-flex align-items-center gap-1 font-monospace shadow-sm" style="background: rgba(245, 158, 11, 0.15); border: 1px solid #f59e0b; color: #f59e0b; font-size: 0.72rem;">
-                        <i class="bi bi-trophy-fill text-warning"></i> 1st Rank • BrowserStack ($105 Prize)
+                    <a href="#sec-events" onclick="switchSection('events')" class="badge text-decoration-none py-1 px-2 d-inline-flex align-items-center gap-1 font-monospace shadow-sm" style="background: rgba(245, 158, 11, 0.15); border: 1px solid #f59e0b; color: #f59e0b; font-size: 0.72rem;">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="me-1">
+                            <circle cx="12" cy="12" r="11" fill="#FF6B35"/>
+                            <circle cx="12" cy="12" r="7.5" fill="#0052CC"/>
+                            <circle cx="12" cy="12" r="4" fill="#FFFFFF"/>
+                            <path d="M11 9.5l3.5 2.5-3.5 2.5v-5z" fill="#0052CC"/>
+                        </svg>
+                        1st Rank • BrowserStack ($105 Prize)
                     </a>
                 </div>
                 <div class="mb-3">
@@ -385,49 +486,95 @@
 
             <div class="text-start mb-5">
                 <div class="d-flex justify-content-between align-items-center mb-1">
-                    <span class="small text-secondary">AI Automation</span>
+                    <span class="small text-secondary">AI Automation &amp; LLMs</span>
                     <span class="small text-info fw-bold">90%</span>
                 </div>
                 <div class="skill-progress"><div class="progress-fill" style="width: 90%"></div></div>
 
                 <div class="d-flex justify-content-between align-items-center mb-1">
-                    <span class="small text-secondary">Python (Intermediate)</span>
-                    <span class="small text-info fw-bold">75%</span>
+                    <span class="small text-secondary">Python &amp; Agentic Systems</span>
+                    <span class="small text-info fw-bold">95%</span>
                 </div>
-                <div class="skill-progress"><div class="progress-fill" style="width: 75%"></div></div>
+                <div class="skill-progress"><div class="progress-fill" style="width: 95%"></div></div>
 
                 <div class="d-flex justify-content-between align-items-center mb-1">
-                    <span class="small text-secondary">Full-Stack Development</span>
+                    <span class="small text-secondary">Full-Stack Architecture</span>
                     <span class="small text-info fw-bold">98%</span>
                 </div>
                 <div class="skill-progress"><div class="progress-fill" style="width: 98%"></div></div>
             </div>
 
             <div class="text-start mb-4 small text-secondary">
-                {% for contact in user.header.contact %}
-                    <div class="mb-2">
-                        {% if contact.startswith('+') %}
-                            <i class="bi bi-telephone-fill text-info me-2"></i>
-                            <a href="tel:{{ contact|replace(' ', '') }}" class="contact-link">{{ contact }}</a>
-                        {% elif '@' in contact %}
-                            <i class="bi bi-envelope-fill text-info me-2"></i>
-                            <a href="mailto:{{ contact }}" class="contact-link">{{ contact }}</a>
-                        {% elif 'github.com' in contact %}
-                            <i class="bi bi-github text-info me-2"></i>
-                            <a href="{{ contact }}" target="_blank" class="contact-link">GitHub Profile</a>
-                        {% elif 'linkedin.com' in contact %}
-                            <i class="bi bi-linkedin text-info me-2"></i>
-                            <a href="{{ contact }}" target="_blank" class="contact-link">LinkedIn Profile</a>
-                        {% elif 'huggingface.co' in contact %}
-                            <i class="bi bi-rocket-takeoff-fill text-info me-2"></i>
-                            <a href="{{ contact }}" target="_blank" class="contact-link">Hugging Face Spaces</a>
-                        {% else %}
-                            <i class="bi bi-dot text-info me-2"></i>
-                            <span>{{ contact }}</span>
-                        {% endif %}
-                    </div>
-                {% endfor %}
+                <!-- Mobile / Phone -->
+                <div class="mb-2 d-flex align-items-center">
+                    <span class="brand-icon-box me-2">
+                        <i class="bi bi-telephone-fill text-info fs-6"></i>
+                    </span>
+                    <a href="tel:+918946919241" class="contact-link fw-semibold">+91 89469 19241</a>
+                </div>
+
+                <!-- WhatsApp Direct Chat Link -->
+                <div class="mb-2 d-flex align-items-center">
+                    <span class="brand-icon-box me-2">
+                        <svg class="brand-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="11" fill="#25D366"/>
+                            <path d="M17.5 14.38c-.28-.14-1.63-.8-1.88-.9-.25-.09-.44-.14-.62.14-.19.28-.72.9-.88 1.08-.16.19-.33.21-.61.07-.28-.14-1.18-.44-2.25-1.39-.83-.74-1.39-1.66-1.55-1.94-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.49.14-.16.19-.28.28-.46.09-.19.05-.35-.02-.49-.07-.14-.62-1.5-.85-2.06-.23-.54-.46-.47-.63-.48-.16-.01-.35-.01-.54-.01-.19 0-.49.07-.75.35-.25.28-.98.96-.98 2.33 0 1.37 1 2.7 1.14 2.89.14.19 1.97 3.01 4.77 4.22.67.29 1.19.46 1.6.59.67.21 1.28.18 1.76.11.54-.08 1.63-.67 1.86-1.31.23-.65.23-1.2.16-1.32-.07-.11-.25-.18-.53-.32z" fill="#FFFFFF"/>
+                        </svg>
+                    </span>
+                    <a href="https://wa.me/918946919241?text=Hi%20Rohit,%20I%20saw%20your%20portfolio!" target="_blank" class="contact-link fw-bold" style="color: #25D366;">WhatsApp Me</a>
+                </div>
+
+                <!-- Email -->
+                <div class="mb-2 d-flex align-items-center">
+                    <span class="brand-icon-box me-2">
+                        <i class="bi bi-envelope-fill text-primary fs-6"></i>
+                    </span>
+                    <a href="mailto:engrohitjain5@gmail.com" class="contact-link fw-semibold text-truncate">engrohitjain5@gmail.com</a>
+                </div>
+
+                <!-- GitHub with Real Logo -->
+                <div class="mb-2 d-flex align-items-center">
+                    <span class="brand-icon-box me-2">
+                        <svg class="brand-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="24" height="24" rx="12" fill="#24292e"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 4a8 8 0 00-2.53 15.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.65 7.65 0 012-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.001 8.001 0 0012 4z" fill="#ffffff"/>
+                        </svg>
+                    </span>
+                    <a href="https://github.com/rislrohitjain/" target="_blank" class="contact-link fw-semibold">GitHub Profile</a>
+                </div>
+
+                <!-- LinkedIn with Real Logo -->
+                <div class="mb-2 d-flex align-items-center">
+                    <span class="brand-icon-box me-2">
+                        <svg class="brand-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="24" height="24" rx="4" fill="#0A66C2"/>
+                            <path d="M7.12 19H4.15V9.45h2.97V19zM5.63 8.16c-.95 0-1.72-.78-1.72-1.73s.77-1.73 1.72-1.73 1.73.78 1.73 1.73-.78 1.73-1.73 1.73zm13.37 10.84h-2.96v-4.64c0-1.11-.02-2.53-1.54-2.53-1.55 0-1.78 1.21-1.78 2.45V19h-2.96V9.45h2.84v1.3h.04c.4-.75 1.36-1.54 2.81-1.54 3.01 0 3.56 1.98 3.56 4.55V19z" fill="#FFFFFF"/>
+                        </svg>
+                    </span>
+                    <a href="https://linkedin.com/in/rohit-jain-061571a3" target="_blank" class="contact-link fw-semibold">LinkedIn Profile</a>
+                </div>
+
+                <!-- Hugging Face with Real Logo -->
+                <div class="mb-2 d-flex align-items-center">
+                    <span class="brand-icon-box me-2">
+                        <svg class="brand-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.025 1.13c-5.77 0-10.449 4.647-10.449 10.378 0 1.112.178 2.181.503 3.185.064-.222.203-.444.416-.577a.96.96 0 0 1 .524-.15c.293 0 .584.124.84.284.278.173.48.408.71.694.226.282.458.611.684.951v-.014c.017-.324.106-.622.264-.874s.403-.487.762-.543c.3-.047.596.06.787.203s.31.313.4.467c.15.257.247.536.315.828a2.535 2.535 0 0 1 .425-.262c.31-.15.657-.217 1.018-.182.36.035.706.182.97.417.27.24.444.56.517.92.074.36.03.74-.11 1.08-.052.126-.12.242-.203.344l.02.01c.324-.038.647.008.932.146.29.14.526.37.67.65.15.29.196.62.142.94-.055.32-.213.6-.445.81-.22.2-.5.32-.8.36-.2.03-.4-.01-.58-.09a1.72 1.72 0 0 1-.48-.37 3.9 3.9 0 0 1-.36-.45c-.24.3-.53.54-.86.7-.34.16-.72.22-1.1.18-.38-.05-.73-.21-1-.46s-.46-.57-.54-.94a2.7 2.7 0 0 1-.02-.68c-.14.24-.33.44-.57.58-.24.14-.52.2-.8.17-.28-.02-.54-.13-.74-.3-.21-.18-.35-.42-.42-.68a1.9 1.9 0 0 1 .05-.98c-.2.22-.45.38-.73.46-.28.08-.58.07-.86-.03-.27-.1-.5-.28-.66-.52-.16-.24-.23-.53-.22-.82.02-.28.12-.55.3-.77.17-.21.4-.37.66-.45.06-.02.12-.03.18-.04a8.4 8.4 0 0 1-.37-2.45c0-4.63 3.77-8.38 8.42-8.38s8.42 3.75 8.42 8.38c0 .88-.14 1.72-.39 2.51.08.01.16.03.24.06.27.09.5.25.67.47.18.22.28.5.29.78.02.29-.05.58-.21.82-.16.24-.39.42-.66.52-.28.1-.58.11-.86.03a1.9 1.9 0 0 1-.73-.46c.03.33.02.66-.05.98-.07.26-.21.5-.42.68-.2.17-.46.28-.74.3-.28.03-.56-.03-.8-.17a1.9 1.9 0 0 1-.57-.58 2.7 2.7 0 0 1-.02.68c-.08.37-.27.69-.54.94s-.62.41-1 .46c-.38.04-.76-.02-1.1-.18-.33-.16-.62-.4-.86-.7a3.9 3.9 0 0 1-.36.45c-.15.15-.31.28-.48.37-.18.08-.38.12-.58.09-.3-.04-.58-.16-.8-.36-.232-.21-.39-.49-.445-.81-.054-.32-.008-.65.142-.94.144-.28.38-.51.67-.65.285-.138.608-.184.932-.146l.02-.01c-.083-.102-.15-.218-.203-.344-.14-.34-.184-.72-.11-1.08.073-.36.247-.68.517-.92.264-.235.61-.382.97-.417.36-.035.707.032 1.018.182.155.075.297.163.425.262.068-.292.165-.57.315-.828.09-.154.21-.313.4-.467.19-.143.487-.25.787-.203.359.056.604.29.762.543.158.252.247.55.264.874v.014c.226-.34.458-.669.684-.951.23-.286.432-.52.71-.694.256-.16.547-.284.84-.284.18 0 .356.05.524.15.213.133.352.355.416.577.325-1.004.503-2.073.503-3.185 0-5.731-4.679-10.378-10.449-10.378z" fill="#FFD21E"/>
+                            <ellipse cx="8.5" cy="11.5" rx="1.25" ry="1.5" fill="#24292e"/>
+                            <ellipse cx="15.5" cy="11.5" rx="1.25" ry="1.5" fill="#24292e"/>
+                            <path d="M9 14.5c.8 1.2 2.2 1.8 3 1.8s2.2-.6 3-1.8" stroke="#24292e" stroke-width="1.2" stroke-linecap="round"/>
+                        </svg>
+                    </span>
+                    <a href="https://huggingface.co/spaces/rislrohitjain/" target="_blank" class="contact-link fw-semibold">Hugging Face Spaces</a>
+                </div>
             </div>
+
+            <a href="https://wa.me/918946919241?text=Hi%20Rohit,%20I%20saw%20your%20portfolio!" target="_blank" class="btn-whatsapp mb-2">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="11" fill="#FFFFFF"/>
+                    <path d="M17.5 14.38c-.28-.14-1.63-.8-1.88-.9-.25-.09-.44-.14-.62.14-.19.28-.72.9-.88 1.08-.16.19-.33.21-.61.07-.28-.14-1.18-.44-2.25-1.39-.83-.74-1.39-1.66-1.55-1.94-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.49.14-.16.19-.28.28-.46.09-.19.05-.35-.02-.49-.07-.14-.62-1.5-.85-2.06-.23-.54-.46-.47-.63-.48-.16-.01-.35-.01-.54-.01-.19 0-.49.07-.75.35-.25.28-.98.96-.98 2.33 0 1.37 1 2.7 1.14 2.89.14.19 1.97 3.01 4.77 4.22.67.29 1.19.46 1.6.59.67.21 1.28.18 1.76.11.54-.08 1.63-.67 1.86-1.31.23-.65.23-1.2.16-1.32-.07-.11-.25-.18-.53-.32z" fill="#25D366"/>
+                </svg>
+                Chat on WhatsApp
+            </a>
 
             <a href="{{ user.header.resume_url }}" class="btn-download" download>
                 <i class="bi bi-file-earmark-pdf-fill me-2"></i> Download CV
@@ -436,7 +583,7 @@
 
         <!-- Hero Card -->
         <section class="bento-item hero-box d-flex flex-column justify-content-center">
-            <h1 class="display-4 fw-bold mb-3">Architecting <span class="text-info">Intelligent</span> Systems.</h1>
+            <h1 class="display-4 fw-bold mb-3">Architecting <span class="gradient-text">Intelligent</span> Systems.</h1>
             <p class="lead text-secondary w-75">{{ user.summary }}</p>
         </section>
 
@@ -444,89 +591,13 @@
         <div class="bento-item stats-bar d-flex justify-content-between align-items-center flex-wrap gap-3">
             {% for stat in user.stats %}
             <div class="text-center flex-grow-1 px-3">
-                <h3 class="fw-bold text-info display-6 mb-0">{{ stat.value }}</h3>
+                <h3 class="fw-bold stat-gradient display-6 mb-0">{{ stat.value }}</h3>
                 <span class="text-secondary small text-uppercase tracking-widest font-monospace" style="font-size: 0.75rem;">{{ stat.label }}</span>
             </div>
             {% if not loop.last %}
             <div class="d-none d-md-block" style="width: 1px; height: 45px; background: var(--card-border);"></div>
             {% endif %}
             {% endfor %}
-        </div>
-
-        <!-- Interactive HQ & Google Business Location Card -->
-        <div class="bento-item" style="grid-column: span 4;">
-            <!-- Map Header -->
-            <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-3 pb-3 border-bottom" style="border-color: var(--card-border) !important;">
-                <div class="d-flex align-items-center">
-                    <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 44px; height: 44px; background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.3);">
-                        <i class="bi bi-geo-alt-fill text-info fs-5"></i>
-                    </div>
-                    <div>
-                        <div class="d-flex align-items-center gap-2 flex-wrap">
-                            <h4 class="fw-bold mb-0" style="color: var(--text-main);">Development Studio & Office Location</h4>
-                            <span class="badge font-monospace" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); font-size: 0.75rem;">Verified Google Location</span>
-                        </div>
-                        <p class="small mb-0 font-monospace mt-1" style="color: var(--text-dim);">
-                            Jaipur Nagar Nigam Area, Rajasthan 302026 • Astha Empire 2, Chordiya City
-                        </p>
-                    </div>
-                </div>
-
-                <div class="d-flex align-items-center gap-2 flex-wrap">
-                    <div class="px-3 py-1 rounded-pill d-flex align-items-center gap-2" style="background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3);">
-                        <span class="fw-bold fs-6" style="color: #f59e0b;">★ 3.4</span>
-                        <div class="small" style="color: #f59e0b; font-size: 0.75rem;">
-                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i><i class="bi bi-star"></i>
-                        </div>
-                        <span class="small font-monospace" style="color: var(--text-dim); font-size: 0.72rem;">(5 Reviews)</span>
-                    </div>
-                    <span class="badge py-2 px-3 font-monospace custom-badge" style="font-size: 0.75rem;">
-                        <span class="d-inline-block rounded-circle bg-success me-1" style="width: 7px; height: 7px;"></span>
-                        Software Company
-                    </span>
-                </div>
-            </div>
-
-            <!-- Map Viewport -->
-            <div class="position-relative rounded-4 overflow-hidden border mb-3" style="height: 360px; border-color: var(--card-border) !important;">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d718.1137258027256!2d75.70927580317746!3d26.887651215698895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db52cbbd5a387%3A0xb8755b323c8a6581!2sRohit%20Jain%20software%20engineer!5e1!3m2!1sen!2sin!4v1777626329164!5m2!1sen!2sin" 
-                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-                <!-- Coordinates Badge -->
-                <div class="position-absolute top-0 end-0 m-3 d-none d-sm-block">
-                    <span class="badge py-2 px-3 rounded-pill font-monospace custom-badge shadow-sm">
-                        <span class="spinner-grow spinner-grow-sm text-info me-1" role="status" style="width: 0.5rem; height: 0.5rem; vertical-align: middle;"></span>
-                        26.88768° N, 75.70664° E
-                    </span>
-                </div>
-            </div>
-
-            <!-- Address & Action Card directly beneath map -->
-            <div class="p-3 rounded-3 d-flex justify-content-between align-items-center flex-wrap gap-3" style="background: var(--card-inner); border: 1px solid var(--card-border);">
-                <div class="d-flex align-items-center gap-3">
-                    <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 44px; height: 44px; min-width: 44px; background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.25);">
-                        <i class="bi bi-building text-info fs-5"></i>
-                    </div>
-                    <div>
-                        <div class="d-flex align-items-center gap-2 flex-wrap">
-                            <h6 class="fw-bold mb-0" style="color: var(--text-main);">Rohit Jain software engineer</h6>
-                            <span class="badge font-monospace" style="background: var(--card-bg); color: var(--text-dim); border: 1px solid var(--card-border); font-size: 0.72rem;">रोहित जैन सॉफ्टवेयर इंजीनियर</span>
-                        </div>
-                        <span class="d-block small mt-1" style="color: var(--text-body); font-size: 0.82rem;">
-                            <i class="bi bi-geo-alt-fill text-danger me-1"></i>Flat No. 103, Astha Empire 2, near Chaitanya School, Chordiya City, Keshupura, Jaipur, Rajasthan 302026
-                        </span>
-                    </div>
-                </div>
-                <div class="d-flex align-items-center gap-2 flex-wrap ms-auto">
-                    <a href="https://www.google.com/maps/dir/?api=1&destination=26.8876761,75.7092192" target="_blank" class="btn btn-sm btn-outline-info font-monospace py-2 px-3 rounded-3 text-decoration-none">
-                        <i class="bi bi-sign-turn-right-fill me-1"></i>Get Directions
-                    </a>
-                    <a href="https://www.google.com/maps/place/Rohit+Jain+software+engineer/@26.8876809,75.7066443,17z/data=!3m1!4b1!4m6!3m5!1s0x396db52cbbd5a387:0xb8755b323c8a6581!8m2!3d26.8876761!4d75.7092192!16s%2Fg%2F11szc_c7td" target="_blank" class="btn btn-sm btn-info text-dark font-monospace py-2 px-3 rounded-3 text-decoration-none fw-bold shadow-sm">
-                        <i class="bi bi-box-arrow-up-right me-1"></i>Open Google Maps
-                    </a>
-                </div>
-            </div>
         </div>
 
         <!-- Focus & Collaboration Card -->
@@ -549,9 +620,49 @@
             </div>
         </div>
 
-<!-- Featured Enterprise & AI Projects Showcase Section (Tabbed) -->
+        <!-- Master Executive Section Switcher (Eliminates Endless Scrolling & Instant 1-Click Access) -->
+        <div class="bento-item p-2 mb-3" style="grid-column: span 4; background: var(--card-inner); border: 1px solid var(--card-border);">
+            <ul class="nav nav-pills justify-content-center gap-2 p-1 flex-wrap" id="mainSectionNav" role="tablist">
+                <li class="nav-item">
+                    <button class="nav-link active px-3 py-2 font-monospace fw-bold d-flex align-items-center gap-2" id="btn-sec-projects" data-bs-toggle="pill" data-bs-target="#sec-projects" type="button" role="tab" onclick="history.replaceState(null, null, '#projects')">
+                        <span>🚀</span> Projects ({{ user.projects|length }})
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link px-3 py-2 font-monospace fw-bold d-flex align-items-center gap-2" id="btn-sec-events" data-bs-toggle="pill" data-bs-target="#sec-events" type="button" role="tab" onclick="history.replaceState(null, null, '#events')">
+                        <span>🏆</span> Honors &amp; Events ({{ user.events|length }})
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link px-3 py-2 font-monospace fw-bold d-flex align-items-center gap-2" id="btn-sec-skills" data-bs-toggle="pill" data-bs-target="#sec-skills" type="button" role="tab" onclick="history.replaceState(null, null, '#skills')">
+                        <span>⚡</span> Tech Stack
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link px-3 py-2 font-monospace fw-bold d-flex align-items-center gap-2" id="btn-sec-agents" data-bs-toggle="pill" data-bs-target="#sec-agents" type="button" role="tab" onclick="history.replaceState(null, null, '#agents')">
+                        <span>🤖</span> AI Team (19)
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link px-3 py-2 font-monospace fw-bold d-flex align-items-center gap-2" id="btn-sec-milestones" data-bs-toggle="pill" data-bs-target="#sec-milestones" type="button" role="tab" onclick="history.replaceState(null, null, '#milestones')">
+                        <span>💼</span> Milestones
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link px-3 py-2 font-monospace fw-bold d-flex align-items-center gap-2" id="btn-sec-studio" data-bs-toggle="pill" data-bs-target="#sec-studio" type="button" role="tab" onclick="history.replaceState(null, null, '#studio')">
+                        <span>📍</span> Studio &amp; Map
+                    </button>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Master Tab Content Area: Renders active section gracefully without long page scrolling -->
+        <div class="tab-content w-100" id="mainSectionTabContent" style="grid-column: span 4;">
+
+            <div class="tab-pane fade show active" id="sec-projects" role="tabpanel" aria-labelledby="btn-sec-projects">
+                <!-- Featured Enterprise & AI Projects Showcase Section (Tabbed) -->
 {% if user.projects %}
-<div id="projects" class="bento-item" style="grid-column: span 4;">
+<div id="projects" class="bento-item" style="width: 100%;">
     <!-- Section Title -->
     <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3 pb-2 border-bottom" style="border-color: var(--card-border) !important;">
         <div class="d-flex align-items-center">
@@ -683,7 +794,7 @@
                     </div>
 
                     <!-- Embedded Interactive Live App Frame -->
-                    <div class="position-relative rounded-3 overflow-hidden border shadow-sm" style="background: #0f172a; height: 580px; border-color: var(--card-border) !important;">
+                    <div class="position-relative rounded-3 overflow-hidden border shadow-sm" style="background: #0f172a; height: 420px; border-color: var(--card-border) !important;">
                         <iframe 
                             id="liveEmbedFrame_{{ proj.id }}"
                             src="{{ proj.live_url }}" 
@@ -902,32 +1013,13 @@
 </div>
 {% endif %}
 
-		<!-- Technical Skills Grid -->
-<div class="bento-item" style="grid-column: span 4;">
-    <h4 class="fw-bold mb-4" style="color: var(--text-main);">Technical Expertise</h4>
-    <div class="row g-4">
-        {% for category, items in user.skills.items() %}
-        <div class="col-md-6 col-lg-3">
-            <div class="p-4 rounded-4 h-100" style="background: var(--card-inner); border: 1px solid var(--card-border);">
-                <h6 class="text-info fw-bold text-uppercase small mb-3" style="letter-spacing: 1px;">
-                    {{ category }}
-                </h6>
-                <div class="d-flex flex-wrap gap-2">
-                    {% for skill in items %}
-                    <span class="badge custom-badge px-3 py-2 rounded-pill font-monospace" style="font-size: 0.75rem;">
-                        {{ skill }}
-                    </span>
-                    {% endfor %}
-                </div>
+		
             </div>
-        </div>
-        {% endfor %}
-    </div>
-</div>
 
-<!-- Tech Events & Community Participation Section -->
+            <div class="tab-pane fade" id="sec-events" role="tabpanel" aria-labelledby="btn-sec-events">
+                <!-- Tech Events & Community Participation Section -->
         {% if user.events %}
-        <div id="events" class="bento-item" style="grid-column: span 4; padding: 24px;">
+        <div id="events" class="bento-item" style="width: 100%; padding: 24px;">
             <div class="d-flex align-items-center mb-3">
                 <span class="fs-2 me-3">📍</span>
                 <div>
@@ -956,7 +1048,20 @@
                         {% endif %}
 
                         <div class="d-flex justify-content-between align-items-start mb-2">
-                            <h5 class="fw-bold {% if event.is_champion %}text-warning{% else %}text-info{% endif %} mb-0 fs-6">{{ event.title }}</h5>
+                            <div class="d-flex align-items-center gap-2">
+                                {% if 'Claude' in event.title %}
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="#CC785C" class="flex-shrink-0">
+                                    <path d="M13.827 3.52h3.603L24 20.48h-3.603l-6.57-16.96zm-7.258 0h3.603L16.742 20.48h-3.603L6.569 3.52zM0 20.48 6.57 3.52h3.602L3.603 20.48H0z"/>
+                                </svg>
+                                {% elif 'UiPath' in event.title %}
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="#FA4616" class="flex-shrink-0">
+                                    <path d="M20.25 3H3.75C3.335 3 3 3.335 3 3.75v16.5c0 .415.335.75.75.75h16.5c.415 0 .75-.335.75-.75V3.75c0-.415-.335-.75-.75-.75zM12 17.25c-2.9 0-5.25-2.35-5.25-5.25S9.1 6.75 12 6.75s5.25 2.35 5.25 5.25-2.35 5.25-5.25 5.25zm0-8c-1.52 0-2.75 1.23-2.75 2.75s1.23 2.75 2.75 2.75 2.75-1.23 2.75-2.75S13.52 9.25 12 9.25z"/>
+                                </svg>
+                                {% else %}
+                                <i class="bi bi-award-fill text-info fs-5"></i>
+                                {% endif %}
+                                <h5 class="fw-bold {% if event.is_champion %}text-warning{% else %}text-info{% endif %} mb-0 fs-6">{{ event.title }}</h5>
+                            </div>
                             <div>
                                 {% if event.badge %}
                                 <span class="badge bg-warning text-dark font-monospace fw-bold ms-2" style="font-size: 0.68rem;"><i class="bi bi-award-fill me-1"></i>{{ event.badge }}</span>
@@ -1069,9 +1174,73 @@
         </div>
         {% endif %}
 
-<!-- Autonomous Agentic Ecosystem Section -->
+
+            </div>
+
+            <div class="tab-pane fade" id="sec-skills" role="tabpanel" aria-labelledby="btn-sec-skills">
+                <!-- Technical Skills Grid -->
+<div class="bento-item" style="width: 100%;">
+    <h4 class="fw-bold mb-4" style="color: var(--text-main);">Technical Expertise</h4>
+    <div class="row g-4">
+        {% for category, items in user.skills.items() %}
+        <div class="col-md-6 col-lg-3">
+            <div class="p-4 rounded-4 h-100" style="background: var(--card-inner); border: 1px solid var(--card-border);">
+                <h6 class="text-info fw-bold text-uppercase small mb-3" style="letter-spacing: 1px;">
+                    {{ category }}
+                </h6>
+                <div class="d-flex flex-wrap gap-2">
+                    {% for skill in items %}
+                    <span class="badge custom-badge px-3 py-2 rounded-pill font-monospace d-inline-flex align-items-center gap-1 shadow-sm" style="font-size: 0.75rem;">
+                        {% if 'Python' in skill %}
+                            <i class="devicon-python-plain colored fs-6 me-1"></i>
+                        {% elif 'Docker' in skill %}
+                            <i class="devicon-docker-plain colored fs-6 me-1"></i>
+                        {% elif 'Git' in skill %}
+                            <i class="devicon-git-plain colored fs-6 me-1"></i>
+                        {% elif 'PostgreSQL' in skill or 'Postgres' in skill %}
+                            <i class="devicon-postgresql-plain colored fs-6 me-1"></i>
+                        {% elif 'MySQL' in skill %}
+                            <i class="devicon-mysql-original colored fs-6 me-1"></i>
+                        {% elif 'MSSQL' in skill or '.NET' in skill %}
+                            <i class="devicon-dot-net-plain colored fs-6 me-1"></i>
+                        {% elif 'FastAPI' in skill %}
+                            <i class="devicon-fastapi-plain colored fs-6 me-1"></i>
+                        {% elif 'Flask' in skill %}
+                            <i class="devicon-flask-original fs-6 me-1 text-light"></i>
+                        {% elif 'Laravel' in skill %}
+                            <i class="devicon-laravel-original colored fs-6 me-1"></i>
+                        {% elif 'Tableau' in skill %}
+                            <i class="devicon-tableau-plain colored fs-6 me-1"></i>
+                        {% elif 'Claude' in skill %}
+                            <svg class="brand-icon me-1" width="15" height="15" viewBox="0 0 24 24" fill="#CC785C"><path d="M13.827 3.52h3.603L24 20.48h-3.603l-6.57-16.96zm-7.258 0h3.603L16.742 20.48h-3.603L6.569 3.52zM0 20.48 6.57 3.52h3.602L3.603 20.48H0z"/></svg>
+                        {% elif 'Gemini' in skill %}
+                            <svg class="brand-icon me-1" width="15" height="15" viewBox="0 0 24 24"><path d="M12 2C12 7.523 7.523 12 2 12C7.523 12 12 16.477 12 22C12 16.477 16.477 12 22 12C16.477 12 12 7.523 12 2Z" fill="#1BA1E3"/></svg>
+                        {% elif 'Ollama' in skill or 'Llama' in skill %}
+                            <span class="me-1">🦙</span>
+                        {% elif 'LangChain' in skill or 'LangGraph' in skill %}
+                            <span class="me-1">🦜</span>
+                        {% elif 'Chroma' in skill or 'RAG' in skill %}
+                            <i class="bi bi-diagram-3-fill text-info me-1"></i>
+                        {% else %}
+                            <i class="bi bi-check2-circle text-info me-1"></i>
+                        {% endif %}
+                        {{ skill }}
+                    </span>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+            </div>
+
+            <div class="tab-pane fade" id="sec-agents" role="tabpanel" aria-labelledby="btn-sec-agents">
+                <!-- Autonomous Agentic Ecosystem Section -->
 {% if user.agentic_team %}
-<div class="bento-item" style="grid-column: span 4; padding: 24px;">
+<div class="bento-item" style="width: 100%; padding: 24px;">
     <div class="d-flex align-items-center mb-4">
         <span class="fs-2 me-3">🤖</span>
         <div>
@@ -1095,8 +1264,12 @@
 </div>
 {% endif %}
 
-<!-- Professional Timeline -->
-        <div class="bento-item" style="grid-column: span 4;">
+
+            </div>
+
+            <div class="tab-pane fade" id="sec-milestones" role="tabpanel" aria-labelledby="btn-sec-milestones">
+                <!-- Professional Timeline -->
+        <div class="bento-item" style="width: 100%;">
             <h4 class="fw-bold mb-4" style="color: var(--text-main);">Milestones</h4>
             <div class="row g-4">
                 {% for job in user.experience %}
@@ -1119,6 +1292,86 @@
 		
 		
 
+        
+            </div>
+
+            <div class="tab-pane fade" id="sec-studio" role="tabpanel" aria-labelledby="btn-sec-studio">
+                <!-- Interactive HQ & Google Business Location Card -->
+        <div class="bento-item" style="width: 100%;" id="studio-location">
+            <!-- Map Header -->
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-3 pb-3 border-bottom" style="border-color: var(--card-border) !important;">
+                <div class="d-flex align-items-center">
+                    <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 44px; height: 44px; background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.25);">
+                        <i class="bi bi-geo-alt-fill text-info fs-5"></i>
+                    </div>
+                    <div>
+                        <div class="d-flex align-items-center gap-2 flex-wrap">
+                            <h4 class="fw-bold mb-0" style="color: var(--text-main);">Development Studio &amp; Office Location</h4>
+                            <span class="badge font-monospace" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); font-size: 0.75rem;">Verified Google Location</span>
+                        </div>
+                        <p class="small mb-0 font-monospace mt-1" style="color: var(--text-dim);">
+                            Jaipur Nagar Nigam Area, Rajasthan 302026 • Astha Empire 2, Chordiya City
+                        </p>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center gap-2 flex-wrap">
+                    <span class="badge py-2 px-3 font-monospace custom-badge" style="font-size: 0.75rem;">
+                        <i class="bi bi-patch-check-fill text-info me-1"></i>
+                        Software Engineering Studio
+                    </span>
+                    <span class="badge py-2 px-3 font-monospace custom-badge" style="font-size: 0.75rem;">
+                        <span class="d-inline-block rounded-circle bg-success me-1" style="width: 7px; height: 7px;"></span>
+                        Open for Opportunities
+                    </span>
+                </div>
+            </div>
+
+            <!-- Map Viewport -->
+            <div class="position-relative rounded-3 overflow-hidden border mb-3" style="height: 320px; border-color: var(--card-border) !important;">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d718.1137258027256!2d75.70927580317746!3d26.887651215698895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db52cbbd5a387%3A0xb8755b323c8a6581!2sRohit%20Jain%20software%20engineer!5e1!3m2!1sen!2sin!4v1777626329164!5m2!1sen!2sin" 
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+                <!-- Coordinates Badge -->
+                <div class="position-absolute top-0 end-0 m-3 d-none d-sm-block">
+                    <span class="badge py-2 px-3 rounded-pill font-monospace custom-badge shadow-sm">
+                        <span class="spinner-grow spinner-grow-sm text-info me-1" role="status" style="width: 0.5rem; height: 0.5rem; vertical-align: middle;"></span>
+                        26.88768° N, 75.70664° E
+                    </span>
+                </div>
+            </div>
+
+            <!-- Address & Action Card directly beneath map -->
+            <div class="p-3 rounded-3 d-flex justify-content-between align-items-center flex-wrap gap-3" style="background: var(--card-inner); border: 1px solid var(--card-border);">
+                <div class="d-flex align-items-center gap-3">
+                    <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 44px; height: 44px; min-width: 44px; background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.25);">
+                        <i class="bi bi-building text-info fs-5"></i>
+                    </div>
+                    <div>
+                        <div class="d-flex align-items-center gap-2 flex-wrap">
+                            <h6 class="fw-bold mb-0" style="color: var(--text-main);">Rohit Jain software engineer</h6>
+                            <span class="badge font-monospace" style="background: var(--card-bg); color: var(--text-dim); border: 1px solid var(--card-border); font-size: 0.72rem;">रोहित जैन सॉफ्टवेयर इंजीनियर</span>
+                        </div>
+                        <span class="d-block small mt-1" style="color: var(--text-body); font-size: 0.82rem;">
+                            <i class="bi bi-geo-alt-fill text-danger me-1"></i>Flat No. 103, Astha Empire 2, near Chaitanya School, Chordiya City, Keshupura, Jaipur, Rajasthan 302026
+                        </span>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center gap-2 flex-wrap ms-auto">
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=26.8876761,75.7092192" target="_blank" class="btn btn-sm btn-outline-info font-monospace py-2 px-3 rounded-3 text-decoration-none">
+                        <i class="bi bi-sign-turn-right-fill me-1"></i>Get Directions
+                    </a>
+                    <a href="https://www.google.com/maps/place/Rohit+Jain+software+engineer/@26.8876809,75.7066443,17z/data=!3m1!4b1!4m6!3m5!1s0x396db52cbbd5a387:0xb8755b323c8a6581!8m2!3d26.8876761!4d75.7092192!16s%2Fg%2F11szc_c7td" target="_blank" class="btn btn-sm btn-info text-dark font-monospace py-2 px-3 rounded-3 text-decoration-none fw-bold shadow-sm">
+                        <i class="bi bi-box-arrow-up-right me-1"></i>Open Google Maps
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+            </div>
+        </div>
     </div>
 </div>
 
@@ -1266,9 +1519,40 @@
         stopEventVideo();
     });
 
+
+    function switchSection(secName) {
+        var btn = document.getElementById('btn-sec-' + secName);
+        if (btn) {
+            var tab = new bootstrap.Tab(btn);
+            tab.show();
+            btn.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+    }
+
+    // Auto-switch tab based on hash link or URL
+    window.addEventListener('DOMContentLoaded', function() {
+        var hash = window.location.hash.replace('#', '');
+        if (hash === 'events' || hash === 'honors') switchSection('events');
+        else if (hash === 'projects') switchSection('projects');
+        else if (hash === 'skills' || hash === 'tech') switchSection('skills');
+        else if (hash === 'agents' || hash === 'team') switchSection('agents');
+        else if (hash === 'milestones' || hash === 'experience') switchSection('milestones');
+        else if (hash === 'studio' || hash === 'studio-location') switchSection('studio');
+    });
+
     // Initialize theme on page load
     initTheme();
 </script>
+
+
+<!-- Floating Quick WhatsApp Button -->
+<a href="https://wa.me/918946919241?text=Hi%20Rohit,%20I%20saw%20your%20portfolio!" target="_blank" class="position-fixed bottom-0 end-0 m-4 d-flex align-items-center gap-2 py-2 px-3 rounded-pill shadow-lg text-white text-decoration-none fw-bold" style="background: #25D366; z-index: 1050; border: 2px solid rgba(255, 255, 255, 0.3); box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45); transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="11" fill="#FFFFFF"/>
+        <path d="M17.5 14.38c-.28-.14-1.63-.8-1.88-.9-.25-.09-.44-.14-.62.14-.19.28-.72.9-.88 1.08-.16.19-.33.21-.61.07-.28-.14-1.18-.44-2.25-1.39-.83-.74-1.39-1.66-1.55-1.94-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.49.14-.16.19-.28.28-.46.09-.19.05-.35-.02-.49-.07-.14-.62-1.5-.85-2.06-.23-.54-.46-.47-.63-.48-.16-.01-.35-.01-.54-.01-.19 0-.49.07-.75.35-.25.28-.98.96-.98 2.33 0 1.37 1 2.7 1.14 2.89.14.19 1.97 3.01 4.77 4.22.67.29 1.19.46 1.6.59.67.21 1.28.18 1.76.11.54-.08 1.63-.67 1.86-1.31.23-.65.23-1.2.16-1.32-.07-.11-.25-.18-.53-.32z" fill="#25D366"/>
+    </svg>
+    <span class="d-none d-sm-inline">WhatsApp Me</span>
+</a>
 
 </body>
 </html>
