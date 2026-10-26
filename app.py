@@ -48,6 +48,8 @@ user_data = {
             "presentation_url": "RSOS_AI_Task_Automation_Executive_Presentation.pptx",
             "presentation_view_url": "https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Frohitjain-resume.vercel.app%2Fstatic%2FRSOS_AI_Task_Automation_Executive_Presentation.pptx",
             "presentation_title": "RSOS AI Task Automation Executive Presentation",
+            "presentation_pdf_url": "RSOS_AI_Task_Automation_Executive_Presentation.pdf",
+            "presentation_slides": [f"images/presentation/slide_{i}.jpg" for i in range(1, 15)],
             "summary": "An end-to-end automated system engineered to ingest support emails from designated mailboxes via scheduled cron jobs, parse unstructured email threads into structured task reports using local Llama models with Ollama and LangGraph, persist data into PostgreSQL, and present insights on a unified portal with graphical charts, CSV, and pivoted Excel exports for daily work sheets. Deployed and orchestrated via Docker strictly on the local machine to guarantee 100% data confidentiality and zero external API dependencies.",
             "highlights": [
                 "100% Local Machine & Docker Orchestration: The entire multi-service stack (Python App, Ollama Local LLM, and PostgreSQL Database) runs locally in isolated Docker containers on the local machine only—guaranteeing complete data privacy, zero cloud data leakage, and zero recurring API costs.",
