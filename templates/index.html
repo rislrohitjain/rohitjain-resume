@@ -441,6 +441,212 @@
             font-size: 0.85rem;
             letter-spacing: -0.01em;
         }
+
+        /* ============================================================
+           MOBILE & TABLET RESPONSIVE SYSTEM (Touch-Optimized)
+           ============================================================ */
+        html, body {
+            max-width: 100vw;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Responsive Breakpoints: Tablet & Mobile (<= 991px) */
+        @media (max-width: 991.98px) {
+            .container {
+                padding-left: 12px !important;
+                padding-right: 12px !important;
+            }
+
+            .bento-container {
+                grid-template-columns: 1fr !important;
+                grid-gap: 16px !important;
+                padding: 16px 0 40px !important;
+            }
+
+            .bento-item,
+            .profile-box,
+            .hero-box,
+            .stats-bar {
+                grid-column: span 1 !important;
+                grid-row: auto !important;
+                width: 100% !important;
+                padding: 20px 16px !important;
+                border-radius: 14px !important;
+            }
+
+            /* Profile Sidebar on Mobile */
+            .profile-box {
+                padding: 24px 18px !important;
+            }
+
+            .profile-actions-grid {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                gap: 10px !important;
+            }
+
+            .profile-actions-grid .btn-whatsapp,
+            .profile-actions-grid .btn-download {
+                margin-bottom: 0 !important;
+                padding: 10px 8px !important;
+                font-size: 0.8rem !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+
+            /* Hero Card on Mobile */
+            .hero-box {
+                text-align: left !important;
+                padding: 22px 18px !important;
+            }
+
+            .hero-box h1 {
+                font-size: clamp(1.75rem, 5.5vw, 2.25rem) !important;
+                line-height: 1.25 !important;
+                margin-bottom: 12px !important;
+            }
+
+            .hero-box .lead {
+                width: 100% !important;
+                font-size: 0.95rem !important;
+                line-height: 1.55 !important;
+            }
+
+            /* Stats Bar on Mobile: Clean 2-Col Grid */
+            .stats-bar {
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 12px !important;
+                padding: 16px 14px !important;
+            }
+
+            .stats-bar > div {
+                padding: 10px 8px !important;
+                background: var(--card-inner);
+                border: 1px solid var(--card-border);
+                border-radius: 10px;
+                text-align: center;
+            }
+
+            .stats-bar > div:last-child {
+                grid-column: span 2 !important;
+            }
+
+            .stats-bar h3 {
+                font-size: 1.75rem !important;
+            }
+
+            .stats-bar .d-none.d-md-block {
+                display: none !important;
+            }
+
+            /* Master Section Switcher: Native Touch Horizontal Scroll */
+            #mainSectionNav {
+                display: flex !important;
+                flex-wrap: nowrap !important;
+                overflow-x: auto !important;
+                justify-content: flex-start !important;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                gap: 6px !important;
+                padding: 4px 2px !important;
+            }
+
+            #mainSectionNav::-webkit-scrollbar {
+                display: none;
+            }
+
+            #mainSectionNav .nav-item {
+                flex-shrink: 0;
+            }
+
+            #mainSectionNav .nav-link {
+                white-space: nowrap !important;
+                font-size: 0.78rem !important;
+                padding: 8px 13px !important;
+                border-radius: 10px !important;
+            }
+
+            /* Project Title Navigation Tabs: Vertical Stack on Mobile */
+            #projectNavTabs {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 8px !important;
+            }
+
+            #projectNavTabs .nav-item {
+                width: 100% !important;
+            }
+
+            #projectNavTabs .nav-link {
+                font-size: 0.8rem !important;
+                padding: 10px 14px !important;
+            }
+
+            /* Floating Quick Actions on Mobile */
+            .btn-whatsapp-floating {
+                bottom: 14px !important;
+                right: 14px !important;
+                margin: 0 !important;
+                padding: 8px 12px !important;
+                font-size: 0.78rem !important;
+                box-shadow: 0 4px 16px rgba(37, 211, 102, 0.45) !important;
+            }
+
+            #themeToggleBtn {
+                top: 10px !important;
+                right: 10px !important;
+                padding: 6px 12px !important;
+                font-size: 0.75rem !important;
+            }
+
+            /* Media Panels on Mobile */
+            iframe, video {
+                max-width: 100% !important;
+            }
+
+            /* Project Action Button Flex */
+            .project-action-buttons {
+                width: 100% !important;
+                display: flex !important;
+                flex-wrap: wrap !important;
+                gap: 8px !important;
+            }
+
+            .project-action-buttons .btn {
+                flex: 1 1 auto !important;
+                text-align: center !important;
+                font-size: 0.75rem !important;
+                padding: 8px 10px !important;
+            }
+        }
+
+        /* Extra Small Phones (<= 479px) */
+        @media (max-width: 479.98px) {
+            .bento-item {
+                padding: 16px 12px !important;
+            }
+
+            .profile-photo-ring {
+                width: 104px !important;
+                height: 104px !important;
+            }
+
+            .hero-box h1 {
+                font-size: 1.6rem !important;
+            }
+
+            .stats-bar h3 {
+                font-size: 1.55rem !important;
+            }
+
+            .profile-actions-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -568,17 +774,19 @@
                 </div>
             </div>
 
-            <a href="https://wa.me/918946919241?text=Hi%20Rohit,%20I%20saw%20your%20portfolio!" target="_blank" class="btn-whatsapp mb-2">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="12" cy="12" r="11" fill="#FFFFFF"/>
-                    <path d="M17.5 14.38c-.28-.14-1.63-.8-1.88-.9-.25-.09-.44-.14-.62.14-.19.28-.72.9-.88 1.08-.16.19-.33.21-.61.07-.28-.14-1.18-.44-2.25-1.39-.83-.74-1.39-1.66-1.55-1.94-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.49.14-.16.19-.28.28-.46.09-.19.05-.35-.02-.49-.07-.14-.62-1.5-.85-2.06-.23-.54-.46-.47-.63-.48-.16-.01-.35-.01-.54-.01-.19 0-.49.07-.75.35-.25.28-.98.96-.98 2.33 0 1.37 1 2.7 1.14 2.89.14.19 1.97 3.01 4.77 4.22.67.29 1.19.46 1.6.59.67.21 1.28.18 1.76.11.54-.08 1.63-.67 1.86-1.31.23-.65.23-1.2.16-1.32-.07-.11-.25-.18-.53-.32z" fill="#25D366"/>
-                </svg>
-                Chat on WhatsApp
-            </a>
+            <div class="profile-actions-grid mt-2">
+                <a href="https://wa.me/918946919241?text=Hi%20Rohit,%20I%20saw%20your%20portfolio!" target="_blank" class="btn-whatsapp mb-2">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="11" fill="#FFFFFF"/>
+                        <path d="M17.5 14.38c-.28-.14-1.63-.8-1.88-.9-.25-.09-.44-.14-.62.14-.19.28-.72.9-.88 1.08-.16.19-.33.21-.61.07-.28-.14-1.18-.44-2.25-1.39-.83-.74-1.39-1.66-1.55-1.94-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.49.14-.16.19-.28.28-.46.09-.19.05-.35-.02-.49-.07-.14-.62-1.5-.85-2.06-.23-.54-.46-.47-.63-.48-.16-.01-.35-.01-.54-.01-.19 0-.49.07-.75.35-.25.28-.98.96-.98 2.33 0 1.37 1 2.7 1.14 2.89.14.19 1.97 3.01 4.77 4.22.67.29 1.19.46 1.6.59.67.21 1.28.18 1.76.11.54-.08 1.63-.67 1.86-1.31.23-.65.23-1.2.16-1.32-.07-.11-.25-.18-.53-.32z" fill="#25D366"/>
+                    </svg>
+                    Chat on WhatsApp
+                </a>
 
-            <a href="{{ user.header.resume_url }}" class="btn-download" download>
-                <i class="bi bi-file-earmark-pdf-fill me-2"></i> Download CV
-            </a>
+                <a href="{{ user.header.resume_url }}" class="btn-download" download>
+                    <i class="bi bi-file-earmark-pdf-fill me-2"></i> Download CV
+                </a>
+            </div>
         </aside>
 
         <!-- Hero Card -->
@@ -726,7 +934,7 @@
                         <p class="small mb-0 mt-1" style="color: var(--text-dim);">{{ proj.tagline }}</p>
                     </div>
                 </div>
-                <div class="d-flex gap-2 flex-wrap">
+                <div class="d-flex gap-2 flex-wrap project-action-buttons">
                     {% if proj.live_url %}
                     <a href="{{ proj.live_url }}" target="_blank" class="btn btn-sm btn-info text-dark font-monospace py-2 px-3 rounded-3 fw-bold text-decoration-none shadow-sm">
                         <i class="bi bi-box-arrow-up-right me-1"></i> Open Live App in New Tab
@@ -1144,7 +1352,7 @@
                         {% if event.images %}
                         <div class="mb-2">
                             <span class="text-info font-monospace d-block mb-1" style="font-size: 0.7rem;"><i class="bi bi-images me-1"></i>{% if event.is_champion %}Winner Announcement &amp; Proofs (Click to expand):{% else %}Event Highlights (Click to expand):{% endif %}</span>
-                            <div class="d-flex gap-2 flex-wrap">
+                            <div class="d-flex gap-2 flex-wrap project-action-buttons">
                                 {% for img in event.images %}
                                 <img src="{{ url_for('static', filename=img) }}" class="rounded-2 border" style="width: 76px; height: 52px; object-fit: cover; cursor: pointer; transition: transform 0.2s ease; border-color: var(--card-border) !important;" onclick="openImageModal('{{ url_for('static', filename=img) }}')" alt="Event Photo" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
                                 {% endfor %}
@@ -1546,7 +1754,7 @@
 
 
 <!-- Floating Quick WhatsApp Button -->
-<a href="https://wa.me/918946919241?text=Hi%20Rohit,%20I%20saw%20your%20portfolio!" target="_blank" class="position-fixed bottom-0 end-0 m-4 d-flex align-items-center gap-2 py-2 px-3 rounded-pill shadow-lg text-white text-decoration-none fw-bold" style="background: #25D366; z-index: 1050; border: 2px solid rgba(255, 255, 255, 0.3); box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45); transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+<a href="https://wa.me/918946919241?text=Hi%20Rohit,%20I%20saw%20your%20portfolio!" target="_blank" class="position-fixed bottom-0 end-0 m-4 d-flex align-items-center gap-2 py-2 px-3 rounded-pill shadow-lg text-white text-decoration-none fw-bold btn-whatsapp-floating" style="background: #25D366; z-index: 1050; border: 2px solid rgba(255, 255, 255, 0.3); box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45); transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="12" cy="12" r="11" fill="#FFFFFF"/>
         <path d="M17.5 14.38c-.28-.14-1.63-.8-1.88-.9-.25-.09-.44-.14-.62.14-.19.28-.72.9-.88 1.08-.16.19-.33.21-.61.07-.28-.14-1.18-.44-2.25-1.39-.83-.74-1.39-1.66-1.55-1.94-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.49.14-.16.19-.28.28-.46.09-.19.05-.35-.02-.49-.07-.14-.62-1.5-.85-2.06-.23-.54-.46-.47-.63-.48-.16-.01-.35-.01-.54-.01-.19 0-.49.07-.75.35-.25.28-.98.96-.98 2.33 0 1.37 1 2.7 1.14 2.89.14.19 1.97 3.01 4.77 4.22.67.29 1.19.46 1.6.59.67.21 1.28.18 1.76.11.54-.08 1.63-.67 1.86-1.31.23-.65.23-1.2.16-1.32-.07-.11-.25-.18-.53-.32z" fill="#25D366"/>
