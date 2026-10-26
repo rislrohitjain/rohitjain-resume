@@ -449,6 +449,10 @@ def index():
 def robots():
     return send_from_directory('static', 'robots.txt')
 
+@app.route('/og-image.jpg')
+def og_image():
+    return send_from_directory('static', 'og-image.jpg')
+
 @app.route('/sitemap.xml')
 def sitemap():
     return send_from_directory('static', 'sitemap.xml')
