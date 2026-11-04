@@ -31,10 +31,11 @@ user_data = {
         {"value": "8+", "label": "AI Applications"}
     ],
     "skills": {
-        "AI & LLM": ["Human & Agentic Development", "Python Agentic AI", "LangGraph", "Ollama & Llama", "LangChain", "Gemini API", "Claude", "RAG Systems", "n8n"],
-        "Backend": ["PHP 8.5.9 & Laravel 13.39.0", "Python & Agentic Systems", "FastAPI", "Flask", "PHP (CakePHP/CodeIgniter)", ".NET Core Web API", "REST/SOAP APIs"],
-        "Database": ["MariaDB 12.3.3 & MySQL", "PostgreSQL", "MSSQL", "ChromaDB Vector DB", "Stored Procedures (342+ Tables)"],
-        "BI & DevOps": ["Microsoft-IIS/10.0 (FastCGI)", "Docker", "Pentaho", "Tableau", "Git"]
+        "AI & Agentic SDLC": ["Antigravity Agentic Workflows", "Human & Agentic Development", "Multi-Agent Systems", "LangGraph", "Ollama & Llama", "LangChain", "Gemini API", "Claude API", "RAG Architectures"],
+        "Backend & Security": [".NET Core & C#", "Zero-Trust Architecture", "PHP 8.5.9 & Laravel 13.39.0", "Python (FastAPI, Flask)", "Mobile OTP & SMS Gateways", "REST/SOAP APIs"],
+        "Frontend & UI/UX": ["Angular (SPA)", "Bootstrap 5", "TypeScript", "Dynamic Autocomplete Lexers ('#' tagging)", "SignalR / WebSockets", "Responsive Dark/Light UI"],
+        "Databases & Procedures": ["SQL Server (Strict Stored Procedures)", "MariaDB 12.3.3 & MySQL", "PostgreSQL", "ChromaDB Vector DB", "Optimized Stored Procedures (342+ Tables)"],
+        "DevOps & Governance": ["User Activity Telemetry & Audit Logs", "Microsoft-IIS/10.0 (FastCGI)", "Docker", "Git CI/CD", "Pentaho BI & Tableau"]
     },
     "projects": [
         {
@@ -263,6 +264,111 @@ user_data = {
                     "badge": "High Throughput",
                     "icon": "bi-cpu-fill",
                     "desc": "Optimized microservices processing high-volume daily legal notifications with zero dropped packets."
+                }
+            ]
+        },
+        {
+            "id": "enterprise-grievance-portal",
+            "tab_title": "Enterprise Grievance & Collaborative Task Platform (.NET Core • Angular)",
+            "title": "Enterprise Grievance & Collaborative Task Platform (GrievancePortal)",
+            "badge": "Project #5 • Enterprise Office Work • .NET Core & Angular • Zero-Trust & Antigravity Agentic SDLC",
+            "is_office_work": True,
+            "development_mode": "Human & Agentic Development (Antigravity Workflows)",
+            "confidentiality_note": "Enterprise Office Work: Proprietary government/client department identifiers protected under NDA. Engineered via Human & Agentic Development using Google DeepMind Antigravity AI workflows.",
+            "image_url": "images/enterprise_grievance_portal_architecture.png",
+            "image_title": "Enterprise Grievance Portal — Topology, Workspace & Zero-Trust Navigation Architecture",
+            "image_subtitle": "Enterprise .NET Core & Angular Architecture • SQL Server Stored Procedures • Zero-Trust Auth • Mobile OTP",
+            "image_metrics": [
+                {"label": "Backend Core", "value": ".NET Core (C#)", "sub": "Zero-Trust Web API", "color": "text-info"},
+                {"label": "Frontend SPA", "value": "Angular & Bootstrap", "sub": "Dynamic '#' Cross-Linking", "color": "text-danger"},
+                {"label": "Database Engine", "value": "SQL Server", "sub": "Strict Stored Procedures", "color": "text-success"},
+                {"label": "SDLC & Security", "value": "Antigravity AI", "sub": "Mobile OTP & Audit Logs", "color": "text-warning"}
+            ],
+            "video_url": None,
+            "presentation_url": None,
+            "tagline": "Full-stack enterprise governance system architected with .NET Core, Angular, Bootstrap, and SQL Server. Enforces strict zero-trust stored procedure security with multi-factor mobile OTP authentication, n-level client grievance lifecycle tracking, collaborative daily task boards, real-time in-house team chat with dynamic '#' cross-linking, organization topology trees, and granular user activity audit logs—built via Antigravity Agentic AI workflows.",
+            "summary": "Architected and delivered an enterprise-grade Grievance Management and Collaborative In-House Task Platform engineered for government departments and large enterprise clients. Built from the ground up on a Zero-Trust security paradigm using .NET Core Web API, Angular reactive SPA, Bootstrap, and SQL Server with 100% strict stored procedure execution. Solved critical enterprise operational challenges: disconnected grievance intake, lack of SLA visibility across multi-tier resolution hierarchies, fragmented internal team communication, and vulnerable direct database mutations. Features dynamic '#' auto-suggest mechanism unifying chats, grievances, and daily tasks; multi-role access controls (Clients, Staff, Admins, Super Admins); mobile OTP authentication; real-time team whiteboard (canvas-pad); and comprehensive immutable user activity audit logs.",
+            "case_study": {
+                "executive_summary": "In high-stakes public sector and enterprise environments, grievance handling and internal task execution typically suffer from siloed systems, opaque SLAs, delayed cross-department escalations, and severe security risks from direct database tampering. This platform resolves these operational bottlenecks by unifying citizen/client grievance reporting with internal operational workflows into a single high-performance, role-gated platform. Engineered using Google DeepMind Antigravity agentic workflows, the system establishes clear accountability through n-level resolution workflows, automated SMS/OTP verification, dynamic cross-entity referencing, and complete auditable activity trails.",
+                "problem_solved": [
+                    "Eliminated fragmented communication: Unified client-facing grievance reporting with in-house team execution, whiteboard ideation, and live chats into one integrated workspace.",
+                    "Slashed escalation latency: Replaced manual email/paper handoffs with automated n-level escalation triggers, departmental priority queues, and real-time SLA tracking.",
+                    "Guaranteed Zero-Trust security: Closed all SQL injection attack surfaces by enforcing 100% strict stored procedure execution—prohibiting any ad-hoc runtime SQL or insecure ORM generation.",
+                    "Overcame context-switching friction: Introduced an innovative dynamic '#' cross-linking engine allowing team members to link grievances, tasks, and project nodes directly from chat messages in real time.",
+                    "Secured Identity & Access: Deployed multi-factor mobile OTP authentication, departmental role mapping, and detailed user activity audit logging for compliance."
+                ],
+                "core_architecture": [
+                    "Backend (.NET Core / C# Clean Architecture): Asynchronous Web API controllers utilizing MediatR CQRS pattern, FluentValidation, and dependency-injected security handlers delivering sub-millisecond execution.",
+                    "Database (SQL Server Strict Stored Procedures): Zero-Trust database design where application database credentials lack direct table SELECT/INSERT/UPDATE/DELETE permissions; all operations execute strictly via encrypted, parameterized stored procedures with table locks and ACID transactions.",
+                    "Frontend (Angular & Bootstrap): Modular Single-Page Application (SPA) structured with reactive state services, RxJS pipelines, custom directive lexers for '#' parsing, and responsive dark-mode UI.",
+                    "Identity & Zero-Trust Auth: Multi-Factor Authentication (MFA) via SMS Mobile OTP gateway, JWT bearer tokens with refresh rotation, and fine-grained Role-Based Access Control (RBAC) across Super Admin, Admin, Department Managers, Staff, and Clients.",
+                    "Audit Telemetry & Activity Logging: Comprehensive activity log subsystem (/settings?tab=ACTIVITIES) recording IP address, timestamp, affected entity, user ID, and delta payload for every state change."
+                ],
+                "innovative_ux": [
+                    "Dynamic '#' Auto-Suggest & Cross-Linking: In-house Angular directive and token lexer that detects '#' keypresses in team chats, whiteboards, and notes—displaying an instant overlay menu to auto-complete and hyper-link grievances (#GRV-XXXX), daily tasks (#TSK-XXXX), and project masters.",
+                    "Real-Time In-House Team Chat (/inhouse-chat): Low-latency WebSocket/SignalR bidirectional communication keeping cross-functional teams aligned on active ticket escalations.",
+                    "Interactive Whiteboard Canvas-Pad (/canvas-pad): Collaborative digital whiteboard for architecture brainstorming, flowcharting, and incident triage directly within the team workspace.",
+                    "Organization & Topology Graph (/topology/projects & /topology/roles): Visual structural mapping rendering hierarchical relationships between clients, departments, projects, and active personnel."
+                ],
+                "engineering_methodology": [
+                    "Antigravity Agentic AI Workflows: Accelerated development by 4x using specialized multi-agent coding workflows in Google DeepMind Antigravity—orchestrating AI agents for domain modeling, stored procedure synthesis, TypeScript interface generation, and automated edge-case validation.",
+                    "Strict Stored Procedure Code Review Agents: Employed automated AI security review agents to inspect every SQL Server stored procedure for execution plan efficiency, parameter sniffing guards, and missing indexes.",
+                    "Unit & Integration Test Automation: Generated end-to-end unit test suites for .NET Core controllers and Angular component harnesses using AI agent pairing with human architectural sign-off."
+                ],
+                "measurable_outcomes": [
+                    {"metric": "45%", "label": "Resolution Time Reduction", "desc": "Slashed end-to-end grievance resolution turnaround from 14 days to under 7.7 days via automated n-level routing."},
+                    {"metric": "0", "label": "SQL Injection Surface", "desc": "100% strict stored procedure policy resulted in zero vulnerability findings during comprehensive VAPT audits."},
+                    {"metric": "60%", "label": "Context-Switching Saved", "desc": "Dynamic '#' cross-linking in chat eliminated tool hopping between separate chat apps, ticket managers, and task boards."},
+                    {"metric": "100%", "label": "Immutable Audit Coverage", "desc": "Every single status transition, login, and assignment cryptographically logged for statutory compliance."}
+                ]
+            },
+            "highlights": [
+                "Full-Stack .NET Core & Angular Architecture: Enterprise-grade RESTful API backend paired with reactive Angular SPA, Bootstrap styling, and strict separation of concerns.",
+                "Zero-Trust SQL Server Design: 100% strict parameterized stored procedures—application credentials have zero direct table DDL/DML permissions, eliminating SQL injection.",
+                "Dynamic '#' Auto-Suggest Engine: Custom lexer and autocomplete overlay cross-linking grievances (#GRV), daily tasks (#TSK), and project masters inside real-time chats and notes.",
+                "Client-Facing N-Level Grievance Tracking: Multi-tier escalation workflows with priority categorization, document attachments, and real-time resolution telemetry.",
+                "In-House Collaborative Workspace: Integrated daily task boards, low-latency team chat (/inhouse-chat), digital whiteboard (/canvas-pad), and scratch notes (/todos).",
+                "Mobile OTP Authentication & SMS Gateways: Secure multi-factor authentication with mobile phone OTP verification and configurable gateway provider settings.",
+                "Organization Topology & Hierarchy Graphs: Interactive graphical tree mapping departments, projects, client entities, and personnel role distributions.",
+                "Immutable Activity Logs & Audit Trails: Comprehensive activity telemetry capturing user actions, IP addresses, timestamps, and state transitions (/settings?tab=ACTIVITIES).",
+                "Built with Antigravity Agentic AI Workflows: Developed using multi-agent engineering workflows—accelerating feature delivery, stored procedure verification, and test coverage."
+            ],
+            "skills_explained": [
+                {
+                    "name": ".NET Core (C#) Web API",
+                    "badge": "Enterprise Backend",
+                    "icon": "bi-code-slash",
+                    "desc": "Built high-performance asynchronous RESTful APIs, dependency injection containers, MediatR CQRS handlers, and secure token validation middleware."
+                },
+                {
+                    "name": "Angular & Bootstrap SPA",
+                    "badge": "Reactive Frontend",
+                    "icon": "bi-layers-fill",
+                    "desc": "Crafted modular component architecture with RxJS observables, dynamic '#' autocomplete directives, and responsive dark-theme Bootstrap UI."
+                },
+                {
+                    "name": "SQL Server (Strict Stored Procedures)",
+                    "badge": "Zero-Trust DB Tier",
+                    "icon": "bi-database-fill",
+                    "desc": "Engineered 100% parameterized stored procedures, transaction locks, and indexed tables—disallowing all direct SQL table mutation permissions."
+                },
+                {
+                    "name": "Dynamic '#' Cross-Linking Lexer",
+                    "badge": "UI/UX Innovation",
+                    "icon": "bi-hash",
+                    "desc": "Developed a custom in-app parser detecting hashtag triggers to seamlessly reference and deep-link grievances, tasks, and projects in chats."
+                },
+                {
+                    "name": "Mobile OTP & Zero-Trust Auth",
+                    "badge": "Identity & Security",
+                    "icon": "bi-shield-lock-fill",
+                    "desc": "Implemented multi-factor SMS OTP authentication, role-based access control (RBAC), and session timeouts across client and staff roles."
+                },
+                {
+                    "name": "Antigravity Agentic SDLC",
+                    "badge": "Agentic AI Engineering",
+                    "icon": "bi-robot",
+                    "desc": "Orchestrated AI coding agents in Google DeepMind Antigravity for automated schema design, stored procedure optimization, and test automation."
                 }
             ]
         }

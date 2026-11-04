@@ -46,17 +46,22 @@
       },
       "knowsAbout": [
         "Human & Agentic Development",
+        "Google DeepMind Antigravity Workflows",
         "Artificial Intelligence",
         "AI Automation",
         "LLM Agents",
         "Python & Agentic Systems",
+        ".NET Core & C#",
+        "Angular (SPA)",
+        "SQL Server Stored Procedures",
+        "Zero-Trust Architecture",
         "PHP 8.5.9",
         "Laravel 13.39.0",
         "MariaDB 12.3.3",
         "Database Modernization",
-        "MySQL Stored Procedures",
         "Full-Stack Architecture",
-        "Windows Server IIS FastCGI"
+        "Windows Server IIS FastCGI",
+        "Enterprise Grievance & Collaborative Task Platform"
       ],
       "sameAs": [
         "https://github.com/rislrohitjain",
@@ -1029,7 +1034,7 @@
                                         <span class="fs-5 text-info"><i class="bi bi-cpu-fill"></i></span>
                                         <div>
                                             <h6 class="fw-bold mb-0" style="color: var(--text-main);">{{ proj.image_title or 'System Tech Stack & Architecture Telemetry' }}</h6>
-                                            <span class="small font-mono" style="color: var(--text-dim); font-size: 0.72rem;">Live production telemetry • PHP 8.5.9 • Laravel 13.39.0 • MariaDB 12.3.3 (342 Tables • 0.34ms Latency)</span>
+                                            <span class="small font-mono" style="color: var(--text-dim); font-size: 0.72rem;">{{ proj.image_subtitle or 'Live production telemetry • PHP 8.5.9 • Laravel 13.39.0 • MariaDB 12.3.3 (342 Tables • 0.34ms Latency)' }}</span>
                                         </div>
                                     </div>
                                     <div class="d-flex align-items-center gap-2 flex-wrap">
@@ -1057,34 +1062,46 @@
 
                                 <!-- Quick Telemetry Metrics Pills -->
                                 <div class="row g-2 px-1">
-                                    <div class="col-6 col-md-3">
-                                        <div class="p-2 rounded-2 text-center" style="background: var(--card-bg); border: 1px solid var(--card-border);">
-                                            <span class="small font-mono text-dim d-block" style="font-size: 0.68rem;">PHP Engine</span>
-                                            <strong class="font-mono text-info" style="font-size: 0.85rem;">v8.5.9</strong>
-                                            <span class="d-block font-mono text-muted" style="font-size: 0.65rem;">cgi-fcgi • 10MB</span>
+                                    {% if proj.image_metrics %}
+                                        {% for m in proj.image_metrics %}
+                                        <div class="col-6 col-md-3">
+                                            <div class="p-2 rounded-2 text-center" style="background: var(--card-bg); border: 1px solid var(--card-border);">
+                                                <span class="small font-mono text-dim d-block" style="font-size: 0.68rem;">{{ m.label }}</span>
+                                                <strong class="font-mono {{ m.color }}" style="font-size: 0.85rem;">{{ m.value }}</strong>
+                                                <span class="d-block font-mono text-muted" style="font-size: 0.65rem;">{{ m.sub }}</span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-6 col-md-3">
-                                        <div class="p-2 rounded-2 text-center" style="background: var(--card-bg); border: 1px solid var(--card-border);">
-                                            <span class="small font-mono text-dim d-block" style="font-size: 0.68rem;">Laravel Framework</span>
-                                            <strong class="font-mono text-danger" style="font-size: 0.85rem;">v13.39.0</strong>
-                                            <span class="d-block font-mono text-muted" style="font-size: 0.65rem;">Modern MVC Core</span>
+                                        {% endfor %}
+                                    {% else %}
+                                        <div class="col-6 col-md-3">
+                                            <div class="p-2 rounded-2 text-center" style="background: var(--card-bg); border: 1px solid var(--card-border);">
+                                                <span class="small font-mono text-dim d-block" style="font-size: 0.68rem;">PHP Engine</span>
+                                                <strong class="font-mono text-info" style="font-size: 0.85rem;">v8.5.9</strong>
+                                                <span class="d-block font-mono text-muted" style="font-size: 0.65rem;">cgi-fcgi • 10MB</span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-6 col-md-3">
-                                        <div class="p-2 rounded-2 text-center" style="background: var(--card-bg); border: 1px solid var(--card-border);">
-                                            <span class="small font-mono text-dim d-block" style="font-size: 0.68rem;">Database (SQL)</span>
-                                            <strong class="font-mono text-success" style="font-size: 0.85rem;">12.3.3-MariaDB</strong>
-                                            <span class="d-block font-mono text-muted" style="font-size: 0.65rem;">342 Tables • 0.34ms</span>
+                                        <div class="col-6 col-md-3">
+                                            <div class="p-2 rounded-2 text-center" style="background: var(--card-bg); border: 1px solid var(--card-border);">
+                                                <span class="small font-mono text-dim d-block" style="font-size: 0.68rem;">Laravel Framework</span>
+                                                <strong class="font-mono text-danger" style="font-size: 0.85rem;">v13.39.0</strong>
+                                                <span class="d-block font-mono text-muted" style="font-size: 0.65rem;">Modern MVC Core</span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-6 col-md-3">
-                                        <div class="p-2 rounded-2 text-center" style="background: var(--card-bg); border: 1px solid var(--card-border);">
-                                            <span class="small font-mono text-dim d-block" style="font-size: 0.68rem;">Host &amp; Methodology</span>
-                                            <strong class="font-mono text-warning" style="font-size: 0.85rem;">IIS 10.0 FastCGI</strong>
-                                            <span class="d-block font-mono text-info" style="font-size: 0.65rem;">Human &amp; Agentic</span>
+                                        <div class="col-6 col-md-3">
+                                            <div class="p-2 rounded-2 text-center" style="background: var(--card-bg); border: 1px solid var(--card-border);">
+                                                <span class="small font-mono text-dim d-block" style="font-size: 0.68rem;">Database (SQL)</span>
+                                                <strong class="font-mono text-success" style="font-size: 0.85rem;">12.3.3-MariaDB</strong>
+                                                <span class="d-block font-mono text-muted" style="font-size: 0.65rem;">342 Tables • 0.34ms</span>
+                                            </div>
                                         </div>
-                                    </div>
+                                        <div class="col-6 col-md-3">
+                                            <div class="p-2 rounded-2 text-center" style="background: var(--card-bg); border: 1px solid var(--card-border);">
+                                                <span class="small font-mono text-dim d-block" style="font-size: 0.68rem;">Host &amp; Methodology</span>
+                                                <strong class="font-mono text-warning" style="font-size: 0.85rem;">IIS 10.0 FastCGI</strong>
+                                                <span class="d-block font-mono text-info" style="font-size: 0.65rem;">Human &amp; Agentic</span>
+                                            </div>
+                                        </div>
+                                    {% endif %}
                                 </div>
                             </div>
                             {% endif %}
@@ -1142,6 +1159,123 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Technical Case Study Panel (Principal Engineer & Recruiter Review) -->
+                        {% if proj.case_study %}
+                        <div class="p-4 rounded-4 mb-4" style="background: linear-gradient(145deg, rgba(56, 189, 248, 0.05) 0%, var(--card-inner) 100%); border: 1px solid rgba(56, 189, 248, 0.3);">
+                            <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-4 pb-3 border-bottom" style="border-color: var(--card-border) !important;">
+                                <div>
+                                    <div class="d-flex align-items-center gap-2 flex-wrap mb-1">
+                                        <span class="badge font-mono px-3 py-1 rounded-pill" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); font-size: 0.72rem;">
+                                            <i class="bi bi-briefcase-fill me-1"></i> Technical Case Study
+                                        </span>
+                                        <span class="badge font-mono px-3 py-1 rounded-pill" style="background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); font-size: 0.72rem;">
+                                            <i class="bi bi-shield-check me-1"></i> Principal Engineer &amp; CTO Specification
+                                        </span>
+                                    </div>
+                                    <h5 class="fw-bold mb-0" style="color: var(--text-main);">
+                                        Enterprise Architectural Analysis &amp; High-Impact Case Study
+                                    </h5>
+                                </div>
+                                <span class="badge py-2 px-3 rounded-pill font-mono" style="background: rgba(245, 158, 11, 0.15); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.3); font-size: 0.72rem;">
+                                    <i class="bi bi-award-fill me-1"></i> Zero-Trust &amp; Antigravity Agentic SDLC
+                                </span>
+                            </div>
+
+                            <!-- 1. Executive Summary & Problem Solved -->
+                            <div class="mb-4">
+                                <h6 class="text-uppercase text-info small font-mono fw-bold mb-2" style="font-size: 0.78rem;">
+                                    <i class="bi bi-1-circle-fill me-1"></i> 1. Executive Summary &amp; Problem Solved
+                                </h6>
+                                <p class="small leading-relaxed mb-3" style="color: var(--text-body);">
+                                    {{ proj.case_study.executive_summary }}
+                                </p>
+                                <div class="row g-2">
+                                    {% for prob in proj.case_study.problem_solved %}
+                                    <div class="col-md-6">
+                                        <div class="p-3 rounded-3 h-100" style="background: var(--card-bg); border: 1px solid var(--card-border); border-left: 3px solid #38bdf8 !important;">
+                                            <span class="small d-block leading-relaxed" style="color: var(--text-body); font-size: 0.8rem;">
+                                                <i class="bi bi-arrow-right-circle-fill text-info me-2"></i>{{ prob }}
+                                            </span>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+
+                            <!-- 2. Core Architecture & Zero-Trust Security Highlights -->
+                            <div class="mb-4">
+                                <h6 class="text-uppercase text-danger small font-mono fw-bold mb-2" style="font-size: 0.78rem;">
+                                    <i class="bi bi-2-circle-fill me-1"></i> 2. Core Architecture &amp; Zero-Trust Security Highlights
+                                </h6>
+                                <div class="row g-2">
+                                    {% for arch in proj.case_study.core_architecture %}
+                                    <div class="col-12">
+                                        <div class="p-3 rounded-3" style="background: var(--card-bg); border: 1px solid var(--card-border); border-left: 3px solid #ef4444 !important;">
+                                            <span class="small d-block leading-relaxed" style="color: var(--text-body); font-size: 0.8rem;">
+                                                <i class="bi bi-shield-lock-fill text-danger me-2"></i>{{ arch }}
+                                            </span>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+
+                            <!-- 3. Innovative UI/UX Features -->
+                            <div class="mb-4">
+                                <h6 class="text-uppercase text-warning small font-mono fw-bold mb-2" style="font-size: 0.78rem;">
+                                    <i class="bi bi-3-circle-fill me-1"></i> 3. Innovative UI/UX Features (Dynamic '#' Cross-Linking &amp; Collaborative Workspace)
+                                </h6>
+                                <div class="row g-2">
+                                    {% for ux in proj.case_study.innovative_ux %}
+                                    <div class="col-md-6">
+                                        <div class="p-3 rounded-3 h-100" style="background: var(--card-bg); border: 1px solid var(--card-border); border-left: 3px solid #f59e0b !important;">
+                                            <span class="small d-block leading-relaxed" style="color: var(--text-body); font-size: 0.8rem;">
+                                                <i class="bi bi-lightning-charge-fill text-warning me-2"></i>{{ ux }}
+                                            </span>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+
+                            <!-- 4. Engineering Methodology (AI-Augmented with Antigravity) -->
+                            <div class="mb-4">
+                                <h6 class="text-uppercase text-success small font-mono fw-bold mb-2" style="font-size: 0.78rem;">
+                                    <i class="bi bi-4-circle-fill me-1"></i> 4. Engineering Methodology (AI-Augmented &amp; Agentic Engineering with Antigravity)
+                                </h6>
+                                <div class="row g-2">
+                                    {% for meth in proj.case_study.engineering_methodology %}
+                                    <div class="col-12">
+                                        <div class="p-3 rounded-3" style="background: var(--card-bg); border: 1px solid var(--card-border); border-left: 3px solid #10b981 !important;">
+                                            <span class="small d-block leading-relaxed" style="color: var(--text-body); font-size: 0.8rem;">
+                                                <i class="bi bi-robot text-success me-2"></i>{{ meth }}
+                                            </span>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+
+                            <!-- 5. Measurable Outcomes & Business Value -->
+                            <div>
+                                <h6 class="text-uppercase text-info small font-mono fw-bold mb-3" style="font-size: 0.78rem;">
+                                    <i class="bi bi-5-circle-fill me-1"></i> 5. Measurable Outcomes &amp; Business Value
+                                </h6>
+                                <div class="row g-3">
+                                    {% for metric in proj.case_study.measurable_outcomes %}
+                                    <div class="col-6 col-md-3">
+                                        <div class="p-3 rounded-3 text-center h-100" style="background: var(--card-bg); border: 1px solid var(--card-border);">
+                                            <span class="display-6 fw-bold font-mono gradient-text d-block">{{ metric.metric }}</span>
+                                            <strong class="font-mono d-block mb-1" style="font-size: 0.82rem; color: var(--text-main);">{{ metric.label }}</strong>
+                                            <span class="small font-mono text-dim d-block" style="font-size: 0.72rem; color: var(--text-dim);">{{ metric.desc }}</span>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
 
                     </div>
                     {% endfor %}
@@ -1292,7 +1426,7 @@
 
                 <div class="row g-4">
                     {% for category, items in user.skills.items() %}
-                    <div class="col-md-6 col-lg-3">
+                    <div class="col-md-6 col-lg-4">
                         <div class="p-4 rounded-4 h-100" style="background: var(--card-inner); border: 1px solid var(--card-border);">
                             <h6 class="text-info fw-bold text-uppercase small mb-3 font-mono" style="letter-spacing: 0.5px;">
                                 {{ category }}
@@ -1308,10 +1442,22 @@
                                         <i class="devicon-git-plain colored fs-6 me-1"></i>
                                     {% elif 'PostgreSQL' in skill or 'Postgres' in skill %}
                                         <i class="devicon-postgresql-plain colored fs-6 me-1"></i>
-                                    {% elif 'MySQL' in skill %}
+                                    {% elif 'MySQL' in skill or 'MariaDB' in skill %}
                                         <i class="devicon-mysql-original colored fs-6 me-1"></i>
-                                    {% elif 'MSSQL' in skill or '.NET' in skill %}
+                                    {% elif 'SQL Server' in skill or 'MSSQL' in skill %}
+                                        <i class="devicon-microsoftsqlserver-plain colored fs-6 me-1"></i>
+                                    {% elif '.NET' in skill or 'C#' in skill %}
                                         <i class="devicon-dot-net-plain colored fs-6 me-1"></i>
+                                    {% elif 'Angular' in skill %}
+                                        <i class="devicon-angularjs-plain colored fs-6 me-1"></i>
+                                    {% elif 'Bootstrap' in skill %}
+                                        <i class="devicon-bootstrap-plain colored fs-6 me-1"></i>
+                                    {% elif 'TypeScript' in skill %}
+                                        <i class="devicon-typescript-plain colored fs-6 me-1"></i>
+                                    {% elif 'Zero-Trust' in skill or 'Security' in skill %}
+                                        <i class="bi bi-shield-lock-fill text-danger me-1"></i>
+                                    {% elif 'Antigravity' in skill or 'Agentic' in skill %}
+                                        <i class="bi bi-robot text-info me-1"></i>
                                     {% elif 'FastAPI' in skill %}
                                         <i class="devicon-fastapi-plain colored fs-6 me-1"></i>
                                     {% elif 'Flask' in skill %}
@@ -1533,7 +1679,7 @@
   <h1>Rohit Jain - Senior Full-Stack Developer & AI Automation Architect</h1>
   <p>Location: Jaipur, Rajasthan, India.</p>
   <p>Contact: Phone & WhatsApp: +91 89469 19241 | Email: engrohitjain5@gmail.com</p>
-  <p>Professional Summary: Senior Full-Stack Developer and AI Automation Architect with over 9 years of experience serving 100,000+ users and handling 50,000+ daily API calls. Winner of 1st Rank at BrowserStack Testathon Jaipur ($105 USD Prize) and Top 5 at Claude Community Jaipur Meetup. Pioneer in Human & Agentic Development and major enterprise tech stack modernization (PHP 8.2.10 to 8.5.9, Laravel 8 to 13.39.0, MariaDB 10.x to 12.3.3-MariaDB across 342+ tables with 0.34ms latency). Due to enterprise NDAs, several office work projects are architecturally showcased with verified live telemetry snapshots.</p>
+  <p>Professional Summary: Senior Full-Stack Developer and AI Automation Architect with over 9 years of experience serving 100,000+ users and handling 50,000+ daily API calls. Winner of 1st Rank at BrowserStack Testathon Jaipur ($105 USD Prize) and Top 5 at Claude Community Jaipur Meetup. Pioneer in Human & Agentic Development and major enterprise tech stack modernization (PHP 8.2.10 to 8.5.9, Laravel 8 to 13.39.0, MariaDB 10.x to 12.3.3-MariaDB across 342+ tables with 0.34ms latency). Architect of Enterprise Grievance & Collaborative Task Platform (.NET Core, Angular, SQL Server strict stored procedures, Zero-Trust design, Mobile OTP auth, audit logs, dynamic '#' cross-linking, and Google DeepMind Antigravity workflows). Due to enterprise NDAs, several office work projects are architecturally showcased with verified live telemetry snapshots.</p>
   <p>Links: 
     <a href="https://github.com/rislrohitjain">GitHub</a> | 
     <a href="https://www.linkedin.com/in/rohit-jain-">LinkedIn</a> | 
