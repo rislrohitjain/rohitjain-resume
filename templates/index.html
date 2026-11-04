@@ -45,14 +45,18 @@
         "addressCountry": "India"
       },
       "knowsAbout": [
+        "Human & Agentic Development",
         "Artificial Intelligence",
         "AI Automation",
         "LLM Agents",
-        "Python",
+        "Python & Agentic Systems",
+        "PHP 8.5.9",
+        "Laravel 13.39.0",
+        "MariaDB 12.3.3",
+        "Database Modernization",
+        "MySQL Stored Procedures",
         "Full-Stack Architecture",
-        "Laravel",
-        "Database Optimization",
-        "Cloud Architecture"
+        "Windows Server IIS FastCGI"
       ],
       "sameAs": [
         "https://github.com/rislrohitjain",
@@ -549,6 +553,9 @@
                         <span class="badge py-2 px-3 rounded-pill font-mono custom-badge" style="font-size: 0.74rem;">
                             <i class="bi bi-geo-alt-fill text-danger me-1"></i> Jaipur, India
                         </span>
+                        <span class="badge py-2 px-3 rounded-pill font-mono" style="background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); font-size: 0.74rem;">
+                            <i class="bi bi-people-fill me-1"></i> Human &amp; Agentic Development
+                        </span>
                     </div>
 
                     <!-- Main Pitch Title -->
@@ -562,7 +569,7 @@
                     </p>
 
                     <!-- Award Callout Banner -->
-                    <div class="p-3 rounded-3 mb-4 d-flex align-items-center justify-content-between flex-wrap gap-2" style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(245, 158, 11, 0.04)); border: 1px solid rgba(245, 158, 11, 0.4);">
+                    <div class="p-3 rounded-3 mb-3 d-flex align-items-center justify-content-between flex-wrap gap-2" style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(245, 158, 11, 0.04)); border: 1px solid rgba(245, 158, 11, 0.4);">
                         <div class="d-flex align-items-center gap-2">
                             <span class="fs-4">🏆</span>
                             <div>
@@ -572,6 +579,20 @@
                         </div>
                         <button type="button" class="btn btn-sm btn-outline-warning font-mono py-1 px-3 rounded-pill" onclick="switchSection('events')">
                             View Proof &amp; Trophy &rarr;
+                        </button>
+                    </div>
+
+                    <!-- Tech Upgrade Callout Banner -->
+                    <div class="p-3 rounded-3 mb-4 d-flex align-items-center justify-content-between flex-wrap gap-2" style="background: linear-gradient(135deg, rgba(56, 189, 248, 0.12), rgba(37, 99, 235, 0.04)); border: 1px solid rgba(56, 189, 248, 0.35);">
+                        <div class="d-flex align-items-center gap-2">
+                            <span class="fs-4">⚡</span>
+                            <div>
+                                <span class="fw-bold font-mono d-block" style="color: var(--accent); font-size: 0.88rem;">Major Enterprise Tech Upgrade &amp; Telemetry</span>
+                                <span class="small font-mono" style="color: var(--text-dim); font-size: 0.75rem;">PHP 8.2 → 8.5.9 • Laravel 8 → 13.39.0 • MariaDB 10.x → 12.3.3 (342 Tables • 0.34ms Latency)</span>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-sm btn-outline-info font-mono py-1 px-3 rounded-pill" onclick="switchSection('projects')">
+                            View Live Telemetry &rarr;
                         </button>
                     </div>
                 </div>
@@ -722,13 +743,36 @@
             {% if user.projects %}
             <div id="projects" class="modern-card p-4 p-md-5 mb-4">
                 <!-- Section Header -->
-                <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-4 pb-3 border-bottom" style="border-color: var(--card-border) !important;">
+                <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3 pb-3 border-bottom" style="border-color: var(--card-border) !important;">
                     <div>
                         <h3 class="fw-bold mb-1" style="color: var(--text-main);">Featured Projects &amp; Enterprise Solutions</h3>
                         <p class="small mb-0 font-mono" style="color: var(--text-dim);">Production Systems, AI Automation &amp; Mission-Critical Architectures</p>
                     </div>
-                    <span class="badge py-2 px-3 rounded-pill font-mono" style="background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.25); color: var(--accent);">
-                        <i class="bi bi-layers-fill me-1"></i> {{ user.projects|length }} Production Projects
+                    <div class="d-flex align-items-center gap-2 flex-wrap">
+                        <span class="badge py-2 px-3 rounded-pill font-mono" style="background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3);">
+                            <i class="bi bi-people-fill me-1"></i> Human &amp; Agentic Development
+                        </span>
+                        <span class="badge py-2 px-3 rounded-pill font-mono" style="background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.25); color: var(--accent);">
+                            <i class="bi bi-layers-fill me-1"></i> {{ user.projects|length }} Production Projects
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Enterprise Office Works & NDA Notice -->
+                <div class="p-3 rounded-3 mb-4 d-flex align-items-center justify-content-between flex-wrap gap-2" style="background: rgba(56, 189, 248, 0.05); border: 1px solid rgba(56, 189, 248, 0.2);">
+                    <div class="d-flex align-items-center gap-2">
+                        <i class="bi bi-shield-lock-fill text-info fs-5"></i>
+                        <div>
+                            <span class="fw-bold font-mono d-block" style="color: var(--text-main); font-size: 0.82rem;">
+                                Enterprise Office Works &amp; Confidentiality Protocol
+                            </span>
+                            <span class="small font-mono" style="color: var(--text-dim); font-size: 0.74rem;">
+                                In multiple enterprise office projects, real client/department names are protected under NDA &amp; government privacy governance. All architectures delivered via <strong>Human &amp; Agentic Development</strong>.
+                            </span>
+                        </div>
+                    </div>
+                    <span class="badge py-1 px-3 rounded-pill font-mono" style="background: rgba(245, 158, 11, 0.15); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.3); font-size: 0.7rem;">
+                        <i class="bi bi-briefcase-fill me-1"></i> Enterprise Office Works
                     </span>
                 </div>
 
@@ -761,15 +805,37 @@
                         <!-- Title & Quick Header -->
                         <div class="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-3">
                             <div>
-                                <span class="badge font-mono mb-2 px-3 py-1 rounded-pill" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); font-size: 0.72rem;">
-                                    {{ proj.badge }}
-                                </span>
+                                <div class="d-flex align-items-center gap-2 flex-wrap mb-2">
+                                    <span class="badge font-mono px-3 py-1 rounded-pill" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); font-size: 0.72rem;">
+                                        {{ proj.badge }}
+                                    </span>
+                                    {% if proj.is_office_work %}
+                                    <span class="badge font-mono px-3 py-1 rounded-pill" style="background: rgba(245, 158, 11, 0.15); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.3); font-size: 0.72rem;">
+                                        <i class="bi bi-briefcase-fill me-1"></i>Enterprise Office Work
+                                    </span>
+                                    {% endif %}
+                                    {% if proj.development_mode %}
+                                    <span class="badge font-mono px-3 py-1 rounded-pill" style="background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); font-size: 0.72rem;">
+                                        <i class="bi bi-robot me-1"></i>{{ proj.development_mode }}
+                                    </span>
+                                    {% endif %}
+                                </div>
                                 <h4 class="fw-bold mb-1" style="color: var(--text-main);">{{ proj.title }}</h4>
                                 <p class="small font-mono mb-0" style="color: var(--text-dim);">{{ proj.tagline }}</p>
+                                {% if proj.confidentiality_note %}
+                                <div class="mt-2 p-2 px-3 rounded-2 small font-mono d-inline-flex align-items-center gap-2" style="background: rgba(255, 255, 255, 0.03); border: 1px dashed var(--card-border); font-size: 0.72rem; color: var(--text-dim);">
+                                    <i class="bi bi-shield-check text-warning"></i> {{ proj.confidentiality_note }}
+                                </div>
+                                {% endif %}
                             </div>
 
                             <!-- Action Buttons -->
                             <div class="d-flex align-items-center gap-2 flex-wrap">
+                                {% if proj.image_url %}
+                                <button type="button" class="btn btn-sm btn-info text-dark font-mono py-2 px-3 rounded-3 fw-bold shadow-sm" onclick="openImageModal('{{ url_for('static', filename=proj.image_url) }}', '{{ proj.image_title or proj.title }}')">
+                                    <i class="bi bi-cpu-fill me-1"></i> View Tech Telemetry
+                                </button>
+                                {% endif %}
                                 {% if proj.live_url %}
                                 <a href="{{ proj.live_url }}" target="_blank" class="btn btn-sm btn-info text-dark font-mono py-2 px-3 rounded-3 fw-bold text-decoration-none shadow-sm">
                                     <i class="bi bi-box-arrow-up-right me-1"></i> Live Production Site
@@ -808,7 +874,7 @@
                         {% endif %}
 
                         <!-- Media Screen Box -->
-                        {% if proj.live_url or proj.video_url or proj.presentation_url %}
+                        {% if proj.live_url or proj.video_url or proj.presentation_url or proj.image_url %}
                         <div class="p-3 rounded-4 mb-4" style="background: var(--card-inner); border: 1px solid var(--card-border);">
                             
                             <!-- 1. Live Web Preview Panel -->
@@ -951,6 +1017,74 @@
                                         <div class="font-mono text-center mt-1" style="font-size: 0.65rem; color: {% if i == 1 %}#f59e0b{% else %}var(--text-dim){% endif %};" id="deckThumbText_{{ i }}">{{ i }}</div>
                                     </div>
                                     {% endfor %}
+                                </div>
+                            </div>
+                            {% endif %}
+
+                            <!-- 4. Interactive Telemetry / Architecture Snapshot Panel -->
+                            {% if proj.image_url %}
+                            <div id="media-image-panel-{{ proj.id }}">
+                                <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3 px-2">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <span class="fs-5 text-info"><i class="bi bi-cpu-fill"></i></span>
+                                        <div>
+                                            <h6 class="fw-bold mb-0" style="color: var(--text-main);">{{ proj.image_title or 'System Tech Stack & Architecture Telemetry' }}</h6>
+                                            <span class="small font-mono" style="color: var(--text-dim); font-size: 0.72rem;">Live production telemetry • PHP 8.5.9 • Laravel 13.39.0 • MariaDB 12.3.3 (342 Tables • 0.34ms Latency)</span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2 flex-wrap">
+                                        <span class="badge font-mono py-1 px-2" style="background: rgba(16, 185, 129, 0.1); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); font-size: 0.7rem;">
+                                            <i class="bi bi-check-circle-fill me-1"></i> Live Verified Telemetry
+                                        </span>
+                                        <button type="button" class="btn btn-sm btn-outline-info font-mono py-1 px-3 rounded-2 fw-bold text-decoration-none" style="font-size: 0.75rem;" onclick="openImageModal('{{ url_for('static', filename=proj.image_url) }}', '{{ proj.image_title or proj.title }}')">
+                                            <i class="bi bi-arrows-fullscreen me-1"></i> Expand Fullscreen
+                                        </button>
+                                        <a href="{{ url_for('static', filename=proj.image_url) }}" target="_blank" class="btn btn-sm btn-info text-dark font-mono py-1 px-3 rounded-2 fw-bold text-decoration-none" style="font-size: 0.75rem;">
+                                            <i class="bi bi-box-arrow-up-right me-1"></i> Open Raw
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="position-relative rounded-3 overflow-hidden border shadow-sm text-center mb-3" style="background: #000; border-color: var(--card-border) !important;">
+                                    <img 
+                                        src="{{ url_for('static', filename=proj.image_url) }}" 
+                                        alt="{{ proj.image_title or 'System Tech Stack Upgrade' }}" 
+                                        class="img-fluid w-100" 
+                                        style="max-height: 520px; object-fit: contain; cursor: pointer; transition: transform 0.2s ease;"
+                                        onclick="openImageModal('{{ url_for('static', filename=proj.image_url) }}', '{{ proj.image_title or proj.title }}')"
+                                        title="Click to view full screen">
+                                </div>
+
+                                <!-- Quick Telemetry Metrics Pills -->
+                                <div class="row g-2 px-1">
+                                    <div class="col-6 col-md-3">
+                                        <div class="p-2 rounded-2 text-center" style="background: var(--card-bg); border: 1px solid var(--card-border);">
+                                            <span class="small font-mono text-dim d-block" style="font-size: 0.68rem;">PHP Engine</span>
+                                            <strong class="font-mono text-info" style="font-size: 0.85rem;">v8.5.9</strong>
+                                            <span class="d-block font-mono text-muted" style="font-size: 0.65rem;">cgi-fcgi • 10MB</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-3">
+                                        <div class="p-2 rounded-2 text-center" style="background: var(--card-bg); border: 1px solid var(--card-border);">
+                                            <span class="small font-mono text-dim d-block" style="font-size: 0.68rem;">Laravel Framework</span>
+                                            <strong class="font-mono text-danger" style="font-size: 0.85rem;">v13.39.0</strong>
+                                            <span class="d-block font-mono text-muted" style="font-size: 0.65rem;">Modern MVC Core</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-3">
+                                        <div class="p-2 rounded-2 text-center" style="background: var(--card-bg); border: 1px solid var(--card-border);">
+                                            <span class="small font-mono text-dim d-block" style="font-size: 0.68rem;">Database (SQL)</span>
+                                            <strong class="font-mono text-success" style="font-size: 0.85rem;">12.3.3-MariaDB</strong>
+                                            <span class="d-block font-mono text-muted" style="font-size: 0.65rem;">342 Tables • 0.34ms</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-3">
+                                        <div class="p-2 rounded-2 text-center" style="background: var(--card-bg); border: 1px solid var(--card-border);">
+                                            <span class="small font-mono text-dim d-block" style="font-size: 0.68rem;">Host &amp; Methodology</span>
+                                            <strong class="font-mono text-warning" style="font-size: 0.85rem;">IIS 10.0 FastCGI</strong>
+                                            <span class="d-block font-mono text-info" style="font-size: 0.65rem;">Human &amp; Agentic</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             {% endif %}
@@ -1399,7 +1533,7 @@
   <h1>Rohit Jain - Senior Full-Stack Developer & AI Automation Architect</h1>
   <p>Location: Jaipur, Rajasthan, India.</p>
   <p>Contact: Phone & WhatsApp: +91 89469 19241 | Email: engrohitjain5@gmail.com</p>
-  <p>Professional Summary: Senior Full-Stack Developer and AI Automation Architect with over 9 years of experience serving 100,000+ users and handling 50,000+ daily API calls. Winner of 1st Rank at BrowserStack Testathon Jaipur ($105 USD Prize) and Top 5 at Claude Community Jaipur Meetup. Expert in Python, Agentic Systems, Full-Stack Architecture, and database optimization cutting result generation times by 50%.</p>
+  <p>Professional Summary: Senior Full-Stack Developer and AI Automation Architect with over 9 years of experience serving 100,000+ users and handling 50,000+ daily API calls. Winner of 1st Rank at BrowserStack Testathon Jaipur ($105 USD Prize) and Top 5 at Claude Community Jaipur Meetup. Pioneer in Human & Agentic Development and major enterprise tech stack modernization (PHP 8.2.10 to 8.5.9, Laravel 8 to 13.39.0, MariaDB 10.x to 12.3.3-MariaDB across 342+ tables with 0.34ms latency). Due to enterprise NDAs, several office work projects are architecturally showcased with verified live telemetry snapshots.</p>
   <p>Links: 
     <a href="https://github.com/rislrohitjain">GitHub</a> | 
     <a href="https://www.linkedin.com/in/rohit-jain-">LinkedIn</a> | 

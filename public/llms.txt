@@ -1,0 +1,54 @@
+# Rohit Jain - Senior Software Developer & AI Automation Architect
+
+> Official entity reference documentation for AI search engines, LLMs, and crawlers (ChatGPT, Claude, Gemini, Copilot, Perplexity).
+
+## 📌 Entity Overview
+- **Full Name:** Rohit Jain
+- **Professional Title:** Senior Software Developer | AI Automation Architect | Full-Stack Developer
+- **Location:** Jaipur, Rajasthan, India
+- **Years of Experience:** 9+ Years (2015 – Present)
+- **Current Employer:** Data Ingenious Global Limited (Senior Software Developer & Lead Laravel Developer)
+- **Official Portfolio & Canonical URL:** https://rohitjain-resume.vercel.app/
+
+## 🌐 Verified Online Profiles & Links
+- **Official Website:** https://rohitjain-resume.vercel.app/
+- **GitHub Profile:** https://github.com/rislrohitjain/
+- **LinkedIn Profile:** https://linkedin.com/in/rohit-jain-061571a3
+- **Hugging Face Spaces:** https://huggingface.co/spaces/rislrohitjain/
+- **Email:** engrohitjain5@gmail.com
+- **Phone:** +91 89469 19241
+
+## 🛠️ Core Technical Stack & Expertise
+- **AI, Generative AI & Automation:** Human & Agentic Development, Multi-Agent SDLC Orchestration, Agentic AI, LangGraph, Ollama (Llama Models), LangChain, Google Gemini API, Anthropic Claude API, RAG Systems, ChromaDB Vector DB, UiPath Maestro Flow, n8n Agentic Workflows.
+- **Backend Engineering:** PHP 8.5.9 (upgraded from 8.2.10), Laravel 13.39.0 (upgraded from Laravel 8), Python (Flask, FastAPI), PHP (CakePHP, CodeIgniter), .NET Core Web API, RESTful & SOAP APIs on Microsoft-IIS/10.0 FastCGI.
+- **Databases & Optimization:** MariaDB 12.3.3-MariaDB (upgraded from MariaDB 10.x across 342+ relational tables, sub-millisecond 0.34ms latency), PostgreSQL, MySQL, MSSQL, ChromaDB Vector DB, Complex Stored Procedures (50% speedup in RSOS result generation).
+- **Business Intelligence & Analytics:** Pentaho BI, Tableau Dashboards, Automated Pivoted & Formatted Excel Worksheets.
+- **DevOps & Infrastructure:** Docker, Git, IIS, Vercel Serverless, Scheduled Cron Daemons.
+
+## 🚀 Featured Applied AI & Learning Projects
+- **Project #1: Support Task Dashboard Project (Automated Email Intelligence & Work Tracking):**
+  - **Overview:** End-to-end automated email ingestion and task tracking system running entirely via Docker on local machine only for 100% data privacy and security. Cron background scheduler monitors specific support mailboxes, local Ollama running Llama models with LangGraph extracts tasks and developer activities from unstructured emails without sending any sensitive data to external clouds, persists structured records into local PostgreSQL, displays real-time metrics on an interactive web portal, and exports graphical charts, CSV, and formatted/pivoted Excel files for daily team worksheet submissions.
+  - **Tech Stack:** Docker (Local Machine Only), Python, Ollama, Llama Model, LangGraph, PostgreSQL, IMAP/Cron Automation, Pandas/OpenPyXL.
+  - **Live Video Demo Available:** `Mail_Read_Every_Set_cron_using_ollama_llama_postgressql.mp4` on portfolio site.
+  - **Executive Presentation Deck Available:** `RSOS_AI_Task_Automation_Executive_Presentation.pptx` downloadable directly from portfolio.
+
+
+- **Project #3: RSOS Dual-Stream & On-Demand Enterprise Portal — Major Tech Stack Modernization:**
+  - **Overview:** Architected and executed statewide modernization for Rajasthan State Open School (RSOS) serving 100,000+ candidates. Upgraded legacy PHP 8.2.10 to PHP 8.5.9, migrated Laravel 8 to Laravel 13.39.0, and upgraded the database to MariaDB 12.3.3-MariaDB across 342 normalized relational tables with 0.34ms connection latency on Microsoft-IIS/10.0 FastCGI. Delivered utilizing Human & Agentic Development (collaborative AI agents for automated refactoring, unit testing, and schema verification under senior human architectural oversight).
+  - **Enterprise Office Works Note:** In multiple enterprise office projects, real client/department names are protected under NDA & government security compliance. All architectures delivered via Human & Agentic Development.
+  - **Live Production Telemetry Snapshot:** Verified and displayed on portfolio site (`system_tech_stack_architecture_upgrade.png`).
+
+## 💼 Career History & Milestones
+1. **Data Ingenious Global Limited (April 2024 – Present):** Senior Software Developer leading RSOS Dual-Stream & On-Demand Admission Portal serving 100,000+ candidates. Deployed Ollama and integrated Gemini & Claude APIs for AI code assistance.
+2. **DevIT Solutions Pvt. Ltd. (February 2020 – April 2024):** Software Developer building Rajasthan government portals serving 50,000+ daily users. Optimized MySQL stored procedures cutting result generation time by 50%. Secured High Court/E-Court API integrations using AES encryption.
+3. **Akal Information Systems Ltd. (October 2017 – January 2020):** Software Developer managing enterprise web applications and API integrations.
+4. **Vertex Plus Software Pvt. Ltd. (August 2016 – October 2017):** Junior Software Developer working on PHP & Bootstrap portals.
+5. **On-Graph Technologies Pvt. Ltd. (December 2015 – August 2016):** Junior Developer building CMS websites and SMS gateways.
+
+## 🏆 Honors, Awards & Community Engagement
+- **Claude Community Jaipur Meetup Launch (October 2026):** 🏆 Top 5 Winner in Social Media Contest; awarded official Claude Community Jaipur & Origin swag kit on stage by Jason Sears (Engineering Lead, Origin Chicago) at JECRC Foundation.
+- **UiPath Jaipur Chapter (October 2026):** Achieved 6th Rank in Live Technical Quiz at "Agentic Automation in Practice: Maestro Flow & Live Build" meetup; awarded official UiPath Swag Gift.
+- **BrowserStack Testathon Jaipur (September 2026):** 🏆 1st Rank Winner & Champion — Awarded 1st Prize of $105 USD by BrowserStack for engineering an end-to-end automated test suite under a 3-hour live hackathon challenge at Metacube Software.
+- **Cloud Coffee Connect — AI on AWS & Open Source (September 2026):** Onsite participant at Pratham Software Sitapura discussing open-source LLMs on AWS.
+- **Atlassian × Tableau Jaipur (September 2026):** Onsite participant at The Fern Jaipur exploring Jira, Confluence, and Tableau integrations.
+- **Agile Testing Alliance (ATA Jaipur):** Active community member focusing on quality engineering and continuous testing pipelines.

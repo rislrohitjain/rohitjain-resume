@@ -19,9 +19,9 @@
 - **Phone:** +91 89469 19241
 
 ## 🛠️ Core Technical Stack & Expertise
-- **AI, Generative AI & Automation:** Agentic AI, LangGraph, Ollama (Llama Models), LangChain, Google Gemini API, Anthropic Claude API, RAG (Retrieval-Augmented Generation) Systems, ChromaDB Vector DB, UiPath Maestro Flow, n8n Agentic Workflows.
-- **Backend Engineering:** Python (Flask, FastAPI), PHP (Laravel, CakePHP, CodeIgniter), .NET Core Web API, RESTful APIs, SOAP APIs.
-- **Databases & Optimization:** PostgreSQL, MySQL, MSSQL, Complex Stored Procedures (achieved 50% performance speedup in RSOS result generation), Database Architecture.
+- **AI, Generative AI & Automation:** Human & Agentic Development, Multi-Agent SDLC Orchestration, Agentic AI, LangGraph, Ollama (Llama Models), LangChain, Google Gemini API, Anthropic Claude API, RAG Systems, ChromaDB Vector DB, UiPath Maestro Flow, n8n Agentic Workflows.
+- **Backend Engineering:** PHP 8.5.9 (upgraded from 8.2.10), Laravel 13.39.0 (upgraded from Laravel 8), Python (Flask, FastAPI), PHP (CakePHP, CodeIgniter), .NET Core Web API, RESTful & SOAP APIs on Microsoft-IIS/10.0 FastCGI.
+- **Databases & Optimization:** MariaDB 12.3.3-MariaDB (upgraded from MariaDB 10.x across 342+ relational tables, sub-millisecond 0.34ms latency), PostgreSQL, MySQL, MSSQL, ChromaDB Vector DB, Complex Stored Procedures (50% speedup in RSOS result generation).
 - **Business Intelligence & Analytics:** Pentaho BI, Tableau Dashboards, Automated Pivoted & Formatted Excel Worksheets.
 - **DevOps & Infrastructure:** Docker, Git, IIS, Vercel Serverless, Scheduled Cron Daemons.
 
@@ -31,6 +31,12 @@
   - **Tech Stack:** Docker (Local Machine Only), Python, Ollama, Llama Model, LangGraph, PostgreSQL, IMAP/Cron Automation, Pandas/OpenPyXL.
   - **Live Video Demo Available:** `Mail_Read_Every_Set_cron_using_ollama_llama_postgressql.mp4` on portfolio site.
   - **Executive Presentation Deck Available:** `RSOS_AI_Task_Automation_Executive_Presentation.pptx` downloadable directly from portfolio.
+
+
+- **Project #3: RSOS Dual-Stream & On-Demand Enterprise Portal — Major Tech Stack Modernization:**
+  - **Overview:** Architected and executed statewide modernization for Rajasthan State Open School (RSOS) serving 100,000+ candidates. Upgraded legacy PHP 8.2.10 to PHP 8.5.9, migrated Laravel 8 to Laravel 13.39.0, and upgraded the database to MariaDB 12.3.3-MariaDB across 342 normalized relational tables with 0.34ms connection latency on Microsoft-IIS/10.0 FastCGI. Delivered utilizing Human & Agentic Development (collaborative AI agents for automated refactoring, unit testing, and schema verification under senior human architectural oversight).
+  - **Enterprise Office Works Note:** In multiple enterprise office projects, real client/department names are protected under NDA & government security compliance. All architectures delivered via Human & Agentic Development.
+  - **Live Production Telemetry Snapshot:** Verified and displayed on portfolio site (`system_tech_stack_architecture_upgrade.png`).
 
 ## 💼 Career History & Milestones
 1. **Data Ingenious Global Limited (April 2024 – Present):** Senior Software Developer leading RSOS Dual-Stream & On-Demand Admission Portal serving 100,000+ candidates. Deployed Ollama and integrated Gemini & Claude APIs for AI code assistance.

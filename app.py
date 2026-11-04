@@ -22,26 +22,29 @@ user_data = {
         ],
         "resume_url": "static/Resume_Original_Rohit_Jain.pdf"  # Replace with actual file download link
     },
-    "summary": "Results-driven Senior Full-Stack Developer & AI Automation Architect with 9+ years of experience delivering mission-critical enterprise systems serving 100,000+ users. 1st Rank Champion at BrowserStack Testathon Jaipur ($105 USD Prize) and Top 5 Winner at Claude Community Jaipur Meetup. Proven track record of architecting agentic AI pipelines and cutting result generation time by 50% via optimized database stored procedures.",
+    "summary": "Results-driven Senior Full-Stack Developer & AI Automation Architect with 9+ years of experience delivering mission-critical enterprise systems serving 100,000+ users. 1st Rank Champion at BrowserStack Testathon Jaipur ($105 USD Prize) and Top 5 Winner at Claude Community Jaipur Meetup. Proven track record of leading enterprise tech modernizations (PHP 8.2.10 → 8.5.9, Laravel 8 → 13.39.0, MariaDB 10.x → 12.3.3-MariaDB across 342+ tables with 0.34ms latency) and architecting agentic AI pipelines using Human & Agentic Development.",
     "stats": [
         {"value": "9+", "label": "Years Exp"},
         {"value": "1st Rank", "label": "BrowserStack Winner ($105)"},
         {"value": "100K+", "label": "Users Served"},
-        {"value": "50K+", "label": "Daily API Calls"},
-        {"value": "8", "label": "AI Applications"}
+        {"value": "342+", "label": "Tables Upgraded (MariaDB 12.3)"},
+        {"value": "8+", "label": "AI Applications"}
     ],
     "skills": {
-        "AI & LLM": ["Python Agentic AI", "LangGraph", "Ollama & Llama", "LangChain", "Gemini API", "Claude", "RAG Systems", "ChromaDB Vector DB", "n8n"],
-        "Backend": ["Python & Agentic Systems", "FastAPI", "Flask", "PHP (Laravel/CakePHP)", ".NET Core Web API", "REST/SOAP APIs"],
-        "Database": ["PostgreSQL", "MySQL", "MSSQL", "ChromaDB Vector DB", "Stored Procedures"],
-        "BI & DevOps": ["Pentaho", "Tableau", "Git", "Docker", "IIS"]
+        "AI & LLM": ["Human & Agentic Development", "Python Agentic AI", "LangGraph", "Ollama & Llama", "LangChain", "Gemini API", "Claude", "RAG Systems", "n8n"],
+        "Backend": ["PHP 8.5.9 & Laravel 13.39.0", "Python & Agentic Systems", "FastAPI", "Flask", "PHP (CakePHP/CodeIgniter)", ".NET Core Web API", "REST/SOAP APIs"],
+        "Database": ["MariaDB 12.3.3 & MySQL", "PostgreSQL", "MSSQL", "ChromaDB Vector DB", "Stored Procedures (342+ Tables)"],
+        "BI & DevOps": ["Microsoft-IIS/10.0 (FastCGI)", "Docker", "Pentaho", "Tableau", "Git"]
     },
     "projects": [
         {
             "id": "support-task-dashboard",
             "tab_title": "Support Task Dashboard — Automated Email Intelligence & Work Tracking",
             "title": "Support Task Dashboard — Automated Email Intelligence & Work Tracking",
-            "badge": "Project #1 • 100% Local Machine & Docker",
+            "badge": "Project #1 • Enterprise Office Work • Human & Agentic Development",
+            "is_office_work": True,
+            "development_mode": "Human & Agentic Development",
+            "confidentiality_note": "Enterprise Office Work: Proprietary internal client workflows protected under NDA. Engineered with Human & Agentic Development.",
             "tagline": "Automated email ingestion, local LLM parsing, PostgreSQL tracking, interactive dashboard portal, and pivoted Excel daily work sheets — running entirely via Docker on local machine only for 100% privacy.",
             "video_url": "Mail_Read_Every_Set_cron_using_ollama_llama_postgressql.mp4",
             "video_title": "Support Task Dashboard Project Demo (Python + Ollama + Llama + PostgreSQL + LangGraph on Local Docker)",
@@ -165,44 +168,62 @@ user_data = {
         },
         {
             "id": "rsos-admission-portal",
-            "tab_title": "RSOS Dual-Stream Portal",
-            "title": "RSOS Dual-Stream & On-Demand Online Admission Platform",
-            "badge": "Project #3 • 100,000+ Candidates • Enterprise Scale",
-            "tagline": "Full-lifecycle enterprise admission platform serving 100,000+ candidates across Rajasthan with automated seat allotment cutting processing time by 40%.",
+            "tab_title": "RSOS Tech Upgrade (PHP 8.5 • Laravel 13 • MariaDB 12)",
+            "title": "RSOS Dual-Stream & On-Demand Enterprise Portal — Major Tech Stack Upgrade & Modernization",
+            "badge": "Project #3 • Enterprise Office Work • Human & Agentic Development",
+            "tagline": "Full-scale modern architecture upgrade: PHP 8.2.10 → 8.5.9, Laravel 8 → 13.39.0, MariaDB 10.x → 12.3.3-MariaDB across 342 relational tables (0.34ms latency) on Windows Server IIS FastCGI, serving 100,000+ candidates.",
+            "is_office_work": True,
+            "development_mode": "Human & Agentic Development",
+            "confidentiality_note": "Enterprise Office Work: Proprietary internal client identifiers protected under NDA. Engineered via collaborative Human & Agentic Development.",
+            "image_url": "images/system_tech_stack_architecture_upgrade.png",
+            "image_title": "System Tech Stack & Architecture — Live Production Telemetry (PHP 8.5.9 • Laravel 13.39.0 • MariaDB 12.3.3-MariaDB)",
             "video_url": None,
             "presentation_url": None,
-            "summary": "Architected and engineered Rajasthan State Open School (RSOS) mission-critical admission and examination platform handling 100,000+ active candidates. Engineered high-concurrency MySQL stored procedures cutting result generation time by 50%, implemented robust RBAC across 15+ administrative roles with zero security breaches, and automated seat-matrix allocation.",
+            "summary": "Architected and executed an end-to-end enterprise modernization and stack migration for the Rajasthan State Open School (RSOS) mission-critical admission & examination platform serving 100,000+ candidates. Successfully upgraded legacy PHP 8.2.10 to PHP 8.5.9, transitioned from Laravel 8 to Laravel 13.39.0, and migrated the database from MariaDB 10.x to 12.3.3-MariaDB with 342 normalized tables running at 0.34ms query latency on Microsoft-IIS/10.0 FastCGI. Engineered utilizing Human & Agentic Development workflows—combining senior human software architecture with multi-agent code analysis, automated schema verification, and regression test suites.",
             "highlights": [
-                "100,000+ Candidate Concurrency: Architected complete SDLC web platform managing statewide admissions, verification, and hall-ticket generation.",
-                "40% Time Saved via Automated Seat Allocation: Replaced legacy manual allocation with algorithmic seat-matrix allotment.",
-                "50% Speedup via MySQL Stored Procedures: Optimized high-volume relational queries and complex stored procedures for sub-second result computation.",
-                "15+ Role-Based Access Control (RBAC): Hardened security protecting confidential candidate databases and examination marks.",
-                "Real-Time Executive Dashboards: Integrated Pentaho and Tableau BI reporting delivering live district-wise enrollment metrics."
+                "Major Tech Stack Modernization (PHP 8.5.9 & Laravel 13.39.0): Upgraded the legacy core from PHP 8.2.10 to PHP 8.5.9 and Laravel 8 to modern Laravel 13.39.0 with zero schema regression.",
+                "Database Migration to MariaDB 12.3.3: Upgraded and tuned 342 relational tables from MariaDB 10.x to 12.3.3-MariaDB, achieving sub-millisecond query latency (0.34 ms) on Windows Server IIS FastCGI.",
+                "Human & Agentic Development Collaboration: Employed multi-agent AI code reviewers and unit-test generators paired with human architectural oversight to safely refactor legacy modules and queries.",
+                "100,000+ Active Candidates: High-concurrency state platform managing statewide admissions, verification, automated seat allotment, and hall-ticket generation.",
+                "50% Speedup via Optimized Stored Procedures: Slashed result computation and tabulation generation times by 50% via optimized relational queries and indexing.",
+                "Enterprise FastCGI on Windows IIS 10.0: Configured high-throughput native Windows Server IIS 10.0 FastCGI runtime with 300s execution limits and low memory footprint (10MB)."
             ],
             "skills_explained": [
                 {
-                    "name": "PHP & Laravel",
-                    "badge": "MVC Backend Architecture",
+                    "name": "PHP 8.5.9 Engine",
+                    "badge": "Modern PHP Core",
                     "icon": "bi-code-slash",
-                    "desc": "Scalable REST APIs, background queue workers, session security, and state-wide admission workflows."
+                    "desc": "Upgraded from PHP 8.2.10 to 8.5.9 on cgi-fcgi runtime with 128M memory limit and 300s execution budget, optimizing memory usage to 10MB."
+                },
+                {
+                    "name": "Laravel 13.39.0",
+                    "badge": "Next-Gen MVC Core",
+                    "icon": "bi-layers-fill",
+                    "desc": "Upgraded from Laravel 8 to Laravel 13.39.0, modernizing dependency management, service providers, middleware pipelines, and queue workers."
+                },
+                {
+                    "name": "MariaDB 12.3.3 (342 Tables)",
+                    "badge": "0.34ms Query Latency",
+                    "icon": "bi-database-fill",
+                    "desc": "Migrated 342 normalized tables from MariaDB 10.x to 12.3.3-MariaDB with optimized InnoDB buffer pooling and sub-millisecond latency."
+                },
+                {
+                    "name": "Human & Agentic Development",
+                    "badge": "Collaborative AI SDLC",
+                    "icon": "bi-robot",
+                    "desc": "Applied AI agent orchestration for automated syntax refactoring, unit test generation, and SQL query analysis with human architectural validation."
+                },
+                {
+                    "name": "Windows Server IIS 10.0 (FastCGI)",
+                    "badge": "Native High-Throughput",
+                    "icon": "bi-hdd-network-fill",
+                    "desc": "Configured enterprise FastCGI handler on Microsoft-IIS/10.0 on Windows Server 11, delivering resilient high-concurrency request processing."
                 },
                 {
                     "name": "MySQL Stored Procedures",
-                    "badge": "Query Optimization",
-                    "icon": "bi-database-fill",
-                    "desc": "Designed complex stored procedures and database triggers that slashed result generation times by 50%."
-                },
-                {
-                    "name": "Role-Based Security",
-                    "badge": "Enterprise RBAC",
-                    "icon": "bi-shield-lock-fill",
-                    "desc": "Multi-tier privilege control protecting examination marks across 15 administrative roles with 0% unauthorized access."
-                },
-                {
-                    "name": "Pentaho & Tableau BI",
-                    "badge": "Data Visualization",
-                    "icon": "bi-bar-chart-fill",
-                    "desc": "Configured executive reporting dashboards tracking statewide enrollment targets and fee reconciliation."
+                    "badge": "50% Result Speedup",
+                    "icon": "bi-lightning-charge-fill",
+                    "desc": "Designed complex stored procedures and database triggers that cut state-wide result generation and marksheet generation times by 50%."
                 }
             ]
         },
@@ -210,7 +231,10 @@ user_data = {
             "id": "ecourt-highcourt-gateway",
             "tab_title": "E-Court & High Court Gateway",
             "title": "E-Court & High Court Secure Inter-Agency API Integration",
-            "badge": "Project #4 • AES Encryption • Government Security",
+            "badge": "Project #4 • Enterprise Office Work • Human & Agentic Development",
+            "is_office_work": True,
+            "development_mode": "Human & Agentic Development",
+            "confidentiality_note": "Enterprise Office Work: Judicial and state department endpoints anonymized under statutory government privacy rules. Delivered via Human & Agentic Development.",
             "tagline": "Mission-critical API integration gateway linking State Department portals with High Court and E-Court judicial systems using AES payload encryption and automated token lifecycle management.",
             "video_url": None,
             "presentation_url": None,
@@ -387,7 +411,8 @@ user_data = {
             "company": "Data Ingenious Global Limited",
             "period": "April 2024 – Present",
             "details": [
-                "Lead Laravel Developer for RSOS Dual-Stream & On-Demand Admission Portal.",
+                "Lead Developer for RSOS Dual-Stream & On-Demand Admission Portal — Architected major stack modernization: PHP 8.2.10 → 8.5.9, Laravel 8 → 13.39.0, and MariaDB 10.x → 12.3.3-MariaDB across 342 tables with 0.34ms latency.",
+                "Spearheaded enterprise office work projects leveraging collaborative Human & Agentic Development methodologies.",
                 "Architected full SDLC for a platform serving 100,000+ candidates.",
                 "Engineered automated seat-allotment modules, cutting processing time by 40%.",
                 "Implemented RBAC for 15+ user roles, achieving zero unauthorized access incidents.",
