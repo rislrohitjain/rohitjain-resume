@@ -37,8 +37,8 @@
   - **Overview:** Full-stack Python application with relational database persistence, intelligent conversational AI assistant (LIC MITRA) with voice input, 20+ schemes catalog, comparison engine, SheetJS Excel export, and live Vercel cloud deployment.
   - **URL:** https://aimukeshajmera.vercel.app/
 
-- **Project #3: State Open School Dual-Stream & On-Demand Educational Portal — Major Tech Stack Upgrade & Modernization:**
-  - **Overview:** Architected and executed statewide modernization for the State Open School mission-critical dual-stream admission & examination platform serving 100,000+ candidates. Upgraded legacy PHP 8.2.10 to PHP 8.5.9, migrated Laravel 8 to Laravel 13.39.0, and upgraded the database to MariaDB 12.3.3-MariaDB across 342 normalized relational tables with 0.34ms connection latency on Microsoft-IIS/10.0 FastCGI. Delivered utilizing Human & Agentic Development (collaborative AI agents for automated refactoring, unit testing, and schema verification under senior human architectural oversight).
+- **Project #3: Board Dual-Stream & On-Demand Enterprise Portal — Major Tech Stack Upgrade & Modernization:**
+  - **Overview:** Architected and executed statewide modernization for the Board mission-critical dual-stream admission & examination platform serving 100,000+ candidates. Upgraded legacy PHP 8.2.10 to PHP 8.5.9, migrated Laravel 8 to Laravel 13.39.0, and upgraded the database to MariaDB 12.3.3-MariaDB across 342 normalized relational tables with 0.34ms connection latency on Microsoft-IIS/10.0 FastCGI. Delivered utilizing Human & Agentic Development (collaborative AI agents for automated refactoring, unit testing, and schema verification under senior human architectural oversight).
   - **State Educational Platform Note:** High-concurrency statewide examination and admission platform modernizing educational public service delivery. All architectures delivered via Human & Agentic Development.
   - **Live Production Telemetry Snapshot:** Verified and displayed on portfolio site (`system_tech_stack_architecture_upgrade.png`).
 
@@ -54,7 +54,7 @@
   - **Architecture Topology Snapshot:** Displayed on portfolio (`enterprise_grievance_portal_architecture.png`).
 
 ## 💼 Career History & Milestones
-1. **Data Ingenious Global Limited (April 2024 – Present):** Senior Software Developer leading State Open School Dual-Stream & On-Demand Educational Portal serving 100,000+ candidates. Deployed Ollama and integrated Gemini & Claude APIs for AI code assistance.
+1. **Data Ingenious Global Limited (April 2024 – Present):** Senior Software Developer leading Board Dual-Stream & On-Demand Enterprise Portal serving 100,000+ candidates. Deployed Ollama and integrated Gemini & Claude APIs for AI code assistance.
 2. **DevIT Solutions Pvt. Ltd. (February 2020 – April 2024):** Software Developer building Rajasthan government portals serving 50,000+ daily users. Optimized MySQL stored procedures cutting result generation time by 50%. Secured High Court/E-Court API integrations using AES encryption.
 3. **Akal Information Systems Ltd. (October 2017 – January 2020):** Software Developer managing enterprise web applications and API integrations.
 4. **Vertex Plus Software Pvt. Ltd. (August 2016 – October 2017):** Junior Software Developer working on PHP & Bootstrap portals.

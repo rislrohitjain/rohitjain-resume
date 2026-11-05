@@ -27,7 +27,7 @@ user_data = {
             "category": "Enterprise Modernization",
             "icon": "bi-cpu-fill",
             "question": "What are the technical specifics of the recent PHP 8.5, Laravel 13, and MariaDB 12 tech stack upgrade?",
-            "answer": "For the mission-critical statewide State Open School Dual-Stream & On-Demand Educational Portal serving 100,000+ candidates, Rohit architected a zero-downtime stack modernization: upgraded the runtime from PHP 8.2.10 to PHP 8.5.9 (FastCGI on Windows Server IIS 10.0), transitioned the application core from Laravel 8 to Laravel 13.39.0, and migrated the database from MariaDB 10.x to 12.3.3-MariaDB. Across 342 normalized relational tables, the system achieved a verified sub-millisecond query latency of 0.34ms. Live production telemetry snapshots are available under Project #3."
+            "answer": "For the mission-critical statewide Board Dual-Stream & On-Demand Enterprise Portal serving 100,000+ candidates, Rohit architected a zero-downtime stack modernization: upgraded the runtime from PHP 8.2.10 to PHP 8.5.9 (FastCGI on Windows Server IIS 10.0), transitioned the application core from Laravel 8 to Laravel 13.39.0, and migrated the database from MariaDB 10.x to 12.3.3-MariaDB. Across 342 normalized relational tables, the system achieved a verified sub-millisecond query latency of 0.34ms. Live production telemetry snapshots are available under Project #3."
         },
         {
             "id": "faq-4",
@@ -221,23 +221,23 @@ user_data = {
         },
         {
             "id": "dual-stream-portal",
-            "tab_title": "Educational Real Project  Tech Upgrade (PHP 8.5 • Laravel 13 • MariaDB 12)",
-            "title": "Educational Real Project  Dual-Stream & On-Demand Educational Portal — Major Tech Stack Upgrade & Modernization",
-            "badge": "Project #3 • State Educational Project • Human & Agentic Development",
+            "tab_title": "Board Tech Upgrade (PHP 8.5 • Laravel 13 • MariaDB 12)",
+            "title": "Board Dual-Stream & On-Demand Enterprise Portal — Major Tech Stack Upgrade & Modernization",
+            "badge": "Project #3 • Enterprise Board Project • Human & Agentic Development",
             "tagline": "Full-scale modern architecture upgrade: PHP 8.2.10 → 8.5.9, Laravel 8 → 13.39.0, MariaDB 10.x → 12.3.3-MariaDB across 342 relational tables (0.34ms latency) on Windows Server IIS FastCGI, serving 100,000+ candidates.",
             "is_office_work": True,
             "development_mode": "Human & Agentic Development",
-            "confidentiality_note": "State Educational Project: High-concurrency statewide open school examination and admission platform modernizing educational public service delivery.",
+            "confidentiality_note": "Enterprise Board Project: High-concurrency statewide board examination and admission platform modernizing public service delivery.",
             "image_url": "images/system_tech_stack_architecture_upgrade.png",
-            "image_title": "Educational Real Project  Tech Stack & Architecture — Live Production Telemetry (PHP 8.5.9 • Laravel 13.39.0 • MariaDB 12.3.3-MariaDB)",
+            "image_title": "Board Portal Tech Stack & Architecture — Live Production Telemetry (PHP 8.5.9 • Laravel 13.39.0 • MariaDB 12.3.3-MariaDB)",
             "video_url": None,
             "presentation_url": None,
-            "summary": "Architected and executed an end-to-end modernization and stack migration for the Educational Real Project  mission-critical dual-stream admission & examination educational platform serving 100,000+ candidates. Successfully upgraded legacy PHP 8.2.10 to PHP 8.5.9, transitioned from Laravel 8 to Laravel 13.39.0, and migrated the database from MariaDB 10.x to 12.3.3-MariaDB with 342 normalized tables running at 0.34ms query latency on Microsoft-IIS/10.0 FastCGI. Engineered utilizing Human & Agentic Development workflows—combining senior human software architecture with multi-agent code analysis, automated schema verification, and regression test suites.",
+            "summary": "Architected and executed an end-to-end modernization and stack migration for the Board mission-critical dual-stream admission & examination enterprise platform serving 100,000+ candidates. Successfully upgraded legacy PHP 8.2.10 to PHP 8.5.9, transitioned from Laravel 8 to Laravel 13.39.0, and migrated the database from MariaDB 10.x to 12.3.3-MariaDB with 342 normalized tables running at 0.34ms query latency on Microsoft-IIS/10.0 FastCGI. Engineered utilizing Human & Agentic Development workflows—combining senior human software architecture with multi-agent code analysis, automated schema verification, and regression test suites.",
             "highlights": [
                 "Major Tech Stack Modernization (PHP 8.5.9 & Laravel 13.39.0): Upgraded the legacy core from PHP 8.2.10 to PHP 8.5.9 and Laravel 8 to modern Laravel 13.39.0 with zero schema regression.",
                 "Database Migration to MariaDB 12.3.3: Upgraded and tuned 342 relational tables from MariaDB 10.x to 12.3.3-MariaDB, achieving sub-millisecond query latency (0.34 ms) on Windows Server IIS FastCGI.",
                 "Human & Agentic Development Collaboration: Employed multi-agent AI code reviewers and unit-test generators paired with human architectural oversight to safely refactor legacy modules and queries.",
-                "100,000+ Active Candidates: High-concurrency state educational platform managing statewide open school admissions, verification, automated seat allotment, and hall-ticket generation.",
+                "100,000+ Active Candidates: High-concurrency state educational platform managing statewide board admissions, verification, automated seat allotment, and hall-ticket generation.",
                 "50% Speedup via Optimized Stored Procedures: Slashed result computation and tabulation generation times by 50% via optimized relational queries and indexing.",
                 "Enterprise FastCGI on Windows IIS 10.0: Configured high-throughput native Windows Server IIS 10.0 FastCGI runtime with 300s execution limits and low memory footprint (10MB)."
             ],
@@ -588,7 +588,7 @@ user_data = {
             "company": "Data Ingenious Global Limited",
             "period": "April 2024 – Present",
             "details": [
-                "Lead Developer for State Open School Dual-Stream & On-Demand Educational Portal — Architected major stack modernization: PHP 8.2.10 → 8.5.9, Laravel 8 → 13.39.0, and MariaDB 10.x → 12.3.3-MariaDB across 342 tables with 0.34ms latency.",
+                "Lead Developer for Board Dual-Stream & On-Demand Enterprise Portal — Architected major stack modernization: PHP 8.2.10 → 8.5.9, Laravel 8 → 13.39.0, and MariaDB 10.x → 12.3.3-MariaDB across 342 tables with 0.34ms latency.",
                 "Spearheaded enterprise office work projects leveraging collaborative Human & Agentic Development methodologies.",
                 "Architected full SDLC for a platform serving 100,000+ candidates.",
                 "Engineered automated seat-allotment modules, cutting processing time by 40%.",
@@ -605,7 +605,7 @@ user_data = {
             "details": [
                 "Delivered large-scale government portals serving 50,000+ daily users in Rajasthan.",
                 "Secured High Court/E-Court API integrations using AES encryption and tokens.",
-                "Reduced State Open School result-generation time by 50% via optimized MySQL stored procedures.",
+                "Reduced Board result-generation time by 50% via optimized MySQL stored procedures.",
                 "Built Paramedical Council seat-matrix algorithms with 99.9% accuracy.",
                 "Designed Pentaho and Tableau BI dashboards for real-time reporting on 10+ KPIs.",
                 "Managed full SDLC across Laravel, CakePHP, CodeIgniter, MySQL, and MSSQL."
