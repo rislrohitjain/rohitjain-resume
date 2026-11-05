@@ -108,51 +108,52 @@
            Configured for Light (Default) and Dark (High-Contrast) Themes
            ========================================================================== */
 
-        /* 1. Light Theme (Default) */
+        /* 1. Dual Themes: Official Blue (Default) & High-Contrast Slate */
+        /* Official Blue (Default - Income Tax Department e-Filing Standard) */
         :root, [data-theme="light"] {
             --portal-font-scale: 100%;
 
             /* Page & Container Backgrounds */
             --bg: #F4F6F9;                 /* Soft off-white / light neutral grey */
             --bg-canvas: #F8F9FA;
-            --card-bg: #FFFFFF;            /* Pure white */
+            --card-bg: #FFFFFF;            /* Pure crisp white */
             --card-inner: #F8F9FA;
 
-            /* Primary Brand Navy & Blues */
-            --primary-navy: #0C2340;       /* Primary Brand Navy */
+            /* Primary Brand Navy & Royal Blues (Official Income Tax Blue) */
+            --primary-navy: #0C2340;       /* Primary Official Navy */
             --primary-navy-mid: #1B365D;   /* Dark navy header accent */
             --primary-navy-dark: #08182B;
-            --secondary-blue: #0B5ED7;     /* Secondary Brand Blue */
-            --secondary-blue-alt: #0066CC;
+            --secondary-blue: #0056B3;     /* WCAG AAA Accessible Royal Blue (7.1:1 on white) */
+            --secondary-blue-alt: #004085;
             --secondary-blue-soft: #E8F1FC;
 
-            /* Accent Warm Colors */
-            --accent-red: #C8102E;         /* Logo emblem accent & vital alerts */
-            --accent-amber: #FFC72C;       /* Informational alerts & highlights */
-            --accent-saffron: #F37021;     /* High-priority CTAs */
+            /* High-Contrast Accents */
+            --accent-red: #B91C1C;         /* Deep crimson for alerts */
+            --accent-amber: #B45309;       /* Deep warm amber for readable text */
+            --accent-saffron: #C2410C;     /* High-priority CTAs deep saffron */
 
-            /* Typography Colors */
-            --text-heading: #1A1A1A;       /* Crisp near-black headings */
-            --text-main: #212529;          /* High-readability dark slate */
-            --text-body: #495057;          /* Body text & procedural info */
-            --text-muted: #6C757D;         /* Muted neutral grey helper text */
+            /* High-Readability Typography */
+            --text-heading: #0C2340;       /* Authoritative crisp navy-black */
+            --text-main: #0F172A;          /* Near-black dark slate */
+            --text-body: #1E293B;          /* High-readability charcoal body text */
+            --text-muted: #334155;         /* Deep readable slate grey (replaces faint #6c757d) */
+            --text-dim: #475569;           /* Secondary readable slate */
 
             /* Hairline Borders & Dividers */
-            --border-color: #DEE2E6;       /* Light grey hairline border */
+            --border-color: #CBD5E1;       /* Light grey hairline border */
             --border-subtle: #E2E8F0;
-            --border-focus: #0B5ED7;
+            --border-focus: #0056B3;
 
             /* Elevation */
             --shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
             --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 
             /* Legacy mapped variables for templates */
-            --accent: #0B5ED7;
+            --accent: #0056B3;             /* Official Blue */
             --primary: #0C2340;
             --primary-hover: #1B365D;
-            --card-border: #DEE2E6;
-            --card-hover-border: #0B5ED7;
-            --text-dim: #6C757D;
+            --card-border: #CBD5E1;
+            --card-hover-border: #0056B3;
         }
 
         /* 2. Dark Theme (High-Contrast Accessibility Mode) */
@@ -169,37 +170,205 @@
             --primary-navy: #1E293B;       /* Darkened navy slate */
             --primary-navy-mid: #0A192F;
             --primary-navy-dark: #070E1A;
-            --secondary-blue: #4D90FE;     /* Brightened accessible electric blue */
-            --secondary-blue-alt: #60A5FA;
-            --secondary-blue-soft: rgba(77, 144, 254, 0.12);
+            --secondary-blue: #60A5FA;     /* Brightened accessible electric blue */
+            --secondary-blue-alt: #93C5FD;
+            --secondary-blue-soft: rgba(96, 165, 250, 0.15);
 
             /* Accent Warm Colors */
-            --accent-red: #EF4444;
-            --accent-amber: #F59E0B;
-            --accent-saffron: #F59E0B;
+            --accent-red: #F87171;
+            --accent-amber: #FBBF24;
+            --accent-saffron: #FB923C;
 
             /* Typography Colors */
             --text-heading: #FFFFFF;       /* High-contrast pure white */
-            --text-main: #F8F9FA;          /* Off-white */
-            --text-body: #CBD5E1;          /* Light cool grey for readability */
-            --text-muted: #94A3B8;
+            --text-main: #F8FAFC;          /* Off-white */
+            --text-body: #E2E8F0;          /* Light cool grey for readability */
+            --text-muted: #CBD5E1;         /* Readable silver */
+            --text-dim: #94A3B8;
 
             /* Hairline Borders & Dividers */
             --border-color: #374151;
             --border-subtle: #475569;
-            --border-focus: #4D90FE;
+            --border-focus: #60A5FA;
 
             /* Elevation */
             --shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
             --shadow-md: 0 6px 16px rgba(0, 0, 0, 0.6);
 
             /* Legacy mapped variables for templates */
-            --accent: #4D90FE;
-            --primary: #4D90FE;
-            --primary-hover: #60A5FA;
+            --accent: #60A5FA;
+            --primary: #60A5FA;
+            --primary-hover: #93C5FD;
             --card-border: #374151;
-            --card-hover-border: #4D90FE;
-            --text-dim: #94A3B8;
+            --card-hover-border: #60A5FA;
+        }
+
+        /* Accessible High-Contrast Badges */
+        .badge-gov-cyan {
+            background: #E0F2FE !important;
+            color: #0369A1 !important;
+            border: 1px solid #BAE6FD !important;
+        }
+        [data-theme="dark"] .badge-gov-cyan {
+            background: rgba(56, 189, 248, 0.15) !important;
+            color: #38BDF8 !important;
+            border: 1px solid rgba(56, 189, 248, 0.3) !important;
+        }
+
+        .badge-gov-green {
+            background: #DCFCE7 !important;
+            color: #15803D !important;
+            border: 1px solid #BBF7D0 !important;
+        }
+        [data-theme="dark"] .badge-gov-green {
+            background: rgba(16, 185, 129, 0.15) !important;
+            color: #34D399 !important;
+            border: 1px solid rgba(16, 185, 129, 0.3) !important;
+        }
+
+        .badge-gov-amber {
+            background: #FEF3C7 !important;
+            color: #B45309 !important;
+            border: 1px solid #FDE68A !important;
+        }
+        [data-theme="dark"] .badge-gov-amber {
+            background: rgba(245, 158, 11, 0.15) !important;
+            color: #FBBF24 !important;
+            border: 1px solid rgba(245, 158, 11, 0.3) !important;
+        }
+
+        .badge-gov-saffron {
+            background: #FFEDD5 !important;
+            color: #C2410C !important;
+            border: 1px solid #FED7AA !important;
+        }
+        [data-theme="dark"] .badge-gov-saffron {
+            background: rgba(243, 112, 33, 0.15) !important;
+            color: #FB923C !important;
+            border: 1px solid rgba(243, 112, 33, 0.3) !important;
+        }
+
+        .badge-gov-navy {
+            background: #E8F1FC !important;
+            color: #0C2340 !important;
+            border: 1px solid #C9DDF5 !important;
+        }
+        [data-theme="dark"] .badge-gov-navy {
+            background: rgba(96, 165, 250, 0.15) !important;
+            color: #93C5FD !important;
+            border: 1px solid rgba(96, 165, 250, 0.3) !important;
+        }
+
+        /* Official Portal Typography & Role Titles */
+        .gov-brand-role-title {
+            color: #0C2340;
+            font-size: 1.05rem;
+            font-weight: 700;
+            letter-spacing: -0.015em;
+            line-height: 1.35;
+        }
+        [data-theme="dark"] .gov-brand-role-title {
+            color: #60A5FA !important;
+        }
+
+        .gov-brand-subtitle {
+            color: var(--text-muted);
+            font-size: 0.76rem;
+            line-height: 1.4;
+            font-weight: 500;
+        }
+        [data-theme="light"] .gov-brand-subtitle {
+            color: #334155 !important;
+        }
+        [data-theme="dark"] .gov-brand-subtitle {
+            color: #CBD5E1 !important;
+        }
+
+        .gov-avatar-border {
+            border-color: #0C2340 !important;
+        }
+        [data-theme="dark"] .gov-avatar-border {
+            border-color: #60A5FA !important;
+        }
+
+        /* Bootstrap High-Contrast Utility Overrides for Perfect Legibility */
+        [data-theme="light"] .text-info {
+            color: #0056B3 !important; /* Official Deep Royal Blue (replaces cyan #0dcaf0) */
+        }
+        [data-theme="dark"] .text-info {
+            color: #60A5FA !important;
+        }
+
+        [data-theme="light"] .text-warning {
+            color: #B45309 !important; /* Deep Warm Amber */
+        }
+        [data-theme="dark"] .text-warning {
+            color: #FBBF24 !important;
+        }
+
+        [data-theme="light"] .text-success {
+            color: #15803D !important; /* Forest Green */
+        }
+        [data-theme="dark"] .text-success {
+            color: #34D399 !important;
+        }
+
+        [data-theme="light"] .text-muted {
+            color: #334155 !important; /* Crisp Slate Grey */
+        }
+        [data-theme="dark"] .text-muted {
+            color: #CBD5E1 !important;
+        }
+
+        [data-theme="light"] .text-secondary {
+            color: #475569 !important;
+        }
+        [data-theme="dark"] .text-secondary {
+            color: #94A3B8 !important;
+        }
+
+        [data-theme="light"] .text-primary {
+            color: #0C2340 !important; /* Official Navy */
+        }
+        [data-theme="dark"] .text-primary {
+            color: #60A5FA !important;
+        }
+
+        [data-theme="light"] .btn-outline-info {
+            color: #0056B3 !important;
+            border-color: #0056B3 !important;
+        }
+        [data-theme="light"] .btn-outline-info:hover {
+            background-color: #0056B3 !important;
+            color: #FFFFFF !important;
+        }
+        [data-theme="light"] .btn-info {
+            background-color: #0056B3 !important;
+            border-color: #004085 !important;
+            color: #FFFFFF !important;
+        }
+        [data-theme="dark"] .btn-info {
+            background-color: #2563EB !important;
+            border-color: #1D4ED8 !important;
+            color: #FFFFFF !important;
+        }
+
+        .offcanvas {
+            background-color: var(--card-bg) !important;
+            color: var(--text-main) !important;
+        }
+        [data-theme="dark"] .offcanvas .btn-close {
+            filter: invert(1) grayscale(100%) brightness(200%);
+        }
+
+        @media (max-width: 576px) {
+            .gov-brand-role-title {
+                font-size: 0.88rem !important;
+                line-height: 1.25 !important;
+            }
+            .gov-brand-subtitle {
+                font-size: 0.7rem !important;
+            }
         }
 
         * {
@@ -282,16 +451,37 @@
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
         }
 
+        .scrollbar-none, .gov-navbar .container, .gov-navbar {
+            scrollbar-width: none !important;
+            -ms-overflow-style: none !important;
+        }
+        .scrollbar-none::-webkit-scrollbar, .gov-navbar .container::-webkit-scrollbar, .gov-navbar::-webkit-scrollbar {
+            display: none !important;
+            width: 0 !important;
+            height: 0 !important;
+        }
+
+        @media (min-width: 992px) {
+            .gov-navbar .container {
+                overflow-x: hidden !important;
+            }
+        }
+
+        #headerNavPills {
+            width: 100%;
+            justify-content: space-between;
+        }
+
         .gov-nav-link {
             color: #FFFFFF;
             opacity: 0.9;
             text-decoration: none;
-            padding: 12px 18px;
-            font-size: 0.88rem;
+            padding: 10px 12px;
+            font-size: 0.82rem;
             font-weight: 500;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 5px;
             transition: all 0.15s ease;
             border-bottom: 3px solid transparent;
             margin-bottom: -3px;
@@ -301,6 +491,15 @@
             border-left: none;
             border-right: none;
             white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 1200px) {
+            .gov-nav-link {
+                padding: 8px 8px;
+                font-size: 0.77rem;
+                gap: 4px;
+            }
         }
         .gov-nav-link:hover {
             opacity: 1;
@@ -730,7 +929,7 @@
                 <span class="d-none d-sm-inline" id="themeLabel">Govt Theme</span>
             </button>
             <!-- Direct Hotline -->
-            <a href="tel:+918946919241" class="text-decoration-none d-none d-lg-inline-flex align-items-center gap-1 font-mono fw-bold" style="color: #f37021; font-size: 0.74rem;">
+            <a href="tel:+918946919241" class="text-decoration-none d-none d-lg-inline-flex align-items-center gap-1 font-mono fw-bold" style="color: var(--secondary-blue); font-size: 0.74rem;">
                 <i class="bi bi-telephone-fill"></i> +91 89469 19241
             </a>
         </div>
@@ -739,47 +938,63 @@
 
 <!-- Main Government Brand Bar -->
 <header class="gov-brand-header">
-    <div class="container d-flex align-items-center justify-content-between flex-wrap gap-3">
+    <div class="container d-flex align-items-center justify-content-between flex-wrap gap-2 gap-md-3">
         <!-- Identity Emblem & Name -->
-        <div class="d-flex align-items-center gap-3">
-            <div class="position-relative">
-                <img src="{{ url_for('static', filename='images/RohitPhoto.jpg') }}" alt="Rohit Jain" class="rounded-circle border border-3 shadow-sm" style="width: 52px; height: 52px; object-fit: cover; border-color: #0c2340 !important;">
-                <span class="position-absolute bottom-0 end-0 bg-success rounded-circle border border-2 border-white" style="width: 13px; height: 13px;" title="Online • Available for Enterprise Roles"></span>
+        <div class="d-flex align-items-center gap-2 gap-sm-3">
+            <div class="position-relative flex-shrink-0">
+                <img src="{{ url_for('static', filename='images/RohitPhoto.jpg') }}" alt="Rohit Jain" class="rounded-circle border border-3 shadow-sm gov-avatar-border" style="width: 50px; height: 50px; object-fit: cover;">
+                <span class="position-absolute bottom-0 end-0 bg-success rounded-circle border border-2 border-white" style="width: 12px; height: 12px;" title="Online • Available for Enterprise Roles"></span>
             </div>
             <div>
                 <div class="d-flex align-items-center gap-2 flex-wrap">
-                    <h4 class="fw-bold mb-0" style="color: var(--text-main); letter-spacing: -0.5px;">Rohit Jain</h4>
-                    <span class="badge font-mono rounded-pill px-2 py-1" style="background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); font-size: 0.68rem;">
+                    <h4 class="fw-bold mb-0" style="color: var(--text-heading); letter-spacing: -0.5px;">Rohit Jain</h4>
+                    <span class="badge badge-gov-green font-mono rounded-pill px-2 py-1" style="font-size: 0.68rem;">
                         <i class="bi bi-shield-check me-1"></i> Verified Lead Engineer
                     </span>
                 </div>
-                <div class="small fw-semibold mt-1" style="color: #f37021; font-size: 0.82rem;">
+                <!-- Official Blue Role Title -->
+                <div class="gov-brand-role-title mt-1">
                     Senior Full-Stack Developer &amp; AI Automation Architect
                 </div>
-                <div class="small text-muted font-mono d-none d-md-block" style="font-size: 0.72rem;">
-                    State Government Portals Lead (100,000+ Candidates) • 1st Rank BrowserStack Champion • Jaipur, Rajasthan
+                <!-- Subtitle with Government & Hackathon Credentials -->
+                <div class="gov-brand-subtitle font-mono">
+                    <span class="d-none d-sm-inline">State Govt Portals Lead (100,000+ Users) &bull; </span>
+                    <span>1st Rank BrowserStack Champion</span>
+                    <span class="d-none d-md-inline"> &bull; Jaipur, Rajasthan</span>
                 </div>
             </div>
         </div>
 
-        <!-- Right CTA Actions -->
-        <div class="d-flex align-items-center gap-2 flex-wrap ms-auto">
-            <a href="{{ user.header.resume_url }}" download class="btn btn-sm btn-gov-saffron rounded-pill d-inline-flex align-items-center gap-1 font-mono py-2 px-3" style="font-size: 0.82rem;">
-                <i class="bi bi-file-earmark-pdf-fill"></i>
-                <span>Download Official CV</span>
-            </a>
-            <a href="https://wa.me/918946919241?text=Hi%20Rohit,%20I%20saw%20your%20portfolio!" target="_blank" class="btn btn-sm btn-gov-whatsapp rounded-pill d-inline-flex align-items-center gap-1 font-mono py-2 px-3" style="font-size: 0.82rem;">
-                <i class="bi bi-whatsapp"></i>
-                <span>WhatsApp Helpdesk</span>
-            </a>
-            <button type="button" class="btn btn-sm btn-gov-outline rounded-pill d-inline-flex align-items-center gap-1 font-mono py-2 px-3" onclick="switchSection('help')" style="font-size: 0.82rem;">
-                <i class="bi bi-question-circle-fill text-info"></i>
-                <span>Help &amp; FAQs</span>
-            </button>
-            <!-- Mobile Menu Toggle -->
-            <button class="btn btn-sm btn-outline-secondary d-lg-none rounded-circle d-flex align-items-center justify-content-center p-2" style="width: 38px; height: 38px; border-color: var(--card-border); color: var(--text-main);" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenuOffcanvas" aria-controls="mobileMenuOffcanvas" aria-label="Open Navigation Menu">
-                <i class="bi bi-list fs-5"></i>
-            </button>
+        <!-- Right Header Actions (Responsive) -->
+        <div class="d-flex align-items-center gap-2 ms-auto">
+            <!-- Desktop Buttons -->
+            <div class="d-none d-lg-flex align-items-center gap-2">
+                <a href="{{ user.header.resume_url }}" download class="btn btn-sm btn-gov-saffron rounded-pill d-inline-flex align-items-center gap-1 font-mono py-2 px-3" style="font-size: 0.82rem;">
+                    <i class="bi bi-file-earmark-pdf-fill"></i>
+                    <span>Download Official CV</span>
+                </a>
+                <a href="https://wa.me/918946919241?text=Hi%20Rohit,%20I%20saw%20your%20portfolio!" target="_blank" class="btn btn-sm btn-gov-whatsapp rounded-pill d-inline-flex align-items-center gap-1 font-mono py-2 px-3" style="font-size: 0.82rem;">
+                    <i class="bi bi-whatsapp"></i>
+                    <span>WhatsApp Helpdesk</span>
+                </a>
+                <button type="button" class="btn btn-sm btn-gov-outline rounded-pill d-inline-flex align-items-center gap-1 font-mono py-2 px-3" onclick="switchSection('help')" style="font-size: 0.82rem;">
+                    <i class="bi bi-question-circle-fill text-info"></i>
+                    <span>Help &amp; FAQs</span>
+                </button>
+            </div>
+
+            <!-- Mobile & Tablet Compact Actions -->
+            <div class="d-flex d-lg-none align-items-center gap-2">
+                <a href="https://wa.me/918946919241?text=Hi%20Rohit,%20I%20saw%20your%20portfolio!" target="_blank" class="btn btn-sm btn-gov-whatsapp rounded-circle d-flex align-items-center justify-content-center shadow-sm" style="width: 38px; height: 38px;" title="WhatsApp Helpdesk">
+                    <i class="bi bi-whatsapp fs-6"></i>
+                </a>
+                <a href="{{ user.header.resume_url }}" download class="btn btn-sm btn-gov-saffron rounded-circle d-flex align-items-center justify-content-center shadow-sm" style="width: 38px; height: 38px;" title="Download Official CV">
+                    <i class="bi bi-file-earmark-pdf-fill fs-6"></i>
+                </a>
+                <button class="btn btn-sm btn-gov-navy rounded-circle d-flex align-items-center justify-content-center p-0 shadow-sm" style="width: 38px; height: 38px;" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenuOffcanvas" aria-controls="mobileMenuOffcanvas" aria-label="Open Navigation Menu">
+                    <i class="bi bi-list fs-5"></i>
+                </button>
+            </div>
         </div>
     </div>
 </header>
@@ -787,21 +1002,21 @@
 <!-- Solid Navy Government Navigation Bar -->
 <nav class="gov-navbar sticky-top">
     <div class="container d-flex align-items-center justify-content-between overflow-x-auto scrollbar-none py-0">
-        <div class="d-flex align-items-center gap-1" id="headerNavPills">
+        <div class="d-flex align-items-center gap-1 w-100 justify-content-between" id="headerNavPills">
             <button class="gov-nav-link active" id="nav-btn-projects" onclick="switchSection('projects')">
-                <i class="bi bi-folder-fill me-1"></i> Projects &amp; Case Studies ({{ user.projects|length }})
+                <i class="bi bi-folder-fill me-1"></i> Projects ({{ user.projects|length }})
             </button>
             <button class="gov-nav-link" id="nav-btn-events" onclick="switchSection('events')">
                 <i class="bi bi-trophy-fill text-warning me-1"></i> Honors &amp; Awards ({{ user.events|length }})
             </button>
             <button class="gov-nav-link" id="nav-btn-skills" onclick="switchSection('skills')">
-                <i class="bi bi-cpu-fill text-info me-1"></i> Tech Stack &amp; Telemetry
+                <i class="bi bi-cpu-fill text-info me-1"></i> Tech Stack
             </button>
             <button class="gov-nav-link" id="nav-btn-agents" onclick="switchSection('agents')">
-                <i class="bi bi-robot text-success me-1"></i> Autonomous AI Team (19)
+                <i class="bi bi-robot text-success me-1"></i> AI Team (19)
             </button>
             <button class="gov-nav-link" id="nav-btn-milestones" onclick="switchSection('milestones')">
-                <i class="bi bi-briefcase-fill text-warning me-1"></i> Career Milestones
+                <i class="bi bi-briefcase-fill text-warning me-1"></i> Milestones
             </button>
             <button class="gov-nav-link" id="nav-btn-studio" onclick="switchSection('studio')">
                 <i class="bi bi-geo-alt-fill text-danger me-1"></i> Studio Location
@@ -820,63 +1035,70 @@
             <i class="bi bi-megaphone-fill me-1"></i> LATEST ANNOUNCEMENT
         </span>
         <div class="small text-truncate flex-grow-1 font-mono" style="color: var(--text-body); font-size: 0.78rem;">
-            <strong>Enterprise Stack Modernization:</strong> Upgraded PHP 8.2 → 8.5.9, Laravel 8 → 13.39.0, MariaDB 10.x → 12.3.3 across 342+ tables (0.34ms query latency). <strong>New Case Study:</strong> Enterprise Grievance &amp; Collaborative Task Platform (Zero-Trust .NET Core, Angular, SQL Server Stored Procedures) published with Antigravity Agentic SDLC.
+            <strong>State Open School Stack Upgrade:</strong> Upgraded PHP 8.2 → 8.5.9, Laravel 8 → 13.39.0, MariaDB 10.x → 12.3.3 across 342+ tables (0.34ms query latency). <strong>New Case Study:</strong> Enterprise Grievance &amp; Collaborative Task Platform (Zero-Trust .NET Core, Angular, SQL Server Stored Procedures) published with Antigravity Agentic SDLC.
         </div>
     </div>
 </div>
 
 <!-- Mobile Offcanvas Drawer -->
-<div class="offcanvas offcanvas-end offcanvas-dark" tabindex="-1" id="mobileMenuOffcanvas" aria-labelledby="mobileMenuOffcanvasLabel">
+<div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenuOffcanvas" aria-labelledby="mobileMenuOffcanvasLabel">
     <div class="offcanvas-header border-bottom" style="border-color: var(--card-border) !important;">
         <div class="d-flex align-items-center gap-2">
-            <img src="{{ url_for('static', filename='images/RohitPhoto.jpg') }}" alt="Rohit Jain" class="rounded-circle border" style="width: 38px; height: 38px; object-fit: cover; border-color: var(--accent) !important;">
+            <img src="{{ url_for('static', filename='images/RohitPhoto.jpg') }}" alt="Rohit Jain" class="rounded-circle border border-2 gov-avatar-border" style="width: 42px; height: 42px; object-fit: cover;">
             <div>
-                <h6 class="fw-bold mb-0" id="mobileMenuOffcanvasLabel" style="color: var(--text-main);">Rohit Jain</h6>
-                <span class="small font-mono text-info" style="font-size: 0.72rem;">Senior Full-Stack Developer</span>
+                <h6 class="fw-bold mb-0" id="mobileMenuOffcanvasLabel" style="color: var(--text-heading);">Rohit Jain</h6>
+                <div class="gov-brand-role-title fw-bold" style="font-size: 0.82rem;">Senior Full-Stack Developer &amp; AI Architect</div>
             </div>
         </div>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
-    <div class="offcanvas-body d-flex flex-column justify-content-between p-4">
+    <div class="offcanvas-body d-flex flex-column justify-content-between p-3">
         <div>
-            <div class="mb-4">
-                <span class="badge py-2 px-3 font-mono rounded-pill" style="background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3);">
-                    <span class="d-inline-block rounded-circle bg-success me-1" style="width: 6px; height: 6px;"></span> Available for Enterprise Roles
+            <div class="mb-3">
+                <span class="badge badge-gov-green py-2 px-3 font-mono rounded-pill w-100 text-center">
+                    <span class="d-inline-block rounded-circle bg-success me-1" style="width: 6px; height: 6px;"></span> Available for Enterprise Roles &bull; 9+ Yrs Exp
                 </span>
             </div>
 
             <!-- Menu Links -->
             <div class="d-flex flex-column gap-2 mb-4 font-mono">
-                <button class="btn text-start py-2 px-3 rounded-3" style="background: var(--card-inner); border: 1px solid var(--card-border); color: var(--text-main);" data-bs-dismiss="offcanvas" onclick="switchSection('projects')">
-                    <span class="me-2">🚀</span> Projects ({{ user.projects|length }})
+                <button class="btn text-start py-2 px-3 rounded-3 d-flex align-items-center justify-content-between" style="background: var(--card-inner); border: 1px solid var(--card-border); color: var(--text-main);" data-bs-dismiss="offcanvas" onclick="switchSection('projects')">
+                    <span><i class="bi bi-folder-fill text-primary me-2"></i> Projects &amp; Case Studies</span>
+                    <span class="badge badge-gov-navy rounded-pill">{{ user.projects|length }}</span>
                 </button>
-                <button class="btn text-start py-2 px-3 rounded-3" style="background: var(--card-inner); border: 1px solid var(--card-border); color: var(--text-main);" data-bs-dismiss="offcanvas" onclick="switchSection('events')">
-                    <span class="me-2">🏆</span> Honors & Events ({{ user.events|length }})
+                <button class="btn text-start py-2 px-3 rounded-3 d-flex align-items-center justify-content-between" style="background: var(--card-inner); border: 1px solid var(--card-border); color: var(--text-main);" data-bs-dismiss="offcanvas" onclick="switchSection('events')">
+                    <span><i class="bi bi-trophy-fill text-warning me-2"></i> Honors &amp; Awards</span>
+                    <span class="badge badge-gov-amber rounded-pill">{{ user.events|length }}</span>
                 </button>
-                <button class="btn text-start py-2 px-3 rounded-3" style="background: var(--card-inner); border: 1px solid var(--card-border); color: var(--text-main);" data-bs-dismiss="offcanvas" onclick="switchSection('skills')">
-                    <span class="me-2">⚡</span> Technical Stack
+                <button class="btn text-start py-2 px-3 rounded-3 d-flex align-items-center justify-content-between" style="background: var(--card-inner); border: 1px solid var(--card-border); color: var(--text-main);" data-bs-dismiss="offcanvas" onclick="switchSection('skills')">
+                    <span><i class="bi bi-cpu-fill text-info me-2"></i> Tech Stack &amp; Telemetry</span>
+                    <span class="badge badge-gov-cyan rounded-pill">PHP 8.5 / MariaDB 12</span>
                 </button>
-                <button class="btn text-start py-2 px-3 rounded-3" style="background: var(--card-inner); border: 1px solid var(--card-border); color: var(--text-main);" data-bs-dismiss="offcanvas" onclick="switchSection('agents')">
-                    <span class="me-2">🤖</span> AI Team (19)
+                <button class="btn text-start py-2 px-3 rounded-3 d-flex align-items-center justify-content-between" style="background: var(--card-inner); border: 1px solid var(--card-border); color: var(--text-main);" data-bs-dismiss="offcanvas" onclick="switchSection('agents')">
+                    <span><i class="bi bi-robot text-success me-2"></i> Autonomous AI Team</span>
+                    <span class="badge badge-gov-green rounded-pill">19 Agents</span>
                 </button>
-                <button class="btn text-start py-2 px-3 rounded-3" style="background: var(--card-inner); border: 1px solid var(--card-border); color: var(--text-main);" data-bs-dismiss="offcanvas" onclick="switchSection('milestones')">
-                    <span class="me-2">💼</span> Experience & Milestones
+                <button class="btn text-start py-2 px-3 rounded-3 d-flex align-items-center justify-content-between" style="background: var(--card-inner); border: 1px solid var(--card-border); color: var(--text-main);" data-bs-dismiss="offcanvas" onclick="switchSection('milestones')">
+                    <span><i class="bi bi-briefcase-fill text-warning me-2"></i> Career Milestones</span>
+                    <span class="badge badge-gov-amber rounded-pill">9+ Years</span>
                 </button>
-                <button class="btn text-start py-2 px-3 rounded-3" style="background: var(--card-inner); border: 1px solid var(--card-border); color: var(--text-main);" data-bs-dismiss="offcanvas" onclick="switchSection('studio')">
-                    <span class="me-2">📍</span> Studio & Location
+                <button class="btn text-start py-2 px-3 rounded-3 d-flex align-items-center justify-content-between" style="background: var(--card-inner); border: 1px solid var(--card-border); color: var(--text-main);" data-bs-dismiss="offcanvas" onclick="switchSection('studio')">
+                    <span><i class="bi bi-geo-alt-fill text-danger me-2"></i> Studio Location</span>
+                    <span class="badge badge-gov-navy rounded-pill">Jaipur</span>
                 </button>
-                <button class="btn text-start py-2 px-3 rounded-3" style="background: var(--card-inner); border: 1px solid var(--card-border); color: var(--text-main);" data-bs-dismiss="offcanvas" onclick="switchSection('help')">
-                    <span class="me-2">❓</span> Help & FAQs (Income Tax Style)
+                <button class="btn text-start py-2 px-3 rounded-3 d-flex align-items-center justify-content-between" style="background: var(--card-inner); border: 1px solid var(--card-border); color: var(--text-main);" data-bs-dismiss="offcanvas" onclick="switchSection('help')">
+                    <span><i class="bi bi-question-circle-fill text-info me-2"></i> Help &amp; FAQs</span>
+                    <span class="badge badge-gov-cyan rounded-pill">7 FAQs</span>
                 </button>
             </div>
         </div>
 
         <div class="border-top pt-3" style="border-color: var(--card-border) !important;">
-            <a href="https://wa.me/918946919241?text=Hi%20Rohit,%20I%20saw%20your%20portfolio!" target="_blank" class="btn btn-whatsapp-theme w-100 py-2 rounded-3 mb-2 font-mono fw-bold text-decoration-none d-flex align-items-center justify-content-center gap-2">
+            <a href="https://wa.me/918946919241?text=Hi%20Rohit,%20I%20saw%20your%20portfolio!" target="_blank" class="btn btn-gov-whatsapp w-100 py-2 rounded-3 mb-2 font-mono fw-bold text-decoration-none d-flex align-items-center justify-content-center gap-2">
                 <i class="bi bi-whatsapp"></i> Chat on WhatsApp
             </a>
-            <a href="{{ user.header.resume_url }}" download class="btn btn-outline-info w-100 py-2 rounded-3 font-mono text-decoration-none d-flex align-items-center justify-content-center gap-2">
-                <i class="bi bi-file-earmark-pdf-fill"></i> Download CV (.pdf)
+            <a href="{{ user.header.resume_url }}" download class="btn btn-gov-saffron w-100 py-2 rounded-3 font-mono text-decoration-none d-flex align-items-center justify-content-center gap-2">
+                <i class="bi bi-file-earmark-pdf-fill"></i> Download Official CV (.pdf)
             </a>
         </div>
     </div>
@@ -896,20 +1118,20 @@
                     One-Click Direct Access to Production Telemetry, Zero-Trust Systems &amp; Technical Verifications
                 </span>
             </div>
-            <span class="badge font-mono rounded-pill px-3 py-1" style="background: #e8f1fc; color: #0c2340; border: 1px solid #c9ddf5; font-size: 0.7rem;">
+            <span class="badge font-mono rounded-pill px-3 py-1" class="badge badge-gov-navy font-mono rounded-pill px-3 py-1" style="font-size: 0.7rem;">
                 <i class="bi bi-lightning-charge-fill text-warning me-1"></i> High Priority Services
             </span>
         </div>
 
         <div class="row g-3">
-            <!-- 1. Dual-Stream Enterprise Portal -->
+            <!-- 1. State Open School Educational Portal -->
             <div class="col-md-6 col-lg-4">
                 <div class="quick-service-tile" onclick="switchSection('projects'); onProjectTabChange('dual-stream-portal');">
-                    <div class="quick-service-icon">🏛️</div>
+                    <div class="quick-service-icon">🎓</div>
                     <div>
-                        <h6 class="fw-bold mb-1" style="color: var(--text-main); font-size: 0.88rem;">Dual-Stream Enterprise Portal</h6>
+                        <h6 class="fw-bold mb-1" style="color: var(--text-main); font-size: 0.88rem;">State Open School Educational Portal</h6>
                         <p class="small text-muted mb-2 font-mono" style="font-size: 0.72rem; line-height: 1.4;">PHP 8.5.9 • Laravel 13.39.0 • MariaDB 12.3.3 (342 Tables, 0.34ms Latency)</p>
-                        <span class="badge font-mono" style="background: #e8f1fc; color: #0284c7; font-size: 0.68rem;">View Telemetry &rarr;</span>
+                        <span class="badge font-mono" class="badge badge-gov-navy font-mono" style="font-size: 0.68rem;">View Telemetry &rarr;</span>
                     </div>
                 </div>
             </div>
@@ -921,7 +1143,7 @@
                     <div>
                         <h6 class="fw-bold mb-1" style="color: var(--text-main); font-size: 0.88rem;">Enterprise Grievance Platform</h6>
                         <p class="small text-muted mb-2 font-mono" style="font-size: 0.72rem; line-height: 1.4;">Zero-Trust .NET Core • Angular • SQL Server Stored Procedures • Mobile OTP</p>
-                        <span class="badge font-mono" style="background: #fff7ed; color: #d97706; font-size: 0.68rem;">Read Case Study &rarr;</span>
+                        <span class="badge font-mono" class="badge badge-gov-amber font-mono" style="font-size: 0.68rem;">Read Case Study &rarr;</span>
                     </div>
                 </div>
             </div>
@@ -933,7 +1155,7 @@
                     <div>
                         <h6 class="fw-bold mb-1" style="color: var(--text-main); font-size: 0.88rem;">BrowserStack 1st Rank Champion</h6>
                         <p class="small text-muted mb-2 font-mono" style="font-size: 0.72rem; line-height: 1.4;">1st Prize ($105 USD Awarded) • Automated Testing Hackathon at Metacube</p>
-                        <span class="badge font-mono" style="background: #f0fdf4; color: #15803d; font-size: 0.68rem;">View Proof &amp; Trophy &rarr;</span>
+                        <span class="badge font-mono" class="badge badge-gov-green font-mono" style="font-size: 0.68rem;">View Proof &amp; Trophy &rarr;</span>
                     </div>
                 </div>
             </div>
@@ -969,7 +1191,7 @@
                     <div>
                         <h6 class="fw-bold mb-1" style="color: var(--text-main); font-size: 0.88rem;">Help Center &amp; Recruiter FAQs</h6>
                         <p class="small text-muted mb-2 font-mono" style="font-size: 0.72rem; line-height: 1.4;">e-Filing Style Help Center • Verifications, SLAs, Tech Specs &amp; Direct Hotline</p>
-                        <span class="badge font-mono" style="background: #fff4ec; color: #f37021; font-size: 0.68rem;">Explore Knowledge Base &rarr;</span>
+                        <span class="badge font-mono" class="badge badge-gov-saffron font-mono" style="font-size: 0.68rem;">Explore Knowledge Base &rarr;</span>
                     </div>
                 </div>
             </div>
@@ -985,13 +1207,13 @@
                 <div>
                     <!-- Status Badge -->
                     <div class="d-flex align-items-center gap-2 flex-wrap mb-3">
-                        <span class="badge py-2 px-3 rounded-pill font-mono" style="background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.25); color: var(--accent); font-size: 0.76rem;">
+                        <span class="badge badge-gov-cyan py-2 px-3 rounded-pill font-mono" style="font-size: 0.72rem;">
                             <i class="bi bi-patch-check-fill me-1"></i> Senior Full-Stack Developer & AI Automation Architect
                         </span>
                         <span class="badge py-2 px-3 rounded-pill font-mono custom-badge" style="font-size: 0.74rem;">
                             <i class="bi bi-geo-alt-fill text-danger me-1"></i> Jaipur, India
                         </span>
-                        <span class="badge py-2 px-3 rounded-pill font-mono" style="background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); font-size: 0.74rem;">
+                        <span class="badge badge-gov-green py-2 px-3 rounded-pill font-mono" style="font-size: 0.72rem;">
                             <i class="bi bi-people-fill me-1"></i> Human &amp; Agentic Development
                         </span>
                     </div>
@@ -1011,7 +1233,7 @@
                         <div class="d-flex align-items-center gap-2">
                             <span class="fs-4">🏆</span>
                             <div>
-                                <span class="fw-bold font-mono d-block" style="color: #f59e0b; font-size: 0.88rem;">1st Rank Winner &amp; Champion</span>
+                                <span class="fw-bold font-mono d-block" style="color: var(--accent-amber); font-size: 0.88rem;">1st Rank Winner &amp; Champion</span>
                                 <span class="small font-mono" style="color: var(--text-dim); font-size: 0.75rem;">BrowserStack Testathon Jaipur • $105 USD Prize Awarded</span>
                             </div>
                         </div>
@@ -1192,17 +1414,17 @@
                         <p class="small mb-0 font-mono" style="color: var(--text-dim);">Production Systems, AI Automation &amp; Mission-Critical Architectures</p>
                     </div>
                     <div class="d-flex align-items-center gap-2 flex-wrap">
-                        <span class="badge py-2 px-3 rounded-pill font-mono" style="background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3);">
+                        <span class="badge py-2 px-3 rounded-pill font-mono" class="badge badge-gov-green font-mono px-3 py-1 rounded-pill">
                             <i class="bi bi-people-fill me-1"></i> Human &amp; Agentic Development
                         </span>
-                        <span class="badge py-2 px-3 rounded-pill font-mono" style="background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.25); color: var(--accent);">
+                        <span class="badge py-2 px-3 rounded-pill font-mono" class="badge badge-gov-cyan font-mono px-3 py-1 rounded-pill">
                             <i class="bi bi-layers-fill me-1"></i> {{ user.projects|length }} Production Projects
                         </span>
                     </div>
                 </div>
 
                 <!-- Enterprise Office Works & NDA Notice -->
-                <div class="p-3 rounded-3 mb-4 d-flex align-items-center justify-content-between flex-wrap gap-2" style="background: rgba(56, 189, 248, 0.05); border: 1px solid rgba(56, 189, 248, 0.2);">
+                <div class="p-3 rounded-3 mb-4 d-flex align-items-center justify-content-between flex-wrap gap-2" style="background: var(--card-inner); border: 1px solid var(--card-border);">
                     <div class="d-flex align-items-center gap-2">
                         <i class="bi bi-shield-lock-fill text-info fs-5"></i>
                         <div>
@@ -1249,16 +1471,16 @@
                         <div class="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-3">
                             <div>
                                 <div class="d-flex align-items-center gap-2 flex-wrap mb-2">
-                                    <span class="badge font-mono px-3 py-1 rounded-pill" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); font-size: 0.72rem;">
+                                    <span class="badge badge-gov-cyan font-mono px-3 py-1 rounded-pill" style="font-size: 0.72rem;">
                                         {{ proj.badge }}
                                     </span>
                                     {% if proj.is_office_work %}
-                                    <span class="badge font-mono px-3 py-1 rounded-pill" style="background: rgba(245, 158, 11, 0.15); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.3); font-size: 0.72rem;">
+                                    <span class="badge badge-gov-amber font-mono px-3 py-1 rounded-pill" style="font-size: 0.72rem;">
                                         <i class="bi bi-briefcase-fill me-1"></i>Enterprise Office Work
                                     </span>
                                     {% endif %}
                                     {% if proj.development_mode %}
-                                    <span class="badge font-mono px-3 py-1 rounded-pill" style="background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); font-size: 0.72rem;">
+                                    <span class="badge badge-gov-green font-mono px-3 py-1 rounded-pill" style="font-size: 0.72rem;">
                                         <i class="bi bi-robot me-1"></i>{{ proj.development_mode }}
                                     </span>
                                     {% endif %}
@@ -1604,10 +1826,10 @@
                             <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-4 pb-3 border-bottom" style="border-color: var(--card-border) !important;">
                                 <div>
                                     <div class="d-flex align-items-center gap-2 flex-wrap mb-1">
-                                        <span class="badge font-mono px-3 py-1 rounded-pill" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); font-size: 0.72rem;">
+                                        <span class="badge badge-gov-cyan font-mono px-3 py-1 rounded-pill" style="font-size: 0.72rem;">
                                             <i class="bi bi-briefcase-fill me-1"></i> Technical Case Study
                                         </span>
-                                        <span class="badge font-mono px-3 py-1 rounded-pill" style="background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); font-size: 0.72rem;">
+                                        <span class="badge badge-gov-green font-mono px-3 py-1 rounded-pill" style="font-size: 0.72rem;">
                                             <i class="bi bi-shield-check me-1"></i> Principal Engineer &amp; CTO Specification
                                         </span>
                                     </div>
@@ -1731,7 +1953,7 @@
                         <h3 class="fw-bold mb-1" style="color: var(--text-main);">Tech Honors, Hackathons &amp; Keynote Events</h3>
                         <p class="small mb-0 font-mono" style="color: var(--accent);">Onsite Competitions, Hackathons &amp; Technical Keynotes in Jaipur</p>
                     </div>
-                    <span class="badge py-2 px-3 rounded-pill font-mono" style="background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); color: #f59e0b;">
+                    <span class="badge py-2 px-3 rounded-pill font-mono" class="badge badge-gov-amber font-mono px-2 py-1 rounded-pill">
                         🏆 {{ user.events|length }} Verified Honors
                     </span>
                 </div>
@@ -1857,7 +2079,7 @@
                         <h3 class="fw-bold mb-1" style="color: var(--text-main);">Technical Architecture &amp; Core Stack</h3>
                         <p class="small mb-0 font-mono" style="color: var(--accent);">Enterprise-Grade Frameworks, Agentic AI, Distributed Databases &amp; DevOps</p>
                     </div>
-                    <span class="badge py-2 px-3 rounded-pill font-mono" style="background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.25); color: var(--accent);">
+                    <span class="badge py-2 px-3 rounded-pill font-mono" class="badge badge-gov-cyan font-mono px-3 py-1 rounded-pill">
                         ⚡ 9+ Years Battle-Tested
                     </span>
                 </div>
@@ -1937,7 +2159,7 @@
                         <h3 class="fw-bold mb-1" style="color: var(--text-main);">Autonomous Agentic AI Ecosystem</h3>
                         <p class="small mb-0 font-mono" style="color: var(--accent);">19 Specialized AI Agents Orchestrated for End-to-End Software Lifecycles</p>
                     </div>
-                    <span class="badge py-2 px-3 rounded-pill font-mono" style="background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.25); color: var(--accent);">
+                    <span class="badge py-2 px-3 rounded-pill font-mono" class="badge badge-gov-cyan font-mono px-3 py-1 rounded-pill">
                         🤖 19 Autonomous Agents
                     </span>
                 </div>
@@ -1967,7 +2189,7 @@
                         <h3 class="fw-bold mb-1" style="color: var(--text-main);">Career Milestones &amp; Experience</h3>
                         <p class="small mb-0 font-mono" style="color: var(--accent);">9+ Years Delivering Enterprise Cloud &amp; Government Portals</p>
                     </div>
-                    <span class="badge py-2 px-3 rounded-pill font-mono" style="background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3);">
+                    <span class="badge py-2 px-3 rounded-pill font-mono" class="badge badge-gov-green font-mono px-3 py-1 rounded-pill">
                         💼 9+ Years Trajectory
                     </span>
                 </div>
@@ -2003,7 +2225,7 @@
                         <div>
                             <div class="d-flex align-items-center gap-2 flex-wrap">
                                 <h4 class="fw-bold mb-0" style="color: var(--text-main);">Development Studio &amp; Office Location</h4>
-                                <span class="badge font-mono" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); font-size: 0.75rem;">Verified Google Location</span>
+                                <span class="badge font-mono" class="badge badge-gov-cyan font-mono px-3 py-1 rounded-pill" style="font-size: 0.75rem;">Verified Google Location</span>
                             </div>
                             <p class="small mb-0 font-mono mt-1" style="color: var(--text-dim);">
                                 Jaipur Nagar Nigam Area, Rajasthan 302026 • Astha Empire 2, Chordiya City
@@ -2012,10 +2234,10 @@
                     </div>
 
                     <div class="d-flex align-items-center gap-2 flex-wrap">
-                        <span class="badge py-2 px-3 font-mono custom-badge" style="font-size: 0.75rem;">
+                        <span class="badge badge-gov-cyan py-2 px-3 font-mono rounded-pill" style="font-size: 0.75rem;">
                             <i class="bi bi-patch-check-fill text-info me-1"></i> Software Engineering Studio
                         </span>
-                        <span class="badge py-2 px-3 font-mono custom-badge" style="font-size: 0.75rem;">
+                        <span class="badge badge-gov-cyan py-2 px-3 font-mono rounded-pill" style="font-size: 0.75rem;">
                             <span class="d-inline-block rounded-circle bg-success me-1" style="width: 7px; height: 7px;"></span> Open for Opportunities
                         </span>
                     </div>
@@ -2073,7 +2295,7 @@
                             <span class="badge font-mono px-3 py-1 rounded-pill" style="background: #0c2340; color: #ffffff; font-size: 0.72rem;">
                                 <i class="bi bi-question-circle-fill text-warning me-1"></i> Help &amp; Knowledge Base
                             </span>
-                            <span class="badge font-mono px-3 py-1 rounded-pill" style="background: rgba(243, 112, 33, 0.15); color: #f37021; border: 1px solid rgba(243, 112, 33, 0.3); font-size: 0.72rem;">
+                            <span class="badge font-mono px-3 py-1 rounded-pill" class="badge badge-gov-saffron font-mono px-3 py-1 rounded-pill" style="font-size: 0.72rem;">
                                 e-Filing Portal 2.0 Standard
                             </span>
                         </div>
@@ -2088,7 +2310,7 @@
                 <!-- Global Instant Search Input -->
                 <div class="p-3 rounded-3 mb-4" style="background: var(--card-inner); border: 1px solid var(--card-border);">
                     <div class="input-group">
-                        <span class="input-group-text bg-white border-end-0" style="border-color: var(--card-border); color: #0c2340;">
+                        <span class="input-group-text border-end-0" style="border-color: var(--card-border); color: var(--primary); background: var(--card-bg) !important;">
                             <i class="bi bi-search"></i>
                         </span>
                         <input type="text" id="faqSearchInput" class="form-control bg-white border-start-0" placeholder="Type a keyword to find answers (e.g. 'Stored Procedures', 'PHP 8.5', 'Mobile OTP', 'BrowserStack', 'NDA', 'Docker')..." onkeyup="filterHelpFaqs()" style="border-color: var(--card-border); font-size: 0.88rem;">
@@ -2136,7 +2358,7 @@
                             <i class="bi bi-headset fs-4 text-primary"></i>
                         </div>
                         <div>
-                            <h6 class="fw-bold mb-0" style="color: #0c2340;">Need Customized Technical Evaluation or Full Dossier?</h6>
+                            <h6 class="fw-bold mb-0" style="color: var(--text-heading);">Need Customized Technical Evaluation or Full Dossier?</h6>
                             <span class="small font-mono text-muted" style="font-size: 0.75rem;">Connect directly with Rohit Jain for senior architect and leadership discussions.</span>
                         </div>
                     </div>
@@ -2184,7 +2406,7 @@
             <div class="col-lg-3 col-md-6">
                 <h6>Core Production Systems</h6>
                 <ul class="list-unstyled small d-flex flex-column gap-2 mb-0" style="font-size: 0.82rem;">
-                    <li><a href="#projects" onclick="switchSection('projects'); onProjectTabChange('dual-stream-portal');">&rsaquo; Dual-Stream Enterprise Portal (PHP 8.5 • Laravel 13)</a></li>
+                    <li><a href="#projects" onclick="switchSection('projects'); onProjectTabChange('dual-stream-portal');">&rsaquo; State Open School Educational Portal (PHP 8.5 • Laravel 13)</a></li>
                     <li><a href="#projects" onclick="switchSection('projects'); onProjectTabChange('enterprise-grievance-portal');">&rsaquo; Enterprise Grievance Platform (Zero-Trust .NET Core)</a></li>
                     <li><a href="#projects" onclick="switchSection('projects'); onProjectTabChange('support-task-dashboard');">&rsaquo; MailAI Support Automation (Docker &amp; Ollama)</a></li>
                     <li><a href="#projects" onclick="switchSection('projects'); onProjectTabChange('aimukeshajmera');">&rsaquo; Mukesh Ajmera Financial AI (LIC MITRA)</a></li>
@@ -2570,11 +2792,10 @@
         if (btn) {
             var tab = new bootstrap.Tab(btn);
             tab.show();
-            btn.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
 
-        // Update top header pill active state
-        document.querySelectorAll('.nav-menu-btn').forEach(function(b) {
+        // Update top header nav active state
+        document.querySelectorAll('.gov-nav-link, .nav-menu-btn').forEach(function(b) {
             b.classList.remove('active');
         });
         var headerBtn = document.getElementById('nav-btn-' + secName);
