@@ -67,3 +67,4 @@
 - **Cloud Coffee Connect — AI on AWS & Open Source (September 2026):** Onsite participant at Pratham Software Sitapura discussing open-source LLMs on AWS.
 - **Atlassian × Tableau Jaipur (September 2026):** Onsite participant at The Fern Jaipur exploring Jira, Confluence, and Tableau integrations.
 - **Agile Testing Alliance (ATA Jaipur):** Active community member focusing on quality engineering and continuous testing pipelines.
+- **Microsoft Fabric & Data Community (2026):** Active member awarded official Microsoft Fabric Community and Microsoft Data Community badges while mastering Microsoft Fabric Lakehouse architecture, OneLake multi-cloud SaaS data lakes, Synapse Data Engineering, and Power BI Direct Lake mode.

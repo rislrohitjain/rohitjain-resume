@@ -520,6 +520,25 @@ user_data = {
         },
 
         {
+            "title": "Microsoft Fabric & Data Community — AI & Unified Analytics",
+            "type": "Community Learning & Credentials",
+            "badge": "🎖️ Microsoft Community Badges",
+            "achievement": "🎖️ Awarded Official Microsoft Fabric Community & Microsoft Data Community Member Badges",
+            "date": "2026",
+            "location": "Microsoft Community Hub / Virtual & In-Person Learning",
+            "organizer": "Microsoft Fabric Community & Microsoft Data Community",
+            "event_url": "https://community.fabric.microsoft.com/",
+            "images": [
+                "images/microsoft_fabric_community_badge.png",
+                "images/microsoft_data_community_badge.png"
+            ],
+            "learnings": [
+                "Microsoft Fabric Unified Analytics Platform: Explored Lakehouse architecture, Synapse Data Engineering, Data Factory pipelines, and OneLake multi-cloud SaaS data lakes.",
+                "Real-Time Analytics & Power BI Direct Lake: Learned next-generation real-time intelligence, KQL event streaming, and Direct Lake mode for sub-second query performance over billions of rows.",
+                "Active Microsoft Community Contributor: Recognized member in the official Microsoft Fabric Community and Microsoft Data Community, collaborating with data engineers and enterprise solutions architects."
+            ]
+        },
+        {
             "title": "Cloud Coffee Connect — AI on AWS & Open Source",
             "type": "Onsite / In-Person Event",
             "date": "Saturday, September 19, 2026 | 10:00 AM – 1:00 PM IST",

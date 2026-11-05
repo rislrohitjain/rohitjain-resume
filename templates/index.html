@@ -443,12 +443,30 @@
             padding: 14px 0;
         }
 
-        /* Solid Navy Government Navigation Bar (Like ITR) */
+        /* Solid Navy Government Navigation Bar (Like ITR) - Zero Vertical Slider */
         .gov-navbar {
             background: var(--primary-navy);
             border-bottom: 3px solid var(--secondary-blue);
             z-index: 1040;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+            overflow-y: hidden !important;
+            overflow-x: hidden !important;
+            padding: 0 !important;
+            height: 48px;
+            max-height: 48px;
+        }
+
+        .gov-navbar .container {
+            overflow-x: auto !important;
+            overflow-y: hidden !important;
+            scrollbar-width: none !important;
+            -ms-overflow-style: none !important;
+            -webkit-overflow-scrolling: touch;
+            white-space: nowrap;
+            height: 48px;
+            max-height: 48px;
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
         }
 
         .scrollbar-none, .gov-navbar .container, .gov-navbar {
@@ -469,22 +487,26 @@
 
         #headerNavPills {
             width: 100%;
+            height: 48px;
             justify-content: space-between;
+            align-items: stretch;
+            margin: 0 !important;
         }
 
         .gov-nav-link {
             color: #FFFFFF;
             opacity: 0.9;
             text-decoration: none;
-            padding: 10px 12px;
-            font-size: 0.82rem;
+            padding: 0 14px;
+            height: 48px;
+            font-size: 0.83rem;
             font-weight: 500;
             display: inline-flex;
             align-items: center;
-            gap: 5px;
+            gap: 6px;
             transition: all 0.15s ease;
             border-bottom: 3px solid transparent;
-            margin-bottom: -3px;
+            margin: 0 !important;
             cursor: pointer;
             background: transparent;
             border-top: none;
@@ -492,12 +514,13 @@
             border-right: none;
             white-space: nowrap;
             flex-shrink: 0;
+            box-sizing: border-box;
         }
 
         @media (max-width: 1200px) {
             .gov-nav-link {
-                padding: 8px 8px;
-                font-size: 0.77rem;
+                padding: 0 10px;
+                font-size: 0.78rem;
                 gap: 4px;
             }
         }
@@ -509,7 +532,7 @@
         }
         .gov-nav-link.active {
             opacity: 1;
-            background: rgba(11, 94, 215, 0.2);
+            background: rgba(11, 94, 215, 0.25);
             border-bottom-color: var(--secondary-blue) !important;
             font-weight: 600;
             color: #FFFFFF !important;
@@ -1290,7 +1313,24 @@
                     </div>
 
                     <h4 class="fw-bold mb-1" style="color: var(--text-main);">{{ user.header.name }}</h4>
-                    <p class="small font-mono fw-bold mb-3" style="color: var(--accent);">{{ user.header.title }}</p>
+                    <p class="small font-mono fw-bold mb-2" style="color: var(--accent);">{{ user.header.title }}</p>
+
+                    <!-- Official Microsoft Community Badges -->
+                    <div class="d-inline-flex align-items-center gap-2 p-1 px-3 rounded-pill mb-3" style="background: var(--card-inner); border: 1px solid var(--card-border);">
+                        <img src="{{ url_for('static', filename='images/microsoft_fabric_community_badge.png') }}" 
+                             alt="Microsoft Fabric Community Badge" 
+                             class="rounded-circle" 
+                             style="width: 26px; height: 26px; object-fit: contain; cursor: pointer;" 
+                             onclick="openImageModal('{{ url_for('static', filename='images/microsoft_fabric_community_badge.png') }}', 'Microsoft Fabric Community Badge')" 
+                             title="Microsoft Fabric Community Member — Click to view">
+                        <img src="{{ url_for('static', filename='images/microsoft_data_community_badge.png') }}" 
+                             alt="Microsoft Data Community Badge" 
+                             class="rounded-circle" 
+                             style="width: 26px; height: 26px; object-fit: contain; cursor: pointer;" 
+                             onclick="openImageModal('{{ url_for('static', filename='images/microsoft_data_community_badge.png') }}', 'Microsoft Data Community Badge')" 
+                             title="Microsoft Data Community Member — Click to view">
+                        <span class="font-mono text-dim" style="font-size: 0.72rem;">Microsoft Badges</span>
+                    </div>
 
                     <!-- Quick Skill Meters -->
                     <div class="text-start mb-4 px-2">
@@ -1989,6 +2029,13 @@
                                         <svg width="20" height="20" viewBox="0 0 24 24" fill="#FA4616" class="flex-shrink-0">
                                             <path d="M20.25 3H3.75C3.335 3 3 3.335 3 3.75v16.5c0 .415.335.75.75.75h16.5c.415 0 .75-.335.75-.75V3.75c0-.415-.335-.75-.75-.75zM12 17.25c-2.9 0-5.25-2.35-5.25-5.25S9.1 6.75 12 6.75s5.25 2.35 5.25 5.25-2.35 5.25-5.25 5.25zm0-8c-1.52 0-2.75 1.23-2.75 2.75s1.23 2.75 2.75 2.75 2.75-1.23 2.75-2.75S13.52 9.25 12 9.25z"/>
                                         </svg>
+                                        {% elif 'Microsoft' in event.title %}
+                                        <svg width="20" height="20" viewBox="0 0 23 23" class="flex-shrink-0">
+                                            <path fill="#f25022" d="M1 1h10v10H1z"/>
+                                            <path fill="#00a4ef" d="M1 12h10v10H1z"/>
+                                            <path fill="#7fba00" d="M12 1h10v10H12z"/>
+                                            <path fill="#ffb900" d="M12 12h10v10H12z"/>
+                                        </svg>
                                         {% else %}
                                         <i class="bi bi-award-fill text-info fs-5"></i>
                                         {% endif %}
@@ -2046,7 +2093,13 @@
                                     <span class="text-info font-mono d-block mb-1" style="font-size: 0.7rem;"><i class="bi bi-images me-1"></i>Photos &amp; Proofs (Click to expand):</span>
                                     <div class="d-flex gap-2 flex-wrap">
                                         {% for img in event.images %}
+                                        {% if 'badge' in img %}
+                                        <div class="p-1 rounded-circle border shadow-sm d-flex align-items-center justify-content-center" style="background: var(--card-bg); border-color: var(--card-border) !important; width: 64px; height: 64px; cursor: pointer;" onclick="openImageModal('{{ url_for('static', filename=img) }}', 'Community Badge')" title="Click to view full size badge">
+                                            <img src="{{ url_for('static', filename=img) }}" class="rounded-circle w-100 h-100" style="object-fit: contain;" alt="Community Badge">
+                                        </div>
+                                        {% else %}
                                         <img src="{{ url_for('static', filename=img) }}" class="rounded-2 border" style="width: 76px; height: 52px; object-fit: cover; cursor: pointer; border-color: var(--card-border) !important;" onclick="openImageModal('{{ url_for('static', filename=img) }}')" alt="Event Photo">
+                                        {% endif %}
                                         {% endfor %}
                                     </div>
                                 </div>
@@ -2787,14 +2840,17 @@
     });
 
     // Master Section Switcher (Syncs header nav and in-page tabs)
-    function switchSection(secName) {
+    function switchSection(secName, shouldScroll) {
+        if (shouldScroll === undefined) shouldScroll = true;
+
+        // 1. Activate Bootstrap Tab
         var btn = document.getElementById('btn-sec-' + secName);
         if (btn) {
-            var tab = new bootstrap.Tab(btn);
+            var tab = bootstrap.Tab.getOrCreateInstance(btn);
             tab.show();
         }
 
-        // Update top header nav active state
+        // 2. Update top header nav active state
         document.querySelectorAll('.gov-nav-link, .nav-menu-btn').forEach(function(b) {
             b.classList.remove('active');
         });
@@ -2803,23 +2859,71 @@
             headerBtn.classList.add('active');
         }
 
-        history.replaceState(null, null, '#' + secName);
+        // 3. Update URL hash without causing abrupt jumps
+        try {
+            history.replaceState(null, null, '#' + secName);
+        } catch (e) {
+            window.location.hash = secName;
+        }
+
+        // 4. Smooth slide content directly to the top of screen below sticky navbar
+        if (shouldScroll) {
+            setTimeout(function() {
+                var target = document.getElementById('sec-' + secName);
+                if (target) {
+                    var navbar = document.querySelector('.gov-navbar');
+                    var navHeight = navbar ? navbar.offsetHeight : 48;
+                    var rect = target.getBoundingClientRect();
+                    var targetTop = rect.top + window.pageYOffset - navHeight - 14;
+                    window.scrollTo({
+                        top: Math.max(0, targetTop),
+                        behavior: 'smooth'
+                    });
+                }
+            }, 60);
+        }
     }
 
-    // Auto-switch based on URL hash
-    window.addEventListener('DOMContentLoaded', function() {
-        var hash = window.location.hash.replace('#', '');
-        if (hash === 'help' || hash === 'faq') switchSection('help');
-        else if (hash === 'events' || hash === 'honors') switchSection('events');
-        else if (hash === 'projects') switchSection('projects');
-        else if (hash === 'skills' || hash === 'tech') switchSection('skills');
-        else if (hash === 'agents' || hash === 'team') switchSection('agents');
-        else if (hash === 'milestones' || hash === 'experience') switchSection('milestones');
-        else if (hash === 'studio' || hash === 'studio-location') switchSection('studio');
-    });
+    function onProjectTabChange(projId) {
+        document.querySelectorAll('video').forEach(function(v) {
+            try { v.pause(); } catch(e) {}
+        });
+        var btn = document.getElementById('tab-btn-' + projId);
+        if (btn) {
+            var tab = bootstrap.Tab.getOrCreateInstance(btn);
+            tab.show();
+        }
+    }
 
-    // Initialize Theme
-    initTheme();
+    // Auto-switch and slide to section on load based on URL hash
+    window.addEventListener('DOMContentLoaded', function() {
+        initTheme();
+
+        var hash = window.location.hash.replace('#', '');
+        if (hash) {
+            var validSections = ['projects', 'events', 'skills', 'agents', 'milestones', 'studio', 'help'];
+            var aliases = {
+                'faq': 'help',
+                'faqs': 'help',
+                'honors': 'events',
+                'awards': 'events',
+                'tech': 'skills',
+                'stack': 'skills',
+                'team': 'agents',
+                'experience': 'milestones',
+                'career': 'milestones',
+                'location': 'studio',
+                'map': 'studio',
+                'studio-location': 'studio'
+            };
+            var targetSection = aliases[hash] || (validSections.indexOf(hash) !== -1 ? hash : null);
+            if (targetSection) {
+                setTimeout(function() {
+                    switchSection(targetSection, true);
+                }, 250);
+            }
+        }
+    });
 </script>
 
 </body>
