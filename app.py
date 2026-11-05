@@ -7,6 +7,58 @@ template_folder='templates'
 
 # Comprehensive User Data for Rohit Jain
 user_data = {
+    "help_center": [
+        {
+            "id": "faq-1",
+            "category": "Credentials & Background",
+            "icon": "bi-person-badge-fill",
+            "question": "Who is Rohit Jain and what are his core technical specializations?",
+            "answer": "Rohit Jain is a Senior Full-Stack Developer and AI Automation Architect based in Jaipur, Rajasthan, with over 9 years of professional experience delivering mission-critical enterprise platforms and state government portals serving 100,000+ concurrent users. His core expertise spans PHP 8.5.9 & Laravel 13.39.0, .NET Core Web API, Angular, SQL Server & MariaDB 12.3.3 optimization, and Human & Agentic Development using Google DeepMind Antigravity and autonomous LLM pipelines."
+        },
+        {
+            "id": "faq-2",
+            "category": "Awards & Competitions",
+            "icon": "bi-trophy-fill",
+            "question": "How can recruiters and CTOs verify Rohit's 1st Rank Champion win at the BrowserStack Testathon Jaipur?",
+            "answer": "Rohit secured the 1st Rank Championship ($105 USD cash prize awarded directly by BrowserStack) at the Jaipur Testathon held at Metacube Software. He engineered an end-to-end automated test suite under a strict 3-hour live challenge utilizing BrowserStack Automate, Test Companion, and Observability. Proof photos, official certificates, cash prize receipts, and live stage awards are verified and viewable directly under the 'Honors & Events' section."
+        },
+        {
+            "id": "faq-3",
+            "category": "Enterprise Modernization",
+            "icon": "bi-cpu-fill",
+            "question": "What are the technical specifics of the recent PHP 8.5, Laravel 13, and MariaDB 12 tech stack upgrade?",
+            "answer": "For a mission-critical statewide Dual-Stream & On-Demand Enterprise Admission platform serving 100,000+ candidates, Rohit architected a zero-downtime stack modernization: upgraded the runtime from PHP 8.2.10 to PHP 8.5.9 (FastCGI on Windows Server IIS 10.0), transitioned the application core from Laravel 8 to Laravel 13.39.0, and migrated the database from MariaDB 10.x to 12.3.3-MariaDB. Across 342 normalized relational tables, the system achieved a verified sub-millisecond query latency of 0.34ms. Live production telemetry snapshots are available under Project #3."
+        },
+        {
+            "id": "faq-4",
+            "category": "Zero-Trust Security",
+            "icon": "bi-shield-lock-fill",
+            "question": "What is the Zero-Trust Strict Stored Procedure architecture used in the Enterprise Grievance Portal?",
+            "answer": "In the Enterprise Grievance & Collaborative Task Platform (GrievancePortal), the database tier completely revokes direct table SELECT, INSERT, UPDATE, and DELETE permissions for application connection strings. 100% of data access and state transitions execute through parameterized, audited SQL Server stored procedures with ACID transaction locking—reducing the SQL injection attack surface to 0.00%. Authentication is reinforced via Multi-Factor Mobile OTP SMS gateways and granular Role-Based Access Control (RBAC)."
+        },
+        {
+            "id": "faq-5",
+            "category": "Agentic AI SDLC",
+            "icon": "bi-robot",
+            "question": "What is 'Human & Agentic Development' and how does Rohit utilize Google DeepMind Antigravity?",
+            "answer": "Human & Agentic Development is a collaborative paradigm where a senior human software engineer orchestrates autonomous multi-agent AI ecosystems (19 specialized agents spanning requirements, API contracts, schema generation, stored procedure reviews, and end-to-end test synthesis). Using Google DeepMind Antigravity workflows, repetitive boilerplate is synthesized and verified in minutes, allowing senior engineering focus to remain on high-level architecture, security compliance, and zero-defect execution."
+        },
+        {
+            "id": "faq-6",
+            "category": "Compliance & NDAs",
+            "icon": "bi-file-earmark-lock2-fill",
+            "question": "Why are some enterprise office projects presented with confidentiality notices instead of client names?",
+            "answer": "Certain government portals, state department workflows, and enterprise consulting deliverables are governed by strict institutional Non-Disclosure Agreements (NDAs) and statutory privacy compliance. To adhere strictly to enterprise ethics and security protocols, proprietary department identifiers and internal database URLs are anonymized, while complete technical architectures, execution telemetry, and performance outcomes are accurately detailed."
+        },
+        {
+            "id": "faq-7",
+            "category": "Recruiter Helpdesk",
+            "icon": "bi-telephone-forward-fill",
+            "question": "How can hiring managers, CTOs, and clients schedule a technical interview or discussion?",
+            "answer": "Rohit is directly accessible via WhatsApp (+91 89469 19241) and Email (engrohitjain5@gmail.com). You can download his verified CV (.PDF) directly from the top banner, or message him directly with one click using the floating WhatsApp button."
+        }
+    ],
+
     "header": {
         "name": "Rohit Jain",
         "title": "Senior Full-Stack Developer | AI Automation Architect",
@@ -49,10 +101,10 @@ user_data = {
             "tagline": "Automated email ingestion, local LLM parsing, PostgreSQL tracking, interactive dashboard portal, and pivoted Excel daily work sheets — running entirely via Docker on local machine only for 100% privacy.",
             "video_url": "Mail_Read_Every_Set_cron_using_ollama_llama_postgressql.mp4",
             "video_title": "Support Task Dashboard Project Demo (Python + Ollama + Llama + PostgreSQL + LangGraph on Local Docker)",
-            "presentation_url": "RSOS_AI_Task_Automation_Executive_Presentation.pptx",
-            "presentation_view_url": "https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Frohitjain-resume.vercel.app%2Fstatic%2FRSOS_AI_Task_Automation_Executive_Presentation.pptx",
-            "presentation_title": "RSOS AI Task Automation Executive Presentation",
-            "presentation_pdf_url": "RSOS_AI_Task_Automation_Executive_Presentation.pdf",
+            "presentation_url": "Enterprise_AI_Task_Automation_Executive_Presentation.pptx",
+            "presentation_view_url": "https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Frohitjain-resume.vercel.app%2Fstatic%2FEnterprise_AI_Task_Automation_Executive_Presentation.pptx",
+            "presentation_title": "Enterprise AI Task Automation Executive Presentation",
+            "presentation_pdf_url": "Enterprise_AI_Task_Automation_Executive_Presentation.pdf",
             "presentation_slides": [f"images/presentation/slide_{i}.jpg" for i in range(1, 15)],
             "summary": "An end-to-end automated system engineered to ingest support emails from designated mailboxes via scheduled cron jobs, parse unstructured email threads into structured task reports using local Llama models with Ollama and LangGraph, persist data into PostgreSQL, and present insights on a unified portal with graphical charts, CSV, and pivoted Excel exports for daily work sheets. Deployed and orchestrated via Docker strictly on the local machine to guarantee 100% data confidentiality and zero external API dependencies.",
             "highlights": [
@@ -168,9 +220,9 @@ user_data = {
             ]
         },
         {
-            "id": "rsos-admission-portal",
-            "tab_title": "RSOS Tech Upgrade (PHP 8.5 • Laravel 13 • MariaDB 12)",
-            "title": "RSOS Dual-Stream & On-Demand Enterprise Portal — Major Tech Stack Upgrade & Modernization",
+            "id": "dual-stream-portal",
+            "tab_title": "Dual-Stream Tech Upgrade (PHP 8.5 • Laravel 13 • MariaDB 12)",
+            "title": "Dual-Stream & On-Demand Enterprise Portal — Major Tech Stack Upgrade & Modernization",
             "badge": "Project #3 • Enterprise Office Work • Human & Agentic Development",
             "tagline": "Full-scale modern architecture upgrade: PHP 8.2.10 → 8.5.9, Laravel 8 → 13.39.0, MariaDB 10.x → 12.3.3-MariaDB across 342 relational tables (0.34ms latency) on Windows Server IIS FastCGI, serving 100,000+ candidates.",
             "is_office_work": True,
@@ -180,7 +232,7 @@ user_data = {
             "image_title": "System Tech Stack & Architecture — Live Production Telemetry (PHP 8.5.9 • Laravel 13.39.0 • MariaDB 12.3.3-MariaDB)",
             "video_url": None,
             "presentation_url": None,
-            "summary": "Architected and executed an end-to-end enterprise modernization and stack migration for the Rajasthan State Open School (RSOS) mission-critical admission & examination platform serving 100,000+ candidates. Successfully upgraded legacy PHP 8.2.10 to PHP 8.5.9, transitioned from Laravel 8 to Laravel 13.39.0, and migrated the database from MariaDB 10.x to 12.3.3-MariaDB with 342 normalized tables running at 0.34ms query latency on Microsoft-IIS/10.0 FastCGI. Engineered utilizing Human & Agentic Development workflows—combining senior human software architecture with multi-agent code analysis, automated schema verification, and regression test suites.",
+            "summary": "Architected and executed an end-to-end enterprise modernization and stack migration for a mission-critical statewide dual-stream admission & examination platform serving 100,000+ candidates. Successfully upgraded legacy PHP 8.2.10 to PHP 8.5.9, transitioned from Laravel 8 to Laravel 13.39.0, and migrated the database from MariaDB 10.x to 12.3.3-MariaDB with 342 normalized tables running at 0.34ms query latency on Microsoft-IIS/10.0 FastCGI. Engineered utilizing Human & Agentic Development workflows—combining senior human software architecture with multi-agent code analysis, automated schema verification, and regression test suites.",
             "highlights": [
                 "Major Tech Stack Modernization (PHP 8.5.9 & Laravel 13.39.0): Upgraded the legacy core from PHP 8.2.10 to PHP 8.5.9 and Laravel 8 to modern Laravel 13.39.0 with zero schema regression.",
                 "Database Migration to MariaDB 12.3.3: Upgraded and tuned 342 relational tables from MariaDB 10.x to 12.3.3-MariaDB, achieving sub-millisecond query latency (0.34 ms) on Windows Server IIS FastCGI.",
@@ -517,7 +569,7 @@ user_data = {
             "company": "Data Ingenious Global Limited",
             "period": "April 2024 – Present",
             "details": [
-                "Lead Developer for RSOS Dual-Stream & On-Demand Admission Portal — Architected major stack modernization: PHP 8.2.10 → 8.5.9, Laravel 8 → 13.39.0, and MariaDB 10.x → 12.3.3-MariaDB across 342 tables with 0.34ms latency.",
+                "Lead Developer for Dual-Stream & On-Demand Enterprise Admission Portal — Architected major stack modernization: PHP 8.2.10 → 8.5.9, Laravel 8 → 13.39.0, and MariaDB 10.x → 12.3.3-MariaDB across 342 tables with 0.34ms latency.",
                 "Spearheaded enterprise office work projects leveraging collaborative Human & Agentic Development methodologies.",
                 "Architected full SDLC for a platform serving 100,000+ candidates.",
                 "Engineered automated seat-allotment modules, cutting processing time by 40%.",
@@ -534,7 +586,7 @@ user_data = {
             "details": [
                 "Delivered large-scale government portals serving 50,000+ daily users in Rajasthan.",
                 "Secured High Court/E-Court API integrations using AES encryption and tokens.",
-                "Reduced RSOS result-generation time by 50% via optimized MySQL stored procedures.",
+                "Reduced enterprise result-generation time by 50% via optimized MySQL stored procedures.",
                 "Built Paramedical Council seat-matrix algorithms with 99.9% accuracy.",
                 "Designed Pentaho and Tableau BI dashboards for real-time reporting on 10+ KPIs.",
                 "Managed full SDLC across Laravel, CakePHP, CodeIgniter, MySQL, and MSSQL."
@@ -597,7 +649,7 @@ def llms():
 
 @app.route('/presentation')
 def presentation():
-    return redirect("https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Frohitjain-resume.vercel.app%2Fstatic%2FRSOS_AI_Task_Automation_Executive_Presentation.pptx")
+    return redirect("https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Frohitjain-resume.vercel.app%2Fstatic%2FEnterprise_AI_Task_Automation_Executive_Presentation.pptx")
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)

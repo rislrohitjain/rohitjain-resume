@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -93,7 +93,7 @@
     </script>
 
     <!-- Google Fonts & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <!-- Devicon Icons for Real Brand Logos -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
@@ -102,162 +102,395 @@
     <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='images/favicon.svg') }}">
     
     <style>
-        :root, [data-theme="dark"] {
-            --bg: #070a12;
-            --bg-grid: rgba(255, 255, 255, 0.035);
-            --card-bg: rgba(15, 22, 41, 0.75);
-            --card-inner: rgba(10, 15, 29, 0.85);
-            --card-border: rgba(255, 255, 255, 0.08);
-            --card-hover-border: rgba(56, 189, 248, 0.4);
-            --text-main: #f8fafc;
-            --text-body: #cbd5e1;
-            --text-dim: #94a3b8;
-            --accent: #38bdf8;
-            --accent-glow: rgba(56, 189, 248, 0.15);
-            --primary: #2563eb;
-            --primary-hover: #1d4ed8;
-            --badge-bg: rgba(10, 15, 29, 0.9);
-            --badge-text: #38bdf8;
-            --badge-border: rgba(56, 189, 248, 0.25);
-            --nav-bg: rgba(7, 10, 18, 0.85);
-            --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
+        /* ==========================================================================
+           Income Tax Department e-Filing Portal 2.0 Official Design System
+           Source: https://www.incometax.gov.in/iec/foportal/help
+           Configured for Light (Default) and Dark (High-Contrast) Themes
+           ========================================================================== */
+
+        /* 1. Light Theme (Default) */
+        :root, [data-theme="light"] {
+            --portal-font-scale: 100%;
+
+            /* Page & Container Backgrounds */
+            --bg: #F4F6F9;                 /* Soft off-white / light neutral grey */
+            --bg-canvas: #F8F9FA;
+            --card-bg: #FFFFFF;            /* Pure white */
+            --card-inner: #F8F9FA;
+
+            /* Primary Brand Navy & Blues */
+            --primary-navy: #0C2340;       /* Primary Brand Navy */
+            --primary-navy-mid: #1B365D;   /* Dark navy header accent */
+            --primary-navy-dark: #08182B;
+            --secondary-blue: #0B5ED7;     /* Secondary Brand Blue */
+            --secondary-blue-alt: #0066CC;
+            --secondary-blue-soft: #E8F1FC;
+
+            /* Accent Warm Colors */
+            --accent-red: #C8102E;         /* Logo emblem accent & vital alerts */
+            --accent-amber: #FFC72C;       /* Informational alerts & highlights */
+            --accent-saffron: #F37021;     /* High-priority CTAs */
+
+            /* Typography Colors */
+            --text-heading: #1A1A1A;       /* Crisp near-black headings */
+            --text-main: #212529;          /* High-readability dark slate */
+            --text-body: #495057;          /* Body text & procedural info */
+            --text-muted: #6C757D;         /* Muted neutral grey helper text */
+
+            /* Hairline Borders & Dividers */
+            --border-color: #DEE2E6;       /* Light grey hairline border */
+            --border-subtle: #E2E8F0;
+            --border-focus: #0B5ED7;
+
+            /* Elevation */
+            --shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+            /* Legacy mapped variables for templates */
+            --accent: #0B5ED7;
+            --primary: #0C2340;
+            --primary-hover: #1B365D;
+            --card-border: #DEE2E6;
+            --card-hover-border: #0B5ED7;
+            --text-dim: #6C757D;
         }
 
-        [data-theme="light"] {
-            --bg: #f8fafc;
-            --bg-grid: rgba(15, 23, 42, 0.04);
-            --card-bg: #ffffff;
-            --card-inner: #f1f5f9;
-            --card-border: #e2e8f0;
-            --card-hover-border: #0284c7;
-            --text-main: #0f172a;
-            --text-body: #334155;
-            --text-dim: #64748b;
-            --accent: #0284c7;
-            --accent-glow: rgba(2, 132, 199, 0.15);
-            --primary: #2563eb;
-            --primary-hover: #1d4ed8;
-            --badge-bg: #f1f5f9;
-            --badge-text: #0284c7;
-            --badge-border: #cbd5e1;
-            --nav-bg: rgba(248, 250, 252, 0.85);
-            --shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
+        /* 2. Dark Theme (High-Contrast Accessibility Mode) */
+        [data-theme="dark"] {
+            --portal-font-scale: 100%;
+
+            /* Page & Container Backgrounds */
+            --bg: #121212;                 /* Deep charcoal black */
+            --bg-canvas: #1A1D20;
+            --card-bg: #24282C;            /* Slightly elevated slate surface */
+            --card-inner: #2B3035;
+
+            /* Primary Brand & Navy Slate */
+            --primary-navy: #1E293B;       /* Darkened navy slate */
+            --primary-navy-mid: #0A192F;
+            --primary-navy-dark: #070E1A;
+            --secondary-blue: #4D90FE;     /* Brightened accessible electric blue */
+            --secondary-blue-alt: #60A5FA;
+            --secondary-blue-soft: rgba(77, 144, 254, 0.12);
+
+            /* Accent Warm Colors */
+            --accent-red: #EF4444;
+            --accent-amber: #F59E0B;
+            --accent-saffron: #F59E0B;
+
+            /* Typography Colors */
+            --text-heading: #FFFFFF;       /* High-contrast pure white */
+            --text-main: #F8F9FA;          /* Off-white */
+            --text-body: #CBD5E1;          /* Light cool grey for readability */
+            --text-muted: #94A3B8;
+
+            /* Hairline Borders & Dividers */
+            --border-color: #374151;
+            --border-subtle: #475569;
+            --border-focus: #4D90FE;
+
+            /* Elevation */
+            --shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+            --shadow-md: 0 6px 16px rgba(0, 0, 0, 0.6);
+
+            /* Legacy mapped variables for templates */
+            --accent: #4D90FE;
+            --primary: #4D90FE;
+            --primary-hover: #60A5FA;
+            --card-border: #374151;
+            --card-hover-border: #4D90FE;
+            --text-dim: #94A3B8;
         }
 
         * {
             box-sizing: border-box;
         }
 
+        html {
+            font-size: var(--portal-font-scale, 100%);
+        }
+
+        /* 1. Typography & Font Styling */
         body {
             background-color: var(--bg);
-            background-image: 
-                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(56, 189, 248, 0.12), transparent 70%),
-                radial-gradient(var(--bg-grid) 1px, transparent 1px);
-            background-size: 100% 100%, 24px 24px;
             color: var(--text-body);
-            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            letter-spacing: -0.015em;
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+            font-weight: 400;
             line-height: 1.6;
+            letter-spacing: -0.01em;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             transition: background-color 0.2s ease, color 0.2s ease;
             overflow-x: hidden;
-            padding-bottom: 60px;
+            padding-bottom: 0;
+            margin: 0;
         }
 
-        h1, h2, h3, h4, h5, h6 {
-            color: var(--text-main);
-            letter-spacing: -0.025em;
+        /* Headings (H1/H2): Bold / Semi-bold (600/700) */
+        h1, h2 {
+            color: var(--text-heading);
             font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        h3, h4 {
+            color: var(--text-heading);
+            font-weight: 600;
+            letter-spacing: -0.015em;
+        }
+        h5, h6 {
+            color: var(--text-main);
+            font-weight: 600;
         }
 
         .font-mono {
             font-family: 'JetBrains Mono', monospace;
         }
 
-        /* Gradient Typography */
-        .gradient-text {
-            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 800;
-            display: inline-block;
-        }
-        [data-theme="light"] .gradient-text {
-            background: linear-gradient(135deg, #0284c7 0%, #4338ca 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        /* National Tricolor Top Stripe */
+        .gov-tricolor-strip {
+            height: 4px;
+            width: 100%;
+            background: linear-gradient(90deg, #FF9933 0%, #FF9933 33.33%, #FFFFFF 33.33%, #FFFFFF 66.66%, #138808 66.66%, #138808 100%);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1060;
         }
 
-        .stat-gradient {
-            background: linear-gradient(180deg, #ffffff 40%, #94a3b8 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 800;
-        }
-        [data-theme="light"] .stat-gradient {
-            background: linear-gradient(180deg, #0f172a 40%, #475569 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        /* Top Accessibility Utility Bar */
+        .gov-top-bar {
+            background: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+            z-index: 1050;
         }
 
-        /* Top Sticky Navbar */
-        .site-header {
-            background: var(--nav-bg);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid var(--card-border);
+        /* Government Brand Header */
+        .gov-brand-header {
+            background: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 14px 0;
+        }
+
+        /* Solid Navy Government Navigation Bar (Like ITR) */
+        .gov-navbar {
+            background: var(--primary-navy);
+            border-bottom: 3px solid var(--secondary-blue);
             z-index: 1040;
-            transition: all 0.2s ease;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
         }
 
-        .brand-link {
+        .gov-nav-link {
+            color: #FFFFFF;
+            opacity: 0.9;
             text-decoration: none;
-            color: inherit;
-        }
-
-        .nav-pill-menu .nav-menu-btn {
+            padding: 12px 18px;
+            font-size: 0.88rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.15s ease;
+            border-bottom: 3px solid transparent;
+            margin-bottom: -3px;
+            cursor: pointer;
             background: transparent;
-            border: 1px solid transparent;
-            color: var(--text-dim);
-            font-size: 0.82rem;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            white-space: nowrap;
+        }
+        .gov-nav-link:hover {
+            opacity: 1;
+            background: rgba(255, 255, 255, 0.08);
+            border-bottom-color: var(--secondary-blue);
+            color: #FFFFFF;
+        }
+        .gov-nav-link.active {
+            opacity: 1;
+            background: rgba(11, 94, 215, 0.2);
+            border-bottom-color: var(--secondary-blue) !important;
             font-weight: 600;
-            padding: 6px 14px;
-            border-radius: 9999px;
-            transition: all 0.2s ease;
-            font-family: 'JetBrains Mono', monospace;
-        }
-        .nav-pill-menu .nav-menu-btn:hover {
-            color: var(--text-main);
-            background: rgba(255, 255, 255, 0.05);
-            border-color: var(--card-border);
-        }
-        .nav-pill-menu .nav-menu-btn.active {
-            background: var(--primary);
-            color: #ffffff;
-            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+            color: #FFFFFF !important;
         }
 
-        /* Cards & Surfaces */
+        /* News & Notification Ticker */
+        .gov-ticker {
+            background: var(--secondary-blue-soft);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 8px 14px;
+        }
+
+        /* 3. Component Styling & Visual Feel */
+        /* Card UI: Rounded rectangles with subtle border-radius of 8px to 10px, thin 1px border */
         .modern-card {
             background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
             box-shadow: var(--shadow);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+            transition: border-color 0.15s ease, box-shadow 0.15s ease;
         }
         .modern-card:hover {
-            border-color: var(--card-hover-border);
+            border-color: var(--border-focus);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Quick Service Tiles */
+        .quick-service-tile {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 16px;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            height: 100%;
+            border-top: 3px solid var(--primary-navy);
+        }
+        .quick-service-tile:hover {
+            border-top-color: var(--secondary-blue);
+            border-color: var(--secondary-blue);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+        .quick-service-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 8px;
+            background: var(--secondary-blue-soft);
+            color: var(--secondary-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+            border: 1px solid var(--border-color);
+        }
+
+        /* Buttons & Filter Pills: Pill radii (20px to 24px) with solid navy background */
+        .btn-gov-navy {
+            background: var(--primary-navy);
+            color: #FFFFFF !important;
+            border: 1px solid var(--primary-navy-dark);
+            font-weight: 600;
+            border-radius: 20px;
+            padding: 6px 16px;
+            transition: all 0.15s ease;
+        }
+        .btn-gov-navy:hover {
+            background: var(--primary-navy-mid);
+            color: #FFFFFF !important;
+            box-shadow: var(--shadow);
+        }
+
+        .btn-gov-blue {
+            background: var(--secondary-blue);
+            color: #FFFFFF !important;
+            border: 1px solid var(--secondary-blue-alt);
+            font-weight: 600;
+            border-radius: 20px;
+            padding: 6px 16px;
+            transition: all 0.15s ease;
+        }
+        .btn-gov-blue:hover {
+            background: var(--secondary-blue-alt);
+            color: #FFFFFF !important;
+        }
+
+        .btn-gov-saffron {
+            background: var(--accent-saffron);
+            color: #FFFFFF !important;
+            border: 1px solid #d95c10;
+            font-weight: 600;
+            border-radius: 20px;
+            padding: 6px 16px;
+            transition: all 0.15s ease;
+        }
+        .btn-gov-saffron:hover {
+            background: #d95c10;
+            color: #FFFFFF !important;
+        }
+
+        .btn-gov-whatsapp {
+            background: #138808;
+            color: #FFFFFF !important;
+            border: 1px solid #0e6306;
+            font-weight: 600;
+            border-radius: 20px;
+            padding: 6px 16px;
+            transition: all 0.15s ease;
+        }
+        .btn-gov-whatsapp:hover {
+            background: #0f6f06;
+            color: #FFFFFF !important;
+        }
+
+        .btn-gov-outline {
+            background: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            font-weight: 500;
+            border-radius: 20px;
+            padding: 6px 16px;
+            transition: all 0.15s ease;
+        }
+        .btn-gov-outline:hover {
+            background: var(--card-inner);
+            border-color: var(--secondary-blue);
+            color: var(--secondary-blue);
+        }
+
+        /* Form Inputs: clear 1px solid outline with high-contrast focus rings */
+        .form-control, .input-group-text {
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            color: var(--text-main);
+            background-color: var(--card-bg);
+        }
+        .form-control:focus {
+            outline: 2px solid var(--border-focus);
+            border-color: var(--border-focus);
+            box-shadow: none;
+            background-color: var(--card-bg);
+            color: var(--text-main);
+        }
+
+        /* Quick-filter Pills (Pamphlets, Do's & Don'ts style) */
+        .filter-pill-btn {
+            background: var(--card-inner);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            border-radius: 22px;
+            padding: 6px 16px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: all 0.15s ease;
+            cursor: pointer;
+        }
+        .filter-pill-btn:hover {
+            border-color: var(--secondary-blue);
+            color: var(--secondary-blue);
+        }
+        .filter-pill-btn.active {
+            background: var(--primary-navy) !important;
+            color: #FFFFFF !important;
+            border-color: var(--primary-navy) !important;
+            font-weight: 600;
         }
 
         /* Segment Tabs Menu */
         .segment-menu-bar {
-            background: var(--card-inner);
-            border: 1px solid var(--card-border);
-            border-radius: 16px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
             padding: 6px;
+            box-shadow: var(--shadow);
         }
 
         .segment-nav {
@@ -267,54 +500,44 @@
             padding: 0;
             list-style: none;
             overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
             scrollbar-width: none;
         }
         .segment-nav::-webkit-scrollbar {
             display: none;
         }
-
-        .segment-nav .nav-item {
-            flex-shrink: 0;
-        }
-
         .segment-nav .nav-link {
             background: transparent;
-            color: var(--text-dim);
+            color: var(--text-muted);
             border: 1px solid transparent;
-            border-radius: 12px;
+            border-radius: 6px;
             padding: 8px 16px;
-            font-size: 0.84rem;
-            font-weight: 600;
-            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.86rem;
+            font-weight: 500;
             white-space: nowrap;
-            transition: all 0.2s ease;
+            transition: all 0.15s ease;
             cursor: pointer;
         }
         .segment-nav .nav-link:hover {
-            color: var(--text-main);
-            background: rgba(255, 255, 255, 0.04);
-            border-color: var(--card-border);
+            color: var(--text-heading);
+            background: var(--card-inner);
+            border-color: var(--border-color);
         }
         .segment-nav .nav-link.active {
-            background: var(--primary) !important;
-            color: #ffffff !important;
-            border-color: var(--primary) !important;
-            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+            background: var(--primary-navy) !important;
+            color: #FFFFFF !important;
+            border-color: var(--primary-navy) !important;
+            font-weight: 600;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         /* Avatar Ring */
         .profile-avatar-ring {
-            width: 110px;
-            height: 110px;
+            width: 104px;
+            height: 104px;
             padding: 3px;
-            background: linear-gradient(135deg, #38bdf8, #818cf8);
+            background: linear-gradient(135deg, var(--primary-navy), var(--secondary-blue));
             border-radius: 50%;
             display: inline-block;
-            transition: transform 0.2s ease;
-        }
-        .profile-avatar-ring:hover {
-            transform: scale(1.04);
         }
         .profile-avatar-img {
             width: 100%;
@@ -322,13 +545,13 @@
             border-radius: 50%;
             background-position: center;
             background-size: cover;
-            border: 3px solid var(--bg);
+            border: 3px solid var(--card-bg);
         }
 
         /* Skill Meter */
         .skill-progress-bar {
-            height: 6px;
-            background: var(--card-border);
+            height: 7px;
+            background: var(--border-color);
             border-radius: 9999px;
             overflow: hidden;
             margin-bottom: 12px;
@@ -336,7 +559,7 @@
         .skill-progress-fill {
             height: 100%;
             border-radius: 9999px;
-            background: linear-gradient(90deg, #38bdf8, #2563eb);
+            background: linear-gradient(90deg, var(--primary-navy), var(--secondary-blue));
         }
 
         /* Brand & Social Pills */
@@ -345,64 +568,110 @@
             align-items: center;
             gap: 8px;
             padding: 7px 14px;
-            border-radius: 10px;
+            border-radius: 6px;
             background: var(--card-inner);
-            border: 1px solid var(--card-border);
-            color: var(--text-body);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
             text-decoration: none;
-            font-size: 0.82rem;
+            font-size: 0.84rem;
             font-weight: 500;
-            transition: all 0.2s ease;
+            transition: all 0.15s ease;
         }
         .social-pill:hover {
-            color: var(--text-main);
-            border-color: var(--accent);
-            background: rgba(56, 189, 248, 0.08);
-            transform: translateY(-1px);
+            color: var(--secondary-blue);
+            border-color: var(--secondary-blue);
+            background: var(--secondary-blue-soft);
         }
 
-        /* WhatsApp Button */
-        .btn-whatsapp-theme {
-            background: #25D366;
-            color: #ffffff !important;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            font-weight: 700;
-            transition: all 0.2s ease;
-        }
-        .btn-whatsapp-theme:hover {
-            background: #20bd5a;
-            color: #ffffff !important;
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-            transform: translateY(-1px);
-        }
-
-        /* Stats Grid */
+        /* Stats Strip */
         .stats-strip {
             background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 18px;
-            padding: 16px 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 18px 24px;
+            box-shadow: var(--shadow);
+        }
+
+        .stat-gradient {
+            color: var(--primary-navy);
+            font-weight: 700;
+        }
+        [data-theme="dark"] .stat-gradient {
+            color: #FFFFFF;
+        }
+
+        .gradient-text {
+            color: var(--secondary-blue);
+            font-weight: 700;
         }
 
         /* Custom Badge */
         .custom-badge {
             background: var(--card-inner) !important;
             color: var(--text-main) !important;
-            border: 1px solid var(--card-border) !important;
-            letter-spacing: 0.2px;
+            border: 1px solid var(--border-color) !important;
+            font-weight: 500;
         }
 
-        /* Offcanvas Menu */
-        .offcanvas-dark {
-            background: var(--bg) !important;
-            color: var(--text-body) !important;
-            border-left: 1px solid var(--card-border) !important;
+        /* Help FAQ Card */
+        .help-faq-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: border-color 0.15s ease;
+        }
+        .help-faq-card:hover {
+            border-color: var(--secondary-blue);
+        }
+        .help-faq-header {
+            padding: 16px 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--card-inner);
+            border-left: 4px solid var(--primary-navy);
+        }
+        .help-faq-header:hover {
+            border-left-color: var(--secondary-blue);
+        }
+
+        /* Official Government Portal Footer */
+        .gov-footer {
+            background: #0C2340;
+            color: #CBD5E1;
+            border-top: 3px solid #0B5ED7;
+            padding: 40px 0 24px 0;
+            margin-top: 48px;
+            font-size: 0.86rem;
+        }
+        [data-theme="dark"] .gov-footer {
+            background: #0A192F;
+            border-top: 3px solid #4D90FE;
+        }
+        .gov-footer h6 {
+            color: #FFFFFF;
+            font-weight: 600;
+            font-size: 0.92rem;
+            margin-bottom: 16px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 8px;
+        }
+        .gov-footer a {
+            color: #E2E8F0;
+            text-decoration: none;
+            transition: color 0.15s ease;
+        }
+        .gov-footer a:hover {
+            color: #FFC72C;
+            text-decoration: underline;
         }
 
         /* Responsive Breakpoints */
         @media (max-width: 991.98px) {
             .hero-title {
-                font-size: 2.3rem !important;
+                font-size: 2.1rem !important;
             }
             .stats-grid-responsive {
                 grid-template-columns: repeat(2, 1fr) !important;
@@ -414,11 +683,11 @@
 
         @media (max-width: 575.98px) {
             .hero-title {
-                font-size: 1.85rem !important;
+                font-size: 1.7rem !important;
             }
             .modern-card {
-                padding: 18px !important;
-                border-radius: 16px !important;
+                padding: 16px !important;
+                border-radius: 8px !important;
             }
             .stats-grid-responsive {
                 grid-template-columns: 1fr !important;
@@ -431,60 +700,130 @@
 </head>
 <body>
 
-<!-- Top Fixed Frosted Navbar -->
-<header class="site-header sticky-top">
-    <div class="container d-flex align-items-center justify-content-between py-2">
-        <!-- Brand Link with Status -->
-        <a href="#" class="brand-link d-flex align-items-center gap-2">
+<!-- National Tricolor Ribbon -->
+<div class="gov-tricolor-strip"></div>
+
+<!-- Top Government Accessibility Strip -->
+<div class="gov-top-bar py-1 px-3">
+    <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
+        <div class="d-flex align-items-center gap-2">
+            <span class="badge rounded-pill px-2 py-1 font-mono" style="background: #0c2340; color: #ffffff; font-size: 0.68rem;">
+                <i class="bi bi-shield-check text-warning me-1"></i> GIGW / W3C Standards
+            </span>
+            <span class="d-none d-md-inline font-mono" style="font-size: 0.74rem; color: var(--text-dim);">
+                Official Architecture Portfolio &amp; Technical Dossier of Rohit Jain (Jaipur, India)
+            </span>
+        </div>
+        <div class="d-flex align-items-center gap-3">
+            <!-- Font Size Adjuster (A- / A / A+) -->
+            <div class="d-flex align-items-center gap-1 font-mono" style="font-size: 0.72rem;">
+                <span class="d-none d-sm-inline me-1" style="color: var(--text-dim);">Font:</span>
+                <div class="btn-group btn-group-sm" role="group" aria-label="Font Sizing">
+                    <button type="button" class="btn btn-outline-secondary py-0 px-2 font-mono" onclick="setFontScale('small', this)" title="Decrease Font Size" style="font-size: 0.7rem;">A-</button>
+                    <button type="button" class="btn btn-outline-secondary py-0 px-2 font-mono active" id="btn-scale-normal" onclick="setFontScale('normal', this)" title="Reset Font Size" style="font-size: 0.7rem;">A</button>
+                    <button type="button" class="btn btn-outline-secondary py-0 px-2 font-mono" onclick="setFontScale('large', this)" title="Increase Font Size" style="font-size: 0.7rem;">A+</button>
+                </div>
+            </div>
+            <!-- Theme Toggle -->
+            <button id="themeToggleBtn" onclick="toggleTheme()" class="btn btn-sm btn-outline-secondary py-0 px-2 d-inline-flex align-items-center gap-1 font-mono" style="font-size: 0.72rem;" title="Toggle Theme">
+                <i class="bi bi-circle-half text-warning" id="themeIcon"></i>
+                <span class="d-none d-sm-inline" id="themeLabel">Govt Theme</span>
+            </button>
+            <!-- Direct Hotline -->
+            <a href="tel:+918946919241" class="text-decoration-none d-none d-lg-inline-flex align-items-center gap-1 font-mono fw-bold" style="color: #f37021; font-size: 0.74rem;">
+                <i class="bi bi-telephone-fill"></i> +91 89469 19241
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Main Government Brand Bar -->
+<header class="gov-brand-header">
+    <div class="container d-flex align-items-center justify-content-between flex-wrap gap-3">
+        <!-- Identity Emblem & Name -->
+        <div class="d-flex align-items-center gap-3">
             <div class="position-relative">
-                <img src="{{ url_for('static', filename='images/RohitPhoto.jpg') }}" alt="Rohit Jain" class="rounded-circle border border-2" style="width: 38px; height: 38px; object-fit: cover; border-color: var(--accent) !important;">
-                <span class="position-absolute bottom-0 end-0 bg-success rounded-circle border border-2 border-dark" style="width: 11px; height: 11px;" title="Online • Available"></span>
+                <img src="{{ url_for('static', filename='images/RohitPhoto.jpg') }}" alt="Rohit Jain" class="rounded-circle border border-3 shadow-sm" style="width: 52px; height: 52px; object-fit: cover; border-color: #0c2340 !important;">
+                <span class="position-absolute bottom-0 end-0 bg-success rounded-circle border border-2 border-white" style="width: 13px; height: 13px;" title="Online • Available for Enterprise Roles"></span>
             </div>
             <div>
-                <div class="fw-bold font-mono" style="color: var(--text-main); font-size: 0.95rem; line-height: 1.1;">Rohit Jain</div>
-                <div class="small font-mono" style="color: var(--accent); font-size: 0.68rem;">AI Automation Architect</div>
+                <div class="d-flex align-items-center gap-2 flex-wrap">
+                    <h4 class="fw-bold mb-0" style="color: var(--text-main); letter-spacing: -0.5px;">Rohit Jain</h4>
+                    <span class="badge font-mono rounded-pill px-2 py-1" style="background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); font-size: 0.68rem;">
+                        <i class="bi bi-shield-check me-1"></i> Verified Lead Engineer
+                    </span>
+                </div>
+                <div class="small fw-semibold mt-1" style="color: #f37021; font-size: 0.82rem;">
+                    Senior Full-Stack Developer &amp; AI Automation Architect
+                </div>
+                <div class="small text-muted font-mono d-none d-md-block" style="font-size: 0.72rem;">
+                    State Government Portals Lead (100,000+ Candidates) • 1st Rank BrowserStack Champion • Jaipur, Rajasthan
+                </div>
             </div>
-        </a>
+        </div>
 
-        <!-- Desktop Navigation Bar -->
-        <nav class="d-none d-lg-flex align-items-center gap-1 nav-pill-menu" id="headerNavPills">
-            <button class="nav-menu-btn active" id="nav-btn-projects" onclick="switchSection('projects')">🚀 Projects</button>
-            <button class="nav-menu-btn" id="nav-btn-events" onclick="switchSection('events')">🏆 Honors</button>
-            <button class="nav-menu-btn" id="nav-btn-skills" onclick="switchSection('skills')">⚡ Skills</button>
-            <button class="nav-menu-btn" id="nav-btn-agents" onclick="switchSection('agents')">🤖 AI Team</button>
-            <button class="nav-menu-btn" id="nav-btn-milestones" onclick="switchSection('milestones')">💼 Milestones</button>
-            <button class="nav-menu-btn" id="nav-btn-studio" onclick="switchSection('studio')">📍 Studio</button>
-        </nav>
-
-        <!-- Right Quick Actions -->
-        <div class="d-flex align-items-center gap-2">
-            <!-- Direct WhatsApp Link -->
-            <a href="https://wa.me/918946919241?text=Hi%20Rohit,%20I%20saw%20your%20portfolio!" target="_blank" class="btn btn-sm btn-whatsapp-theme rounded-pill d-none d-sm-inline-flex align-items-center gap-1 py-1 px-3" style="font-size: 0.8rem;">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="12" cy="12" r="11" fill="#FFFFFF"/>
-                    <path d="M17.5 14.38c-.28-.14-1.63-.8-1.88-.9-.25-.09-.44-.14-.62.14-.19.28-.72.9-.88 1.08-.16.19-.33.21-.61.07-.28-.14-1.18-.44-2.25-1.39-.83-.74-1.39-1.66-1.55-1.94-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.49.14-.16.19-.28.28-.46.09-.19.05-.35-.02-.49-.07-.14-.62-1.5-.85-2.06-.23-.54-.46-.47-.63-.48-.16-.01-.35-.01-.54-.01-.19 0-.49.07-.75.35-.25.28-.98.96-.98 2.33 0 1.37 1 2.7 1.14 2.89.14.19 1.97 3.01 4.77 4.22.67.29 1.19.46 1.6.59.67.21 1.28.18 1.76.11.54-.08 1.63-.67 1.86-1.31.23-.65.23-1.2.16-1.32-.07-.11-.25-.18-.53-.32z" fill="#25D366"/>
-                </svg>
-                <span>WhatsApp</span>
-            </a>
-
-            <!-- Download CV -->
-            <a href="{{ user.header.resume_url }}" download class="btn btn-sm btn-outline-info rounded-pill d-none d-md-inline-flex align-items-center gap-1 font-mono py-1 px-3" style="font-size: 0.8rem;">
+        <!-- Right CTA Actions -->
+        <div class="d-flex align-items-center gap-2 flex-wrap ms-auto">
+            <a href="{{ user.header.resume_url }}" download class="btn btn-sm btn-gov-saffron rounded-pill d-inline-flex align-items-center gap-1 font-mono py-2 px-3" style="font-size: 0.82rem;">
                 <i class="bi bi-file-earmark-pdf-fill"></i>
-                <span>CV</span>
+                <span>Download Official CV</span>
             </a>
-
-            <!-- Theme Toggle Button -->
-            <button id="themeToggleBtn" onclick="toggleTheme()" class="btn btn-sm rounded-circle d-flex align-items-center justify-content-center p-2" style="width: 36px; height: 36px; background: var(--card-inner); border: 1px solid var(--card-border); color: var(--text-main);" title="Toggle Theme" aria-label="Toggle Theme">
-                <i class="bi bi-moon-stars-fill text-info" id="themeIcon"></i>
+            <a href="https://wa.me/918946919241?text=Hi%20Rohit,%20I%20saw%20your%20portfolio!" target="_blank" class="btn btn-sm btn-gov-whatsapp rounded-pill d-inline-flex align-items-center gap-1 font-mono py-2 px-3" style="font-size: 0.82rem;">
+                <i class="bi bi-whatsapp"></i>
+                <span>WhatsApp Helpdesk</span>
+            </a>
+            <button type="button" class="btn btn-sm btn-gov-outline rounded-pill d-inline-flex align-items-center gap-1 font-mono py-2 px-3" onclick="switchSection('help')" style="font-size: 0.82rem;">
+                <i class="bi bi-question-circle-fill text-info"></i>
+                <span>Help &amp; FAQs</span>
             </button>
-
-            <!-- Mobile Offcanvas Menu Toggle -->
-            <button class="btn btn-sm btn-outline-secondary d-lg-none rounded-circle d-flex align-items-center justify-content-center p-2" style="width: 36px; height: 36px; border-color: var(--card-border); color: var(--text-main);" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenuOffcanvas" aria-controls="mobileMenuOffcanvas" aria-label="Open Navigation Menu">
+            <!-- Mobile Menu Toggle -->
+            <button class="btn btn-sm btn-outline-secondary d-lg-none rounded-circle d-flex align-items-center justify-content-center p-2" style="width: 38px; height: 38px; border-color: var(--card-border); color: var(--text-main);" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenuOffcanvas" aria-controls="mobileMenuOffcanvas" aria-label="Open Navigation Menu">
                 <i class="bi bi-list fs-5"></i>
             </button>
         </div>
     </div>
 </header>
+
+<!-- Solid Navy Government Navigation Bar -->
+<nav class="gov-navbar sticky-top">
+    <div class="container d-flex align-items-center justify-content-between overflow-x-auto scrollbar-none py-0">
+        <div class="d-flex align-items-center gap-1" id="headerNavPills">
+            <button class="gov-nav-link active" id="nav-btn-projects" onclick="switchSection('projects')">
+                <i class="bi bi-folder-fill me-1"></i> Projects &amp; Case Studies ({{ user.projects|length }})
+            </button>
+            <button class="gov-nav-link" id="nav-btn-events" onclick="switchSection('events')">
+                <i class="bi bi-trophy-fill text-warning me-1"></i> Honors &amp; Awards ({{ user.events|length }})
+            </button>
+            <button class="gov-nav-link" id="nav-btn-skills" onclick="switchSection('skills')">
+                <i class="bi bi-cpu-fill text-info me-1"></i> Tech Stack &amp; Telemetry
+            </button>
+            <button class="gov-nav-link" id="nav-btn-agents" onclick="switchSection('agents')">
+                <i class="bi bi-robot text-success me-1"></i> Autonomous AI Team (19)
+            </button>
+            <button class="gov-nav-link" id="nav-btn-milestones" onclick="switchSection('milestones')">
+                <i class="bi bi-briefcase-fill text-warning me-1"></i> Career Milestones
+            </button>
+            <button class="gov-nav-link" id="nav-btn-studio" onclick="switchSection('studio')">
+                <i class="bi bi-geo-alt-fill text-danger me-1"></i> Studio Location
+            </button>
+            <button class="gov-nav-link" id="nav-btn-help" onclick="switchSection('help')">
+                <i class="bi bi-question-circle-fill text-info me-1"></i> Help &amp; FAQs
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- Latest Announcements Ticker -->
+<div class="container mt-3">
+    <div class="gov-ticker d-flex align-items-center gap-2 shadow-sm">
+        <span class="badge bg-warning text-dark font-mono text-uppercase px-2 py-1 flex-shrink-0" style="font-size: 0.72rem; font-weight: 800;">
+            <i class="bi bi-megaphone-fill me-1"></i> LATEST ANNOUNCEMENT
+        </span>
+        <div class="small text-truncate flex-grow-1 font-mono" style="color: var(--text-body); font-size: 0.78rem;">
+            <strong>Enterprise Stack Modernization:</strong> Upgraded PHP 8.2 → 8.5.9, Laravel 8 → 13.39.0, MariaDB 10.x → 12.3.3 across 342+ tables (0.34ms query latency). <strong>New Case Study:</strong> Enterprise Grievance &amp; Collaborative Task Platform (Zero-Trust .NET Core, Angular, SQL Server Stored Procedures) published with Antigravity Agentic SDLC.
+        </div>
+    </div>
+</div>
 
 <!-- Mobile Offcanvas Drawer -->
 <div class="offcanvas offcanvas-end offcanvas-dark" tabindex="-1" id="mobileMenuOffcanvas" aria-labelledby="mobileMenuOffcanvasLabel">
@@ -526,6 +865,9 @@
                 <button class="btn text-start py-2 px-3 rounded-3" style="background: var(--card-inner); border: 1px solid var(--card-border); color: var(--text-main);" data-bs-dismiss="offcanvas" onclick="switchSection('studio')">
                     <span class="me-2">📍</span> Studio & Location
                 </button>
+                <button class="btn text-start py-2 px-3 rounded-3" style="background: var(--card-inner); border: 1px solid var(--card-border); color: var(--text-main);" data-bs-dismiss="offcanvas" onclick="switchSection('help')">
+                    <span class="me-2">❓</span> Help & FAQs (Income Tax Style)
+                </button>
             </div>
         </div>
 
@@ -542,6 +884,97 @@
 
 <!-- Main Application Container -->
 <div class="container py-4">
+
+    <!-- Quick Services & Mission-Critical Highlights (Income Tax Portal 2.0 Style) -->
+    <div class="modern-card p-4 mb-4">
+        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3 pb-2 border-bottom" style="border-color: var(--card-border) !important;">
+            <div>
+                <h5 class="fw-bold mb-0 d-flex align-items-center" style="color: var(--text-main);">
+                    <i class="bi bi-grid-fill text-warning me-2"></i> Quick Services &amp; Mission-Critical Highlights
+                </h5>
+                <span class="small font-mono text-muted" style="font-size: 0.74rem;">
+                    One-Click Direct Access to Production Telemetry, Zero-Trust Systems &amp; Technical Verifications
+                </span>
+            </div>
+            <span class="badge font-mono rounded-pill px-3 py-1" style="background: #e8f1fc; color: #0c2340; border: 1px solid #c9ddf5; font-size: 0.7rem;">
+                <i class="bi bi-lightning-charge-fill text-warning me-1"></i> High Priority Services
+            </span>
+        </div>
+
+        <div class="row g-3">
+            <!-- 1. Dual-Stream Enterprise Portal -->
+            <div class="col-md-6 col-lg-4">
+                <div class="quick-service-tile" onclick="switchSection('projects'); onProjectTabChange('dual-stream-portal');">
+                    <div class="quick-service-icon">🏛️</div>
+                    <div>
+                        <h6 class="fw-bold mb-1" style="color: var(--text-main); font-size: 0.88rem;">Dual-Stream Enterprise Portal</h6>
+                        <p class="small text-muted mb-2 font-mono" style="font-size: 0.72rem; line-height: 1.4;">PHP 8.5.9 • Laravel 13.39.0 • MariaDB 12.3.3 (342 Tables, 0.34ms Latency)</p>
+                        <span class="badge font-mono" style="background: #e8f1fc; color: #0284c7; font-size: 0.68rem;">View Telemetry &rarr;</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Enterprise Grievance Portal -->
+            <div class="col-md-6 col-lg-4">
+                <div class="quick-service-tile" onclick="switchSection('projects'); onProjectTabChange('enterprise-grievance-portal');">
+                    <div class="quick-service-icon">🛡️</div>
+                    <div>
+                        <h6 class="fw-bold mb-1" style="color: var(--text-main); font-size: 0.88rem;">Enterprise Grievance Platform</h6>
+                        <p class="small text-muted mb-2 font-mono" style="font-size: 0.72rem; line-height: 1.4;">Zero-Trust .NET Core • Angular • SQL Server Stored Procedures • Mobile OTP</p>
+                        <span class="badge font-mono" style="background: #fff7ed; color: #d97706; font-size: 0.68rem;">Read Case Study &rarr;</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. BrowserStack Testathon Champion -->
+            <div class="col-md-6 col-lg-4">
+                <div class="quick-service-tile" onclick="switchSection('events');">
+                    <div class="quick-service-icon">🏆</div>
+                    <div>
+                        <h6 class="fw-bold mb-1" style="color: var(--text-main); font-size: 0.88rem;">BrowserStack 1st Rank Champion</h6>
+                        <p class="small text-muted mb-2 font-mono" style="font-size: 0.72rem; line-height: 1.4;">1st Prize ($105 USD Awarded) • Automated Testing Hackathon at Metacube</p>
+                        <span class="badge font-mono" style="background: #f0fdf4; color: #15803d; font-size: 0.68rem;">View Proof &amp; Trophy &rarr;</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Support Task Dashboard -->
+            <div class="col-md-6 col-lg-4">
+                <div class="quick-service-tile" onclick="switchSection('projects'); onProjectTabChange('support-task-dashboard');">
+                    <div class="quick-service-icon">📧</div>
+                    <div>
+                        <h6 class="fw-bold mb-1" style="color: var(--text-main); font-size: 0.88rem;">MailAI Support Automation</h6>
+                        <p class="small text-muted mb-2 font-mono" style="font-size: 0.72rem; line-height: 1.4;">Docker (Local Machine Only) • Ollama Llama + PostgreSQL • Zero Cloud Leakage</p>
+                        <span class="badge font-mono" style="background: #eef2ff; color: #4f46e5; font-size: 0.68rem;">Watch Demo Video &rarr;</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Mukesh Ajmera Advisory -->
+            <div class="col-md-6 col-lg-4">
+                <div class="quick-service-tile" onclick="switchSection('projects'); onProjectTabChange('aimukeshajmera');">
+                    <div class="quick-service-icon">📈</div>
+                    <div>
+                        <h6 class="fw-bold mb-1" style="color: var(--text-main); font-size: 0.88rem;">Mukesh Ajmera Financial AI</h6>
+                        <p class="small text-muted mb-2 font-mono" style="font-size: 0.72rem; line-height: 1.4;">Full-Stack Python + Relational DB • LIC MITRA Conversational Assistant (Voice)</p>
+                        <span class="badge font-mono" style="background: #e0f2fe; color: #0284c7; font-size: 0.68rem;">Launch Live Preview &rarr;</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Help Center & Recruiter FAQs -->
+            <div class="col-md-6 col-lg-4">
+                <div class="quick-service-tile" onclick="switchSection('help');">
+                    <div class="quick-service-icon">❓</div>
+                    <div>
+                        <h6 class="fw-bold mb-1" style="color: var(--text-main); font-size: 0.88rem;">Help Center &amp; Recruiter FAQs</h6>
+                        <p class="small text-muted mb-2 font-mono" style="font-size: 0.72rem; line-height: 1.4;">e-Filing Style Help Center • Verifications, SLAs, Tech Specs &amp; Direct Hotline</p>
+                        <span class="badge font-mono" style="background: #fff4ec; color: #f37021; font-size: 0.68rem;">Explore Knowledge Base &rarr;</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Hero Header Grid -->
     <div class="row align-items-stretch g-4 mb-4">
@@ -735,6 +1168,11 @@
             <li class="nav-item">
                 <button class="nav-link" id="btn-sec-studio" data-bs-toggle="pill" data-bs-target="#sec-studio" type="button" role="tab" onclick="switchSection('studio')">
                     📍 Studio &amp; Location
+                </button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" id="btn-sec-help" data-bs-toggle="pill" data-bs-target="#sec-help" type="button" role="tab" onclick="switchSection('help')">
+                    ❓ Help &amp; FAQs
                 </button>
             </li>
         </ul>
@@ -1005,7 +1443,7 @@
                                         </span>
                                     </div>
                                     <div class="d-flex align-items-center gap-1 font-mono small" style="color: var(--text-dim); font-size: 0.75rem;">
-                                        <span><i class="bi bi-shield-check me-1 text-success"></i> Official RSOS AI Architecture Deck</span>
+                                        <span><i class="bi bi-shield-check me-1 text-success"></i> Official Enterprise AI Architecture Deck</span>
                                     </div>
                                 </div>
 
@@ -1626,9 +2064,183 @@
             </div>
         </div>
 
+        <!-- 7. HELP & KNOWLEDGE CENTER TAB (Income Tax e-Filing /help Style) -->
+        <div class="tab-pane fade" id="sec-help" role="tabpanel" aria-labelledby="btn-sec-help">
+            <div class="modern-card p-4 p-md-5 mb-4">
+                <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-4 pb-3 border-bottom" style="border-color: var(--card-border) !important;">
+                    <div>
+                        <div class="d-flex align-items-center gap-2 flex-wrap mb-1">
+                            <span class="badge font-mono px-3 py-1 rounded-pill" style="background: #0c2340; color: #ffffff; font-size: 0.72rem;">
+                                <i class="bi bi-question-circle-fill text-warning me-1"></i> Help &amp; Knowledge Base
+                            </span>
+                            <span class="badge font-mono px-3 py-1 rounded-pill" style="background: rgba(243, 112, 33, 0.15); color: #f37021; border: 1px solid rgba(243, 112, 33, 0.3); font-size: 0.72rem;">
+                                e-Filing Portal 2.0 Standard
+                            </span>
+                        </div>
+                        <h3 class="fw-bold mb-1" style="color: var(--text-main);">Frequently Asked Questions &amp; Technical Guidance</h3>
+                        <p class="small mb-0 font-mono" style="color: var(--text-dim);">Structured answers and architecture rationales for Hiring Managers, CTOs, and Technical Reviewers</p>
+                    </div>
+                    <a href="https://wa.me/918946919241?text=Hi%20Rohit,%20I%20have%20a%20question%20regarding%20your%20portfolio" target="_blank" class="btn btn-sm btn-gov-whatsapp font-mono py-2 px-3 rounded-pill">
+                        <i class="bi bi-whatsapp me-1"></i> Ask on WhatsApp
+                    </a>
+                </div>
+
+                <!-- Global Instant Search Input -->
+                <div class="p-3 rounded-3 mb-4" style="background: var(--card-inner); border: 1px solid var(--card-border);">
+                    <div class="input-group">
+                        <span class="input-group-text bg-white border-end-0" style="border-color: var(--card-border); color: #0c2340;">
+                            <i class="bi bi-search"></i>
+                        </span>
+                        <input type="text" id="faqSearchInput" class="form-control bg-white border-start-0" placeholder="Type a keyword to find answers (e.g. 'Stored Procedures', 'PHP 8.5', 'Mobile OTP', 'BrowserStack', 'NDA', 'Docker')..." onkeyup="filterHelpFaqs()" style="border-color: var(--card-border); font-size: 0.88rem;">
+                    </div>
+                </div>
+
+                <!-- Category Filter Pills (Do's & Don'ts / Pamphlets style) -->
+                <div class="d-flex align-items-center gap-2 flex-wrap mb-4" id="faqCategoryPills">
+                    <button type="button" class="filter-pill-btn active" onclick="filterFaqByCategory('all', this)">All Topics</button>
+                    <button type="button" class="filter-pill-btn" onclick="filterFaqByCategory('Enterprise Modernization', this)">🏛️ Enterprise Upgrades</button>
+                    <button type="button" class="filter-pill-btn" onclick="filterFaqByCategory('Zero-Trust Security', this)">🛡️ Zero-Trust Security</button>
+                    <button type="button" class="filter-pill-btn" onclick="filterFaqByCategory('Agentic AI SDLC', this)">🤖 Agentic SDLC</button>
+                    <button type="button" class="filter-pill-btn" onclick="filterFaqByCategory('Awards & Competitions', this)">🏆 Awards Verification</button>
+                    <button type="button" class="filter-pill-btn" onclick="filterFaqByCategory('Compliance & NDAs', this)">📜 Compliance &amp; NDAs</button>
+                    <button type="button" class="filter-pill-btn" onclick="filterFaqByCategory('Recruiter Helpdesk', this)">📞 Recruiter Helpdesk</button>
+                </div>
+
+                <!-- FAQ Accordion Cards List -->
+                <div class="d-flex flex-column gap-3" id="faqListContainer">
+                    {% for faq in user.help_center %}
+                    <div class="help-faq-card" data-category="{{ faq.category }}" data-keywords="{{ faq.question|lower }} {{ faq.answer|lower }}">
+                        <div class="help-faq-header" data-bs-toggle="collapse" data-bs-target="#collapseFaq{{ loop.index }}" aria-expanded="{% if loop.first %}true{% else %}false{% endif %}" aria-controls="collapseFaq{{ loop.index }}">
+                            <div class="d-flex align-items-center gap-3">
+                                <i class="bi {{ faq.icon }} text-warning fs-5"></i>
+                                <div>
+                                    <span class="badge font-mono rounded-pill mb-1" style="background: rgba(12, 35, 64, 0.08); color: #0c2340; border: 1px solid rgba(12, 35, 64, 0.15); font-size: 0.68rem;">{{ faq.category }}</span>
+                                    <h6 class="fw-bold mb-0" style="color: var(--text-main); font-size: 0.92rem;">{{ faq.question }}</h6>
+                                </div>
+                            </div>
+                            <i class="bi bi-chevron-down text-muted fs-6"></i>
+                        </div>
+                        <div id="collapseFaq{{ loop.index }}" class="collapse {% if loop.first %}show{% endif %}" data-bs-parent="#faqListContainer">
+                            <div class="p-4 bg-white border-top" style="border-color: var(--card-border) !important; color: var(--text-body); font-size: 0.88rem; line-height: 1.65;">
+                                <p class="mb-0">{{ faq.answer }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <!-- Recruiter Direct Assistance Card -->
+                <div class="mt-4 p-4 rounded-3 d-flex align-items-center justify-content-between flex-wrap gap-3" style="background: #e8f1fc; border: 1px solid #c9ddf5;">
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center bg-white shadow-sm" style="width: 46px; height: 46px;">
+                            <i class="bi bi-headset fs-4 text-primary"></i>
+                        </div>
+                        <div>
+                            <h6 class="fw-bold mb-0" style="color: #0c2340;">Need Customized Technical Evaluation or Full Dossier?</h6>
+                            <span class="small font-mono text-muted" style="font-size: 0.75rem;">Connect directly with Rohit Jain for senior architect and leadership discussions.</span>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                        <a href="mailto:engrohitjain5@gmail.com" class="btn btn-sm btn-gov-navy font-mono py-2 px-3 rounded-pill">
+                            <i class="bi bi-envelope-fill me-1"></i> Send Email
+                        </a>
+                        <a href="https://wa.me/918946919241" target="_blank" class="btn btn-sm btn-gov-whatsapp font-mono py-2 px-3 rounded-pill">
+                            <i class="bi bi-whatsapp me-1"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
+    <!-- Closes #mainSectionTabContent -->
 
 </div>
+<!-- Closes .container.py-4 -->
+
+<!-- Official Government Portal Footer (incometax.gov.in Style) -->
+<footer class="gov-footer">
+    <div class="container">
+        <div class="row g-4 mb-4">
+            <!-- Col 1: Identity & Standards -->
+            <div class="col-lg-4 col-md-6">
+                <div class="d-flex align-items-center gap-2 mb-3">
+                    <img src="{{ url_for('static', filename='images/RohitPhoto.jpg') }}" alt="Rohit Jain" class="rounded-circle border border-2 border-white" style="width: 42px; height: 42px; object-fit: cover;">
+                    <div>
+                        <h6 class="mb-0 text-white fw-bold">Rohit Jain</h6>
+                        <span class="small font-mono text-warning" style="font-size: 0.75rem;">Senior Full-Stack Developer &amp; AI Architect</span>
+                    </div>
+                </div>
+                <p class="small leading-relaxed mb-3" style="color: #cbd5e1; font-size: 0.84rem;">
+                    Architecting intelligent enterprise systems, state government portals (100,000+ candidates), and autonomous multi-agent pipelines with zero-trust security and sub-millisecond database optimization.
+                </p>
+                <div class="d-flex align-items-center gap-2 flex-wrap">
+                    <span class="badge rounded-pill bg-white text-dark font-mono px-2 py-1" style="font-size: 0.68rem;">GIGW / W3C Standards</span>
+                    <span class="badge rounded-pill bg-primary text-white font-mono px-2 py-1" style="font-size: 0.68rem;">BrowserStack 1st Rank</span>
+                </div>
+            </div>
+
+            <!-- Col 2: Mission-Critical Portals -->
+            <div class="col-lg-3 col-md-6">
+                <h6>Core Production Systems</h6>
+                <ul class="list-unstyled small d-flex flex-column gap-2 mb-0" style="font-size: 0.82rem;">
+                    <li><a href="#projects" onclick="switchSection('projects'); onProjectTabChange('dual-stream-portal');">&rsaquo; Dual-Stream Enterprise Portal (PHP 8.5 • Laravel 13)</a></li>
+                    <li><a href="#projects" onclick="switchSection('projects'); onProjectTabChange('enterprise-grievance-portal');">&rsaquo; Enterprise Grievance Platform (Zero-Trust .NET Core)</a></li>
+                    <li><a href="#projects" onclick="switchSection('projects'); onProjectTabChange('support-task-dashboard');">&rsaquo; MailAI Support Automation (Docker &amp; Ollama)</a></li>
+                    <li><a href="#projects" onclick="switchSection('projects'); onProjectTabChange('aimukeshajmera');">&rsaquo; Mukesh Ajmera Financial AI (LIC MITRA)</a></li>
+                    <li><a href="#projects" onclick="switchSection('projects'); onProjectTabChange('ecourt-highcourt-gateway');">&rsaquo; E-Court &amp; High Court Gateway</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 3: Knowledge Base & Policies -->
+            <div class="col-lg-2 col-md-6">
+                <h6>Help &amp; Policies</h6>
+                <ul class="list-unstyled small d-flex flex-column gap-2 mb-0" style="font-size: 0.82rem;">
+                    <li><a href="#help" onclick="switchSection('help');">&rsaquo; FAQs &amp; Helpdesk</a></li>
+                    <li><a href="#skills" onclick="switchSection('skills');">&rsaquo; System Architecture</a></li>
+                    <li><a href="#agents" onclick="switchSection('agents');">&rsaquo; 19-Agent AI SDLC</a></li>
+                    <li><a href="#events" onclick="switchSection('events');">&rsaquo; Verified Awards ($105)</a></li>
+                    <li><a href="#studio" onclick="switchSection('studio');">&rsaquo; Studio Directions</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 4: Recruiter & Client Helpline -->
+            <div class="col-lg-3 col-md-6">
+                <h6>Direct Engineering Helpline</h6>
+                <div class="d-flex flex-column gap-2 small" style="font-size: 0.84rem;">
+                    <div>
+                        <span class="text-warning font-mono d-block" style="font-size: 0.72rem;">DIRECT CALL &amp; WHATSAPP</span>
+                        <a href="https://wa.me/918946919241" target="_blank" class="fw-bold fs-6 text-white text-decoration-none">
+                            <i class="bi bi-whatsapp text-success me-1"></i> +91 89469 19241
+                        </a>
+                    </div>
+                    <div>
+                        <span class="text-warning font-mono d-block" style="font-size: 0.72rem;">OFFICIAL EMAIL</span>
+                        <a href="mailto:engrohitjain5@gmail.com" class="text-white">engrohitjain5@gmail.com</a>
+                    </div>
+                    <div>
+                        <span class="text-warning font-mono d-block" style="font-size: 0.72rem;">HEADQUARTERS LOCATION</span>
+                        <span class="text-light">Jaipur, Rajasthan 302026, India</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Statutory Divider & Copyright Notice -->
+        <div class="pt-3 border-top d-flex justify-content-between align-items-center flex-wrap gap-2" style="border-color: rgba(255, 255, 255, 0.15) !important; font-size: 0.78rem;">
+            <div class="text-light">
+                &copy; 2026 Rohit Jain. Official Portfolio &amp; Technical Architecture Registry. Designed in adherence to National Portal Accessibility Standards.
+            </div>
+            <div class="d-flex align-items-center gap-3">
+                <a href="{{ user.header.resume_url }}" download class="text-warning fw-bold text-decoration-none font-mono">
+                    <i class="bi bi-file-earmark-pdf-fill me-1"></i> Download Verified CV
+                </a>
+                <span class="text-muted">|</span>
+                <span class="text-muted">Last Updated: November 2026</span>
+            </div>
+        </div>
+    </div>
+</footer>
 
 <!-- Video Modal -->
 <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
@@ -1691,25 +2303,87 @@
 <!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
+        // Font Sizing Control (A- / A / A+)
+    function setFontScale(scale, btn) {
+        var root = document.documentElement;
+        document.querySelectorAll('[aria-label="Font Sizing"] button').forEach(function(b) {
+            b.classList.remove('active');
+        });
+        if (btn) btn.classList.add('active');
+
+        if (scale === 'small') {
+            root.style.setProperty('--portal-font-scale', '90%');
+            localStorage.setItem('portal-font-scale', '90%');
+        } else if (scale === 'large') {
+            root.style.setProperty('--portal-font-scale', '110%');
+            localStorage.setItem('portal-font-scale', '110%');
+        } else {
+            root.style.setProperty('--portal-font-scale', '100%');
+            localStorage.setItem('portal-font-scale', '100%');
+        }
+    }
+
+    // Strictly Dual Themes: Light (Default) and Dark Mode
     function initTheme() {
-        var savedTheme = localStorage.getItem('site-theme') || 'dark';
+        var savedTheme = localStorage.getItem('site-theme') || 'light';
+        var savedScale = localStorage.getItem('portal-font-scale') || '100%';
+        document.documentElement.style.setProperty('--portal-font-scale', savedScale);
         setTheme(savedTheme);
     }
 
     function setTheme(theme) {
-        document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem('site-theme', theme);
+        // Enforce strictly 'light' or 'dark'
+        var activeTheme = (theme === 'dark') ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', activeTheme);
+        localStorage.setItem('site-theme', activeTheme);
         var icon = document.getElementById('themeIcon');
-        if (theme === 'dark') {
-            if (icon) icon.className = 'bi bi-moon-stars-fill text-info';
-        } else {
+        var label = document.getElementById('themeLabel');
+        if (activeTheme === 'dark') {
             if (icon) icon.className = 'bi bi-sun-fill text-warning';
+            if (label) label.textContent = 'Light Mode';
+        } else {
+            if (icon) icon.className = 'bi bi-moon-fill text-primary';
+            if (label) label.textContent = 'Dark Mode';
         }
     }
 
     function toggleTheme() {
-        var current = document.documentElement.getAttribute('data-theme') || 'dark';
+        var current = document.documentElement.getAttribute('data-theme') || 'light';
         setTheme(current === 'dark' ? 'light' : 'dark');
+    }
+
+    // Help Center Instant Search Filter
+    function filterHelpFaqs() {
+        var query = (document.getElementById('faqSearchInput').value || '').toLowerCase().trim();
+        var cards = document.querySelectorAll('#faqListContainer .help-faq-card');
+        cards.forEach(function(card) {
+            var text = card.getAttribute('data-keywords') || '';
+            if (!query || text.indexOf(query) !== -1) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    function filterFaqByCategory(category, btn) {
+        var pills = document.querySelectorAll('#faqCategoryPills button');
+        pills.forEach(function(b) {
+            b.classList.remove('active');
+        });
+        if (btn) {
+            btn.classList.add('active');
+        }
+
+        var cards = document.querySelectorAll('#faqListContainer .help-faq-card');
+        cards.forEach(function(card) {
+            var cat = card.getAttribute('data-category') || '';
+            if (category === 'all' || cat.toLowerCase().indexOf(category.toLowerCase()) !== -1) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
     }
 
     function onProjectTabChange(projId) {
@@ -1914,7 +2588,8 @@
     // Auto-switch based on URL hash
     window.addEventListener('DOMContentLoaded', function() {
         var hash = window.location.hash.replace('#', '');
-        if (hash === 'events' || hash === 'honors') switchSection('events');
+        if (hash === 'help' || hash === 'faq') switchSection('help');
+        else if (hash === 'events' || hash === 'honors') switchSection('events');
         else if (hash === 'projects') switchSection('projects');
         else if (hash === 'skills' || hash === 'tech') switchSection('skills');
         else if (hash === 'agents' || hash === 'team') switchSection('agents');
