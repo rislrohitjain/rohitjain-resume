@@ -992,7 +992,7 @@
         <div class="d-flex align-items-center gap-2 ms-auto">
             <!-- Desktop Buttons -->
             <div class="d-none d-lg-flex align-items-center gap-2">
-                <a href="{{ user.header.resume_url }}" download class="btn btn-sm btn-gov-saffron rounded-pill d-inline-flex align-items-center gap-1 font-mono py-2 px-3" style="font-size: 0.82rem;">
+                <a href="{{ user.header.resume_url }}" target="_blank" download="Rohit_Jain_Resume.pdf" class="btn btn-sm btn-gov-saffron rounded-pill d-inline-flex align-items-center gap-1 font-mono py-2 px-3" style="font-size: 0.82rem;">
                     <i class="bi bi-file-earmark-pdf-fill"></i>
                     <span>Download Official CV</span>
                 </a>
@@ -1011,7 +1011,7 @@
                 <a href="https://wa.me/918946919241?text=Hi%20Rohit,%20I%20saw%20your%20portfolio!" target="_blank" class="btn btn-sm btn-gov-whatsapp rounded-circle d-flex align-items-center justify-content-center shadow-sm" style="width: 38px; height: 38px;" title="WhatsApp Helpdesk">
                     <i class="bi bi-whatsapp fs-6"></i>
                 </a>
-                <a href="{{ user.header.resume_url }}" download class="btn btn-sm btn-gov-saffron rounded-circle d-flex align-items-center justify-content-center shadow-sm" style="width: 38px; height: 38px;" title="Download Official CV">
+                <a href="{{ user.header.resume_url }}" target="_blank" download="Rohit_Jain_Resume.pdf" class="btn btn-sm btn-gov-saffron rounded-circle d-flex align-items-center justify-content-center shadow-sm" style="width: 38px; height: 38px;" title="Download Official CV">
                     <i class="bi bi-file-earmark-pdf-fill fs-6"></i>
                 </a>
                 <button class="btn btn-sm btn-gov-navy rounded-circle d-flex align-items-center justify-content-center p-0 shadow-sm" style="width: 38px; height: 38px;" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenuOffcanvas" aria-controls="mobileMenuOffcanvas" aria-label="Open Navigation Menu">
@@ -1120,7 +1120,7 @@
             <a href="https://wa.me/918946919241?text=Hi%20Rohit,%20I%20saw%20your%20portfolio!" target="_blank" class="btn btn-gov-whatsapp w-100 py-2 rounded-3 mb-2 font-mono fw-bold text-decoration-none d-flex align-items-center justify-content-center gap-2">
                 <i class="bi bi-whatsapp"></i> Chat on WhatsApp
             </a>
-            <a href="{{ user.header.resume_url }}" download class="btn btn-gov-saffron w-100 py-2 rounded-3 font-mono text-decoration-none d-flex align-items-center justify-content-center gap-2">
+            <a href="{{ user.header.resume_url }}" target="_blank" download="Rohit_Jain_Resume.pdf" class="btn btn-gov-saffron w-100 py-2 rounded-3 font-mono text-decoration-none d-flex align-items-center justify-content-center gap-2">
                 <i class="bi bi-file-earmark-pdf-fill"></i> Download Official CV (.pdf)
             </a>
         </div>
@@ -1290,7 +1290,7 @@
                         <span>Chat on WhatsApp</span>
                     </a>
 
-                    <a href="{{ user.header.resume_url }}" download class="btn btn-primary py-2 px-4 rounded-3 d-inline-flex align-items-center gap-2 shadow-sm font-mono text-decoration-none">
+                    <a href="{{ user.header.resume_url }}" target="_blank" download="Rohit_Jain_Resume.pdf" class="btn btn-primary py-2 px-4 rounded-3 d-inline-flex align-items-center gap-2 shadow-sm font-mono text-decoration-none">
                         <i class="bi bi-file-earmark-pdf-fill"></i>
                         <span>Download CV</span>
                     </a>
@@ -1553,11 +1553,11 @@
                                 {% endif %}
                                 {% if proj.presentation_url %}
                                 {% if proj.presentation_pdf_url %}
-                                <a href="{{ url_for('static', filename=proj.presentation_pdf_url) }}" download class="btn btn-sm btn-outline-warning font-mono py-2 px-3 rounded-3 text-decoration-none">
+                                <a href="{{ url_for('static', filename=proj.presentation_pdf_url) }}" target="_blank" download="Enterprise_AI_Task_Automation_Executive_Presentation.pdf" class="btn btn-sm btn-outline-warning font-mono py-2 px-3 rounded-3 text-decoration-none">
                                     <i class="bi bi-file-earmark-pdf-fill me-1"></i> Slides (.PDF)
                                 </a>
                                 {% endif %}
-                                <a href="{{ url_for('static', filename=proj.presentation_url) }}" download class="btn btn-sm btn-warning text-dark font-mono py-2 px-3 rounded-3 fw-bold text-decoration-none shadow-sm">
+                                <a href="{{ url_for('static', filename=proj.presentation_url) }}" download="Enterprise_AI_Task_Automation_Executive_Presentation.pptx" class="btn btn-sm btn-warning text-dark font-mono py-2 px-3 rounded-3 fw-bold text-decoration-none shadow-sm">
                                     <i class="bi bi-download me-1"></i> Download .PPTX
                                 </a>
                                 {% endif %}
@@ -1657,11 +1657,11 @@
                                             <i class="bi bi-arrows-fullscreen me-1"></i> Expand Modal
                                         </button>
                                         {% if proj.presentation_pdf_url %}
-                                        <a href="{{ url_for('static', filename=proj.presentation_pdf_url) }}" download class="btn btn-sm btn-warning text-dark font-mono py-1 px-3 rounded-2 fw-bold text-decoration-none shadow-sm" style="font-size: 0.75rem;">
+                                        <a href="{{ url_for('static', filename=proj.presentation_pdf_url) }}" target="_blank" download="Enterprise_AI_Task_Automation_Executive_Presentation.pdf" class="btn btn-sm btn-warning text-dark font-mono py-1 px-3 rounded-2 fw-bold text-decoration-none shadow-sm" style="font-size: 0.75rem;">
                                             <i class="bi bi-file-earmark-pdf-fill me-1"></i> Download PDF
                                         </a>
                                         {% endif %}
-                                        <a href="{{ url_for('static', filename=proj.presentation_url) }}" download class="btn btn-sm btn-outline-warning font-mono py-1 px-2 rounded-2 text-decoration-none" style="font-size: 0.75rem;">
+                                        <a href="{{ url_for('static', filename=proj.presentation_url) }}" download="Enterprise_AI_Task_Automation_Executive_Presentation.pptx" class="btn btn-sm btn-outline-warning font-mono py-1 px-2 rounded-2 text-decoration-none" style="font-size: 0.75rem;">
                                             <i class="bi bi-download me-1"></i> .PPTX
                                         </a>
                                     </div>
@@ -2507,7 +2507,7 @@
                 &copy; 2026 Rohit Jain. Official Portfolio &amp; Technical Architecture Registry. Designed in adherence to National Portal Accessibility Standards.
             </div>
             <div class="d-flex align-items-center gap-3">
-                <a href="{{ user.header.resume_url }}" download class="text-warning fw-bold text-decoration-none font-mono">
+                <a href="{{ user.header.resume_url }}" target="_blank" download="Rohit_Jain_Resume.pdf" class="text-warning fw-bold text-decoration-none font-mono">
                     <i class="bi bi-file-earmark-pdf-fill me-1"></i> Download Verified CV
                 </a>
                 <span class="text-muted">|</span>

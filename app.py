@@ -72,7 +72,7 @@ user_data = {
             "https://linkedin.com/in/rohit-jain-061571a3",
             "https://huggingface.co/spaces/rislrohitjain/"
         ],
-        "resume_url": "static/Resume_Original_Rohit_Jain.pdf"  # Replace with actual file download link
+        "resume_url": "/static/Resume_Original_Rohit_Jain.pdf"  # Replace with actual file download link
     },
     "summary": "Results-driven Senior Full-Stack Developer & AI Automation Architect with 9+ years of experience delivering mission-critical enterprise systems serving 100,000+ users. 1st Rank Champion at BrowserStack Testathon Jaipur ($105 USD Prize) and Top 5 Winner at Claude Community Jaipur Meetup. Proven track record of leading enterprise tech modernizations (PHP 8.2.10 → 8.5.9, Laravel 8 → 13.39.0, MariaDB 10.x → 12.3.3-MariaDB across 342+ tables with 0.34ms latency) and architecting agentic AI pipelines using Human & Agentic Development.",
     "stats": [
@@ -665,6 +665,27 @@ def sitemap():
 @app.route('/.well-known/llms.txt')
 def llms():
     return send_from_directory('static', 'llms.txt')
+
+@app.route('/resume')
+@app.route('/resume.pdf')
+@app.route('/Resume_Original_Rohit_Jain.pdf')
+@app.route('/download-cv')
+def resume_file():
+    return send_from_directory('static', 'Resume_Original_Rohit_Jain.pdf', mimetype='application/pdf')
+
+@app.route('/presentation.pdf')
+@app.route('/Enterprise_AI_Task_Automation_Executive_Presentation.pdf')
+def presentation_pdf_file():
+    return send_from_directory('static', 'Enterprise_AI_Task_Automation_Executive_Presentation.pdf', mimetype='application/pdf')
+
+@app.route('/presentation.pptx')
+@app.route('/Enterprise_AI_Task_Automation_Executive_Presentation.pptx')
+def presentation_pptx_file():
+    return send_from_directory('static', 'Enterprise_AI_Task_Automation_Executive_Presentation.pptx', mimetype='application/vnd.openxmlformats-officedocument.presentationml.presentation')
+
+@app.route('/static/<path:filename>')
+def serve_static(filename):
+    return send_from_directory('static', filename)
 
 @app.route('/presentation')
 def presentation():
