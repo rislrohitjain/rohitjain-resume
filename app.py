@@ -649,6 +649,10 @@ def index():
     # Renders the separate resume.html file
     return render_template('index.html', user=user_data)
 
+@app.route('/googleZyFQCQo56hpbXwchfRdBF2OQ55EXuYsuCZymmKMbIwI.html')
+def google_verification():
+    return send_from_directory('static', 'googleZyFQCQo56hpbXwchfRdBF2OQ55EXuYsuCZymmKMbIwI.html')
+
 @app.route('/robots.txt')
 def robots():
     return send_from_directory('static', 'robots.txt')
