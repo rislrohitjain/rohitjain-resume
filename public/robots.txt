@@ -16,4 +16,13 @@ Allow: /
 User-agent: ClaudeBot
 Allow: /
 
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
 Sitemap: https://rohitjain-resume.vercel.app/sitemap.xml

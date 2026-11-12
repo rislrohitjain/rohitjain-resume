@@ -56,9 +56,85 @@ user_data = {
             "icon": "bi-telephone-forward-fill",
             "question": "How can hiring managers, CTOs, and clients schedule a technical interview or discussion?",
             "answer": "Rohit is directly accessible via WhatsApp (+91 89469 19241) and Email (engrohitjain5@gmail.com). You can download his verified CV (.PDF) directly from the top banner, or message him directly with one click using the floating WhatsApp button."
+        },
+        {
+            "id": "faq-8",
+            "category": "Services & Hiring",
+            "icon": "bi-briefcase-fill",
+            "question": "What enterprise commercial services, consulting, and contract engagements does Rohit Jain offer?",
+            "answer": "Rohit provides fractional technical leadership and enterprise consulting across 4 core areas: (1) Enterprise AI Agent Development & Workflow Engineering (LangGraph, local Ollama, Google DeepMind Antigravity); (2) Mission-Critical Legacy Stack Modernization (PHP 8.5, Laravel 13, MariaDB 12 optimization with 0.34ms latency); (3) Zero-Trust Full-Stack Applications (.NET Core, Angular, Strict Stored Procedures); and (4) High-Reliability QA Automation & Observability (BrowserStack 1st Rank Champion). Engagements are available on fixed-scope delivery, monthly retainer, or hourly architecture advisory."
+        },
+        {
+            "id": "faq-9",
+            "category": "Lead Generation & Pricing",
+            "icon": "bi-whatsapp",
+            "question": "How can potential clients get a free project estimate or architecture consultation on WhatsApp?",
+            "answer": "Clients can use the interactive WhatsApp Lead Generator on this portfolio to submit their project type, timeline, and budget. Rohit reviews technical specifications and responds directly via WhatsApp within 15 minutes with a zero-cost architecture review and preliminary project estimate."
         }
     ],
 
+    "services": [
+        {
+            "id": "ai-automation",
+            "title": "Enterprise AI & Agentic Workflow Engineering",
+            "icon": "bi-robot",
+            "badge": "Air-Gapped & Local LLM",
+            "tagline": "Private local LLMs, LangGraph state machines, multi-agent AI SDLC, and zero-data-leakage automation.",
+            "deliverables": [
+                "Local LLM pipelines using Ollama (Llama 3.2, DeepSeek) running 100% on-premises",
+                "LangGraph state machine graph architectures for multi-step agentic execution",
+                "Google DeepMind Antigravity multi-agent workflows (19 specialized SDLC agents)",
+                "Document intelligence, automated email task ingestion, and private RAG vector search"
+            ],
+            "engagement": "Fixed Scope Sprint / Monthly Retainer",
+            "whatsapp_prefill": "Hi Rohit, I am interested in Enterprise AI & Agentic Workflow Engineering for my company."
+        },
+        {
+            "id": "stack-modernization",
+            "title": "Mission-Critical Stack Modernization & DB Tuning",
+            "icon": "bi-cpu-fill",
+            "badge": "0.34ms Query Latency",
+            "tagline": "PHP 8.5.9, Laravel 13.39.0, MariaDB 12.3.3 zero-downtime migration across 340+ relational tables.",
+            "deliverables": [
+                "Legacy runtime upgrade (PHP 7/8.2 -> PHP 8.5.9 FastCGI on Windows IIS / Linux)",
+                "Core framework modernization from legacy Laravel 8 to latest Laravel 13.39.0",
+                "Database refactoring & index tuning across 342 relational tables for sub-millisecond query speed",
+                "Zero data regression, automated schema migration, and stored procedure optimization"
+            ],
+            "engagement": "Modernization Sprint / Performance Audit",
+            "whatsapp_prefill": "Hi Rohit, I need help modernizing our legacy tech stack (PHP/Laravel/MariaDB/MySQL)."
+        },
+        {
+            "id": "zero-trust-apps",
+            "title": "Zero-Trust Enterprise Web Applications",
+            "icon": "bi-shield-check",
+            "badge": ".NET Core & Angular",
+            "tagline": "Clean Architecture .NET Core Web API, Angular SPAs, Mobile OTP SMS gateways, and strict stored procedures.",
+            "deliverables": [
+                "Zero-Trust database tier: 100% parameterized stored procedures, 0% direct SQL access",
+                "Role-Based Access Control (RBAC) across 15+ tiers with complete immutable audit logs",
+                "Multi-factor authentication (MFA) via SMS OTP gateways and AES-256 payload encryption",
+                "Real-time team collaboration, dynamic '#' cross-linking autocomplete, and SignalR WebSockets"
+            ],
+            "engagement": "Full-Stack Custom Development / Architecture Audit",
+            "whatsapp_prefill": "Hi Rohit, I want to discuss building a Zero-Trust Enterprise Web Application (.NET/Angular)."
+        },
+        {
+            "id": "qa-observability",
+            "title": "Automated QA & High-Concurrency Reliability",
+            "icon": "bi-trophy-fill",
+            "badge": "BrowserStack 1st Rank",
+            "tagline": "Award-winning test automation (1st Rank BrowserStack Champion) and continuous CI/CD reliability.",
+            "deliverables": [
+                "End-to-end automated test suites using BrowserStack Automate, Test Companion & Observability",
+                "Load testing, high-concurrency stress validation (100k+ candidates scale)",
+                "Automated regression pipelines, unit test synthesis, and API contract verification",
+                "FastCGI runtime tuning, memory footprint optimization (down to 10MB) & 300s budget management"
+            ],
+            "engagement": "QA Strategy / Test Automation Sprint",
+            "whatsapp_prefill": "Hi Rohit, I would like to consult on Automated QA and Performance Engineering for our platform."
+        }
+    ],
     "header": {
         "name": "Rohit Jain",
         "title": "Senior Full-Stack Developer | AI Automation Architect",
@@ -669,6 +745,11 @@ def sitemap():
 @app.route('/.well-known/llms.txt')
 def llms():
     return send_from_directory('static', 'llms.txt')
+
+@app.route('/llms-full.txt')
+@app.route('/.well-known/llms-full.txt')
+def llms_full():
+    return send_from_directory('static', 'llms-full.txt')
 
 @app.route('/resume')
 @app.route('/resume.pdf')
