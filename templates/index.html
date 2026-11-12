@@ -1330,10 +1330,10 @@
             <!-- 5. Mukesh Ajmera Advisory -->
             <div class="col-md-6 col-lg-4">
                 <div class="quick-service-tile" onclick="switchSection('projects'); onProjectTabChange('aimukeshajmera');">
-                    <div class="quick-service-icon">📈</div>
+                    <div class="quick-service-icon">🛡️</div>
                     <div>
-                        <h6 class="fw-bold mb-1" style="color: var(--text-main); font-size: 0.88rem;">Mukesh Ajmera Financial AI</h6>
-                        <p class="small text-muted mb-2 font-mono" style="font-size: 0.72rem; line-height: 1.4;">Full-Stack Python + Relational DB • LIC MITRA Conversational Assistant (Voice)</p>
+                        <h6 class="fw-bold mb-1" style="color: var(--text-main); font-size: 0.88rem;">Mukesh Ajmera – LIC Insurance Agent</h6>
+                        <p class="small text-muted mb-2 font-mono" style="font-size: 0.72rem; line-height: 1.4;">LIC Agent Code: 018431202 • Sarwar, Ajmer • LIC Insurance Services (Python + LIC MITRA AI)</p>
                         <span class="badge font-mono" style="background: #e0f2fe; color: #0284c7; font-size: 0.68rem;">Launch Live Preview &rarr;</span>
                     </div>
                 </div>
@@ -1880,6 +1880,14 @@
                                 {% if proj.confidentiality_note %}
                                 <div class="mt-2 p-2 px-3 rounded-2 small font-mono d-inline-flex align-items-center gap-2" style="background: rgba(255, 255, 255, 0.03); border: 1px dashed var(--card-border); font-size: 0.72rem; color: var(--text-dim);">
                                     <i class="bi bi-shield-check text-warning"></i> {{ proj.confidentiality_note }}
+                                </div>
+                                {% endif %}
+                                {% if proj.agent_code %}
+                                <div class="mt-2 p-2 px-3 rounded-3 small font-mono d-inline-flex align-items-center gap-2 flex-wrap" style="background: rgba(2, 132, 199, 0.08); border: 1px solid rgba(2, 132, 199, 0.3); font-size: 0.76rem;">
+                                    <span class="fw-bold" style="color: var(--secondary-blue);"><i class="bi bi-shield-check me-1"></i>{{ proj.agent_name }} – {{ proj.agent_designation }}</span>
+                                    <span class="badge rounded-pill px-2 py-1" style="background: #0284c7; color: #ffffff;">LIC Agent Code: {{ proj.agent_code }}</span>
+                                    <span class="badge rounded-pill px-2 py-1" style="background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3);">{{ proj.business }}</span>
+                                    <span class="text-muted"><i class="bi bi-geo-alt-fill text-danger me-1"></i>{{ proj.location }}</span>
                                 </div>
                                 {% endif %}
                             </div>
@@ -3005,7 +3013,7 @@
                     <li><a href="#projects" onclick="switchSection('projects'); onProjectTabChange('dual-stream-portal');">&rsaquo; Board Dual-Stream Enterprise Portal (PHP 8.5 • Laravel 13)</a></li>
                     <li><a href="#projects" onclick="switchSection('projects'); onProjectTabChange('enterprise-grievance-portal');">&rsaquo; Enterprise Grievance Platform (Zero-Trust .NET Core)</a></li>
                     <li><a href="#projects" onclick="switchSection('projects'); onProjectTabChange('support-task-dashboard');">&rsaquo; MailAI Support Automation (Docker &amp; Ollama)</a></li>
-                    <li><a href="#projects" onclick="switchSection('projects'); onProjectTabChange('aimukeshajmera');">&rsaquo; Mukesh Ajmera Financial AI (LIC MITRA)</a></li>
+                    <li><a href="#projects" onclick="switchSection('projects'); onProjectTabChange('aimukeshajmera');">&rsaquo; Mukesh Ajmera – LIC Insurance Agent (Code: 018431202)</a></li>
                     <li><a href="#projects" onclick="switchSection('projects'); onProjectTabChange('ecourt-highcourt-gateway');">&rsaquo; E-Court &amp; High Court Gateway</a></li>
                 </ul>
             </div>
