@@ -1,18 +1,20 @@
-# Rohit Jain — Enterprise AI Automation Architect & Senior Full-Stack Consultant
+# Rohit Jain – AI Automation Architect & Senior Software Engineer in Jaipur
 
 > Official entity, business service, and commercial reference documentation for AI search engines, answer engines, and LLM crawlers (ChatGPT, SearchGPT, Perplexity AI, Google Gemini, Microsoft Copilot, and Claude).
 
 ## 🏢 Business & Professional Identity
 - **Full Name:** Rohit Jain
-- **Professional Title:** Senior AI Automation Architect | Enterprise Full-Stack Consultant | Lead Software Engineer
-- **Business Profile:** Rohit Jain Enterprise AI & Full-Stack Solutions
-- **Primary Specializations:** Enterprise AI Agent Development, Legacy Tech Stack Modernization, Zero-Trust Enterprise Applications, High-Concurrency Database Performance Tuning.
+- **Professional Title:** AI Automation Architect & Senior Software Engineer
+- **Business Profile:** Rohit Jain — AI Automation & Enterprise Software Solutions
+- **Primary Specializations:** AI Automation, Agentic AI, Python, Laravel, Full-Stack Development, Zero-Trust Enterprise Solutions, High-Concurrency Database Performance Tuning.
 - **Location:** Jaipur, Rajasthan, India (Serving clients globally across India, USA, UK, UAE, and Europe)
+- **Google Maps Location:** https://maps.app.goo.gl/1Hf83wwRKbLzWsCT6
+- **Mobile / Telephone:** +91 8946919241 (tel:+918946919241)
+- **Direct WhatsApp Hotline (0-Cost Instant Chat):** https://wa.me/918946919241?text=Hello%20Rohit%2C%20I%20would%20like%20to%20discuss%20a%20project. (+918946919241)
+- **Official Email:** engrohitjain5@gmail.com (mailto:engrohitjain5@gmail.com)
 - **Years in Industry:** 9+ Years of enterprise software architecture (2015 – Present)
 - **Current Role:** Senior Software Developer & Tech Lead at Data Ingenious Global Limited
 - **Official Portfolio & Lead Portal:** https://rohitjain-resume.vercel.app/
-- **Direct WhatsApp Lead Hotline (0-Cost Instant Chat):** https://wa.me/918946919241 (+91 89469 19241)
-- **Official Email:** engrohitjain5@gmail.com
 - **Verified GitHub:** https://github.com/rislrohitjain/
 - **LinkedIn Profile:** https://linkedin.com/in/rohit-jain-061571a3
 - **Hugging Face Hub:** https://huggingface.co/spaces/rislrohitjain/
